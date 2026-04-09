@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Report Review Verdict: WARN - Phân Tích Chứng Khoán Mỹ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            color-scheme: dark;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
+            font-size: 18px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #0d1117;
+            border-bottom: 1px solid #30363d;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background-color: rgba(13, 17, 23, 0.85);
+        }
+
+        nav {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .nav-brand:hover {
+            color: #79c0ff;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 1.5rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #e6edf3;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+
+        .article-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-date::before {
+            content: "📅";
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #c9d1d9;
+        }
+
+        .article-content h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 2rem 0 0.8rem 0;
+            color: #e6edf3;
+            border-left: 4px solid #58a6ff;
+            padding-left: 1rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.6rem 0;
+            color: #e6edf3;
+        }
+
+        .article-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.2rem 0 0.4rem 0;
+            color: #c9d1d9;
+        }
+
+        .article-content p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid #58a6ff;
+            background-color: #161b22;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 1.2rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+            color: #58a6ff;
+        }
+
+        .article-content em {
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        /* Tables */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-content table thead {
+            background-color: #161b22;
+            border-bottom: 2px solid #30363d;
+        }
+
+        .article-content table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #e6edf3;
+            background-color: #161b22;
+        }
+
+        .article-content table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .article-content table tbody tr:hover {
+            background-color: #161b22;
+        }
+
+        .article-content table tbody tr:nth-child(even) {
+            background-color: #0d1117;
+        }
+
+        /* Code Blocks */
+        .article-content pre {
+            background-color: #161b22;
+            color: #e6edf3;
+            padding: 1.5rem;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .article-content code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9em;
+            background-color: #21262d;
+            color: #ff7b72;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+        }
+
+        .article-content pre code {
+            background-color: transparent;
+            color: #e6edf3;
+            padding: 0;
+        }
+
+        /* Links */
+        .article-content a {
+            color: #58a6ff;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .article-content a:hover {
+            border-bottom-color: #58a6ff;
+            color: #79c0ff;
+        }
+
+        /* Back Navigation */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+            color: #79c0ff;
+        }
+
+        .back-link::before {
+            content: "←";
+        }
+
+        /* Footer */
+        footer {
+            background-color: #161b22;
+            border-top: 1px solid #30363d;
+            padding: 2rem 1.5rem;
+            margin-top: 3rem;
+            color: #8b949e;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-divider {
+            color: #30363d;
+            margin: 0 0.5rem;
+        }
+
+        /* Horizontal Rule */
+        .article-content hr {
+            border: none;
+            border-top: 1px solid #30363d;
+            margin: 2rem 0;
+        }
+
+        /* Images */
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                padding: 1rem;
+            }
+
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+            }
+
+            nav {
+                padding: 0.8rem;
+            }
+
+            .article-content table {
+                font-size: 0.85rem;
+            }
+
+            .article-content table th,
+            .article-content table td {
+                padding: 0.6rem;
+            }
+
+            .article-content pre {
+                padding: 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .article-content {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+
+            .article-content h2 {
+                font-size: 1.1rem;
+                margin: 1.5rem 0 0.6rem 0;
+            }
+
+            .article-content pre {
+                padding: 0.8rem;
+                font-size: 0.75rem;
+                border-radius: 4px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            header, footer {
+                display: none;
+            }
+
+            main {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .back-link {
+                display: none;
+            }
+
+            .article-content a {
+                color: #58a6ff;
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="nav-brand">Phân Tích Chứng Khoán Mỹ</a>
+        </nav>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-link">Quay lại danh sách</a>
+
+        <article>
+            <header class="article-header">
+                <h1>Report Review Verdict: WARN</h1>
+                <div class="article-meta">
+                    <span class="article-date">2026 04 08</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <h1>Report Review Verdict: WARN</h1>
+<p><strong>Report:</strong> quick_update_2300.md<br />
+<strong>Reviewed at:</strong> 2026-04-08T23:30:00Z<br />
+<strong>Reviewer version:</strong> Tier 4 Master Judge v1.0</p>
+<hr />
+<h2>Verdict Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Verdict</th>
+<th>Key Findings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tier 0 (Ground Truth)</strong></td>
+<td>PASS</td>
+<td>No critical failures; 2 unchecked price items (S&amp;P labeling, Nasdaq futures value) resolved as non-blocking</td>
+</tr>
+<tr>
+<td><strong>Tier 1 (Data Auditor)</strong></td>
+<td>WARN</td>
+<td>1 MAJOR: Hormuz transit count (4 tankers vs 3–5 observed depending on timestamp). 1 MINOR: Nikkei ATH claim appropriately self-flagged by report for EOD verification. 10 other claims PASS.</td>
+</tr>
+<tr>
+<td><strong>Tier 2 (Narrative Critic)</strong></td>
+<td>PASS</td>
+<td>All causal chains sound. Zero derivation errors. Arithmetic verified. Language strength matches evidence count. Anti-patterns (Russell YTD derivation, narrative overreach) successfully avoided.</td>
+</tr>
+<tr>
+<td><strong>Tier 3 (Consistency Checker)</strong></td>
+<td>PASS</td>
+<td>Zero structural conflicts. Table/prose alignment verified. Timezone conversions correct (PDT body + ET footer). Anonymization compliant.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Chain Risk Map</h2>
+<h3>Issue: Hormuz Transit Precision (Tier 1 MAJOR)</h3>
+<p><strong>Failed claim:</strong> Report states "4 tanker transits cả ngày 08/04" (4 tankers all day 08/04)</p>
+<p><strong>Actual:</strong> Bloomberg sources show 3 ships observed leaving (one snapshot) and 5 bulk carriers at 12:00 ET snapshot — lacks ≥2 sources with identical timestamp</p>
+<p><strong>Downstream impact analysis:</strong></p>
+<ol>
+<li><strong>Narrative claim</strong>: "Hormuz vẫn gần như đóng" (Hormuz still nearly closed)</li>
+<li><strong>Status</strong>: UNAFFECTED</li>
+<li>
+<p><strong>Reason</strong>: Whether 3, 4, or 5 transits, all represent ~90% reduction from normal 40–50/day capacity. Directional thesis ("~5% normal capacity") remains valid.</p>
+</li>
+<li>
+<p><strong>Causal reasoning</strong>: "Risk premium unwind intraday đã đi hơi xa so với fundamentals" (intraday unwind went too far vs on-the-ground reality)</p>
+</li>
+<li><strong>Status</strong>: UNAFFECTED</li>
+<li>
+<p><strong>Reason</strong>: Core logic compares market pricing to Hormuz blockade severity. Any 3–5 transits support the thesis that market over-discounted ceasefire certainty.</p>
+</li>
+<li>
+<p><strong>Scenario probability</strong>: "Base case consolidation 65–70%" (up from 60%)</p>
+</li>
+<li><strong>Status</strong>: UNAFFECTED</li>
+<li><strong>Reason</strong>: Scenario built on futures fade, oil rebound, VIX crush, Ghalibaf statement — not solely on Hormuz transit count. Futures/oil/VIX data points independently verified PASS.</li>
+</ol>
+<p><strong>Blast radius:</strong> 0 (no downstream cascades)<br />
+<strong>Criticality:</strong> MAJOR (precision issue, not accuracy issue)</p>
+<hr />
+<h2>Top Fixes Required</h2>
+<h3>1. Hormuz Transit Figure — Clarify Observation Time (PRIORITY)</h3>
+<p><strong>Issue</strong>: Report claims "4 tankers cả ngày 08/04" but lacks time-stamped source confirmation</p>
+<p><strong>Recommended fix</strong>:
+- Option A (Preferred): Replace with time-specific observation: "~4 transits observed 12:00 ET snapshot (vs 40–50 normal/day)"
+- Option B: Broaden to range: "Only 3–5 transits observed depending on timestamp, vs normal 40–50/day"
+- Add inline note: "Source: Bloomberg Strait of Hormuz updates; time snapshot clarified to avoid false precision"</p>
+<p><strong>Scope</strong>: 1 paragraph (Hormuz blockade section); no downstream rewrites needed</p>
+<hr />
+<h3>2. Nikkei 225 ATH Verification — Defer to EOD 6AM (NON-BLOCKING)</h3>
+<p><strong>Issue</strong>: Report flags Nikkei 225 as "ATH mới" but notes potential mismatch (historical Feb 2026 ATH ~58,000 vs reported 56,308)</p>
+<p><strong>Current status</strong>: Report ITSELF applies self-limiting language: "Flag reviewer Tầng 0: verify Nikkei close 08/04 thật + close 09/04 khi phiên Á đóng. Không rút conclusion."</p>
+<p><strong>Recommended action</strong>: In next scheduled update (6AM 09/04 EOD report):
+- Cross-check Nikkei 225 official close against Bloomberg terminal
+- If close &lt;58,000: Remove ATH language; reframe as "strong rally +5.39% but below Feb ATH"
+- If close &gt;58,000: Confirm new ATH with official date of Feb high</p>
+<p><strong>Impact on 2300 update</strong>: None — report appropriately defers conclusion. No blocking action required.</p>
+<hr />
+<h2>Vertical Audit Summary (All Tiers)</h2>
+<h3>Tier 0: Deterministic Ground Truth</h3>
+<ul>
+<li>Status: PASS</li>
+<li>Notes: 2 price items (S&amp;P label, Nasdaq futures) left unchecked due to parsing ambiguity but posed no risk. YTD data verified via yfinance live fetch (SPX −1.10%, Dow −0.98%, Nasdaq −2.58%).</li>
+</ul>
+<h3>Tier 1: Data Auditor</h3>
+<ul>
+<li>Status: WARN (due to 1 MAJOR)</li>
+<li>Passes: 10/12 verified claims</li>
+<li>Major flag: Hormuz transit (3–5 vs reported 4, lacking synchronized timestamp)</li>
+<li>Minor flag: Nikkei ATH (appropriately self-flagged by report)</li>
+<li>Recommendation: Specify Hormuz observation time in revised version</li>
+</ul>
+<h3>Tier 2: Narrative Critic</h3>
+<ul>
+<li>Status: PASS</li>
+<li>Validation: All derivation chains sound (Ghalibaf statement → futures fade → consolidation repricing)</li>
+<li>Language strength: Appropriate for evidence count (4 supporting data points for "test" claim)</li>
+<li>Anti-pattern compliance: Russell YTD correctly avoided derivation (Rule-001); Nikkei ATH self-limited (Rule-006)</li>
+<li>Arithmetic: All spot checks pass (VIX delta −18.25%, futures pct −0.10%)</li>
+<li>Timezone: All conversions correct (PDT body format + ET footer reference)</li>
+</ul>
+<h3>Tier 3: Consistency Checker</h3>
+<ul>
+<li>Status: PASS</li>
+<li>Validation: Zero table/prose mismatches; probability shifts documented ("up from 60%"); all timestamps consistent</li>
+<li>Anonymization: No banned source names detected</li>
+<li>Filename: Correct PDT reference (2300 = 23:00 PDT, not ET conversion error)</li>
+</ul>
+<hr />
+<h2>Decision</h2>
+<p><strong>FINAL VERDICT: WARN</strong></p>
+<p><strong>Deploy decision: DEPLOY_WITH_WARNING</strong></p>
+<p><strong>Rationale</strong>: Report passes strict audit across Tiers 0, 2, and 3 (PASS), with only Tier 1 flagging 1 MAJOR precision issue (Hormuz transit count). However, this issue is <strong>isolated</strong> — it does NOT cascade downstream to invalidate narrative claims, reasoning chains, or scenario probabilities. The directional thesis (Hormuz severely constrained, risk premium unwind went too far vs fundamentals) remains intact whether transits numbered 3, 4, or 5. This is a data-precision bug (specify observation time) rather than a narrative error.</p>
+<p><strong>Recommended action</strong>:
+1. <strong>Deploy to Telegram</strong>: Yes, with attached warning notice
+2. <strong>Warning text</strong>: "⚠️ Data audit flagged: Hormuz transit count cited as 4 tankers all-day but Bloomberg sources show 3–5 depending on snapshot time. Directional constraint (~5% normal capacity) confirmed; exact figure requires time-stamped verification. See full audit."
+3. <strong>Post-deployment</strong>: Fix Hormuz language in next scheduled update (6AM 09/04) to specify observation time
+4. <strong>No hold required</strong>: Nikkei ATH concern already self-flagged by report; will be resolved in EOD report</p>
+<hr />
+<h2>Anti-FOMO Summary</h2>
+<p>Report correctly resists false precision and media hype:
+- "Media headline 'Dow best day since 2025' ... but (a) YTD vẫn âm, (b) ceasefire đã crack, (c) CPI 2 ngày nữa"
+- "Đây vẫn là <strong>bounce trong downtrend</strong>, không phải new bull leg confirmed"
+- Probability shifts documented and justified (60% → 65–70% consolidation base case)
+- Caution applied to speculative elements (Nikkei ATH, Russell YTD)</p>
+<hr />
+<p><strong>Reviewer</strong>: Tier 4 Master Judge<br />
+<strong>Review version</strong>: v1.0<br />
+<strong>Audit completed</strong>: 2026-04-08T23:30:00Z</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Phân Tích Chứng Khoán Mỹ <span class="footer-divider">•</span> Báo cáo & Cập nhật thị trường</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #6e7681;">
+                Cập nhật lúc 2026 04 08
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CẬP NHẬT THỊ TRƯỜNG | 23:00 PDT (02:00 ET 09/04) 08/04/2026 - Phân Tích Chứng Khoán Mỹ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            color-scheme: dark;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
+            font-size: 18px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #0d1117;
+            border-bottom: 1px solid #30363d;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background-color: rgba(13, 17, 23, 0.85);
+        }
+
+        nav {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .nav-brand:hover {
+            color: #79c0ff;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 1.5rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #e6edf3;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+
+        .article-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-date::before {
+            content: "📅";
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #c9d1d9;
+        }
+
+        .article-content h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 2rem 0 0.8rem 0;
+            color: #e6edf3;
+            border-left: 4px solid #58a6ff;
+            padding-left: 1rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.6rem 0;
+            color: #e6edf3;
+        }
+
+        .article-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.2rem 0 0.4rem 0;
+            color: #c9d1d9;
+        }
+
+        .article-content p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid #58a6ff;
+            background-color: #161b22;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 1.2rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+            color: #58a6ff;
+        }
+
+        .article-content em {
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        /* Tables */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-content table thead {
+            background-color: #161b22;
+            border-bottom: 2px solid #30363d;
+        }
+
+        .article-content table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #e6edf3;
+            background-color: #161b22;
+        }
+
+        .article-content table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .article-content table tbody tr:hover {
+            background-color: #161b22;
+        }
+
+        .article-content table tbody tr:nth-child(even) {
+            background-color: #0d1117;
+        }
+
+        /* Code Blocks */
+        .article-content pre {
+            background-color: #161b22;
+            color: #e6edf3;
+            padding: 1.5rem;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .article-content code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9em;
+            background-color: #21262d;
+            color: #ff7b72;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+        }
+
+        .article-content pre code {
+            background-color: transparent;
+            color: #e6edf3;
+            padding: 0;
+        }
+
+        /* Links */
+        .article-content a {
+            color: #58a6ff;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .article-content a:hover {
+            border-bottom-color: #58a6ff;
+            color: #79c0ff;
+        }
+
+        /* Back Navigation */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+            color: #79c0ff;
+        }
+
+        .back-link::before {
+            content: "←";
+        }
+
+        /* Footer */
+        footer {
+            background-color: #161b22;
+            border-top: 1px solid #30363d;
+            padding: 2rem 1.5rem;
+            margin-top: 3rem;
+            color: #8b949e;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-divider {
+            color: #30363d;
+            margin: 0 0.5rem;
+        }
+
+        /* Horizontal Rule */
+        .article-content hr {
+            border: none;
+            border-top: 1px solid #30363d;
+            margin: 2rem 0;
+        }
+
+        /* Images */
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                padding: 1rem;
+            }
+
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+            }
+
+            nav {
+                padding: 0.8rem;
+            }
+
+            .article-content table {
+                font-size: 0.85rem;
+            }
+
+            .article-content table th,
+            .article-content table td {
+                padding: 0.6rem;
+            }
+
+            .article-content pre {
+                padding: 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .article-content {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+
+            .article-content h2 {
+                font-size: 1.1rem;
+                margin: 1.5rem 0 0.6rem 0;
+            }
+
+            .article-content pre {
+                padding: 0.8rem;
+                font-size: 0.75rem;
+                border-radius: 4px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            header, footer {
+                display: none;
+            }
+
+            main {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .back-link {
+                display: none;
+            }
+
+            .article-content a {
+                color: #58a6ff;
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="nav-brand">Phân Tích Chứng Khoán Mỹ</a>
+        </nav>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-link">Quay lại danh sách</a>
+
+        <article>
+            <header class="article-header">
+                <h1>CẬP NHẬT THỊ TRƯỜNG | 23:00 PDT (02:00 ET 09/04) 08/04/2026</h1>
+                <div class="article-meta">
+                    <span class="article-date">2026 04 08</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <h1>CẬP NHẬT THỊ TRƯỜNG | 23:00 PDT (02:00 ET 09/04) 08/04/2026</h1>
+<h2>Market Session</h2>
+<p><strong>US cash đã đóng cửa</strong> từ 13:00 PDT. Hiện là <strong>after-hours US sâu + phiên Á 09/04</strong> (Tokyo/Seoul giữa phiên, HK/Thượng Hải buổi sáng). Catalyst mới: <strong>Iran parliament speaker tuyên bố Mỹ vi phạm ceasefire</strong> — futures US bắt đầu fade nhẹ. Focus vẫn là <strong>CPI thứ Sáu 10/04 08:30 ET</strong>.</p>
+<h2>Tóm tắt 1 dòng</h2>
+<p><strong>Ceasefire bị "test" trong chưa đầy 24h — Iran parliament speaker Ghalibaf cáo buộc Mỹ vi phạm, Hormuz vẫn gần như blocked (chỉ 4 tanker transits ngày 08/04). Futures US pare gains nhẹ: ES −0.1%, YM −0.1%, NQ −0.2%. WTI bounce từ settle $94.41 lên ~$97 overnight (+2–3%). Thị trường "shrug" — chưa có risk-off thực sự, nhưng bull extension scenario 25% từ update 2100 PDT đang yếu đi; base case consolidation (60%) trở nên dominant hơn.</strong></p>
+<h2>Giá hiện tại (so với close US 13:00 PDT &amp; update 2100 PDT)</h2>
+<table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>Giá hiện tại</th>
+<th>Nguồn &amp; Thời điểm</th>
+<th>Thay đổi từ 2100</th>
+<th>So với close US</th>
+<th>Cảnh báo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ES (S&amp;P 500 fut)</td>
+<td>~6,776 (−0.1%)</td>
+<td>Yahoo Finance + Investing.com, ~23:00 PDT</td>
+<td>−~7 pts</td>
+<td>−0.1% vs 6,782.81 close</td>
+<td>Pare gains sau headline Iran</td>
+</tr>
+<tr>
+<td>NQ (Nasdaq 100 fut)</td>
+<td>~25,160 (−0.2%)</td>
+<td>Yahoo Finance + Investing.com</td>
+<td>−~50 pts</td>
+<td>−0.2%</td>
+<td>Tech dẫn đầu fade</td>
+</tr>
+<tr>
+<td>YM (Dow fut)</td>
+<td>~47,860 (−0.1%)</td>
+<td>Yahoo Finance + Investing.com</td>
+<td>−~50 pts</td>
+<td>−0.1%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>WTI Crude (May)</td>
+<td><strong>~$97.04</strong></td>
+<td>Reuters/Yahoo Finance, ~22:00 ET</td>
+<td>+$2.6 vs $94.41 settle</td>
+<td>+2.8% bounce</td>
+<td>Pare losses sau headline vi phạm</td>
+</tr>
+<tr>
+<td>Brent Crude (Jun)</td>
+<td>~$94.80</td>
+<td>Reuters</td>
+<td>+$1.8 vs $93 settle</td>
+<td>+1.9%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>10Y UST yield</td>
+<td>~4.22–4.28%</td>
+<td>Investing.com, thanh khoản mỏng</td>
+<td>flat–nhích nhẹ</td>
+<td>—</td>
+<td>Đêm thanh khoản thấp</td>
+</tr>
+<tr>
+<td>VIX (close CBOE)</td>
+<td><strong>21.04</strong> (close 08/04)</td>
+<td>yfinance live Tầng 0, fetched 23:06 PDT; prev close 07/04 = 25.74</td>
+<td>−~4.7 pts vs prev day (−18%)</td>
+<td>—</td>
+<td>Resolved — baseline 2100 nghi ngờ 25.78 là <strong>prev day close</strong>, không phải 08/04 close</td>
+</tr>
+<tr>
+<td>Nikkei 225</td>
+<td>đang giao dịch phiên Á 09/04</td>
+<td>Live data chưa cross-check ≥2 nguồn</td>
+<td>—</td>
+<td>—</td>
+<td>Dữ liệu rải rác; một số nguồn trích ~53,500, mâu thuẫn với close 56,308 trong baseline 2100 — <strong>chờ verify EOD 6AM</strong></td>
+</tr>
+<tr>
+<td>Kospi</td>
+<td>đang giao dịch</td>
+<td>Tương tự</td>
+<td>—</td>
+<td>—</td>
+<td>Chờ close</td>
+</tr>
+</tbody>
+</table>
+<p><strong>YTD verified (yfinance live từ Tầng 0 reviewer, close 08/04):</strong> SPX <strong>−1.10%</strong>, Dow <strong>−0.98%</strong>, Nasdaq <strong>−2.58%</strong>. Russell 2000 YTD vẫn chưa có 2 nguồn live confirm — KHÔNG derive từ spread outperformance.</p>
+<p><em>Cross-check: Yahoo Finance, Investing.com, Reuters, Bloomberg (pause rally headline), CNN Live Updates (Iran ceasefire tested).</em></p>
+<hr />
+<h2>Biến động đáng chú ý từ 2100 PDT</h2>
+<h3>1. Headline Iran: Parliament speaker Ghalibaf cáo buộc Mỹ vi phạm ceasefire</h3>
+<ul>
+<li><strong>Gì xảy ra:</strong> Trong khoảng 20:00–22:00 ET (17:00–19:00 PDT, ngay sau baseline 2100), Iranian parliament speaker Mohammad Bagher Ghalibaf đăng statement trên X cáo buộc Mỹ đã vi phạm các điều khoản của ceasefire công bố hôm trước. Lý do nêu: (a) Israel tiếp tục tấn công Lebanon, (b) drone xâm nhập không phận Iran, (c) Mỹ từ chối quyền làm giàu uranium của Iran. VP Vance được giao dẫn đàm phán tiếp với Tehran (Bloomberg).</li>
+<li><strong>Tại sao quan trọng:</strong> Đây là <strong>crack đầu tiên trong ceasefire chưa đầy 24h</strong>. Đáng chú ý, Hormuz vẫn gần như đóng — chỉ <strong>4 tanker transits cả ngày 08/04</strong> (mức bình thường là 40–50 transits/ngày), tức risk premium unwind trong dầu hơi "đi trước" so với fundamentals on-the-ground. Ngoài ra: fire tại Habshan gas complex (Abu Dhabi) và drone strike vào đường ống Saudi tiếp tục được report trong ngày.</li>
+<li><strong>Ảnh hưởng:</strong> Bull extension scenario (25%) trong baseline 2100 PDT yếu đi rõ rệt. Probability tái phân bổ (estimate): <strong>Base case consolidation giờ ~65–70%</strong>, bull extension ~15–20%, pullback 15%. Reaction futures mới chỉ −0.1 đến −0.2% — thị trường "shrug" (Fortune) nhưng đây là <strong>tín hiệu cần watch qua đêm</strong>.</li>
+</ul>
+<h3>2. Futures pare gains: ES −0.1%, NQ −0.2%, YM −0.1%</h3>
+<ul>
+<li><strong>Gì xảy ra:</strong> Sau khi Asian risk-on phản ứng ban đầu (trong baseline 2100 PDT), overnight US futures bắt đầu fade nhẹ khi headline vi phạm ceasefire lan rộng. ES=F đi về ~6,776 (−0.1% vs close 6,782.81), NQ=F −0.2%, YM=F −0.1%.</li>
+<li><strong>Tại sao quan trọng:</strong> Đây là <strong>phase "consolidation with downside bias"</strong> — chưa phải risk-off thực, nhưng rõ ràng không phải melt-up continuation. CTAs và vol-target fund vừa mới bắt đầu re-lever (lag 2–5 ngày) sẽ <strong>chậm lại</strong> nếu overnight futures không tạo mức cao mới.</li>
+<li><strong>Ảnh hưởng:</strong> Setup open 09/04 (thứ Năm): nhiều khả năng flat đến −0.3%, không phải gap-up +0.4% như base case 2100 PDT. Range SPX Thursday open: <strong>6,750–6,790</strong> (thay vì 6,755–6,820 ở update trước).</li>
+</ul>
+<h3>3. WTI bounce $94.41 → ~$97 overnight (+2.8%)</h3>
+<ul>
+<li><strong>Gì xảy ra:</strong> WTI futures May delivery bounce từ settle $94.41 lên ~$97.04 trong overnight electronic session (quote ~22:00 ET per Reuters/Yahoo Finance). Brent June cũng bounce tương tự ~$93 → $94.80 (+1.9%).</li>
+<li><strong>Tại sao quan trọng:</strong> Đây là <strong>pare back ~15%</strong> của cú plunge −16% settle-to-settle. Logic: (a) Hormuz vẫn chưa reopen thực sự (4 tankers/day), (b) ceasefire đã có crack, (c) margin call forced selling có thể đã hoàn tất trong last hour US session. <strong>Residual risk premium tăng lại ~$3/bbl</strong>, nghĩa là market pricing lại ~$10–13 risk premium tổng so với pre-conflict ~$84–87.</li>
+<li><strong>Ảnh hưởng:</strong> Energy sector (XLE, USO) sẽ ổn định hơn mở cửa thứ Năm — có thể gap-up nhẹ sau close đỏ đậm 08/04. Đây <strong>chưa phải</strong> tín hiệu re-escalation, chỉ là risk premium normalize sau over-react intraday.</li>
+</ul>
+<h3>4. Cross-check data baseline 2100: Nikkei ATH claim cần verify</h3>
+<ul>
+<li><strong>Gì xảy ra:</strong> Baseline 2100 PDT ghi "Nikkei 225 close +5.39% tại 56,308.42 — ATH mới, phá kỷ lục 02/2026." Tuy nhiên cross-check nhanh cho thấy (a) Nikkei ATH thực tế đạt gần 58,000 vào giữa tháng 02/2026 (Bloomberg/CNBC), (b) một số aggregator trích mức hiện tại ~53,500 — mâu thuẫn với close 56,308.</li>
+<li><strong>Tại sao quan trọng:</strong> Có khả năng 56,308 là <strong>intraday high chứ không phải close</strong>, hoặc <strong>stale data</strong> từ aggregator sớm trong phiên. Không phải ATH mới nếu ATH 02/2026 là ~58,000.</li>
+<li><strong>Ảnh hưởng:</strong> <strong>Flag reviewer Tầng 0</strong>: verify Nikkei close 08/04 thật + close 09/04 khi phiên Á đóng. Không rút conclusion "Á ATH mới" cho đến khi confirm. Trong báo cáo EOD 6AM 09/04, cần dùng số chính thức từ Nikkei official hoặc Bloomberg terminal.</li>
+</ul>
+<h3>5. VIX close 08/04 — RESOLVED: 21.04 (vol crush confirmed)</h3>
+<ul>
+<li><strong>Gì xảy ra:</strong> Tầng 0 yfinance resolve ambiguity từ baseline 2100: <strong>VIX close 08/04 = 21.04</strong>, prev close 07/04 = 25.74. Tức là VIX crushed −4.70 điểm (−18.3%) trong phiên rally. Con số 25.78 mà aggregator trích thực chất là <strong>prev day close (07/04)</strong>, không phải 08/04 close — nhầm ngày.</li>
+<li><strong>Tại sao quan trọng:</strong> Xác nhận <strong>vol regime normalize</strong> sau ceasefire news. Không có hedge demand bất thường. Vol crush hoàn tất, tiếp tục support thesis "relief rally quality cao" của baseline 2100 PDT — nhưng chỉ cho intraday 08/04.</li>
+<li><strong>Ảnh hưởng:</strong> Vol environment hiện là "low 20s" — chưa phải complacency (thường &lt;15), chưa phải stress (&gt;25). Sẵn sàng rebound nếu có headline Iran escalation overnight; sẵn sàng crush thêm nếu CPI 10/04 benign.</li>
+</ul>
+<hr />
+<h2>Catalyst 24h tới (update)</h2>
+<table>
+<thead>
+<tr>
+<th>Giờ ET</th>
+<th>Sự kiện</th>
+<th>Tác động</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Đang diễn ra</td>
+<td>Headline Iran ceasefire compliance</td>
+<td><strong>HIGH/tail risk</strong></td>
+<td><strong>ACTIVE</strong> — Ghalibaf statement mới</td>
+</tr>
+<tr>
+<td>Thứ 5 09/04 pre-market</td>
+<td>Reaction ADR Á gap (EWJ, EWY, BABA)</td>
+<td>MEDIUM</td>
+<td>Có thể không còn gap-up mạnh như baseline dự kiến</td>
+</tr>
+<tr>
+<td>Thứ 5 09/04 08:30</td>
+<td>Initial Jobless Claims</td>
+<td>LOW–MEDIUM</td>
+<td>Không đổi</td>
+</tr>
+<tr>
+<td><strong>Thứ 6 10/04 08:30</strong></td>
+<td><strong>CPI tháng 3</strong></td>
+<td><strong>HIGH</strong></td>
+<td>Binary event tuần — không đổi</td>
+</tr>
+<tr>
+<td>Overnight continuing</td>
+<td>Iran/Israel diplomatic wires</td>
+<td><strong>Tail risk</strong></td>
+<td><strong>Elevated</strong> sau statement Ghalibaf</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Kịch bản overnight → Thursday 09/04 open (revised từ 2100 PDT)</h2>
+<p><strong>Base case (65–70%, up từ 60%):</strong> Futures tiếp tục range ES 6,770–6,790, không break higher không break down. Open thứ Năm flat đến −0.3%. Range intraday SPX dao động quanh 6,760–6,805. Vol regime giữ quanh mức close 21.04.</p>
+<p><strong>Bull extension (15–20%, down từ 25%):</strong> Nếu overnight có headline "ceasefire holding despite rhetoric" hoặc Trump Truth Social tone de-escalate → futures bounce về 6,795+, Thursday open +0.3%. Nhưng bar cao hơn rõ rệt so với 2100 PDT.</p>
+<p><strong>Pullback (15%, không đổi):</strong> Nếu Iran escalate verbal → action (ví dụ: thêm missile Gulf, drone strike energy infra Saudi/UAE), gap-down 0.5–1%, SPX test vùng ~6,740. 10Y yield về ~4.15%, vol tăng trở lại vài điểm so với close 21.04. Oil re-bounce mạnh hơn (+$3–5 nữa).</p>
+<p><strong>Risk bổ sung:</strong> (1) Á close có thể fade so với intraday high — watch Nikkei close 15:00 JST = 02:00 ET = 23:00 PDT (đang tới); (2) Energy sector over-sold bounce có thể steal bid từ tech/cyclicals; (3) CPI nowcast Cleveland Fed pre-print.</p>
+<hr />
+<h2>Tín hiệu tổng hợp (quan điểm phân tích trung lập)</h2>
+<p>Từ 2100 PDT đến 2300 PDT, <strong>narrative thay đổi nhẹ từ "clean relief rally" sang "relief rally with cracks"</strong>. Ceasefire đã test trong vòng chưa đầy 24h, oil pare losses ~15%, futures pare gains −0.1 đến −0.2%. Đây chưa phải regime shift, nhưng là <strong>reminder rằng risk premium unwind intraday đã đi hơi xa so với fundamentals on-the-ground</strong> (Hormuz vẫn gần như đóng).</p>
+<p>Framework "chain causal" vẫn nguyên vẹn nhưng <strong>hệ số confidence giảm</strong>: ceasefire → oil unwind → risk-on, với điều kiện ceasefire thực sự hold. Market hiện đang pricing probability ceasefire hold ~70–75% (vs ~90% intraday peak).</p>
+<p><strong>Position check (trung lập):</strong> Long từ sáng — trailing stop vẫn 6,730–6,740 nhưng cần <strong>tighter hơn</strong> nếu futures break 6,770 overnight (stop lên 6,760). Flat — KHÔNG chase, chờ (a) CPI 10/04 benign OR (b) confirm ceasefire hold ≥48h. Energy — bounce thứ Năm khả thi nhưng dừng mua nếu XLE gap-up &gt;3% (mean-reversion đã chạy). Small cap / Russell 2000 — tiếp tục hold YTD reality check, không overweight cho đến khi có 2 nguồn YTD live.</p>
+<p><strong>Anti-FOMO reminder:</strong> Media headline "Dow best day since 2025" đang dominant news cycle tối nay, nhưng (a) YTD vẫn âm, (b) ceasefire đã crack, (c) CPI 2 ngày nữa. Đây vẫn là <strong>bounce trong downtrend</strong>, không phải new bull leg confirmed.</p>
+<hr />
+<p><em>Quick Update 2300 PDT | Previous: quick_update_2100.md (21:00 PDT = 00:00 ET 09/04)</em>
+<em>Body: PDT | Footer ref: PDT / ET</em>
+<em>Data snapshot: Yahoo Finance + Investing.com + Reuters + Bloomberg (futures), CNN Live + Fortune + CBS News (Iran headlines), yfinance Tầng 0 (YTD SPX/Dow/Nasdaq)</em>
+<em>Next scheduled update: 06:00 PDT 09/04 (báo cáo chính EOD thứ Năm) hoặc on-demand nếu có headline lớn (Iran escalation, Trump Truth Social, oil spike &gt;5%)</em>
+<em>Anti-pattern check: YTD Russell 2000 KHÔNG derived từ spread; Nikkei ATH claim từ baseline 2100 flagged để verify; VIX close 08/04 flagged cần Tầng 0 yfinance resolve.</em></p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Phân Tích Chứng Khoán Mỹ <span class="footer-divider">•</span> Báo cáo & Cập nhật thị trường</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #6e7681;">
+                Cập nhật lúc 2026 04 08
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
