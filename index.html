@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phân Tích Chứng Khoán Mỹ - Báo cáo & Cập nhật thị trường</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            color-scheme: dark;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
+            font-size: 18px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            border-bottom: 1px solid #30363d;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .site-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #e6edf3;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.2rem;
+        }
+
+        .site-subtitle {
+            font-size: 1rem;
+            color: #8b949e;
+            font-weight: 400;
+        }
+
+        .site-tagline {
+            color: #58a6ff;
+            font-weight: 500;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 1.5rem 1.5rem;
+        }
+
+        .report-count {
+            color: #6e7681;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Date Group - Collapse/Expand */
+        .date-group {
+            margin-bottom: 0.25rem;
+        }
+
+        .date-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+            background: none;
+            border: none;
+            border-bottom: 1px solid #30363d;
+            padding: 0.65rem 0.25rem;
+            cursor: pointer;
+            font-family: inherit;
+            text-align: left;
+            transition: background-color 0.15s ease;
+        }
+
+        .date-toggle:hover {
+            background-color: #161b22;
+        }
+
+        .date-chevron {
+            font-size: 0.65rem;
+            color: #6e7681;
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+            width: 1rem;
+            text-align: center;
+        }
+
+        .date-group.open .date-chevron {
+            transform: rotate(90deg);
+        }
+
+        .date-label {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #e6edf3;
+        }
+
+        .date-badge {
+            font-size: 0.7rem;
+            color: #6e7681;
+            font-weight: 500;
+            margin-left: auto;
+        }
+
+        /* Report List (collapsible) */
+        .report-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.25s ease;
+        }
+
+        .date-group.open .report-list {
+            max-height: 1000px;
+        }
+
+        .report-item {
+            border-bottom: 1px solid #21262d;
+        }
+
+        .report-item:last-child {
+            border-bottom: 1px solid #30363d;
+        }
+
+        .report-link {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.5rem 0.5rem 0.5rem 1.75rem;
+            text-decoration: none;
+            color: #e6edf3;
+            font-size: 0.9rem;
+            transition: all 0.15s ease;
+        }
+
+        .report-link:hover {
+            color: #58a6ff;
+            background-color: #161b22;
+        }
+
+        .report-time {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #58a6ff;
+            min-width: 60px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .report-type {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+            min-width: 42px;
+            text-align: center;
+        }
+
+        .type-full {
+            background-color: #0d2a4a;
+            color: #58a6ff;
+        }
+
+        .type-quick {
+            background-color: #14331a;
+            color: #3fb950;
+        }
+
+        .type-other {
+            background-color: #161b22;
+            color: #8b949e;
+        }
+
+        .report-name {
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .report-arrow {
+            color: #484f58;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .report-link:hover .report-arrow {
+            color: #58a6ff;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid #30363d;
+            padding: 1.2rem;
+            margin-top: 1.5rem;
+            color: #6e7681;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .site-title {
+                font-size: 1.5rem;
+            }
+
+            header {
+                padding: 1.2rem 1rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            .report-link {
+                padding-left: 1.25rem;
+                gap: 0.4rem;
+                font-size: 0.85rem;
+            }
+
+            .report-time {
+                min-width: 50px;
+                font-size: 0.75rem;
+            }
+
+            .report-type {
+                font-size: 0.6rem;
+                min-width: 36px;
+            }
+        }
+
+        /* Print */
+        @media print {
+            .date-chevron { display: none; }
+            .report-list { max-height: none !important; }
+            .report-arrow { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="site-title">Phân Tích Chứng Khoán Mỹ</h1>
+        <p class="site-subtitle">Báo cáo & Cập nhật <span class="site-tagline">thị trường hàng ngày</span></p>
+    </header>
+
+    <main>
+        <p class="report-count">23 báo cáo</p>
+
+        <div class="reports-section">
+            <div class="date-group">
+  <button class="date-toggle">
+    <span class="date-chevron">&#x25B6;</span>
+    <span class="date-label">2026 04 08</span>
+    <span class="date-badge">6 báo cáo</span>
+  </button>
+  <ul class="report-list">
+    <li class="report-item">
+      <a href="2026-04-08-cap-nhat-thi-truong-2100-pdt-0000-et-0904-08042026.html" class="report-link">
+        <span class="report-time">9 PM PDT</span>
+        <span class="report-type type-quick">Quick</span>
+        <span class="report-name">CẬP NHẬT THỊ TRƯỜNG | 21:00 PDT (00:00 ET 09/04) 08/04/2026</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+    <li class="report-item">
+      <a href="2026-04-08-bao-cao.html" class="report-link">
+        <span class="report-time">9 PM PDT</span>
+        <span class="report-type type-quick">Quick</span>
+        <span class="report-name">Báo cáo</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+    <li class="report-item">
+      <a href="2026-04-08-bao-cao-phan-tich-thi-truong-chung-khoan-my.html" class="report-link">
+        <span class="report-time">3 PM PDT</span>
+        <span class="report-type type-full">Full</span>
+        <span class="report-name">BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+    <li class="report-item">
+      <a href="2026-04-08-cap-nhat-thi-truong-1130-pdt-1430-et-08042026.html" class="report-link">
+        <span class="report-time">11:30 AM PDT</span>
+        <span class="report-type type-quick">Quick</span>
+        <span class="report-name">CẬP NHẬT THỊ TRƯỜNG | 11:30 PDT (14:30 ET) 08/04/2026</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+    <li class="report-item">
+      <a href="2026-04-08-cap-nhat-thi-truong-0900-pdt-1200-et-08042026.html" class="report-link">
+        <span class="report-time">9 AM PDT</span>
+        <span class="report-type type-quick">Quick</span>
+        <span class="report-name">CẬP NHẬT THỊ TRƯỜNG | 09:00 PDT (12:00 ET) 08/04/2026</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+    <li class="report-item">
+      <a href="2026-04-08-bao-cao-phan-tich-thi-truong-chung-khoan-my-2.html" class="report-link">
+        <span class="report-time">6 AM PDT</span>
+        <span class="report-type type-full">Full</span>
+        <span class="report-name">BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="date-group">
+  <button class="date-toggle">
+    <span class="date-chevron">&#x25B6;</span>
+    <span class="date-label">2026 04 07</span>
+    <span class="date-badge">6 báo cáo</span>
+  </button>
+  <ul class="report-list">
+    <li class="report-item">
+      <a href="2026-04-07-cap-nhat-thi-truong-2300-pt-0200-et-0804-07042026.html" class="report-link">
+        <span class="report-time">11 PM PDT</span>
+        <span class="report-type type-quick">Quick</span>
+        <span class="report-name">CẬP NHẬT THỊ TRƯỜNG | 23:00 PT (02:00 ET 08/04) 07/04/2026</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+    <li class="report-item">
+      <a href="2026-04-07-cap-nhat-thi-truong-2000-pt-2300-et-07042026.html" class="report-link">
+        <span class="report-time">8 PM PDT</span>
+        <span class="report-type type-quick">Quick</span>
+        <span class="report-name">CẬP NHẬT THỊ TRƯỜNG | 20:00 PT (23:00 ET) 07/04/2026</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+    <li class="report-item">
+      <a href="2026-04-07-bao-cao-phan-tich-thi-truong-chung-khoan-my-2.html" class="report-link">
+        <span class="report-time">6 PM PDT</span>
+        <span class="report-type type-full">Full</span>
+        <span class="report-name">BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+    <li class="report-item">
+      <a href="2026-04-07-bao-cao-phan-tich-thi-truong-chung-khoan-my.html" class="report-link">
+        <span class="report-time">12 PM PDT</span>
+        <span class="report-type type-full">Full</span>
+        <span class="report-name">BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+    <li class="report-item">
+      <a href="2026-04-07-cap-nhat-thi-truong-230-pm-et-07042026.html" class="report-link">
+        <span class="report-time">11:30 AM PDT</span>
+        <span class="report-type type-quick">Quick</span>
+        <span class="report-name">CẬP NHẬT THỊ TRƯỜNG | 2:30 PM ET — 07/04/2026</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+    <li class="report-item">
+      <a href="2026-04-07-cap-nhat-thi-truong-1201-pm-et-07042026.html" class="report-link">
+        <span class="report-time">9 AM PDT</span>
+        <span class="report-type type-quick">Quick</span>
+        <span class="report-name">CẬP NHẬT THỊ TRƯỜNG | 12:01 PM ET — 07/04/2026</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="date-group">
+  <button class="date-toggle">
+    <span class="date-chevron">&#x25B6;</span>
+    <span class="date-label">2026 04 06</span>
+    <span class="date-badge">5 báo cáo</span>
+  </button>
+  <ul class="report-list">
+    <li class="report-item">
+      <a href="2026-04-06-cap-nhat-thi-truong-2000-pdt-06042026.html" class="report-link">
+        <span class="report-time">8 PM PDT</span>
+        <span class="report-type type-quick">Quick</span>
+        <span class="report-name">CẬP NHẬT THỊ TRƯỜNG | 20:00 PDT 06/04/2026</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+    <li class="report-item">
+      <a href="2026-04-06-bao-cao-phan-tich-thi-truong-chung-khoan-my.html" class="report-link">
+        <span class="report-time">3 PM PDT</span>
+        <span class="report-type type-full">Full</span>
+        <span class="report-name">BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+    <li class="report-item">
+      <a href="2026-04-06-cap-nhat-thi-truong-1430-et-1130-pdt-06042026.html" class="report-link">
+        <span class="report-time">11:30 AM PDT</span>
+        <span class="report-type type-quick">Quick</span>
+        <span class="report-name">CẬP NHẬT THỊ TRƯỜNG | 14:30 ET - 11:30 PDT 06/04/2026</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+    <li class="report-item">
+      <a href="2026-04-06-cap-nhat-thi-truong-1200-et-0900-pdt-06042026.html" class="report-link">
+        <span class="report-time">9 AM PDT</span>
+        <span class="report-type type-quick">Quick</span>
+        <span class="report-name">CẬP NHẬT THỊ TRƯỜNG | 12:00 ET - 09:00 PDT 06/04/2026</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+    <li class="report-item">
+      <a href="2026-04-06-bao-cao-phan-tich-thi-truong-chung-khoan-my-2.html" class="report-link">
+        <span class="report-time">6 AM PDT</span>
+        <span class="report-type type-full">Full</span>
+        <span class="report-name">BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="date-group">
+  <button class="date-toggle">
+    <span class="date-chevron">&#x25B6;</span>
+    <span class="date-label">2026 04 05</span>
+    <span class="date-badge">2 báo cáo</span>
+  </button>
+  <ul class="report-list">
+    <li class="report-item">
+      <a href="2026-04-05-cap-nhat-thi-truong-2330-05042026-chu-nhat.html" class="report-link">
+        <span class="report-time">11:30 PM PDT</span>
+        <span class="report-type type-quick">Quick</span>
+        <span class="report-name">CẬP NHẬT THỊ TRƯỜNG | 23:30 05/04/2026 (Chủ Nhật)</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+    <li class="report-item">
+      <a href="2026-04-05-cap-nhat-thi-truong-2000-05042026-chu-nhat.html" class="report-link">
+        <span class="report-time">8 PM PDT</span>
+        <span class="report-type type-quick">Quick</span>
+        <span class="report-name">CẬP NHẬT THỊ TRƯỜNG | 20:00 05/04/2026 (Chủ Nhật)</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="date-group">
+  <button class="date-toggle">
+    <span class="date-chevron">&#x25B6;</span>
+    <span class="date-label">2026 04 03</span>
+    <span class="date-badge">1 báo cáo</span>
+  </button>
+  <ul class="report-list">
+    <li class="report-item">
+      <a href="2026-04-03-bao-cao-phan-tich-thi-truong-chung-khoan-my.html" class="report-link">
+        <span class="report-time">—</span>
+        <span class="report-type type-full">Full</span>
+        <span class="report-name">BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="date-group">
+  <button class="date-toggle">
+    <span class="date-chevron">&#x25B6;</span>
+    <span class="date-label">2026 04 01</span>
+    <span class="date-badge">1 báo cáo</span>
+  </button>
+  <ul class="report-list">
+    <li class="report-item">
+      <a href="2026-04-01-bao-cao-phan-tich-thi-truong-chung-khoan-my.html" class="report-link">
+        <span class="report-time">—</span>
+        <span class="report-type type-full">Full</span>
+        <span class="report-name">BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="date-group">
+  <button class="date-toggle">
+    <span class="date-chevron">&#x25B6;</span>
+    <span class="date-label">2024 12 15</span>
+    <span class="date-badge">1 báo cáo</span>
+  </button>
+  <ul class="report-list">
+    <li class="report-item">
+      <a href="2024-12-15-phan-tich-thi-truong-chung-khoan-my-15122024.html" class="report-link">
+        <span class="report-time">—</span>
+        
+        <span class="report-name">Phân Tích Thị Trường Chứng Khoán Mỹ - 15/12/2024</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="date-group">
+  <button class="date-toggle">
+    <span class="date-chevron">&#x25B6;</span>
+    <span class="date-label">2024 12 14</span>
+    <span class="date-badge">1 báo cáo</span>
+  </button>
+  <ul class="report-list">
+    <li class="report-item">
+      <a href="2024-12-14-chi-so-gia-tieu-dung-thang-11-phan-tich-chi-tiet.html" class="report-link">
+        <span class="report-time">—</span>
+        
+        <span class="report-name">Chỉ Số Giá Tiêu Dùng Tháng 11 - Phân Tích Chi Tiết</span>
+        <span class="report-arrow">&#x203A;</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+        </div>
+    </main>
+
+    <footer>
+        Cập nhật lần cuối: 08/04/2026 21:21
+    </footer>
+
+    <script>
+        // Collapse/Expand toggle
+        document.querySelectorAll('.date-toggle').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var group = this.closest('.date-group');
+                group.classList.toggle('open');
+            });
+        });
+
+        // Auto-expand the first (most recent) date group
+        var firstGroup = document.querySelector('.date-group');
+        if (firstGroup) firstGroup.classList.add('open');
+    </script>
+</body>
+</html>
