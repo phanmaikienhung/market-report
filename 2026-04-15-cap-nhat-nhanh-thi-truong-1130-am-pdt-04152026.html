@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CẬP NHẬT NHANH THỊ TRƯỜNG — 11:30 AM PDT 04/15/2026 - Phân Tích Chứng Khoán Mỹ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            color-scheme: dark;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
+            font-size: 18px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #0d1117;
+            border-bottom: 1px solid #30363d;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background-color: rgba(13, 17, 23, 0.85);
+        }
+
+        nav {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .nav-brand:hover {
+            color: #79c0ff;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 1.5rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #e6edf3;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+
+        .article-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-date::before {
+            content: "📅";
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #c9d1d9;
+        }
+
+        .article-content h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 2rem 0 0.8rem 0;
+            color: #e6edf3;
+            border-left: 4px solid #58a6ff;
+            padding-left: 1rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.6rem 0;
+            color: #e6edf3;
+        }
+
+        .article-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.2rem 0 0.4rem 0;
+            color: #c9d1d9;
+        }
+
+        .article-content p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid #58a6ff;
+            background-color: #161b22;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 1.2rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+            color: #58a6ff;
+        }
+
+        .article-content em {
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        /* Tables */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-content table thead {
+            background-color: #161b22;
+            border-bottom: 2px solid #30363d;
+        }
+
+        .article-content table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #e6edf3;
+            background-color: #161b22;
+        }
+
+        .article-content table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .article-content table tbody tr:hover {
+            background-color: #161b22;
+        }
+
+        .article-content table tbody tr:nth-child(even) {
+            background-color: #0d1117;
+        }
+
+        /* Code Blocks */
+        .article-content pre {
+            background-color: #161b22;
+            color: #e6edf3;
+            padding: 1.5rem;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .article-content code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9em;
+            background-color: #21262d;
+            color: #ff7b72;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+        }
+
+        .article-content pre code {
+            background-color: transparent;
+            color: #e6edf3;
+            padding: 0;
+        }
+
+        /* Links */
+        .article-content a {
+            color: #58a6ff;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .article-content a:hover {
+            border-bottom-color: #58a6ff;
+            color: #79c0ff;
+        }
+
+        /* Back Navigation */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+            color: #79c0ff;
+        }
+
+        .back-link::before {
+            content: "←";
+        }
+
+        /* Footer */
+        footer {
+            background-color: #161b22;
+            border-top: 1px solid #30363d;
+            padding: 2rem 1.5rem;
+            margin-top: 3rem;
+            color: #8b949e;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-divider {
+            color: #30363d;
+            margin: 0 0.5rem;
+        }
+
+        /* Horizontal Rule */
+        .article-content hr {
+            border: none;
+            border-top: 1px solid #30363d;
+            margin: 2rem 0;
+        }
+
+        /* Images */
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                padding: 1rem;
+            }
+
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+            }
+
+            nav {
+                padding: 0.8rem;
+            }
+
+            .article-content table {
+                font-size: 0.85rem;
+            }
+
+            .article-content table th,
+            .article-content table td {
+                padding: 0.6rem;
+            }
+
+            .article-content pre {
+                padding: 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .article-content {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+
+            .article-content h2 {
+                font-size: 1.1rem;
+                margin: 1.5rem 0 0.6rem 0;
+            }
+
+            .article-content pre {
+                padding: 0.8rem;
+                font-size: 0.75rem;
+                border-radius: 4px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            header, footer {
+                display: none;
+            }
+
+            main {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .back-link {
+                display: none;
+            }
+
+            .article-content a {
+                color: #58a6ff;
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="nav-brand">Phân Tích Chứng Khoán Mỹ</a>
+        </nav>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-link">Quay lại danh sách</a>
+
+        <article>
+            <header class="article-header">
+                <h1>CẬP NHẬT NHANH THỊ TRƯỜNG — 11:30 AM PDT 04/15/2026</h1>
+                <div class="article-meta">
+                    <span class="article-date">2026 04 15</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <h1>CẬP NHẬT NHANH THỊ TRƯỜNG — 11:30 AM PDT 04/15/2026</h1>
+<p><strong>Loại:</strong> Quick Update (giữa phiên — Power Hour setup)
+<strong>Baseline:</strong> Quick Update 11:00 PM PDT 04/14/2026 (after-hours / futures)
+<strong>Timestamp dữ liệu:</strong> ~11:30 AM PDT / 2:30 PM ET 04/15/2026 (≈90 phút trước close)
+<strong>Nguồn giá:</strong> TheStreet, Bloomberg, Yahoo Finance, CNBC, FinancialContent, FXStreet, Investing.com — cross-checked ≥2 nguồn</p>
+<hr />
+<h2>TỔNG QUAN INTRADAY — SPX LẬP INTRADAY ATH MỚI</h2>
+<p><strong>SPX phá 7,000 và lập đỉnh intraday kỷ lục 7,003.82</strong>, vượt đỉnh cũ 7,002.28 ngày 28/01/2026. Đây là intraday ATH đầu tiên kể từ khi xung đột Mỹ–Iran bùng phát. Phiên được dẫn dắt bởi (1) bank earnings blowout (BAC, MS), (2) hy vọng gia hạn ceasefire Iran thêm 2 tuần, (3) rotation trở lại AI/communications. Tuy nhiên, Dow tụt lại (-0.15%) do weakness trong một số Dow-heavy components, trong khi small-caps chỉ tăng khiêm tốn (+0.30%) — <strong>dấu hiệu breadth còn chưa đồng đều</strong>, lãnh đạo thị trường vẫn tập trung ở large-cap growth + financials.</p>
+<hr />
+<h2>PRICE TABLE — LIVE ~11:30 AM PDT / 2:30 PM ET</h2>
+<div class="codehilite"><pre><span></span><code>CHỈ SỐ              LIVE          Δ NGÀY           YTD 2026 (ước tính)
+──────────────────────────────────────────────────────────────────────
+S&amp;P 500            ~7,003        +0.52%           ~+2.1%
+Dow Jones         ~48,460        -0.15%           ~+0.2%
+Nasdaq Comp      ~23,800         +0.70%           ~+2.4%
+Russell 2000      ~2,714         +0.30%           ~+8.2%
+VIX                 18.17        -1.0%            —
+──────────────────────────────────────────────────────────────────────
+10Y Treasury       4.27%         ~flat            —
+DXY                 98.08        ~flat            ~-0.3% YTD
+──────────────────────────────────────────────────────────────────────
+WTI Crude          ~$93          ~flat            —
+Brent              ~$96-97       ~flat            —
+Gold (spot)        ~$4,800       ~flat            —
+Bitcoin            ~$74,300      -0.9% (24h)      —
+──────────────────────────────────────────────────────────────────────
+</code></pre></div>
+
+<p><strong>Ghi chú YTD (BẮT BUỘC cross-check):</strong> Russell 2000 YTD ≈+8.2% (baseline 04/14 close +7.87% từ yfinance, cộng +0.30% hôm nay). SPX YTD ≈+2.1% (baseline +1.6% +0.52%). KHÔNG derive từ spread — số liệu baseline đã được kiểm tra tại Tầng 0 hôm qua.</p>
+<p><strong>Ghi chú DXY:</strong> Baseline 11 PM 04/14 là 98.13 (yfinance). Live ~11:30 AM PDT: 98.08 (yfinance intraday) — YTD 2026 ≈-0.34% (dollar yếu nhẹ từ đầu năm, phản ánh Fed-cut expectations và Iran-risk selling).</p>
+<p><strong>Ghi chú oil:</strong> WTI giữ quanh $93 sau khi giảm 7% hôm qua. Market đang pricing kịch bản gia hạn ceasefire + đàm phán vòng 2, không pricing kịch bản Hormuz escalation.</p>
+<hr />
+<h2>EARNINGS REACTION — BANKS DẪN DẮT</h2>
+<p><strong>Bank of America (BAC) — BEAT MẠNH:</strong>
+- EPS $1.11 vs est. $1.01 (beat ~10%)
+- Revenue $30.3B (+7% YoY), investment banking fees +21% ($1.8B)
+- <strong>Stock +2.5%</strong> — phản ứng tích cực, không "sell the news"</p>
+<p><strong>Morgan Stanley (MS) — RECORD QUARTER:</strong>
+- EPS $3.43 vs est. $3.02 (beat ~14%)
+- Net revenue $20.6B — lần đầu vượt $20B trong 1 quý
+- IB revenue +36%, equity trading +25%, FICC +29% ($3.36B, hưởng lợi từ commodity volatility)
+- <strong>Stock +5%+</strong> — reprice mạnh lên high range, là động lực lớn nhất cho Financials sector hôm nay</p>
+<p><strong>Johnson &amp; Johnson (JNJ):</strong> Beat &amp; raise hôm qua nhưng đã "sell the news" -1% AH; hôm nay phục hồi nhẹ theo broad market.</p>
+<p><strong>Đọc:</strong> Bank earnings xác nhận (1) IB pipeline mạnh, (2) trading revenue benefits từ Iran/oil volatility, (3) NIM ổn định dù 10Y yield +4.27%. Đây là bullish read-through cho GS/JPM/C earnings ngày mai.</p>
+<hr />
+<h2>SECTOR ROTATION TRONG NGÀY</h2>
+<p><strong>Leaders (intraday):</strong>
+- Cyclicals: +1.19%
+- Technology: +0.80% (AI trades awaken lại, sau giai đoạn rotation out)
+- Communications: +0.72%
+- Financials: +0.64% (dẫn dắt bởi BAC/MS)
+- Energy: tham gia nhóm advancing sectors</p>
+<p><strong>Laggards:</strong>
+- Defensives (Staples, Utilities, Healthcare): underperform khi risk-on quay lại
+- Small-caps nhích chậm (+0.30%) — breadth không bùng nổ</p>
+<p><strong>Nhận định rotation:</strong> Hôm nay là phiên RISK-ON nhưng <strong>chất lượng rotation chưa tối ưu</strong>. Lý tưởng khi SPX lập ATH thì Russell 2000 và Dow cũng phải tham gia mạnh. Việc Dow -0.15% + Russell chỉ +0.30% vs SPX +0.52% cho thấy <strong>lãnh đạo vẫn tập trung ở mega-cap tech + IB-heavy financials</strong>, chưa phải broad-based rally kiểu "đồng thuận kinh tế mạnh".</p>
+<hr />
+<h2>POWER HOUR SETUP (2:30–4:00 PM ET)</h2>
+<p><strong>Kịch bản ưu tiên (cập nhật live):</strong></p>
+<ol>
+<li>
+<p><strong>Base case — Consolidate quanh 7,000, close ≥ 7,000 (xác suất ~55%):</strong> Nếu SPX giữ được mốc tâm lý 7,000 vào close, đây là bullish breakout xác nhận (break-and-hold từ resistance 6,930-7,000 sang support). Hàm ý: short-term uptrend tiếp diễn; target tiếp theo 7,050-7,100.</p>
+</li>
+<li>
+<p><strong>Bullish case — Accelerate trong power hour (xác suất ~25%):</strong> Nếu có flow bất ngờ (Iran ceasefire extension xác nhận chính thức, hoặc option gamma squeeze ở 7,000), close có thể lên 7,020-7,040. Thực tế hôm nay cũng có chance này vì MS/BAC flow rất mạnh.</p>
+</li>
+<li>
+<p><strong>Bearish case — Reject 7,000, fade vào close (xác suất ~20%):</strong> "Buy the rumor, sell the news" sau intraday ATH. Nếu VIX bật từ 18.2 lên &gt;19 trong giờ cuối, cảnh giác failed breakout. Lưu ý: VIX 18.17 vẫn complacency-prone; sell-off từ đỉnh thường diễn ra lặng lẽ trước khi VIX spike.</p>
+</li>
+</ol>
+<p><strong>Level quan trọng cần theo dõi:</strong>
+- SPX support: 6,985 (VWAP intraday ước tính), 6,967 (close 04/14)
+- SPX resistance: 7,003.82 (intraday ATH), 7,020-7,050 (psychological extension)</p>
+<hr />
+<h2>VOLUME PROFILE &amp; BREADTH</h2>
+<ul>
+<li><strong>Volume:</strong> Thấp-trung bình — chưa phải "conviction breakout". Power hour volume sẽ quyết định mức độ tin cậy của breakout 7,000.</li>
+<li><strong>Breadth:</strong> NYSE advance/decline khá positive nhưng không extreme. Russell 2000 chỉ +0.30% là red flag nhỏ về breadth — lý tưởng small-caps phải +1%+ trong phiên ATH.</li>
+<li><strong>VIX curve:</strong> Spot 18.22 giảm; nếu VIX front-month/3-month contango dãn ra nghĩa là complacency; theo dõi M1/M3 spread.</li>
+</ul>
+<hr />
+<h2>RỦI RO ĐẦU PHIÊN CHIỀU</h2>
+<ul>
+<li><strong>Iran:</strong> Bloomberg sáng nay đưa tin Mỹ và Iran đang cân nhắc <strong>gia hạn ceasefire 2 tuần</strong> nhưng blockade Hormuz vẫn active; IRGC commander cảnh báo blockade có thể chấm dứt pause chiến sự. Đây là <strong>binary risk</strong> — bất kỳ headline tiêu cực nào trong power hour có thể fade breakout.</li>
+<li><strong>Retail Sales:</strong> Census Bureau đã <strong>hoãn release từ 04/16 → 04/21</strong> — không có data point macro nào trong phiên này để drive flow. Market đang trade hoàn toàn trên earnings + Iran narrative.</li>
+<li><strong>Gamma/Options:</strong> Mốc 7,000 là big strike cluster — pin risk hai chiều. Nếu close &gt;7,000, dealer hedging có thể kéo tiếp lên; nếu close &lt;7,000, có thể reject mạnh.</li>
+</ul>
+<hr />
+<h2>NHÌN VỀ PHIÊN TIẾP THEO (THỨ NĂM 04/16)</h2>
+<p><strong>Earnings focus:</strong> GS, JPM, C, TSM (pre-market). Read-through từ BAC/MS hôm nay rất tích cực → expectations cho GS/JPM đã nâng lên.
+<strong>Macro:</strong> Ít data (Retail Sales đã bị hoãn 04/21). Jobless claims 5:30 AM PDT.
+<strong>Iran:</strong> Vòng đàm phán 2 tại Pakistan có thể xảy ra trong 1-2 ngày tới.</p>
+<p><strong>Kịch bản 04/16 (sơ bộ):</strong>
+- Bull (30%): Ngân hàng lớn beat tiếp → SPX test 7,050
+- Base (50%): Consolidate 6,980-7,030 sau ATH hôm nay
+- Bear (20%): Iran negative headline hoặc GS/JPM miss → pullback test 6,950</p>
+<hr />
+<p><em>Cập nhật lúc 11:30 AM PDT (2:30 PM ET) ngày 04/15/2026.</em>
+<em>Dữ liệu: TheStreet, Bloomberg, Yahoo Finance, CNBC, FinancialContent, FXStreet, Fortune, Investing.com, Advisor Perspectives.</em>
+<em>Phương pháp: Top-Down Hybrid (Macro-First × Multi-Layer × Narrative). Intraday data có thể thay đổi — con số cuối phiên sẽ được xác nhận trong quick_update 20:00 PDT.</em></p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Phân Tích Chứng Khoán Mỹ <span class="footer-divider">•</span> Báo cáo & Cập nhật thị trường</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #6e7681;">
+                Cập nhật lúc 2026 04 15
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

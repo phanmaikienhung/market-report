@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CẬP NHẬT NHANH THỊ TRƯỜNG — 04/10/2026, 11:00 PM PDT - Phân Tích Chứng Khoán Mỹ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            color-scheme: dark;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
+            font-size: 18px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #0d1117;
+            border-bottom: 1px solid #30363d;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background-color: rgba(13, 17, 23, 0.85);
+        }
+
+        nav {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .nav-brand:hover {
+            color: #79c0ff;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 1.5rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #e6edf3;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+
+        .article-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-date::before {
+            content: "📅";
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #c9d1d9;
+        }
+
+        .article-content h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 2rem 0 0.8rem 0;
+            color: #e6edf3;
+            border-left: 4px solid #58a6ff;
+            padding-left: 1rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.6rem 0;
+            color: #e6edf3;
+        }
+
+        .article-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.2rem 0 0.4rem 0;
+            color: #c9d1d9;
+        }
+
+        .article-content p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid #58a6ff;
+            background-color: #161b22;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 1.2rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+            color: #58a6ff;
+        }
+
+        .article-content em {
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        /* Tables */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-content table thead {
+            background-color: #161b22;
+            border-bottom: 2px solid #30363d;
+        }
+
+        .article-content table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #e6edf3;
+            background-color: #161b22;
+        }
+
+        .article-content table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .article-content table tbody tr:hover {
+            background-color: #161b22;
+        }
+
+        .article-content table tbody tr:nth-child(even) {
+            background-color: #0d1117;
+        }
+
+        /* Code Blocks */
+        .article-content pre {
+            background-color: #161b22;
+            color: #e6edf3;
+            padding: 1.5rem;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .article-content code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9em;
+            background-color: #21262d;
+            color: #ff7b72;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+        }
+
+        .article-content pre code {
+            background-color: transparent;
+            color: #e6edf3;
+            padding: 0;
+        }
+
+        /* Links */
+        .article-content a {
+            color: #58a6ff;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .article-content a:hover {
+            border-bottom-color: #58a6ff;
+            color: #79c0ff;
+        }
+
+        /* Back Navigation */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+            color: #79c0ff;
+        }
+
+        .back-link::before {
+            content: "←";
+        }
+
+        /* Footer */
+        footer {
+            background-color: #161b22;
+            border-top: 1px solid #30363d;
+            padding: 2rem 1.5rem;
+            margin-top: 3rem;
+            color: #8b949e;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-divider {
+            color: #30363d;
+            margin: 0 0.5rem;
+        }
+
+        /* Horizontal Rule */
+        .article-content hr {
+            border: none;
+            border-top: 1px solid #30363d;
+            margin: 2rem 0;
+        }
+
+        /* Images */
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                padding: 1rem;
+            }
+
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+            }
+
+            nav {
+                padding: 0.8rem;
+            }
+
+            .article-content table {
+                font-size: 0.85rem;
+            }
+
+            .article-content table th,
+            .article-content table td {
+                padding: 0.6rem;
+            }
+
+            .article-content pre {
+                padding: 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .article-content {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+
+            .article-content h2 {
+                font-size: 1.1rem;
+                margin: 1.5rem 0 0.6rem 0;
+            }
+
+            .article-content pre {
+                padding: 0.8rem;
+                font-size: 0.75rem;
+                border-radius: 4px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            header, footer {
+                display: none;
+            }
+
+            main {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .back-link {
+                display: none;
+            }
+
+            .article-content a {
+                color: #58a6ff;
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="nav-brand">Phân Tích Chứng Khoán Mỹ</a>
+        </nav>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-link">Quay lại danh sách</a>
+
+        <article>
+            <header class="article-header">
+                <h1>CẬP NHẬT NHANH THỊ TRƯỜNG — 04/10/2026, 11:00 PM PDT</h1>
+                <div class="article-meta">
+                    <span class="article-date">2026 04 10</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <h1>CẬP NHẬT NHANH THỊ TRƯỜNG — 04/10/2026, 11:00 PM PDT</h1>
+<p><strong>Loại:</strong> Quick Update Đêm Khuya | <strong>Baseline:</strong> Quick Update 8:00 PM PDT hôm nay | <strong>Timestamp dữ liệu:</strong> ~11:00 PM PDT
+<strong>Trạng thái thị trường:</strong> Đã đóng cửa (1:00 PM PDT) — Futures giao dịch mỏng, mở lại Chủ Nhật 3:00 PM PDT</p>
+<hr />
+<h2>BẢN TIN NHANH</h2>
+<ul>
+<li>⚠️ <strong>Futures gần như flat</strong> — S&amp;P 500, Dow, Nasdaq futures đều giao dịch sát flatline sau 3 PM PDT. Khối lượng cực thấp, thị trường chờ kết quả talks Islamabad</li>
+<li>🔴 <strong>PHÁI ĐOÀN IRAN MỞ RỘNG</strong> — Ngoài Ghalibaf + Araghchi, Iran mang theo Thư ký SNSC Ali Akbar Ahmadian + Thống đốc Ngân hàng TW Hemmati. Dấu hiệu Iran coi đây là đàm phán toàn diện, không chỉ ceasefire</li>
+<li>⚠️ <strong>FORMAT ĐÀM PHÁN XÁC NHẬN:</strong> Gián tiếp trước (qua Pakistan trung gian), sau đó mặt đối mặt. Talks chính thức ngày mai Thứ Bảy 04/11</li>
+<li>🔴 <strong>GHALIBAF GIỮ NGUYÊN 2 ĐIỀU KIỆN TIÊN QUYẾT</strong> — Post trên X: Lebanon ceasefire + tài sản đóng băng phải giải quyết TRƯỚC. "Đàm phán song phương hoặc ngừng bắn đơn phương là vô lý"</li>
+<li>⚠️ <strong>Hormuz vẫn gần đóng</strong> — Chỉ ~7 tàu transit ngày Thứ Năm, 600+ tàu stranded. Iran thu phí $1M+/tàu</li>
+</ul>
+<hr />
+<h2>I. GIÁ ĐÓNG CỬA &amp; FUTURES (Không thay đổi so với 8PM)</h2>
+<h3>Chỉ Số Chính — Close 04/10/2026</h3>
+<table>
+<thead>
+<tr>
+<th>Chỉ Số</th>
+<th>Close Chính Thức</th>
+<th>Thay Đổi Phiên</th>
+<th>Thay Đổi Tuần</th>
+<th>YTD 2026</th>
+<th>Nguồn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S&amp;P 500</td>
+<td>6,816.89</td>
+<td>-0.11%</td>
+<td>+3.6%</td>
+<td>~-0.6%</td>
+<td>CNBC, TheStreet, yfinance</td>
+</tr>
+<tr>
+<td>Dow Jones</td>
+<td>47,916.57</td>
+<td>-0.56% (-269 pts)</td>
+<td>+3.0%</td>
+<td>~-0.9%</td>
+<td>CNBC, TheStreet</td>
+</tr>
+<tr>
+<td>Nasdaq</td>
+<td>22,902.89</td>
+<td>+0.35%</td>
+<td>+4.7%</td>
+<td>~-1.5%</td>
+<td>CNBC, TheStreet, yfinance</td>
+</tr>
+<tr>
+<td>Russell 2000</td>
+<td>~2,630.59</td>
+<td>-0.22%</td>
+<td>~flat</td>
+<td>~+5.2%</td>
+<td>Yahoo Finance, Investing.com</td>
+</tr>
+</tbody>
+</table>
+<p><strong>⚠️ YTD Note:</strong> YTD cross-checked với yfinance API (11:34 AM PDT) và web sources. Tuần tăng mạnh nhất từ 11/2025 nhưng YTD vẫn âm cho 3 chỉ số lớn.</p>
+<h3>Futures (tính đến ~11 PM PDT)</h3>
+<table>
+<thead>
+<tr>
+<th>Hợp Đồng</th>
+<th>Mức Hiện Tại</th>
+<th>Thay Đổi</th>
+<th>Ghi Chú</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ES (S&amp;P 500)</td>
+<td>~6,862–6,869</td>
+<td>~Flat</td>
+<td>Khối lượng cực thấp, chờ talks</td>
+</tr>
+<tr>
+<td>NQ (Nasdaq 100)</td>
+<td>~Flat</td>
+<td>~Flat</td>
+<td>Tương tự ES</td>
+</tr>
+<tr>
+<td>YM (Dow)</td>
+<td>~Flat</td>
+<td>~Flat</td>
+<td>Tương tự ES</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nhận xét:</strong> Futures không có biến động đáng kể so với update 8 PM. Thị trường đang ở chế độ "wait-and-see" trước talks Islamabad ngày mai. Gap risk thực sự sẽ xuất hiện khi futures mở lại Chủ Nhật 3 PM PDT (6 PM ET).</p>
+<h3>Commodities, Rates &amp; Crypto — Không Thay Đổi Đáng Kể</h3>
+<table>
+<thead>
+<tr>
+<th>Tài Sản</th>
+<th>Giá/Mức</th>
+<th>So Với 8PM</th>
+<th>Nguồn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WTI Crude (May)</td>
+<td>~$96.57–$98.70</td>
+<td>↔️ Range-bound</td>
+<td>TradingEconomics, EIA</td>
+</tr>
+<tr>
+<td>Gold</td>
+<td>~$4,749–$4,753</td>
+<td>↔️ Không đổi</td>
+<td>TradingEconomics, Kitco</td>
+</tr>
+<tr>
+<td>VIX</td>
+<td>~19.49</td>
+<td>↔️ Close value</td>
+<td>Yahoo Finance</td>
+</tr>
+<tr>
+<td>10Y Treasury</td>
+<td>4.31%</td>
+<td>↔️ Không đổi</td>
+<td>FRED, ETF Trends</td>
+</tr>
+<tr>
+<td>Bitcoin</td>
+<td>~$72,204</td>
+<td>↔️ Không đổi</td>
+<td>Fortune</td>
+</tr>
+<tr>
+<td>DXY</td>
+<td>~98.64</td>
+<td>↔️ Không đổi</td>
+<td>Investing.com, Baseline 8PM</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>II. CẬP NHẬT ĐỊA CHÍNH TRỊ MỚI (Sau 8 PM PDT)</h2>
+<h3>2.1 Islamabad — Chi Tiết Mới Về Phái Đoàn &amp; Format</h3>
+<p><strong>Thông tin mới so với update 8 PM:</strong></p>
+<p><strong>A. Phái đoàn Iran lớn hơn dự kiến:</strong>
+- Ngoài Ghalibaf (Chủ tịch Quốc hội) + Araghchi (Ngoại trưởng), Iran mang thêm:
+  - <strong>Ali Akbar Ahmadian</strong> — Thư ký Hội đồng An ninh Quốc gia Tối cao (SNSC). Đây là người có quyền ra quyết định an ninh trực tiếp
+  - <strong>Abdolnaser Hemmati</strong> — Thống đốc Ngân hàng Trung ương Iran. Sự hiện diện cho thấy Iran muốn thảo luận <strong>tài chính/trừng phạt/tài sản đóng băng</strong> một cách nghiêm túc
+  - Một số nghị sĩ Quốc hội
+- <strong>Quan sát:</strong> Thành phần phái đoàn mở rộng hơn so với kỳ vọng. Sự hiện diện của Hemmati (ngân hàng TW) và Ahmadian (SNSC) gợi ý Iran có thể muốn mở rộng phạm vi đàm phán sang trừng phạt và tài sản — tuy nhiên cần chờ xác nhận từ agenda chính thức ngày mai</p>
+<p><strong>B. Format đàm phán xác nhận (Al Jazeera):</strong>
+- <strong>Giai đoạn 1:</strong> Gián tiếp — 2 bên thống nhất agenda qua trung gian Pakistan
+- <strong>Giai đoạn 2:</strong> Mặt đối mặt — Vance-Ghalibaf/Araghchi trực tiếp
+- Pakistan đặt mục tiêu khiêm tốn: "a deal to keep talks going" — KHÔNG kỳ vọng breakthrough</p>
+<p><strong>C. Ghalibaf giữ nguyên lập trường cứng:</strong>
+- Post trên X tối nay nhắc lại: Ceasefire Lebanon + giải phóng tài sản = điều kiện TIÊN QUYẾT
+- Gọi ceasefire hiện tại là "đơn phương" và "vô lý" nếu không bao gồm Lebanon
+- Điều này TRÁI NGƯỢC với tuyên bố Mỹ-Israel rằng Lebanon không nằm trong ceasefire</p>
+<h3>2.2 Lebanon — Vẫn Leo Thang, Trở Ngại Lớn Nhất</h3>
+<ul>
+<li>Ngày 04/10: Thêm 14 người chết do không kích Israel tại Nam Lebanon</li>
+<li>13 trong số đó là <strong>nhân viên an ninh chính phủ</strong> — bị đánh trúng tòa nhà chính phủ tại Nabatieh</li>
+<li>Israel tiếp tục không kích "không ngừng" khắp Nam Lebanon từ sáng đến tối</li>
+<li>Hezbollah đáp trả bằng rocket vào Kiryat Shmona, Metula, Misgav Am (Bắc Israel)</li>
+<li><strong>Tổng thiệt hại Lebanon kể từ đầu chiến tranh:</strong> ~1,953+ người chết, 6,300+ bị thương (theo Bộ Y tế Lebanon, cập nhật 04/10 — Al Jazeera, Democracy Now!)</li>
+</ul>
+<p><strong>Market implication:</strong> Lebanon là <strong>rủi ro dealbreaker</strong> nhưng chưa chắc chắn. Format đàm phán 2 giai đoạn (gián tiếp → trực tiếp) cho phép giai đoạn 1 thiết lập agenda mà không cần thỏa thuận ngay. Tuy nhiên, nếu Iran đặt Lebanon ceasefire là điều kiện tiên quyết không thể thương lượng VÀ Mỹ-Israel từ chối → talks có thể bế tắc sớm.</p>
+<h3>2.3 Hormuz — Vẫn Gần Đóng, Có Phí Thu Mới</h3>
+<ul>
+<li>Traffic: ~7 tàu transit ngày Thứ Năm (vs bình thường 95–140 tàu/ngày) — theo Kpler data via Al Jazeera</li>
+<li><strong>600+ tàu stranded</strong> trong Vịnh Ba Tư, bao gồm 325 tàu dầu (Kpler data)</li>
+<li>Iran thu phí transit $1M+/tàu — tạo nguồn thu mới từ khủng hoảng</li>
+<li>Chưa có dấu hiệu mở lại quy mô lớn dù ceasefire đã 3 ngày</li>
+</ul>
+<hr />
+<h2>III. RISK MAP CẬP NHẬT — CUỐI TUẦN 04/11-12</h2>
+<p><strong>Lưu ý:</strong> Các kịch bản dưới đây KHÔNG loại trừ lẫn nhau. "Israel leo thang Lebanon" là yếu tố bổ sung (modifier) có thể xảy ra đồng thời với bất kỳ kịch bản talks nào, nên được tách riêng thay vì cộng xác suất.</p>
+<h3>Kịch bản kết quả talks Islamabad (mutually exclusive, tổng ~100%):</h3>
+<table>
+<thead>
+<tr>
+<th>Kịch Bản Talks</th>
+<th>Xác Suất</th>
+<th>Impact Thị Trường</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Talks sụp đổ</strong> (Iran bỏ bàn vì Lebanon)</td>
+<td>25–30%</td>
+<td>🔴 Rất cao: Futures -1.5–2.5%, WTI spike $105+</td>
+</tr>
+<tr>
+<td><strong>Talks kéo dài, không kết quả rõ</strong> (gia hạn, tiếp tục)</td>
+<td>45–50%</td>
+<td>🟡 Thấp: Flat-to-slightly-negative open Monday</td>
+</tr>
+<tr>
+<td><strong>Tiến triển tích cực</strong> (gia hạn ceasefire + lộ trình rõ)</td>
+<td>15–20%</td>
+<td>🟢 Cao: Futures +1–2%, WTI dưới $90</td>
+</tr>
+<tr>
+<td><strong>Breakthrough bất ngờ</strong> (deal khung toàn diện)</td>
+<td>5–10%</td>
+<td>🟢 Rất cao: Rally mạnh, WTI dưới $85</td>
+</tr>
+</tbody>
+</table>
+<h3>Yếu tố bổ sung (modifier, xảy ra SONG SONG với bất kỳ kịch bản nào):</h3>
+<table>
+<thead>
+<tr>
+<th>Modifier</th>
+<th>Xác Suất</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Israel leo thang Lebanon cuối tuần</strong></td>
+<td>20–25%</td>
+<td>Phức tạp hóa talks, tăng risk premium dầu $2–4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Thay đổi so với 8 PM:</strong> Điều chỉnh nhẹ xác suất "tiến triển tích cực" từ 20–25% xuống 15–20%. Đây là điều chỉnh nhỏ (~5pp) phản ánh 2 diễn biến mới trong đêm:
+1. <strong>Phái đoàn Iran mở rộng hơn dự kiến</strong> với SNSC Secretary + Central Bank Governor — cho thấy Iran có thể đưa nhiều chủ đề hơn lên bàn đàm phán (trừng phạt, tài sản, an ninh khu vực), làm tăng độ phức tạp và giảm khả năng đạt kết quả rõ ràng trong 1 ngày
+2. <strong>Israel không kích Lebanon suốt ngày 04/10</strong> (14 người chết, bao gồm 13 nhân viên an ninh tại tòa nhà chính phủ Nabatieh — Al Jazeera) — tiếp tục xói mòn điều kiện tiên quyết mà Iran đã đặt ra cho đàm phán</p>
+<p><em>Lưu ý: Điều chỉnh 5pp là khiêm tốn, phản ánh rủi ro gia tăng chứ không phải thay đổi cơ bản trong triển vọng talks.</em></p>
+<hr />
+<h2>IV. TUẦN TỚI — NHẮC LẠI LỊCH QUAN TRỌNG</h2>
+<table>
+<thead>
+<tr>
+<th>Ngày</th>
+<th>Sự Kiện</th>
+<th>Tầm Quan Trọng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Thứ Bảy 04/11</strong></td>
+<td>Đàm phán Mỹ-Iran tại Islamabad</td>
+<td>⚠️ Quyết định hướng gap Monday</td>
+</tr>
+<tr>
+<td><strong>Chủ Nhật 04/12</strong></td>
+<td>Futures mở 3 PM PDT</td>
+<td>Phản ứng đầu tiên với kết quả talks</td>
+</tr>
+<tr>
+<td><strong>Thứ Hai 04/13</strong></td>
+<td>Goldman Sachs (GS) earnings</td>
+<td>Bellwether investment banking</td>
+</tr>
+<tr>
+<td><strong>Thứ Ba 04/14</strong></td>
+<td>JPM, WFC, C, BAC, BLK earnings</td>
+<td>"Super Tuesday" — 5 ngân hàng lớn</td>
+</tr>
+<tr>
+<td><strong>Thứ Tư 04/15</strong></td>
+<td>Retail Sales tháng 3</td>
+<td>Consumer health check</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>V. TÓM TẮT</h2>
+<p>Không có biến động thị trường đáng kể kể từ update 8 PM — futures flat, commodities range-bound, crypto ổn định. Tuy nhiên, <strong>bức tranh địa chính trị đã rõ nét hơn:</strong></p>
+<ol>
+<li><strong>Phái đoàn Iran mở rộng</strong> với SNSC Secretary + Central Bank Governor → Iran muốn đàm phán toàn diện, không chỉ ceasefire</li>
+<li><strong>Format đàm phán 2 giai đoạn</strong> (gián tiếp → trực tiếp) xác nhận → talks sẽ mất thời gian</li>
+<li><strong>Ghalibaf giữ cứng Lebanon</strong> là điều kiện tiên quyết → dealbreaker risk tăng</li>
+<li><strong>Israel tiếp tục đánh Lebanon</strong> → trực tiếp cản trở điều kiện Iran</li>
+</ol>
+<p><strong>Kịch bản base case (45%):</strong> Talks kéo dài, không breakthrough nhưng cũng không sụp đổ. Gia hạn ceasefire + hẹn vòng 2. Monday open flat-to-slightly-negative. Gap risk thực sự nằm ở <strong>Chủ Nhật 3 PM PDT</strong> khi futures mở lại.</p>
+<p><strong>Cập nhật tiếp theo:</strong> Quick Update sáng Thứ Hai 04/13 hoặc Breaking Update nếu có kết quả talks.</p>
+<hr />
+<p><em>Timestamp: 04/10/2026, 11:00 PM PDT</em>
+<em>Nguồn dữ liệu: CNBC, TheStreet, Al Jazeera, CNN, NBC News, CBS News, FRED, ETF Trends, Fortune, Kpler, TradingEconomics, yfinance API, Democracy Now!, IranWire</em>
+<em>Disclaimer: Đây là phân tích trung lập, không phải khuyến nghị đầu tư.</em></p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Phân Tích Chứng Khoán Mỹ <span class="footer-divider">•</span> Báo cáo & Cập nhật thị trường</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #6e7681;">
+                Cập nhật lúc 2026 04 10
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

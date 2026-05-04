@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CẬP NHẬT NHANH THỊ TRƯỜNG — 8:00 PM PDT, 04/09/2026 - Phân Tích Chứng Khoán Mỹ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            color-scheme: dark;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
+            font-size: 18px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #0d1117;
+            border-bottom: 1px solid #30363d;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background-color: rgba(13, 17, 23, 0.85);
+        }
+
+        nav {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .nav-brand:hover {
+            color: #79c0ff;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 1.5rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #e6edf3;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+
+        .article-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-date::before {
+            content: "📅";
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #c9d1d9;
+        }
+
+        .article-content h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 2rem 0 0.8rem 0;
+            color: #e6edf3;
+            border-left: 4px solid #58a6ff;
+            padding-left: 1rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.6rem 0;
+            color: #e6edf3;
+        }
+
+        .article-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.2rem 0 0.4rem 0;
+            color: #c9d1d9;
+        }
+
+        .article-content p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid #58a6ff;
+            background-color: #161b22;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 1.2rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+            color: #58a6ff;
+        }
+
+        .article-content em {
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        /* Tables */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-content table thead {
+            background-color: #161b22;
+            border-bottom: 2px solid #30363d;
+        }
+
+        .article-content table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #e6edf3;
+            background-color: #161b22;
+        }
+
+        .article-content table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .article-content table tbody tr:hover {
+            background-color: #161b22;
+        }
+
+        .article-content table tbody tr:nth-child(even) {
+            background-color: #0d1117;
+        }
+
+        /* Code Blocks */
+        .article-content pre {
+            background-color: #161b22;
+            color: #e6edf3;
+            padding: 1.5rem;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .article-content code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9em;
+            background-color: #21262d;
+            color: #ff7b72;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+        }
+
+        .article-content pre code {
+            background-color: transparent;
+            color: #e6edf3;
+            padding: 0;
+        }
+
+        /* Links */
+        .article-content a {
+            color: #58a6ff;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .article-content a:hover {
+            border-bottom-color: #58a6ff;
+            color: #79c0ff;
+        }
+
+        /* Back Navigation */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+            color: #79c0ff;
+        }
+
+        .back-link::before {
+            content: "←";
+        }
+
+        /* Footer */
+        footer {
+            background-color: #161b22;
+            border-top: 1px solid #30363d;
+            padding: 2rem 1.5rem;
+            margin-top: 3rem;
+            color: #8b949e;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-divider {
+            color: #30363d;
+            margin: 0 0.5rem;
+        }
+
+        /* Horizontal Rule */
+        .article-content hr {
+            border: none;
+            border-top: 1px solid #30363d;
+            margin: 2rem 0;
+        }
+
+        /* Images */
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                padding: 1rem;
+            }
+
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+            }
+
+            nav {
+                padding: 0.8rem;
+            }
+
+            .article-content table {
+                font-size: 0.85rem;
+            }
+
+            .article-content table th,
+            .article-content table td {
+                padding: 0.6rem;
+            }
+
+            .article-content pre {
+                padding: 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .article-content {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+
+            .article-content h2 {
+                font-size: 1.1rem;
+                margin: 1.5rem 0 0.6rem 0;
+            }
+
+            .article-content pre {
+                padding: 0.8rem;
+                font-size: 0.75rem;
+                border-radius: 4px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            header, footer {
+                display: none;
+            }
+
+            main {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .back-link {
+                display: none;
+            }
+
+            .article-content a {
+                color: #58a6ff;
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="nav-brand">Phân Tích Chứng Khoán Mỹ</a>
+        </nav>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-link">Quay lại danh sách</a>
+
+        <article>
+            <header class="article-header">
+                <h1>CẬP NHẬT NHANH THỊ TRƯỜNG — 8:00 PM PDT, 04/09/2026</h1>
+                <div class="article-meta">
+                    <span class="article-date">2026 04 09</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <h1>CẬP NHẬT NHANH THỊ TRƯỜNG — 8:00 PM PDT, 04/09/2026</h1>
+<p><strong>Loại:</strong> Quick Update (cập nhật từ báo cáo 3:00 PM PDT)
+<strong>Thời điểm dữ liệu:</strong> ~8:00 PM PDT / 11:00 PM ET, 04/09/2026 (after-hours)
+<strong>Quy ước giờ:</strong> Pacific Daylight Time (PDT)
+<strong>Baseline:</strong> Báo cáo Phiên Chiều 3:00 PM PDT cùng ngày</p>
+<hr />
+<h2>HEADLINES</h2>
+<p><strong>VIX GIẢM VỀ ~19.5 (YFINANCE) NHƯNG NGUỒN KHÁC GHI ~20–21.5 — SOFTWARE BỊ BÁN THÁO TIẾP NỐI TREND SaaS -21 to -28% YTD (sources vary) — TRUMP ĐẢO CHIỀU VỀ HORMUZ TOLL — CPI NGÀY MAI LÀ CATALYST SỐ 1</strong></p>
+<ul>
+<li>⚠️ <strong>VIX nguồn phân tán:</strong> yfinance (^VIX) ghi close 19.49 (-7.37% từ 21.04), nhưng CNBC ghi ~20.18, Investing.com ghi ~21.56. Spread ~2 pts giữa nguồn là bất thường. Báo cáo ghi nhận cả range 19.49–21.5 — nếu VIX thực sự sub-20 → complacent trước CPI; nếu VIX trên 20 → thị trường đã bắt đầu price risk. Khuyến nghị chờ CBOE official settlement để confirm.</li>
+<li>📉 <strong>Software sector tiếp tục trend bear (-21 to -28% YTD (sources vary)):</strong> iShares Expanded Tech-Software ETF -3.6%, mức thấp nhất kể từ tháng 11/2023. Catalyst hôm nay: Anthropic công bố Claude Mythos — model tìm thấy hàng ngàn lỗ hổng bảo mật trong mọi OS và browser. Tuy nhiên đây là gia tốc của trend cấu trúc (SaaS bear market từ đầu 2026), không phải sự kiện đơn lẻ gây bán tháo.</li>
+<li>📉 <strong>Palantir -7.3%</strong> ($130.49): Michael Burry cảnh báo Anthropic đang "eating Palantir's lunch" — Anthropic ARR tăng từ $9B lên $30B, chiếm 73% chi tiêu AI enterprise mới (theo Ramp data).</li>
+<li>✅ <strong>Meta-CoreWeave:</strong> Thỏa thuận $21B mới cho AI inference infrastructure đến 2032, nâng tổng hợp đồng lên $35B. CoreWeave +3%.</li>
+<li>⚠️ <strong>Trump cảnh báo Iran:</strong> "They better not be [collecting tolls] and, if they are, they better stop now!" — mâu thuẫn với tuyên bố "joint venture toll" ngày hôm trước.</li>
+<li>⚠️ <strong>Hezbollah phản công:</strong> Nhận trách nhiệm tấn công rocket vào bắc Israel, tuyên bố tiếp tục cho đến khi Israel ngừng đánh Lebanon.</li>
+<li>📊 <strong>CPI tháng 3 ngày mai 5:30 AM PDT:</strong> Consensus headline 3.2–3.7% YoY (tăng mạnh từ 2.4% tháng 2), core ~2.7% YoY. Cleveland Fed Nowcast: 3.16%.</li>
+</ul>
+<hr />
+<h2>I. SỐ LIỆU ĐÓNG CỬA CHÍNH THỨC — 04/09/2026</h2>
+<h3>1.1 Chỉ Số Chính (Market Close 1:00 PM PDT / 4:00 PM ET)</h3>
+<div class="codehilite"><pre><span></span><code>CHỈ SỐ               ĐÓNG CỬA          THAY ĐỔI NGÀY    YTD %           NGUỒN
+──────────────────────────────────────────────────────────────────────────────────────
+S&amp;P 500               6,824.66          +0.62%           -0.49%          yfinance (^GSPC), TheStreet, Motley Fool
+Dow Jones             48,185.80          +0.58%           -0.41%          yfinance (^DJI), Motley Fool, CNBC
+Nasdaq Comp           22,822.42          +0.83%           -1.78%          yfinance (^IXIC), TheStreet
+Russell 2000           2,636.31          +0.60%           +5.11%          yfinance (^RUT), TheStreet
+
+VIX                   19.49–21.5        -7.4 to +2.2%     —              yfinance 19.49 / CNBC 20.18 / Investing 21.56 ⚠️
+10Y Yield              4.29–4.31%       +1 to +2 bps      —              CNBC 4.287%, yfinance 4.311%
+DXY                      ~99.0          +0.2%             —              Trading Economics (&quot;climbed above 99&quot;)
+</code></pre></div>
+
+<p><strong>Ghi chú đóng cửa:</strong>
+- <strong>Dow Jones:</strong> Báo cáo 3PM ghi 48,150.80. Motley Fool/CNBC ghi 48,185.80 — yfinance xác nhận 48,185.80 là close chính thức.
+- <strong>VIX — NGUỒN PHÂN TÁN BẤT THƯỜNG:</strong> yfinance (^VIX) ghi close 19.49 (-7.37%), CNBC ghi ~20.18, Investing.com ghi ~21.56. Spread ~2 pts có thể do: (a) khác biệt settlement methodology (spot vs futures), (b) timing snapshot khác nhau, (c) yfinance dùng intraday close thay vì CBOE settlement. <strong>Nếu VIX thực sự sub-20</strong> → thị trường complacent trước CPI → buying vol protection hợp lý. <strong>Nếu VIX ~20–21.5</strong> → thị trường đã bắt đầu price CPI risk → vol protection ít urgency hơn. Báo cáo ghi nhận range thay vì single value.
+- <strong>10Y Yield:</strong> yfinance ghi 4.311%, CNBC/FRED ghi 4.287–4.29%. Chênh ~2bps có thể do timing. Ghi nhận range 4.29–4.31%.
+- <strong>DXY:</strong> Báo cáo 3PM ghi 98.85 (-0.28%). Trading Economics ghi DXY "climbed above 99" ngày 09/04 — DXY có thể đã recover từ intraday low.</p>
+<h3>1.2 YTD Verification (Cross-checked ≥2 nguồn)</h3>
+<table>
+<thead>
+<tr>
+<th>Chỉ Số</th>
+<th>YTD %</th>
+<th>Nguồn 1</th>
+<th>Nguồn 2</th>
+<th>Ghi Chú</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S&amp;P 500</td>
+<td>-0.49 to -0.59%</td>
+<td>yfinance -0.49% (^GSPC, 8:06 PM)</td>
+<td>SlickCharts/YCharts -0.59%</td>
+<td>Range do khác biệt Dec 31 close reference. Gần breakeven</td>
+</tr>
+<tr>
+<td>Dow Jones</td>
+<td>-0.41%</td>
+<td>yfinance (^DJI, verified 8:06 PM)</td>
+<td>CNBC headline "turns positive for 2026" (có thể intraday)</td>
+<td>Vẫn âm nhẹ YTD, nhưng gần breakeven</td>
+</tr>
+<tr>
+<td>Nasdaq</td>
+<td>-1.78%</td>
+<td>yfinance (^IXIC, verified 8:06 PM)</td>
+<td>ycharts ~-1.65% range</td>
+<td>Thu hẹp mạnh từ -11% pre-rally</td>
+</tr>
+<tr>
+<td>Russell 2000</td>
+<td>+5.11%</td>
+<td>yfinance (^RUT, verified 8:06 PM)</td>
+<td>IWM ETF YTD +5.30% (yfinance)</td>
+<td>Dẫn đầu YTD — tín hiệu rotation sơ khởi (tentative — 1 data point)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lưu ý YTD:</strong> Rally Apr 7–8 (S&amp;P +3.7%, Dow +4.5%) đã thay đổi toàn bộ bức tranh YTD. Trước rally: S&amp;P -5.6%, Nasdaq ~-11%. Sau rally: S&amp;P -0.49%, Nasdaq -1.78%. Web sources từ trước 07/04 vẫn hiện số cũ.</p>
+<h3>1.3 Commodities &amp; Crypto (Close + After-hours)</h3>
+<div class="codehilite"><pre><span></span><code>TÀI SẢN              GIÁ                THAY ĐỔI NGÀY    NGUỒN
+──────────────────────────────────────────────────────────────────
+WTI Crude             $98.57–101.28      +4.4 to +7.3%    yfinance CL=F $98.57 / Fortune-CNBC $101.28 (spot)
+Brent Crude           $96.33–101.0       +1.7 to +6.6%    yfinance BZ=F $96.33 / Fortune-CNBC ~$101
+Gold (spot)           $4,785.57          -0.1%            Trading Economics, Investing.com
+BTC                   ~$71,200–72,350    -0.8 to +1%      Fortune ($71,218 sáng), MetaMask ($72,348)
+</code></pre></div>
+
+<p><strong>Dầu WTI — spread nguồn rộng:</strong> yfinance CL=F ghi $98.57 (May futures), Fortune/CNBC ghi $101.28 (spot). yfinance BZ=F (Brent) ghi $96.33. Spread WTI ~$2.71 phản ánh: (a) khác biệt spot vs futures, (b) biến động intraday cực mạnh. Cả hai nguồn xác nhận rebound từ close $94.41 ngày 08/04 (+4.4% tới +7.3% tùy nguồn). Hormuz chưa mở → supply premium vẫn intact.</p>
+<hr />
+<h2>II. DIỄN BIẾN MỚI KỂ TỪ 3:00 PM PDT</h2>
+<h3>2.1 Anthropic Claude Mythos — Catalyst Software Sell-off</h3>
+<p><strong>Tin quan trọng nhất chiều nay:</strong> Anthropic công bố mô hình AI mới "Claude Mythos" — chỉ cho phép ~40 công ty (gồm Microsoft, Google) truy cập vì model đã phát hiện hàng ngàn lỗ hổng bảo mật chưa biết (zero-day) trong MỌI hệ điều hành và trình duyệt lớn.</p>
+<p><strong>Tác động thị trường:</strong>
+- iShares Expanded Tech-Software Sector ETF: <strong>-3.6%</strong> (mức thấp nhất từ Nov 2023, YTD -21 to -28% (sources vary))
+- Palantir (PLTR): <strong>-7.3%</strong> ($130.49) — Michael Burry cảnh báo "Anthropic is eating Palantir's lunch", cite ARR Anthropic tăng $9B→$30B
+- Atlassian: giảm sau Guggenheim cắt target price ~40% xuống $115 vì AI headwind
+- Cloudflare: <strong>-13.88%</strong>, Fastly: <strong>-12.76%</strong> — cloud/CDN infrastructure bị bán mạnh</p>
+<p><strong>Phân tích — phân tách nguyên nhân:</strong> IGV đã giảm 21–28% YTD (sources vary) trước khi Claude Mythos được công bố — đây là bear market cấu trúc (structural) do AI platform companies commoditize chức năng SaaS truyền thống. Claude Mythos là <strong>catalyst gia tốc</strong> (incremental accelerant) chứ không phải nguyên nhân gốc. Trong mức giảm -3.6% hôm nay, một phần thuộc về trend SaaS weakness đang diễn ra, phần còn lại là phản ứng cụ thể với Mythos zero-day revelations. Không có đủ dữ liệu để tách biệt chính xác tỷ trọng từng yếu tố. Ramp data cho thấy 73% chi tiêu AI enterprise mới chảy về Anthropic — đây là trend dài hạn quan trọng hơn bất kỳ catalyst đơn lẻ nào.</p>
+<h3>2.2 Meta-CoreWeave: $21B AI Infrastructure Deal</h3>
+<p>Meta ký thêm $21B với CoreWeave cho AI inference infrastructure đến 2032, nâng tổng hợp đồng lên $35B. Đặc biệt:
+- Focus vào <strong>inference</strong> (chạy AI liên tục), không chỉ training
+- Sử dụng chip Nvidia Rubin (thế hệ mới)
+- CoreWeave cũng huy động thêm $3B nợ mới</p>
+<p><strong>Ý nghĩa:</strong> Meta all-in AI infrastructure. Tổng $35B cho một vendor duy nhất = bet cực lớn. Positive cho Nvidia (Rubin demand), positive cho CoreWeave. Nhưng cũng highlight capex burden — Meta đang chi nhiều hơn GDP nhiều quốc gia cho AI compute.</p>
+<h3>2.3 Địa Chính Trị — Ceasefire Thêm Phức Tạp</h3>
+<p><strong>Trump vs Iran Toll (mới):</strong>
+- Trump đăng trên social media: "They better not be [collecting tolls] and, if they are, they better stop now!" — phản ứng mạnh với tin Iran đòi $1-2M/tàu qua Hormuz.
+- <strong>Mâu thuẫn:</strong> Chỉ hôm trước, Trump nói với ABC News đang xem xét "joint venture" thu phí Hormuz cùng Iran. 180 độ trong 24 giờ → uncertainty tăng.</p>
+<p><strong>Hezbollah phản công (mới):</strong>
+- Hezbollah nhận trách nhiệm tấn công rocket vào bắc Israel sáng 09/04
+- Tuyên bố: sẽ tiếp tục cho đến khi Israel ngừng đánh Lebanon, bất kể ceasefire
+- Israel kiên quyết: Lebanon KHÔNG nằm trong ngừng bắn</p>
+<p><strong>Hormuz thực tế (update):</strong>
+- Traffic qua Hormuz ngày 09/04 vẫn rất thấp: ước tính 1–9 tàu trong 24 giờ (NBC News ghi ~6, S&amp;P Global ghi 4–9, MarineTraffic ghi 5 bulk carriers) — số liệu biến động lớn, chưa có pattern ổn định
+- So với trước chiến tranh: &gt;100 tàu/ngày → hiện ước tính 1–9% công suất (biến động theo ngày)
+- Iran yêu cầu "coordinate with Tehran" trước khi qua — de facto kiểm soát chứ không phải mở tự do</p>
+<h3>2.4 Vòng Đàm Phán Islamabad — Thứ 7 (04/12)</h3>
+<p>Phái đoàn Mỹ do VP Vance dẫn đầu sẽ tới Pakistan cho vòng đàm phán chính thức. Đây là catalyst cuối tuần quan trọng — bất kỳ progress hay breakdown nào sẽ gap risk cho thứ Hai.</p>
+<hr />
+<h2>III. CPI THÁNG 3 — POSITIONING TRƯỚC GIỜ G</h2>
+<p><strong>Thời gian:</strong> 04/10/2026, 5:30 AM PDT (8:30 AM ET)</p>
+<h3>3.1 Consensus Forecast (tổng hợp từ nhiều nguồn)</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Consensus</th>
+<th>Range</th>
+<th>Nguồn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Headline CPI YoY</td>
+<td>3.2–3.7%</td>
+<td>FactSet 3.4%, Morningstar 3.7%, Cleveland Fed 3.16%</td>
+<td>FactSet, Morningstar, Cleveland Fed, Kiplinger</td>
+</tr>
+<tr>
+<td>Core CPI YoY</td>
+<td>~2.7%</td>
+<td>2.5–2.7%</td>
+<td>FactSet, IBKR</td>
+</tr>
+<tr>
+<td>Core CPI MoM</td>
+<td>+0.29%</td>
+<td>+0.2–0.3%</td>
+<td>FactSet consensus</td>
+</tr>
+<tr>
+<td>Headline CPI MoM</td>
+<td>+0.93%</td>
+<td>0.7–1.0%</td>
+<td>FactSet</td>
+</tr>
+</tbody>
+</table>
+<p><strong>So với tháng 2:</strong> Headline CPI tháng 2 là 2.4% YoY. Nếu tháng 3 nhảy lên 3.2–3.7% → mức tăng lớn nhất trong một tháng kể từ 2022. Nguyên nhân chính: giá năng lượng từ khủng hoảng Hormuz.</p>
+<h3>3.2 Market Positioning (Close 04/09)</h3>
+<ul>
+<li><strong>VIX 19.49–21.5 (nguồn phân tán).</strong> Nếu yfinance chính xác (19.49) → vol crush mạnh, thị trường complacent, CPI shock sẽ amplified. Nếu CNBC/Investing.com chính xác (20–21.5) → thị trường đã bắt đầu price CPI risk, nhưng mức 20–21.5 vẫn tương đối thấp cho binary event có thể move S&amp;P +/- 2%. Trong cả hai trường hợp, vol chưa fully price worst-case CPI scenario.</li>
+<li><strong>10Y Yield 4.311%:</strong> Ổn định — bonds chưa move, chờ data.</li>
+<li><strong>S&amp;P +0.62%:</strong> Thị trường vẫn bullish nhưng volume giảm chiều — sitting on hands.</li>
+<li><strong>Software sector -3.6%:</strong> Nếu CPI hot → risk-off thêm, software tiếp tục bị bán. Nếu CPI cool → bounce mạnh.</li>
+<li><strong>Dầu $98.57–$101.28 (range):</strong> Energy component sẽ đẩy headline CPI lên. Core CPI (loại energy) mới là key metric cho Fed policy.</li>
+</ul>
+<h3>3.3 Scenario Analysis CPI</h3>
+<p><em>Lưu ý: Xác suất dưới đây là ước tính phân tích (analyst estimates) dựa trên tổng hợp consensus forecasts từ FactSet, Morningstar, Cleveland Fed và phân phối lịch sử CPI surprises. Không phải xác suất market-implied từ CME FedWatch.</em></p>
+<p><strong>Kịch bản 1 — CPI Inline (3.2–3.4% headline, core 0.2–0.3% MoM) — ~45% xác suất (est.):</strong>
+- S&amp;P +0.5–1.0%, VIX giảm tiếp về 17–18
+- "Đã price in" — market relief vì không tệ hơn kỳ vọng
+- Bond yields ổn định, Fed narrative không đổi</p>
+<p><strong>Kịch bản 2 — CPI Hot (&gt;3.5% headline, core &gt;0.3% MoM) — ~35% xác suất (est.):</strong>
+- S&amp;P -1.5 to -2.5%, VIX spike 25–28
+- "Higher for longer" narrative mạnh lên, rate cut expectations bị đẩy xa hơn
+- Dầu tăng thêm (energy inflation narrative), USD tăng
+- Software sector bị double hit (rate sensitive + AI disruption)</p>
+<p><strong>Kịch bản 3 — CPI Cool (&lt;3.0% headline, core &lt;0.2% MoM) — ~20% xác suất (est.):</strong>
+- S&amp;P +1.5–2.5%, VIX giảm về 15–16
+- "Disinflation intact" — market melt-up, rate cut hopes revive
+- Tech/growth rotation mạnh trở lại
+- Dầu có thể giảm (demand concerns &gt; supply narrative)</p>
+<hr />
+<h2>IV. SECTOR &amp; STOCK HIGHLIGHTS (CLOSE)</h2>
+<h3>4.1 Sector Performance Đóng Cửa</h3>
+<div class="codehilite"><pre><span></span><code>SECTOR                 THAY ĐỔI NGÀY    GHI CHÚ
+───────────────────────────────────────────────────
+Energy                 +1.46%           Dẫn đầu — dầu rebound mạnh
+Consumer Staples       +0.66%           Defensive play trước CPI
+Real Estate            +0.42%           Rate sensitivity
+Small Cap (Russell)    +0.60%           Small cap tiếp tục outperform
+Consumer Discretionary +0.10%           Flat — Constellation Brands beat offset
+Industrials            +0.20%           Flat
+Materials              -0.22%           Mixed
+Financials             -0.48%           Yield curve flat
+Health Care            -0.54%           Giảm nhẹ
+Communication Svcs     -0.55%           Growth rotation out
+Software/IT            -0.79 to -3.6%   ĐÁY BẢNG — Anthropic Claude Mythos fear
+</code></pre></div>
+
+<h3>4.2 Notable Movers</h3>
+<p><strong>Winners:</strong>
+- Amazon (AMZN): Tăng nhờ CEO Andy Jassy shareholder letter — chi tiết AI investments, in-house chip business
+- Brown-Forman (BF.B): +11.81% — M&amp;A speculation (Sazerac interest)
+- Constellation Brands (STZ): Tăng mạnh — earnings beat
+- CoreWeave (CRWV): +3% — Meta deal $21B
+- York Space Systems: +16.49% — NASA contract extension</p>
+<p><strong>Losers:</strong>
+- Palantir (PLTR): <strong>-7.30%</strong> ($130.49) — Burry/Anthropic cảnh báo
+- Texas Pacific Land (TPL): <strong>-14.34%</strong>
+- Cloudflare (NET): <strong>-13.88%</strong> — AI infrastructure/cloud bị bán
+- Fastly (FSLY): <strong>-12.76%</strong> — CDN/edge bị bán theo
+- Atlassian (TEAM): Giảm — Guggenheim cắt target 40%
+- iShares Software ETF (IGV): <strong>-3.6%</strong> — mức thấp nhất từ Nov 2023</p>
+<hr />
+<h2>V. FRAMEWORK UPDATE — CROSS-PILLAR</h2>
+<h3>5.1 Cập Nhật Quan Trọng vs Baseline 3PM</h3>
+<table>
+<thead>
+<tr>
+<th>Yếu Tố</th>
+<th>Baseline 3PM</th>
+<th>Update 8PM</th>
+<th>Ý Nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VIX</td>
+<td>19.49 (vol crush)</td>
+<td><strong>19.49–21.5 (nguồn phân tán)</strong></td>
+<td>Chưa rõ vol crush hay vol bid — chờ CBOE settlement</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>IT -0.79%</td>
+<td><strong>IGV -3.6%</strong>, PLTR -7.3%</td>
+<td>Anthropic Claude Mythos = catalyst mới, software bear market deepening</td>
+</tr>
+<tr>
+<td>Hormuz</td>
+<td>5 tàu/24h</td>
+<td><strong>1–9 tàu ngày 09/04</strong> (NBC/S&amp;P/MarineTraffic)</td>
+<td>Biến động lớn, ~1–9% công suất</td>
+</tr>
+<tr>
+<td>Trump/Toll</td>
+<td>Chưa có phản ứng</td>
+<td><strong>"Better not"</strong> warning — mâu thuẫn 180° vs "joint venture"</td>
+<td>Uncertainty tăng, ceasefire framework lung lay</td>
+</tr>
+<tr>
+<td>Hezbollah</td>
+<td>Bác bỏ đàm phán</td>
+<td><strong>Tấn công rocket Israel</strong></td>
+<td>Escalation thực tế, không chỉ verbal</td>
+</tr>
+<tr>
+<td>Meta AI</td>
+<td>MuseSpark ngày 08/04</td>
+<td><strong>+$21B CoreWeave</strong> (tổng $35B)</td>
+<td>AI capex race tiếp tục gia tốc</td>
+</tr>
+<tr>
+<td>Dow close</td>
+<td>48,150.80</td>
+<td><strong>48,185.80</strong> (yfinance xác nhận)</td>
+<td>Chênh $35 — đính chính nhỏ</td>
+</tr>
+</tbody>
+</table>
+<h3>5.2 Convergence Analysis — 4 Trụ Cột</h3>
+<p><strong>Macro × CPI:</strong> VIX 19.49–21.5 (tùy nguồn) — ngay cả ở mức trên (21.5), vol vẫn tương đối thấp cho binary event CPI có thể gây S&amp;P +/- 2%. Nếu headline CPI 3.5%+, VIX có thể spike 25-40% trong 1 phiên. Positioning vẫn net long sau 7 phiên rally → CPI shock sẽ amplified. Fed đang ở vị trí khó khăn: CPI tăng hạn chế khả năng cắt lãi suất, nhưng GDP 2.4% + employment OK → không cần tăng. Hawkish hold + forward guidance là kịch bản likely nhất — tuy nhiên nếu CPI &gt;3.5% + dầu &gt;$100, áp lực trên Fed sẽ tăng đáng kể.</p>
+<p><strong>Geopolitical × Energy:</strong> Trump 180° trên Hormuz toll = negotiations framework bất ổn. Hormuz 1–9 tàu/ngày (biến động) (6% công suất) + Hezbollah tấn công Israel = multiple escalation vectors. Dầu $97.53–$101.28 (tùy nguồn spot/futures). Kịch bản escalation: nếu Hormuz đóng thêm 1 tháng → Goldman forecast Brent lên ba chữ số cao (120–130 USD); nếu phased reopening → 100–115 USD trong 2–4 tuần. Tuy nhiên cần xét các yếu tố giảm áp: US Navy presence, Suez alternative route, khả năng SPR deployment, demand destruction feedback nếu giá &gt;$110.</p>
+<p><strong>Sector × AI:</strong> IGV -21 to -28% YTD (sources vary) với tín hiệu cấu trúc đang hình thành (AI disruption theme) nhưng evidence chưa đa dạng (3 tín hiệu cùng narrative). Claude Mythos là catalyst gia tốc thêm (incremental). Meta $35B CoreWeave = AI infra winner, legacy SaaS = loser. Phân hóa rõ ràng. Tuy nhiên, contra quan trọng: nếu CPI cool → rate-sensitive software stocks có thể bounce 5–10% nhanh (mean reversion từ oversold -21 to -28% YTD (sources vary)). SaaS weakness chưa 100% "structural confirmed" vì thiếu evidence từ nguồn độc lập ngoài AI disruption theme.</p>
+<p><strong>Options × Positioning:</strong> VIX 19.49–21.5 + positive gamma (SPX &gt;6,650) = market drifting up. NHƯNG nếu CPI gây sell-off 2%+ → gamma flip → acceleration lower. Ngay cả ở mức 21.5, VIX chưa fully price tail risk CPI 3.5%+. Selling vol trước CPI: risk/reward bất lợi vì upside vol potential lớn hơn downside.</p>
+<hr />
+<h2>VI. ACTIONABLE NOTES (Updated 8PM)</h2>
+<ol>
+<li>
+<p><strong>VIX 19.49–21.5 (nguồn phân tán) — trong mọi trường hợp, vol chưa fully price CPI risk.</strong> Ngay cả ở mức 21.5, VIX thấp cho binary event có potential move S&amp;P +/- 2%. Nếu CPI &gt;3.5%, VIX spike 25–40% khả thi. KHÔNG nên sell vol trước CPI.</p>
+</li>
+<li>
+<p><strong>Software sector weakness kéo dài (IGV -21 to -28% YTD (sources vary)) với tín hiệu cấu trúc đang hình thành.</strong> Bằng chứng: IGV -21 to -28% YTD (sources vary), Anthropic ARR tăng $9B→$30B chiếm 73% enterprise AI spend, Guggenheim cắt TEAM target 40%. Tuy nhiên, cả 3 tín hiệu đều phản ánh cùng một narrative (AI disruption) — chưa đủ diverse evidence cho "structural confirmed." Contra: rate-sensitive software có thể bounce 5–10% nếu CPI cool. Claude Mythos là catalyst gia tốc thêm, không phải nguyên nhân gốc.</p>
+</li>
+<li>
+<p><strong>CPI core MoM là SỐ QUAN TRỌNG NHẤT ngày mai</strong> — headline sẽ scary (3.2–3.7%) nhưng đã anticipated do energy. Core 0.29% MoM (consensus) vs actual sẽ quyết định reaction. Core &gt;0.35% = very bearish. Core &lt;0.2% = very bullish.</p>
+</li>
+<li>
+<p><strong>Hormuz chưa cải thiện — 1–9 tàu/ngày (biến động) vs 100+.</strong> Dầu WTI $98.57–$101.28 (yfinance CL=F $98.57, spot vs futures). Goldman Sachs conditional forecast: Brent có thể lên ba chữ số cao (120–130 USD) nếu đóng thêm 1 tháng. Tuy nhiên, Suez alternative + US Navy + SPR deployment + demand destruction là yếu tố giảm áp cần xét. Trump mâu thuẫn toll/no-toll → framework bất ổn.</p>
+</li>
+<li>
+<p><strong>Weekend gap risk cao:</strong> Vòng đàm phán Islamabad (VP Vance) thứ 7 + Hezbollah escalation + CPI reaction = nhiều catalyst dồn dập. Giảm exposure trước weekend là prudent.</p>
+</li>
+<li>
+<p><strong>Russell 2000 YTD +5.11% dẫn đầu — tín hiệu rotation sơ khởi (emerging, chưa confirmed).</strong> Russell +0.60% hôm nay, tiếp tục outperform. So sánh YTD: S&amp;P -0.49 to -0.59%, Dow -0.41%, Nasdaq -1.78%. Spread Russell vs S&amp;P ~5.5–5.7pp YTD — có thể là: (a) rotation thực sự (large→small cap), (b) relief bounce từ geopolitical discount relief, hoặc (c) small-cap cyclical bounce. Cần thêm dữ liệu (sector YTD breakdown, fund flows) để confirm rotation thesis.</p>
+</li>
+</ol>
+<hr />
+<h2>VII. RISK RADAR (OVERNIGHT → 04/10)</h2>
+<table>
+<thead>
+<tr>
+<th>Thời Gian (PDT)</th>
+<th>Sự Kiện</th>
+<th>Tác Động Kỳ Vọng</th>
+<th>Mức Rủi Ro</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>04/09 overnight</td>
+<td>Hormuz headlines + Hezbollah escalation</td>
+<td>Dầu gap +/- 3–5%, futures volatility</td>
+<td>🔴 Cao</td>
+</tr>
+<tr>
+<td><strong>04/10 5:30 AM</strong></td>
+<td><strong>CPI tháng 3</strong></td>
+<td><strong>S&amp;P +/- 2%, VIX +/- 30-40%</strong></td>
+<td><strong>🔴🔴 Rất Cao</strong></td>
+</tr>
+<tr>
+<td>04/10 7:00 AM</td>
+<td>Michigan Consumer Sentiment (prelim)</td>
+<td>Inflation expectations — secondary</td>
+<td>🟡 Trung bình</td>
+</tr>
+<tr>
+<td>04/10 cả ngày</td>
+<td>Fed officials phản ứng CPI</td>
+<td>Yield curve adjustment +/- 10bps</td>
+<td>🟡 Trung bình</td>
+</tr>
+<tr>
+<td>04/11 (Thứ 6)</td>
+<td>Weekly options expiration setup</td>
+<td>Gamma exposure adjustment</td>
+<td>🟡 Trung bình</td>
+</tr>
+<tr>
+<td><strong>04/12 (Thứ 7)</strong></td>
+<td><strong>Đàm phán Islamabad — VP Vance</strong></td>
+<td><strong>Ceasefire progress/collapse → Monday gap</strong></td>
+<td><strong>🔴 Cao</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Cập nhật tiếp theo: ~11:00 PM PDT hoặc sau CPI release 5:30 AM PDT ngày 04/10.</em></p>
+<p><em>Timestamp: 04/09/2026 8:00 PM PDT / 11:00 PM ET</em>
+<em>Nguồn dữ liệu: CNBC, Trading Economics, Investing.com, TheStreet, Motley Fool, Bloomberg, Yahoo Finance (yfinance API), Fortune, MetaMask, CoinDesk, ABC News, CBS News, NBC News, CNN, CFR, FactSet, Morningstar, Kiplinger, Cleveland Fed, MarineTraffic, Benzinga, Disruption Banking, Zacks</em>
+<em>YTD % verified qua yfinance API (fetched 8:06 PM PDT) + cross-checked ≥1 web source mỗi chỉ số. VIX nguồn phân tán: yfinance 19.49, CNBC ~20.18, Investing.com ~21.56 — ghi nhận range. WTI spread: TradingEcon $97.53 (futures) vs Fortune/CNBC $101.28 (spot) — ghi nhận cả hai.</em>
+<em>Phiên bản: 3.0 (sau 3 vòng review Tầng 0-4. Sửa: oil/VIX/Brent range, Great Rotation→tentative, Mythos reframe, Fed Trap nuance, Hormuz range 1-9 tàu, CPI probabilities disclaimer, software narrative cân bằng)</em></p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Phân Tích Chứng Khoán Mỹ <span class="footer-divider">•</span> Báo cáo & Cập nhật thị trường</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #6e7681;">
+                Cập nhật lúc 2026 04 09
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
