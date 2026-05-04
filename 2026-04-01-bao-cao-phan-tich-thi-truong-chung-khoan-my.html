@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ - Phân Tích Chứng Khoán Mỹ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            color-scheme: dark;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
+            font-size: 18px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #0d1117;
+            border-bottom: 1px solid #30363d;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background-color: rgba(13, 17, 23, 0.85);
+        }
+
+        nav {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .nav-brand:hover {
+            color: #79c0ff;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 1.5rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #e6edf3;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+
+        .article-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-date::before {
+            content: "📅";
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #c9d1d9;
+        }
+
+        .article-content h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 2rem 0 0.8rem 0;
+            color: #e6edf3;
+            border-left: 4px solid #58a6ff;
+            padding-left: 1rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.6rem 0;
+            color: #e6edf3;
+        }
+
+        .article-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.2rem 0 0.4rem 0;
+            color: #c9d1d9;
+        }
+
+        .article-content p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid #58a6ff;
+            background-color: #161b22;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 1.2rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+            color: #58a6ff;
+        }
+
+        .article-content em {
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        /* Tables */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-content table thead {
+            background-color: #161b22;
+            border-bottom: 2px solid #30363d;
+        }
+
+        .article-content table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #e6edf3;
+            background-color: #161b22;
+        }
+
+        .article-content table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .article-content table tbody tr:hover {
+            background-color: #161b22;
+        }
+
+        .article-content table tbody tr:nth-child(even) {
+            background-color: #0d1117;
+        }
+
+        /* Code Blocks */
+        .article-content pre {
+            background-color: #161b22;
+            color: #e6edf3;
+            padding: 1.5rem;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .article-content code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9em;
+            background-color: #21262d;
+            color: #ff7b72;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+        }
+
+        .article-content pre code {
+            background-color: transparent;
+            color: #e6edf3;
+            padding: 0;
+        }
+
+        /* Links */
+        .article-content a {
+            color: #58a6ff;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .article-content a:hover {
+            border-bottom-color: #58a6ff;
+            color: #79c0ff;
+        }
+
+        /* Back Navigation */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+            color: #79c0ff;
+        }
+
+        .back-link::before {
+            content: "←";
+        }
+
+        /* Footer */
+        footer {
+            background-color: #161b22;
+            border-top: 1px solid #30363d;
+            padding: 2rem 1.5rem;
+            margin-top: 3rem;
+            color: #8b949e;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-divider {
+            color: #30363d;
+            margin: 0 0.5rem;
+        }
+
+        /* Horizontal Rule */
+        .article-content hr {
+            border: none;
+            border-top: 1px solid #30363d;
+            margin: 2rem 0;
+        }
+
+        /* Images */
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                padding: 1rem;
+            }
+
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+            }
+
+            nav {
+                padding: 0.8rem;
+            }
+
+            .article-content table {
+                font-size: 0.85rem;
+            }
+
+            .article-content table th,
+            .article-content table td {
+                padding: 0.6rem;
+            }
+
+            .article-content pre {
+                padding: 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .article-content {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+
+            .article-content h2 {
+                font-size: 1.1rem;
+                margin: 1.5rem 0 0.6rem 0;
+            }
+
+            .article-content pre {
+                padding: 0.8rem;
+                font-size: 0.75rem;
+                border-radius: 4px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            header, footer {
+                display: none;
+            }
+
+            main {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .back-link {
+                display: none;
+            }
+
+            .article-content a {
+                color: #58a6ff;
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="nav-brand">Phân Tích Chứng Khoán Mỹ</a>
+        </nav>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-link">Quay lại danh sách</a>
+
+        <article>
+            <header class="article-header">
+                <h1>BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ</h1>
+                <div class="article-meta">
+                    <span class="article-date">2026 04 01</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <h1>BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ</h1>
+<h2>Ngày 04/01/2026 (Thứ Tư)</h2>
+<p><strong>Tác giả:</strong> Claude Agent (Opus 4.6)
+<strong>Knowledge Base:</strong> Viet Hustler Community (990 PDFs, 2000+ dòng)
+<strong>Ngày báo cáo:</strong> 04/04/2026
+<strong>Quy ước ngày tháng:</strong> MM/DD/YYYY (theo chuẩn Mỹ)
+<strong>Phương pháp:</strong> Top-Down Hybrid (Macro-First × Multi-Layer × Narrative)
+<strong>Phiên bản:</strong> 2.0 (post fact-check)</p>
+<hr />
+<h2>TÓM TẮT ĐIỀU HÀNH (Executive Summary)</h2>
+<p>Thứ Tư 04/01/2026 là một phiên giao dịch đầy kịch tính khi thị trường bùng nổ trên hy vọng kết thúc chiến tranh Iran. Tổng thống Trump tuyên bố trên Truth Social rằng Iran đã yêu cầu ngừng bắn — S&amp;P 500 tăng vọt lên 6,575, Dow +0.48%, Nasdaq +1.16%. Dầu WTI giảm mạnh ~2.5% về ~$100/thùng, vàng vẫn giữ vùng cao $4,679/oz. ADP March báo cáo +62K việc làm tư nhân — yếu tuyệt đối nhưng vượt kỳ vọng 41K, cho thấy thị trường lao động đang nguội dần nhưng chưa sụp đổ.</p>
+<ol>
+<li><strong>Macro/FED:</strong> FED giữ FFR 3.50-3.75%, GDP Q1 GDPNow giảm từ 2.0% → 1.9%, Core CPI 2.5% — FED đang trong thế "wait-and-see" giữa inflation pipeline từ dầu vs dữ liệu hiện tại đang hạ nhiệt.</li>
+<li><strong>Địa chính trị:</strong> Hy vọng ngừng bắn Iran → de-escalation → dầu giảm → risk-on rally. Nhưng Eo Hormuz vẫn chưa thông hoàn toàn.</li>
+<li><strong>Sector:</strong> Energy sector dẫn đầu YTD (+38.4% Q1), nhưng hôm nay giảm khi dầu hạ. Tech rally mạnh trên hy vọng hòa bình. Great Rotation (Large → Value/Energy) vẫn đang diễn ra.</li>
+<li><strong>Microstructure:</strong> VIX 24.54 — vẫn cao, cho thấy thị trường chưa thực sự tin vào kịch bản hòa bình. Negative gamma territory khiến biến động amplified.</li>
+</ol>
+<p><strong>Điểm HỘI TỤ toàn bộ 4 trụ cột:</strong></p>
+<ul>
+<li><strong>Hội tụ 1:</strong> Dầu giảm + Hy vọng hòa bình + Tech rally → Risk-on rotation ngắn hạn (Pillar 2 + 3 + 4)</li>
+<li><strong>Hội tụ 2:</strong> GDP chậm lại (1.9%) + ADP yếu (+62K) + Core CPI hạ (2.5%) → FED Trap đang hình thành — dữ liệu hiện tại cho phép cắt lãi, nhưng oil shock pipeline ngăn cản (Pillar 1 + 2)</li>
+<li><strong>Hội tụ 3:</strong> DXY yếu (~100.13) + Vàng cao ($4,679) + Kỳ vọng lạm phát cao (Michigan 5Y: 3.2%) → Debasement Trade đang accelerate (Pillar 1 + 2 + 3)</li>
+<li><strong>Hội tụ 4:</strong> VIX cao (24.54) + Dầu vẫn &gt;$100 + Hormuz chưa mở → Hy vọng hòa bình có thể là "bull trap" nếu chiến tranh kéo dài (Pillar 2 + 4)</li>
+</ul>
+<hr />
+<h2>I. CÂU CHUYỆN THỊ TRƯỜNG NGÀY 04/01/2026</h2>
+<h3>1.1 Bối Cảnh</h3>
+<p>Phiên thứ Tư diễn ra trong bối cảnh thị trường vừa trải qua tuần cuối tháng 3 đầy biến động do chiến tranh Iran. Eo biển Hormuz bị đóng từ đầu tháng 3, khiến giao thông hàng hải giảm &gt;97%, dầu Brent đã vượt $100 lần đầu tiên trong 4 năm. Tuy nhiên, từ 03/26 Iran cho phép tàu của 5 quốc gia (Trung Quốc, Nga, Ấn Độ, Iraq, Pakistan) đi qua, tạo tín hiệu de-escalation đầu tiên.</p>
+<p>Sáng thứ Tư, bom tấn thông tin xuất hiện: Trump đăng Truth Social rằng <strong>Tổng thống Iran đã yêu cầu ngừng bắn</strong>, và Mỹ sẽ cân nhắc khi Eo Hormuz "open, free, and clear." Trump dự đoán chiến tranh có thể kết thúc trong 2-3 tuần. Thị trường phản ứng ngay lập tức — S&amp;P 500 và Nasdaq bùng nổ, dầu lao dốc.</p>
+<p>Song song, <strong>ADP March report</strong> được công bố: +62K việc làm tư nhân, cao hơn kỳ vọng 41K nhưng vẫn ở mức yếu lịch sử. Con số này cho thấy thị trường lao động đang hạ nhiệt — một tín hiệu có lợi cho FED nếu muốn cắt lãi, nhưng cũng là dấu hiệu suy yếu kinh tế.</p>
+<h3>1.2 Timeline Chi Tiết &amp; Phản Ứng Thị Trường</h3>
+<table>
+<thead>
+<tr>
+<th>Thời Điểm</th>
+<th>Sự Kiện</th>
+<th>Phản Ứng</th>
+<th>Giải Thích</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pre-market</strong></td>
+<td>Trump Truth Social: Iran xin ngừng bắn</td>
+<td>Futures tăng mạnh</td>
+<td>Hy vọng Hormuz mở → dầu giảm → inflation relief</td>
+</tr>
+<tr>
+<td><strong>8:15 AM</strong></td>
+<td>ADP March: +62K (vs 41K exp)</td>
+<td>Neutral-to-positive</td>
+<td>Beats expectations nhưng vẫn yếu tuyệt đối</td>
+</tr>
+<tr>
+<td><strong>Open</strong></td>
+<td>S&amp;P 500 gap up mở cửa</td>
+<td>Risk-on rally, tech dẫn đầu</td>
+<td>De-escalation + ADP không quá xấu</td>
+</tr>
+<tr>
+<td><strong>Intraday</strong></td>
+<td>Dầu WTI giảm ~2.5% về $100/thùng</td>
+<td>Energy sector giảm, Tech bùng nổ</td>
+<td>Rotation ngắn hạn: Energy → Tech</td>
+</tr>
+<tr>
+<td><strong>Close</strong></td>
+<td>S&amp;P 500: 6,575 / Nasdaq: 21,841 / Dow: 46,566</td>
+<td>Rally mạnh nhất tuần</td>
+<td>Tâm lý lạc quan về hòa bình chiếm ưu thế</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Con Số Đóng Cửa 04/01/2026:</strong></p>
+<div class="codehilite"><pre><span></span><code>Chỉ Số          │ Đóng Cửa       │ Thay Đổi    │ %
+─────────────────┼─────────────────┼─────────────┼──────
+S&amp;P 500          │ 6,575.32       │ +47         │ +0.72%
+Dow Jones        │ 46,565.74      │ +222        │ +0.48%
+Nasdaq Composite │ 21,840.95      │ +251        │ +1.16%
+Russell 2000 IWM │ 249.56         │ n/a         │ n/a
+VIX              │ 24.54          │              │ (cao)
+10Y Treasury     │ ~4.31%         │              │
+WTI Crude        │ ~$100.12       │ -$1.26      │ -1.24%
+Brent Crude      │ ~$104.86       │              │ -2.5%
+Gold (XAU/USD)   │ $4,679         │ +~$161      │ +3.6% (high $4,789)
+DXY              │ ~100.13        │              │ (yếu)
+</code></pre></div>
+
+<hr />
+<h2>II. PHÂN TÍCH 4 TRỤ CỘT CHÉO</h2>
+<h3>2.1 Macro &amp; FED</h3>
+<p><strong>Trạng Thái Hiện Tại (tính đến 04/01/2026):</strong>
+- FFR: 3.50-3.75% (giữ nguyên từ 01/2026, FOMC tiếp theo: 04/29)
+- GDP Q1 GDPNow: 1.9% (giảm từ 3.1% ngày 02/24 → 2.0% ngày 03/23 → 1.9% ngày 04/01)
+- Core CPI Feb: 2.5% YoY (thấp nhất từ 03/2021, giảm đều)
+- ADP March: +62K (yếu, nhưng vượt kỳ vọng 41K)
+- Michigan 1Y Inflation Expectations: 3.4% (ổn định)
+- Michigan 5Y Inflation Expectations: 3.2% (giảm nhẹ từ 3.3%)
+- 10Y Treasury Yield: ~4.31%</p>
+<p><strong>Framework Application: FED Trap Đang Hình Thành</strong></p>
+<p>Áp dụng framework "FED Trap" từ Knowledge Base: FED đang bị kẹt giữa 3 áp lực mâu thuẫn.</p>
+<div class="codehilite"><pre><span></span><code>Dữ liệu HIỆN TẠI nói: &quot;Cắt lãi được&quot;
+├── Core CPI 2.5% — gần target 2%
+├── ADP +62K — thị trường lao động yếu
+├── GDP chậm lại 1.9% — tăng trưởng suy giảm
+└── → Phillips Curve ủng hộ cắt lãi
+
+Dữ liệu TƯƠNG LAI nói: &quot;KHÔNG cắt được&quot;
+├── Dầu &gt;$100 → PPI pipeline sẽ đẩy CPI lên sau 3-6 tháng
+├── Michigan 5Y Expectations 3.2% — cao hơn target
+├── Trumpflation: Tariff 10% toàn cầu (Section 122) + supply shock
+└── → Nếu cắt lãi → USD yếu thêm → nhập khẩu đắt → lạm phát bùng
+</code></pre></div>
+
+<p><strong>Key Data Deep Dive: ADP +62K</strong></p>
+<p>ADP March cho thấy bức tranh chia rẽ sâu sắc trong thị trường lao động:
+- <strong>Education &amp; Health Services: +58K</strong> — sector phòng thủ vẫn tuyển mạnh
+- <strong>Construction: +30K</strong> — hưởng lợi từ chi tiêu hạ tầng
+- <strong>Trade, Transportation, Utilities: -58K</strong> — bị ảnh hưởng nặng bởi disruption Hormuz
+- <strong>Small business (1-19 nhân viên): +112K</strong> — nhưng midsize: -53K</p>
+<p>→ Thị trường lao động không sụp đổ, nhưng đang <strong>polarize</strong>: ngành defensive tuyển, ngành cyclical sa thải.</p>
+<p><strong>Bond Market Signal:</strong></p>
+<p>10Y yield ~4.31% trong bối cảnh FFR 3.50-3.75% → Yield curve positive (spread ~56bp). Theo KB framework: curve steepening + positive = thị trường đang price-in "no recession, but slower growth." Tuy nhiên, nếu dầu duy trì &gt;$100, term premium sẽ tăng (inflation risk) → yield có thể lên 4.5%+.</p>
+<p><strong>Chuỗi Nhân Quả:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="nv">Iran</span><span class="w"> </span><span class="nv">War</span><span class="w"> </span>→<span class="w"> </span><span class="nv">Hormuz</span><span class="w"> </span>đó<span class="nv">ng</span><span class="w"> </span>→<span class="w"> </span><span class="nv">D</span>ầ<span class="nv">u</span><span class="w"> </span><span class="o">&gt;</span><span class="mh">$100</span><span class="w"> </span>→<span class="w"> </span><span class="nv">PPI</span><span class="w"> </span><span class="nv">pipeline</span><span class="w"> </span><span class="mi">3</span><span class="o">-</span><span class="mi">6</span><span class="w"> </span><span class="nv">th</span>á<span class="nv">ng</span>
+<span class="w">    </span>↓
+<span class="nv">Core</span><span class="w"> </span><span class="nv">CPI</span><span class="w"> </span><span class="nv">hi</span>ệ<span class="nv">n</span><span class="w"> </span><span class="nv">t</span>ạ<span class="nv">i</span><span class="w"> </span><span class="mi">2</span>.<span class="mi">5</span><span class="o">%</span><span class="w"> </span><span class="ss">(</span><span class="nv">qu</span>á<span class="w"> </span><span class="nv">kh</span>ứ,<span class="w"> </span><span class="nv">ch</span>ư<span class="nv">a</span><span class="w"> </span><span class="nv">ph</span>ả<span class="nv">n</span><span class="w"> </span>á<span class="nv">nh</span><span class="w"> </span><span class="nv">oil</span><span class="w"> </span><span class="nv">shock</span><span class="ss">)</span>
+<span class="w">    </span>↓
+<span class="nv">FED</span><span class="w"> </span><span class="nv">th</span>ấ<span class="nv">y</span><span class="w"> </span><span class="s2">&quot;data OK&quot;</span><span class="w"> </span>→<span class="w"> </span><span class="nv">mu</span>ố<span class="nv">n</span><span class="w"> </span><span class="nv">hold</span><span class="o">/</span><span class="nv">cut</span>
+<span class="w">    </span>↓
+<span class="nv">NH</span>Ư<span class="nv">NG</span>:<span class="w"> </span><span class="nv">Michigan</span><span class="w"> </span><span class="mi">5</span><span class="nv">Y</span><span class="w"> </span><span class="mi">3</span>.<span class="mi">2</span><span class="o">%</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">oil</span><span class="w"> </span><span class="nv">shock</span><span class="w"> </span><span class="nv">incoming</span>
+<span class="w">    </span>↓
+<span class="nv">FED</span><span class="w"> </span><span class="nv">Trap</span>:<span class="w"> </span><span class="nv">C</span>ắ<span class="nv">t</span><span class="w"> </span><span class="nv">l</span>ã<span class="nv">i</span><span class="w"> </span>→<span class="w"> </span><span class="nv">USD</span><span class="w"> </span><span class="nv">y</span>ế<span class="nv">u</span><span class="w"> </span>→<span class="w"> </span><span class="nv">l</span>ạ<span class="nv">m</span><span class="w"> </span><span class="nv">ph</span>á<span class="nv">t</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nv">Gi</span>ữ<span class="w"> </span>→<span class="w"> </span><span class="nv">GDP</span><span class="w"> </span><span class="nv">ch</span>ậ<span class="nv">m</span><span class="w"> </span><span class="nv">th</span>ê<span class="nv">m</span>
+<span class="w">    </span>↓
+<span class="nv">K</span>ế<span class="nv">t</span><span class="w"> </span><span class="nv">qu</span>ả:<span class="w"> </span><span class="nv">FED</span><span class="w"> </span><span class="nv">bu</span>ộ<span class="nv">c</span><span class="w"> </span><span class="s2">&quot;wait-and-see&quot;</span><span class="w"> </span><span class="nv">cho</span><span class="w"> </span>đế<span class="nv">n</span><span class="w"> </span><span class="nv">khi</span><span class="w"> </span><span class="nv">Hormuz</span><span class="w"> </span><span class="nv">crisis</span><span class="w"> </span><span class="nv">resolved</span>
+</code></pre></div>
+
+<hr />
+<h3>2.2 Địa Chính Trị</h3>
+<p><strong>Timeline Chiến Tranh Iran (đến 04/01/2026):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Ngày</th>
+<th>Sự Kiện</th>
+<th>Tác Động Thị Trường</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>03/04</td>
+<td>Iran tuyên bố đóng Eo Hormuz, tấn công tàu</td>
+<td>Brent vượt $100, VIX spike</td>
+</tr>
+<tr>
+<td>03/12</td>
+<td>21 cuộc tấn công tàu hàng xác nhận</td>
+<td>Giao thông Hormuz ↓97%, dầu lên $126 peak</td>
+</tr>
+<tr>
+<td>03/19</td>
+<td>Mỹ mở chiến dịch "Operation Epic Fury"</td>
+<td>Dầu biến động, thị trường chia rẽ</td>
+</tr>
+<tr>
+<td>03/26</td>
+<td>Iran cho 5 quốc gia (TQ, Nga, Ấn, Iraq, Pakistan) đi qua Hormuz</td>
+<td>Tín hiệu de-escalation đầu tiên</td>
+</tr>
+<tr>
+<td>03/27</td>
+<td>UN humanitarian shipments được phép</td>
+<td>Dầu bắt đầu giảm từ peak</td>
+</tr>
+<tr>
+<td><strong>04/01</strong></td>
+<td><strong>Trump: Iran xin ngừng bắn, chiến tranh có thể kết thúc 2-3 tuần</strong></td>
+<td><strong>S&amp;P +0.72%, dầu -2.5%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Oil Shock Impact — Transmission Chain (KB Framework):</strong></p>
+<div class="codehilite"><pre><span></span><code>Hormuz đóng (20% cung dầu toàn cầu)
+  ↓
+Phase 1 (tức thì): Brent $73 → $126 peak (+73% trong 1 tháng)
+  ↓
+Phase 2 (hiện tại 04/01): De-escalation → Brent về ~$105, WTI ~$100
+  ↓
+Phase 3 (pipeline 3-6 tháng): PPI tăng → CPI tăng (CHƯA PHẢN ÁNH)
+  ↓
+Phase 4 (rủi ro): Nếu Hormuz không mở hoàn toàn → oil super-cycle
+</code></pre></div>
+
+<p><strong>Tariff Context (post-SCOTUS ruling 02/20):</strong></p>
+<p>Tối cao Pháp viện đã chặn IEEPA tariffs (6-3) vào 02/20/2026, loại bỏ $160B thuế đã thu. Tuy nhiên, Trump ngay lập tức chuyển sang <strong>Section 122 (Trade Act 1974)</strong> để áp thuế 10% toàn cầu. Tác động:
+- Thuế Trung Quốc: vẫn ~65% tổng cộng (Biden carry-over + mới)
+- EU, Canada, Mexico: 10-25%
+- → Trumpflation pipeline vẫn intact, chỉ thay đổi cơ sở pháp lý</p>
+<p><strong>Kịch Bản Địa Chính Trị Tiếp Theo:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Kịch Bản</th>
+<th>Xác Suất</th>
+<th>Trigger</th>
+<th>Oil Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ngừng bắn trong 2-3 tuần</td>
+<td>30%</td>
+<td>Iran đồng ý, Hormuz mở dần</td>
+<td>WTI $80-85</td>
+</tr>
+<tr>
+<td>Kéo dài 1-2 tháng, Hormuz mở từng phần</td>
+<td>45%</td>
+<td>Đàm phán chậm, UN trung gian</td>
+<td>WTI $90-100</td>
+</tr>
+<tr>
+<td>Escalation, Hormuz đóng hoàn toàn</td>
+<td>25%</td>
+<td>Đàm phán đổ vỡ, tấn công mới</td>
+<td>WTI $120-140</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>2.3 Sector &amp; Cổ Phiếu</h3>
+<p><strong>YTD Performance Overview (tính đến 04/01/2026):</strong></p>
+<div class="codehilite"><pre><span></span><code>Chỉ Số / ETF        │ Close 04/01  │ YTD %        │ Nhận Xét
+─────────────────────┼──────────────┼──────────────┼─────────────────
+S&amp;P 500              │ 6,575        │ ~-3.9%       │ Pullback từ ATH (Q1: -4.6%)
+Dow Jones            │ 46,566       │ ~-3%         │ Phòng thủ hơn
+Nasdaq               │ 21,841       │ ~-6%         │ Tech bị bán
+Russell 2000 (IWM)   │ 249.56       │ ~+1.5%       │ Small cap outperform
+XLE (Energy)         │ ~$132*       │ +38.4% (Q1)  │ Oil shock winner
+XLU (Utilities)      │ ~$92*        │ +12%*        │ AI data center demand
+</code></pre></div>
+
+<p>*Ước tính, cần fact-check</p>
+<p><strong>Framework Application: Great Rotation Đang Diễn Ra</strong></p>
+<p>Theo KB framework "Great Rotation": khi large-cap growth suy yếu + lạm phát tăng + FFR giảm → dòng tiền chuyển từ Growth → Value, từ Large → Small cap.</p>
+<p>Bằng chứng trên thị trường ngày 04/01:
+- Russell 2000 YTD +1.5% vs S&amp;P 500 YTD -3.9% → <strong>Small cap outperform ~5.4 percentage points</strong>
+- Energy (XLE) +38.4% Q1 vs Nasdaq -6% → <strong>Value/Commodity vastly outperform Growth</strong>
+- Utilities (XLU) transforming thành "growth play" nhờ AI data center demand</p>
+<p>→ <strong>Rotation đang ở giai đoạn "early-to-mid"</strong> — chưa confirmed (cần sustained multi-quarter), nhưng tín hiệu rất mạnh.</p>
+<p><strong>Magnificent 7 Breakdown (ước tính 04/01/2026):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Cổ Phiếu</th>
+<th>Giá ~04/01</th>
+<th>YTD % (ước tính)</th>
+<th>Nhận Xét</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NVDA</td>
+<td>~$175</td>
+<td>~-5%</td>
+<td>AI cycle vẫn mạnh nhưng valuation pressure</td>
+</tr>
+<tr>
+<td>AAPL</td>
+<td>~$246</td>
+<td>~-3%</td>
+<td>iPhone cycle trung bình, tariff risk</td>
+</tr>
+<tr>
+<td>MSFT</td>
+<td>~$357</td>
+<td>~-8%</td>
+<td>Cloud growth chậm, AI capex cao</td>
+</tr>
+<tr>
+<td>AMZN</td>
+<td>~$200</td>
+<td>~-6%</td>
+<td>AWS ổn, retail bị tariff ảnh hưởng</td>
+</tr>
+<tr>
+<td>GOOGL</td>
+<td>~$273</td>
+<td>~-3%</td>
+<td>AI competitive pressure, ad revenue OK</td>
+</tr>
+<tr>
+<td>META</td>
+<td>~$650*</td>
+<td>~-7%*</td>
+<td>Llama investment chưa ROI</td>
+</tr>
+<tr>
+<td>TSLA</td>
+<td>~$353</td>
+<td>~-10%*</td>
+<td>EV margin pressure, BYD competition</td>
+</tr>
+</tbody>
+</table>
+<p>*Ước tính từ dữ liệu gần nhất, cần verify</p>
+<p><strong>Sector Analysis cho phiên 04/01:</strong>
+- <strong>Winners:</strong> Tech (de-escalation rally), Construction, Small caps
+- <strong>Losers:</strong> Energy (dầu giảm → XLE đảo chiều intraday), Trade/Transport (ADP -58K jobs)
+- <strong>Neutral:</strong> Healthcare (ADP +58K nhưng strike effects), Financials</p>
+<hr />
+<h3>2.4 Options &amp; Market Microstructure</h3>
+<p><strong>VIX Analysis:</strong></p>
+<p>VIX đóng cửa 24.54 ngày 04/01 — ở mức <strong>elevated</strong> nhưng không panic. So sánh:
+- VIX &lt;15: Complacency
+- VIX 15-20: Bình thường
+- <strong>VIX 20-25: Cautious (hiện tại)</strong>
+- VIX 25-30: Fear
+- VIX &gt;30: Panic</p>
+<p>Điểm đáng chú ý: S&amp;P 500 rally +0.72% nhưng VIX vẫn &gt;24 → <strong>Divergence bearish</strong>. Thường khi thị trường rally, VIX giảm mạnh. VIX "từ chối giảm" cho thấy options traders không tin rally này bền vững. Đây là tín hiệu rằng <strong>smart money đang hedge, không phải chase rally</strong>.</p>
+<p><strong>Key Intraday Mechanics:</strong></p>
+<div class="codehilite"><pre><span></span><code>Dealer Positioning (KB Framework - Gamma Hedging):
+├── SPX ~6,575: Có thể ở NEGATIVE GAMMA territory
+├── → Dealers phải bán khi giá giảm, mua khi giá tăng
+├── → Amplifies moves cả hai hướng
+├── → Rally hôm nay được amplified bởi dealer buying
+└── → Nhưng nếu reversal → sell-off cũng sẽ bị amplified
+</code></pre></div>
+
+<p><strong>GEX Map (ước tính):</strong></p>
+<div class="codehilite"><pre><span></span><code>PUT WALL: ~6,400 (strong support)
+CURRENT SPOT: 6,575
+CALL WALL: ~6,650-6,700 (resistance)
+GAMMA FLIP: ~6,500 (below current = negative gamma)
+</code></pre></div>
+
+<p>→ Thị trường đang trade GIỮA put wall và call wall. Nếu không break 6,650+ → stuck in range.</p>
+<p><strong>Gap Risk Assessment:</strong></p>
+<p>⚠️ <strong>CẢNH BÁO: NFP Report ra ngày 04/03 (Thứ Sáu)</strong></p>
+<p>NFP March consensus: ~60K. Con số này sẽ là catalyst lớn nhất tuần. Nếu:
+- NFP &gt;&gt; 100K: Rally extension, nhưng FED hawkish risk
+- NFP 50-80K: Goldilocks — đủ yếu để FED dovish, đủ mạnh để tránh suy thoái
+- NFP &lt; 30K: Suy thoái scare, VIX spike, risk-off</p>
+<p>(Lưu ý: Không xem dữ liệu 04/03 theo yêu cầu — chỉ nêu rủi ro tiềm năng)</p>
+<p><strong>Options Flow &amp; Positioning (04/01):</strong></p>
+<p>Với VIX 24.54 và rally trên de-escalation:
+- <strong>Put/Call ratio</strong>: Likely elevated — hedging activity cao
+- <strong>0DTE volume</strong>: Có thể tăng mạnh khi retail chase rally
+- <strong>Institutional</strong>: Likely selling calls into rally (take profit from March lows)</p>
+<hr />
+<h2>III. CROSS-REFERENCE: ĐIỂM HỘI TỤ &amp; PHÂN KỲ</h2>
+<h3>3.1 Điểm Hội Tụ</h3>
+<p><strong>Hội Tụ 1: "FED Trap Pipeline" (Pillar 1 + 2)</strong>
+- Macro: Core CPI 2.5% + GDP 1.9% → "data says cut"
+- Geopolitics: Oil &gt;$100 + Trumpflation → "pipeline says don't cut"
+- <strong>Kết luận:</strong> FED bị kẹt, sẽ hold ở FOMC 04/29
+- <strong>Confidence: 85%</strong></p>
+<p><strong>Hội Tụ 2: "Debasement Trade Accelerating" (Pillar 1 + 2 + 3)</strong>
+- DXY ~100 (yếu nhất trong nhiều tháng)
+- Vàng $4,679 (gần ATH)
+- Michigan 5Y Expectations 3.2% (cao)
+- NHTW toàn cầu tăng dự trữ vàng (KB: 15% → 24%)
+- <strong>Kết luận:</strong> Thị trường đang price-in "USD debasement" — Fed Trap + Fiscal Dominance → USD yếu dài hạn
+- <strong>Confidence: 80%</strong></p>
+<p><strong>Hội Tụ 3: "Great Rotation Early Stage" (Pillar 1 + 3 + 4)</strong>
+- Small cap outperform (Russell +1.5% YTD vs S&amp;P -3.9%)
+- Energy +38.4% Q1 vs Tech -7%
+- Value/Cyclical &gt; Growth
+- VIX elevated → institutional reducing growth exposure
+- <strong>Kết luận:</strong> Rotation đang diễn ra nhưng ở giai đoạn đầu, chưa "confirmed"
+- <strong>Confidence: 70%</strong></p>
+<h3>3.2 Điểm Phân Kỳ</h3>
+<p><strong>Phân Kỳ 1: Equity Rally vs VIX Stubbornly High (Pillar 3 vs 4)</strong>
+- S&amp;P +0.72%, Nasdaq +1.16% → Risk-on
+- VIX 24.54 → Options market vẫn cautious
+- <strong>Resolution:</strong> Options market đúng hơn trong ngắn hạn. Rally dựa trên "hope" (Trump tweet) chưa có xác nhận cụ thể. VIX sẽ chỉ giảm khi Hormuz thực sự mở. → <strong>Bearish bias ẩn</strong></p>
+<p><strong>Phân Kỳ 2: ADP Weak (+62K) vs Market Rally (Pillar 1 vs 3)</strong>
+- ADP +62K = thị trường lao động yếu → bearish signal cho economy
+- Thị trường rally → vì "bad news = good news" (FED sẽ dovish)
+- <strong>Resolution:</strong> Đây là "Bad news is good news" trade kinh điển. Nhưng trade này chỉ hoạt động khi inflation dưới kiểm soát. Với oil &gt;$100, "bad news" có thể nhanh chóng trở thành "stagflation scare." → <strong>Fragile</strong></p>
+<p><strong>Phân Kỳ 3: Gold Rally + Equity Rally (Pillar 2 vs 3)</strong>
+- Vàng +3.6% → safe haven demand, inflation hedge
+- Equity +0.72% → risk-on
+- <strong>Resolution:</strong> Cả hai không thể rally bền vững cùng lúc. Vàng rally = debasement/inflation fear. Equity rally = peace hope. Khi một trong hai narrative thắng, asset kia sẽ đảo chiều. → <strong>Watch DXY để resolve</strong>: DXY &lt;99 → Gold wins, DXY &gt;101 → Equity sentiment wins</p>
+<h3>3.3 Chuỗi Nhân Quả Tổng Hợp</h3>
+<div class="codehilite"><pre><span></span><code><span class="n">LEVEL</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">TRIGGER</span><span class="w"> </span><span class="p">(</span><span class="n">Geopolitics</span><span class="p">)</span>
+<span class="n">Iran</span><span class="w"> </span><span class="n">ceasefire</span><span class="w"> </span><span class="k">signal</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">Hormuz</span><span class="w"> </span><span class="n">de</span><span class="o">-</span><span class="n">escalation</span><span class="w"> </span><span class="n">hope</span>
+<span class="w">    </span><span class="err">↓</span><span class="w">                           </span><span class="err">↓</span>
+<span class="n">Oil</span><span class="w"> </span><span class="o">-</span><span class="mf">2.5</span><span class="o">%</span><span class="w">                 </span><span class="n">Risk</span><span class="o">-</span><span class="n">on</span><span class="w"> </span><span class="n">sentiment</span>
+<span class="w">    </span><span class="err">↓</span><span class="w">                           </span><span class="err">↓</span>
+<span class="n">LEVEL</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">TRANSMISSION</span><span class="w"> </span><span class="p">(</span><span class="n">Macro</span><span class="p">)</span>
+<span class="n">Inflation</span><span class="w"> </span><span class="n">pipeline</span><span class="w">         </span><span class="n">ADP</span><span class="w"> </span><span class="o">+</span><span class="mi">62</span><span class="n">K</span><span class="w"> </span><span class="p">(</span><span class="n">weak</span><span class="w"> </span><span class="n">labor</span><span class="p">)</span>
+<span class="n">easing</span><span class="w"> </span><span class="n">short</span><span class="o">-</span><span class="n">term</span><span class="w">              </span><span class="err">↓</span>
+<span class="w">    </span><span class="err">↓</span><span class="w">                    </span><span class="n">FED</span><span class="w"> </span><span class="s2">&quot;wait-and-see&quot;</span>
+<span class="w">    </span><span class="err">↓</span><span class="w">                           </span><span class="err">↓</span>
+<span class="n">LEVEL</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">MARKET</span><span class="w"> </span><span class="n">IMPACT</span><span class="w"> </span><span class="p">(</span><span class="n">Sectors</span><span class="p">)</span>
+<span class="n">Energy</span><span class="w"> </span><span class="n">rotation</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="err">←→</span><span class="w"> </span><span class="n">Tech</span><span class="w"> </span><span class="n">rotation</span><span class="w"> </span><span class="ow">in</span>
+<span class="w">    </span><span class="err">↓</span><span class="w">                           </span><span class="err">↓</span>
+<span class="n">XLE</span><span class="w"> </span><span class="n">down</span><span class="w"> </span><span class="n">intraday</span><span class="w">          </span><span class="n">Nasdaq</span><span class="w"> </span><span class="o">+</span><span class="mf">1.16</span><span class="o">%</span>
+<span class="w">    </span><span class="err">↓</span><span class="w">                           </span><span class="err">↓</span>
+<span class="n">LEVEL</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">MICROSTRUCTURE</span>
+<span class="n">Negative</span><span class="w"> </span><span class="n">gamma</span><span class="w"> </span><span class="n">amplifies</span><span class="w"> </span><span class="n">rally</span>
+<span class="w">    </span><span class="err">↓</span>
+<span class="n">VIX</span><span class="w"> </span><span class="n">refuses</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">drop</span><span class="w"> </span><span class="n">below</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">HEDGE</span><span class="w"> </span><span class="n">DEMAND</span><span class="w"> </span><span class="n">PERSISTS</span>
+<span class="w">    </span><span class="err">↓</span>
+<span class="n">CONCLUSION</span><span class="p">:</span><span class="w"> </span><span class="n">Rally</span><span class="w"> </span><span class="n">có</span><span class="w"> </span><span class="n">legs</span><span class="w"> </span><span class="n">ngắn</span><span class="w"> </span><span class="n">hạn</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">3</span><span class="w"> </span><span class="n">ngày</span><span class="p">)</span>
+<span class="w">             </span><span class="n">nhưng</span><span class="w"> </span><span class="n">VIX</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">oil</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">$</span><span class="mi">100</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">structural</span><span class="w"> </span><span class="n">headwind</span>
+</code></pre></div>
+
+<hr />
+<h2>IV. DỰ BÁO NGẮN HẠN (Từ góc nhìn cuối ngày 04/01)</h2>
+<h3>4.1 Kịch Bản 1: BULL (30% Xác Suất)</h3>
+<p><strong>Trigger:</strong> Iran chấp nhận ngừng bắn, Hormuz mở dần trong 1-2 tuần.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">Iran</span><span class="w"> </span><span class="n">ceasefire</span><span class="w"> </span><span class="n">xác</span><span class="w"> </span><span class="n">nhận</span>
+<span class="w">  </span><span class="err">→</span><span class="w"> </span><span class="n">Hormuz</span><span class="w"> </span><span class="n">mở</span><span class="w"> </span><span class="n">dần</span><span class="w"> </span><span class="n">cho</span><span class="w"> </span><span class="n">tàu</span><span class="w"> </span><span class="n">dầu</span>
+<span class="w">    </span><span class="err">→</span><span class="w"> </span><span class="n">Brent</span><span class="w"> </span><span class="n">giảm</span><span class="w"> </span><span class="n">về</span><span class="w"> </span><span class="o">$</span><span class="mi">85</span><span class="o">-</span><span class="mi">90</span>
+<span class="w">      </span><span class="err">→</span><span class="w"> </span><span class="n">Inflation</span><span class="w"> </span><span class="n">pipeline</span><span class="w"> </span><span class="n">giải</span><span class="w"> </span><span class="n">tỏa</span>
+<span class="w">        </span><span class="err">→</span><span class="w"> </span><span class="n">FED</span><span class="w"> </span><span class="k">signal</span><span class="w"> </span><span class="n">dovish</span><span class="w"> </span><span class="n">tại</span><span class="w"> </span><span class="mi">04</span><span class="o">/</span><span class="mi">29</span>
+<span class="w">          </span><span class="err">→</span><span class="w"> </span><span class="n">SPX</span><span class="w"> </span><span class="k">break</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="mi">700</span><span class="p">,</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="n">ATH</span>
+</code></pre></div>
+
+<p><strong>Market Impact:</strong>
+- S&amp;P 500: 6,700-6,800
+- WTI: $80-85
+- Gold: $4,400-4,500 (giảm khi safe haven demand giảm)
+- VIX: &lt;20
+- DXY: 99-100</p>
+<h3>4.2 Kịch Bản 2: BASE (45% Xác Suất)</h3>
+<p><strong>Trigger:</strong> Đàm phán kéo dài, Hormuz mở từng phần, dữ liệu kinh tế mixed.</p>
+<div class="codehilite"><pre><span></span><code>Iran đàm phán nhưng chưa ký
+  → Hormuz mở cho một số quốc gia, vẫn restricted
+    → Brent dao động $95-105
+      → Inflation pipeline vẫn active nhưng giảm bớt
+        → FED hold tại 04/29, &quot;data-dependent&quot; language
+          → SPX sideway 6,400-6,600
+</code></pre></div>
+
+<p><strong>Market Impact:</strong>
+- S&amp;P 500: 6,400-6,600 (range-bound)
+- WTI: $95-105
+- Gold: $4,600-4,800 (tiếp tục rally nhẹ)
+- VIX: 22-26
+- DXY: 99-101</p>
+<h3>4.3 Kịch Bản 3: BEAR (25% Xác Suất)</h3>
+<p><strong>Trigger:</strong> Đàm phán đổ vỡ, Mỹ leo thang quân sự, Hormuz đóng hoàn toàn.</p>
+<div class="codehilite"><pre><span></span><code>Iran escalation
+  → Hormuz đóng hoàn toàn, tấn công cơ sở dầu Saudi
+    → Brent &gt;$130, WTI &gt;$120
+      → Stagflation scare: GDP →0%, CPI &gt;4%
+        → FED panic mode, không thể cắt hay tăng
+          → SPX breakdown &lt;6,200, VIX &gt;35
+</code></pre></div>
+
+<p><strong>Market Impact:</strong>
+- S&amp;P 500: 6,000-6,200
+- WTI: $120-140
+- Gold: $5,000+ (safe haven + inflation hedge)
+- VIX: 30-40
+- DXY: 98-100 (USD yếu thêm do stagflation)</p>
+<h3>4.4 Key Levels &amp; Mức Giá Quan Trọng</h3>
+<table>
+<thead>
+<tr>
+<th>Tài Sản</th>
+<th>Support</th>
+<th>Resistance</th>
+<th>Current (04/01)</th>
+<th>Bull Case</th>
+<th>Bear Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S&amp;P 500</td>
+<td>6,400</td>
+<td>6,650-6,700</td>
+<td>6,575</td>
+<td>6,800</td>
+<td>6,000</td>
+</tr>
+<tr>
+<td>Nasdaq</td>
+<td>21,200</td>
+<td>22,200</td>
+<td>21,841</td>
+<td>22,500</td>
+<td>20,500</td>
+</tr>
+<tr>
+<td>WTI</td>
+<td>$95</td>
+<td>$108</td>
+<td>$100</td>
+<td>$80</td>
+<td>$140</td>
+</tr>
+<tr>
+<td>Gold</td>
+<td>$4,500</td>
+<td>$4,800</td>
+<td>$4,679</td>
+<td>$4,400</td>
+<td>$5,000+</td>
+</tr>
+<tr>
+<td>VIX</td>
+<td>20</td>
+<td>28</td>
+<td>24.54</td>
+<td>&lt;18</td>
+<td>&gt;35</td>
+</tr>
+<tr>
+<td>10Y Yield</td>
+<td>4.10%</td>
+<td>4.50%</td>
+<td>4.31%</td>
+<td>4.00%</td>
+<td>4.60%</td>
+</tr>
+<tr>
+<td>DXY</td>
+<td>98</td>
+<td>102</td>
+<td>100.13</td>
+<td>101</td>
+<td>97</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>V. KHUYẾN NGHỊ HÀNH ĐỘNG</h2>
+<h3>5.1 Portfolio Strategy</h3>
+<div class="codehilite"><pre><span></span><code><span class="nv">Allocation</span><span class="w"> </span><span class="nv">G</span>ợ<span class="nv">i</span><span class="w"> </span>Ý<span class="w"> </span><span class="ss">(</span><span class="nv">cho</span><span class="w"> </span><span class="nv">tu</span>ầ<span class="nv">n</span><span class="w"> </span><span class="nv">t</span>ớ<span class="nv">i</span>,<span class="w"> </span><span class="nv">d</span>ự<span class="nv">a</span><span class="w"> </span><span class="nv">tr</span>ê<span class="nv">n</span><span class="w"> </span><span class="nv">BASE</span><span class="w"> </span><span class="nv">scenario</span><span class="w"> </span><span class="mi">45</span><span class="o">%</span><span class="ss">)</span>:
+
+<span class="nv">Conservative</span><span class="w"> </span><span class="ss">(</span><span class="mi">30</span><span class="o">%</span><span class="ss">)</span>:
+├──<span class="w"> </span><span class="nv">XLU</span><span class="w"> </span><span class="ss">(</span><span class="nv">Utilities</span><span class="ss">)</span>:<span class="w"> </span><span class="mi">10</span><span class="o">%</span><span class="w"> </span>—<span class="w"> </span><span class="nv">AI</span><span class="w"> </span><span class="nv">data</span><span class="w"> </span><span class="nv">center</span><span class="w"> </span><span class="nv">demand</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">defensive</span>
+├──<span class="w"> </span><span class="nv">Gold</span><span class="o">/</span><span class="nv">GLD</span>:<span class="w"> </span><span class="mi">10</span><span class="o">%</span><span class="w"> </span>—<span class="w"> </span><span class="nv">Debasement</span><span class="w"> </span><span class="nv">hedge</span>
+└──<span class="w"> </span><span class="nv">Short</span><span class="o">-</span><span class="nv">term</span><span class="w"> </span><span class="nv">Treasuries</span>:<span class="w"> </span><span class="mi">10</span><span class="o">%</span><span class="w"> </span>—<span class="w"> </span><span class="nv">FFR</span><span class="w"> </span><span class="mi">3</span>.<span class="mi">5</span><span class="o">-</span><span class="mi">3</span>.<span class="mi">75</span><span class="o">%</span><span class="w"> </span><span class="nv">yield</span>
+
+<span class="nv">Growth</span><span class="w"> </span><span class="ss">(</span><span class="mi">25</span><span class="o">%</span><span class="ss">)</span>:
+├──<span class="w"> </span><span class="nv">QQQ</span><span class="w"> </span><span class="nv">selective</span>:<span class="w"> </span><span class="mi">15</span><span class="o">%</span><span class="w"> </span>—<span class="w"> </span><span class="nv">Ch</span>ỉ<span class="w"> </span><span class="nv">n</span>ế<span class="nv">u</span><span class="w"> </span><span class="nv">peace</span><span class="w"> </span><span class="nv">confirmed</span>
+└──<span class="w"> </span><span class="nv">NVDA</span><span class="o">/</span><span class="nv">MSFT</span>:<span class="w"> </span><span class="mi">10</span><span class="o">%</span><span class="w"> </span>—<span class="w"> </span><span class="nv">AI</span><span class="w"> </span><span class="nv">secular</span><span class="w"> </span><span class="nv">trend</span><span class="w"> </span><span class="ss">(</span><span class="nv">buy</span><span class="w"> </span><span class="nv">dips</span><span class="ss">)</span>
+
+<span class="nv">Value</span><span class="o">/</span><span class="nv">Cyclical</span><span class="w"> </span><span class="ss">(</span><span class="mi">25</span><span class="o">%</span><span class="ss">)</span>:
+├──<span class="w"> </span><span class="nv">XLE</span><span class="w"> </span><span class="ss">(</span><span class="nv">Energy</span><span class="ss">)</span>:<span class="w"> </span><span class="mi">10</span><span class="o">%</span><span class="w"> </span>—<span class="w"> </span><span class="nv">V</span>ẫ<span class="nv">n</span><span class="w"> </span><span class="nv">bullish</span><span class="w"> </span><span class="nv">nh</span>ư<span class="nv">ng</span><span class="w"> </span><span class="nv">gi</span>ả<span class="nv">m</span><span class="w"> </span><span class="nv">weight</span><span class="w"> </span><span class="nv">t</span>ừ<span class="w"> </span><span class="nv">peak</span>
+├──<span class="w"> </span><span class="nv">IWM</span><span class="w"> </span><span class="ss">(</span><span class="nv">Small</span><span class="w"> </span><span class="nv">cap</span><span class="ss">)</span>:<span class="w"> </span><span class="mi">10</span><span class="o">%</span><span class="w"> </span>—<span class="w"> </span><span class="nv">Great</span><span class="w"> </span><span class="nv">Rotation</span><span class="w"> </span><span class="nv">beneficiary</span>
+└──<span class="w"> </span><span class="nv">XLF</span><span class="w"> </span><span class="ss">(</span><span class="nv">Financials</span><span class="ss">)</span>:<span class="w"> </span><span class="mi">5</span><span class="o">%</span><span class="w"> </span>—<span class="w"> </span><span class="nv">NIM</span><span class="w"> </span><span class="nv">benefit</span><span class="w"> </span><span class="nv">n</span>ế<span class="nv">u</span><span class="w"> </span><span class="nv">yield</span><span class="w"> </span><span class="nv">curve</span><span class="w"> </span><span class="nv">steepens</span>
+
+<span class="nv">Cash</span><span class="w"> </span><span class="ss">(</span><span class="mi">20</span><span class="o">%</span><span class="ss">)</span>:
+└──<span class="w"> </span><span class="nv">Gi</span>ữ<span class="w"> </span><span class="nv">cao</span><span class="w"> </span><span class="nv">h</span>ơ<span class="nv">n</span><span class="w"> </span><span class="nv">b</span>ì<span class="nv">nh</span><span class="w"> </span><span class="nv">th</span>ườ<span class="nv">ng</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nv">uncertainty</span><span class="w"> </span><span class="nv">Hormuz</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">NFP</span>
+</code></pre></div>
+
+<p><strong>Rebalance Triggers:</strong>
+1. Nếu Hormuz confirmed open → Tăng QQQ lên 25%, giảm XLE về 5%, giảm Cash về 10%
+2. Nếu WTI vượt $115 → Tăng XLE lên 15%, tăng Gold lên 15%, giảm QQQ về 10%
+3. Nếu VIX &gt;30 → Tăng Cash lên 30%, kích hoạt hedges
+4. Nếu NFP &lt; 30K → Chuẩn bị bear scenario, tăng Gold + Treasuries</p>
+<h3>5.2 Sector Plays</h3>
+<p><strong>LONG:</strong>
+| Position | Entry | Target | Stop-Loss | Risk | Confidence |
+|---|---|---|---|---|---|
+| XLE (Energy) | $130 | $145 | $120 | Oil reversal | 65% |
+| GLD (Gold) | $438 | $470 | $420 | USD strength | 75% |
+| IWM (Small cap) | $249 | $265 | $240 | Recession scare | 60% |</p>
+<p><strong>SHORT:</strong>
+| Position | Entry | Target | Stop-Loss | Risk | Confidence |
+|---|---|---|---|---|---|
+| QQQ (nếu peace fails) | $585 | $555 | $600 | Peace rally | 50% |</p>
+<p><strong>HOLD:</strong>
+- SPY: Chờ NFP và FOMC 04/29 để quyết định
+- MSFT/NVDA: AI secular trend intact, nhưng valuations stretched</p>
+<h3>5.3 Options Strategy</h3>
+<p><strong>Defensive:</strong>
+- SPX 6,400 Put Spread (Buy 6,400P / Sell 6,300P, April expiry): ~$15-20/contract
+- Bảo vệ portfolio nếu peace talks collapse</p>
+<p><strong>Aggressive (nếu peace confirmed):</strong>
+- QQQ 600 Calls (May expiry): Bet on tech rally nếu oil &lt; $90
+- Risk: time decay + peace không confirmed</p>
+<p><strong>Neutral:</strong>
+- Iron Condor SPX 6,350/6,400/6,650/6,700 (April expiry): Thu phí premium từ range-bound market
+- Best scenario: SPX stays 6,400-6,650</p>
+<h3>5.4 Risk Management</h3>
+<table>
+<thead>
+<tr>
+<th>Rủi Ro</th>
+<th>Xác Suất</th>
+<th>Tác Động</th>
+<th>Biện Pháp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hormuz escalation</td>
+<td>25%</td>
+<td>Rất cao — oil $130+, SPX -8%</td>
+<td>XLE hedge, Gold, reduce equity</td>
+</tr>
+<tr>
+<td>NFP shock (quá yếu)</td>
+<td>20%</td>
+<td>Cao — recession scare</td>
+<td>Treasuries, reduce cyclical</td>
+</tr>
+<tr>
+<td>FED surprise hawkish</td>
+<td>10%</td>
+<td>Trung bình — yield spike</td>
+<td>Duration hedges</td>
+</tr>
+<tr>
+<td>Trump tweet reversal</td>
+<td>15%</td>
+<td>Trung bình — peace hope evaporates</td>
+<td>VIX call spreads</td>
+</tr>
+<tr>
+<td>Tariff escalation</td>
+<td>15%</td>
+<td>Cao — Trumpflation accelerates</td>
+<td>Gold, reduce importers</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Stop-Loss Levels:</strong>
+- Portfolio: -5% drawdown → reduce equity to 50%, increase cash
+- Individual position: -8% → exit
+- VIX trigger: &gt;32 → de-risk toàn bộ portfolio</p>
+<hr />
+<h2>VI. PHỤ LỤC</h2>
+<h3>A. Bảng Dữ Liệu Chi Tiết</h3>
+<p><strong>Macro Indicators (Latest Available as of 04/01/2026):</strong></p>
+<div class="codehilite"><pre><span></span><code>GDP Q1 GDPNow:         1.9% (↓ từ 3.1% hai tháng trước)
+Core CPI Feb YoY:       2.5% (thấp nhất từ 03/2021)
+Core CPI Feb MoM:       0.2%
+ADP March:              +62,000 (consensus: 41K)
+FFR Target:             3.50-3.75%
+10Y Yield:              ~4.31%
+Michigan 1Y Expect:     3.4%
+Michigan 5Y Expect:     3.2%
+Unemployment (Feb):     ~4.3%
+</code></pre></div>
+
+<p><strong>Market Closes 04/01/2026:</strong></p>
+<div class="codehilite"><pre><span></span><code>S&amp;P 500:        6,575.32    (+0.72%)
+Dow Jones:      46,565.74   (+0.48%)
+Nasdaq:         21,840.95   (+1.16%)
+Russell 2000:   IWM 249.56
+VIX:            24.54
+WTI Crude:      ~$100.12    (-1.24%)
+Brent Crude:    ~$104.86
+Gold:           $4,679/oz   (+3.6% intraday high $4,789)
+DXY:            ~100.13
+Bitcoin:        ~$68,448
+</code></pre></div>
+
+<h3>B. Framework Được Áp Dụng</h3>
+<table>
+<thead>
+<tr>
+<th>Framework (KB)</th>
+<th>Áp Dụng Cho</th>
+<th>Kết Luận</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FED Trap</td>
+<td>Pillar 1: Monetary Policy</td>
+<td>FED kẹt giữa data hiện tại (dovish) vs pipeline tương lai (hawkish)</td>
+</tr>
+<tr>
+<td>Trumpflation</td>
+<td>Pillar 1+2: Inflation drivers</td>
+<td>Supply shock từ tariff + oil = lạm phát cấu trúc, không phải tiền tệ</td>
+</tr>
+<tr>
+<td>Fiscal Dominance</td>
+<td>Pillar 1: Debt dynamics</td>
+<td>Nợ/GDP 123%, chi phí lãi $659B/năm → FED mất độc lập dài hạn</td>
+</tr>
+<tr>
+<td>Great Rotation</td>
+<td>Pillar 3: Sector dynamics</td>
+<td>Large→Small, Growth→Value đang diễn ra Q1 2026</td>
+</tr>
+<tr>
+<td>Oil Shock Chain</td>
+<td>Pillar 2: Commodity transmission</td>
+<td>Hormuz crisis → PPI → CPI pipeline (3-6 tháng delay)</td>
+</tr>
+<tr>
+<td>Dealer Gamma Hedging</td>
+<td>Pillar 4: Microstructure</td>
+<td>Negative gamma amplifies both rally and selloff</td>
+</tr>
+<tr>
+<td>Dollar Smile Theory</td>
+<td>Pillar 1+2: USD dynamics</td>
+<td>DXY ~100 = đáy smile (ổn định toàn cầu) → carry trade, vàng ↑</td>
+</tr>
+</tbody>
+</table>
+<h3>C. Glossary Thuật Ngữ</h3>
+<table>
+<thead>
+<tr>
+<th>Thuật Ngữ</th>
+<th>Tiếng Việt</th>
+<th>Giải Thích</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FED Trap</td>
+<td>Bẫy FED</td>
+<td>FED bị kẹt không thể tăng/giảm/giữ lãi suất</td>
+</tr>
+<tr>
+<td>Trumpflation</td>
+<td>Lạm phát Trump</td>
+<td>Lạm phát cấu trúc từ thuế quan + bảo hộ</td>
+</tr>
+<tr>
+<td>Great Rotation</td>
+<td>Xoay vòng lớn</td>
+<td>Dòng tiền chuyển từ Growth sang Value</td>
+</tr>
+<tr>
+<td>Debasement Trade</td>
+<td>Giao dịch mất giá</td>
+<td>Mua vàng/crypto vì USD yếu</td>
+</tr>
+<tr>
+<td>Negative Gamma</td>
+<td>Gamma âm</td>
+<td>Dealers amplify market moves</td>
+</tr>
+<tr>
+<td>GEX</td>
+<td>Gamma Exposure</td>
+<td>Bản đồ vị thế gamma của dealers</td>
+</tr>
+<tr>
+<td>Pipeline</td>
+<td>Ống dẫn</td>
+<td>Tác động trì hoãn (oil → PPI → CPI)</td>
+</tr>
+<tr>
+<td>Hormuz</td>
+<td>Eo biển Hormuz</td>
+<td>Chokepoint 20% cung dầu thế giới</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>VII. DISCLAIMER &amp; CẢNH BÁO</h2>
+<p>⚠️ <strong>Đây KHÔNG phải lời khuyên đầu tư.</strong> Báo cáo này là phân tích thông tin dựa trên dữ liệu có sẵn tính đến ngày 04/01/2026 và các framework phân tích từ Knowledge Base Viet Hustler. Mọi dự báo đều mang tính không chắc chắn cao, đặc biệt trong bối cảnh chiến tranh Iran đang diễn biến nhanh. Nhà đầu tư cần tự đánh giá rủi ro và tham khảo chuyên gia tài chính trước khi ra quyết định.</p>
+<p><strong>Hạn chế dữ liệu:</strong> Một số giá ETF (XLE, XLU, META) và YTD % là ước tính do không thể xác minh chính xác giá đóng cửa 04/01 cho tất cả ticker. Các con số được đánh dấu * cần fact-check bổ sung.</p>
+<p><strong>Fact-Check Log (v2.0):</strong>
+- ✅ S&amp;P 500: 6,575.32 — confirmed (March 31 close 6,528.52 + 0.72% = 6,575.5)
+- ✅ VIX: 24.54 — confirmed (FRED VIXCLS)
+- ✅ Gold: $4,679.31 — confirmed (pricegold.net, Fortune); high corrected $4,750→$4,789
+- ✅ ADP: +62K — confirmed (CNBC, ADP mediacenter)
+- ✅ GDP GDPNow: 1.9% on 04/01 — confirmed (Atlanta Fed)
+- ✅ Core CPI Feb: 2.5% YoY — confirmed (BLS, CNBC)
+- ✅ FFR: 3.50-3.75% — confirmed (Federal Reserve)
+- ✅ Michigan: 1Y 3.4%, 5Y 3.2% — confirmed (TradingEconomics)
+- ⚠️ S&amp;P YTD: corrected -4.8%→-3.9% (Q1 was -4.6%, April 1 rally improved)
+- ⚠️ NVDA price: adjusted $165→~$175 (April 2 close was $177.39)
+- ⚠️ ETF prices (XLE, XLU, QQQ): estimates only, not independently verified for 04/01</p>
+<hr />
+<p><strong>Báo Cáo Hoàn Thành:</strong> 04/04/2026
+<strong>Phiên Bản:</strong> 2.0 (post fact-check)
+<strong>Cập Nhật Tiếp Theo:</strong> Sau khi NFP March (04/03) và FOMC (04/29) được công bố</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Phân Tích Chứng Khoán Mỹ <span class="footer-divider">•</span> Báo cáo & Cập nhật thị trường</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #6e7681;">
+                Cập nhật lúc 2026 04 01
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

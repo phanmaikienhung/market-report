@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CẬP NHẬT NHANH THỊ TRƯỜNG — 11:30 AM PDT 04/13/2026 - Phân Tích Chứng Khoán Mỹ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            color-scheme: dark;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
+            font-size: 18px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #0d1117;
+            border-bottom: 1px solid #30363d;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background-color: rgba(13, 17, 23, 0.85);
+        }
+
+        nav {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .nav-brand:hover {
+            color: #79c0ff;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 1.5rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #e6edf3;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+
+        .article-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-date::before {
+            content: "📅";
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #c9d1d9;
+        }
+
+        .article-content h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 2rem 0 0.8rem 0;
+            color: #e6edf3;
+            border-left: 4px solid #58a6ff;
+            padding-left: 1rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.6rem 0;
+            color: #e6edf3;
+        }
+
+        .article-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.2rem 0 0.4rem 0;
+            color: #c9d1d9;
+        }
+
+        .article-content p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid #58a6ff;
+            background-color: #161b22;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 1.2rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+            color: #58a6ff;
+        }
+
+        .article-content em {
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        /* Tables */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-content table thead {
+            background-color: #161b22;
+            border-bottom: 2px solid #30363d;
+        }
+
+        .article-content table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #e6edf3;
+            background-color: #161b22;
+        }
+
+        .article-content table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .article-content table tbody tr:hover {
+            background-color: #161b22;
+        }
+
+        .article-content table tbody tr:nth-child(even) {
+            background-color: #0d1117;
+        }
+
+        /* Code Blocks */
+        .article-content pre {
+            background-color: #161b22;
+            color: #e6edf3;
+            padding: 1.5rem;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .article-content code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9em;
+            background-color: #21262d;
+            color: #ff7b72;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+        }
+
+        .article-content pre code {
+            background-color: transparent;
+            color: #e6edf3;
+            padding: 0;
+        }
+
+        /* Links */
+        .article-content a {
+            color: #58a6ff;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .article-content a:hover {
+            border-bottom-color: #58a6ff;
+            color: #79c0ff;
+        }
+
+        /* Back Navigation */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+            color: #79c0ff;
+        }
+
+        .back-link::before {
+            content: "←";
+        }
+
+        /* Footer */
+        footer {
+            background-color: #161b22;
+            border-top: 1px solid #30363d;
+            padding: 2rem 1.5rem;
+            margin-top: 3rem;
+            color: #8b949e;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-divider {
+            color: #30363d;
+            margin: 0 0.5rem;
+        }
+
+        /* Horizontal Rule */
+        .article-content hr {
+            border: none;
+            border-top: 1px solid #30363d;
+            margin: 2rem 0;
+        }
+
+        /* Images */
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                padding: 1rem;
+            }
+
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+            }
+
+            nav {
+                padding: 0.8rem;
+            }
+
+            .article-content table {
+                font-size: 0.85rem;
+            }
+
+            .article-content table th,
+            .article-content table td {
+                padding: 0.6rem;
+            }
+
+            .article-content pre {
+                padding: 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .article-content {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+
+            .article-content h2 {
+                font-size: 1.1rem;
+                margin: 1.5rem 0 0.6rem 0;
+            }
+
+            .article-content pre {
+                padding: 0.8rem;
+                font-size: 0.75rem;
+                border-radius: 4px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            header, footer {
+                display: none;
+            }
+
+            main {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .back-link {
+                display: none;
+            }
+
+            .article-content a {
+                color: #58a6ff;
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="nav-brand">Phân Tích Chứng Khoán Mỹ</a>
+        </nav>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-link">Quay lại danh sách</a>
+
+        <article>
+            <header class="article-header">
+                <h1>CẬP NHẬT NHANH THỊ TRƯỜNG — 11:30 AM PDT 04/13/2026</h1>
+                <div class="article-meta">
+                    <span class="article-date">2026 04 13</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <h1>CẬP NHẬT NHANH THỊ TRƯỜNG — 11:30 AM PDT 04/13/2026</h1>
+<p><strong>Loại:</strong> Quick Update giữa phiên — 30 phút trước Power Hour
+<strong>Timestamp dữ liệu:</strong> ~11:30 AM PDT / 2:30 PM ET, Thứ Hai 04/13/2026
+<strong>Baseline:</strong> Quick Update 9:00 AM PDT + Báo cáo đầy đủ 6:00 AM PDT cùng ngày
+<strong>Nguồn giá:</strong> Yahoo Finance, CNBC, Trading Economics, Investing.com, TheStreet, Benzinga, Fortune — cross-checked live</p>
+<hr />
+<h2>CÂU CHUYỆN INTRADAY: HỒI PHỤC KỸ THUẬT, BREADTH CÒN HỖN HỢP</h2>
+<p>Phiên mở cửa giảm mạnh (S&amp;P -0.52% intraday low ~6,781; futures -1% trước bell), sau đó một <strong>cú hồi phục kỹ thuật intraday</strong> đưa 3/4 chỉ số lớn về vùng dương nhẹ trong ~3 giờ. Tuy nhiên, <strong>breadth vẫn hỗn hợp</strong>: Dow âm -0.54%, Gold -0.71%, Goldman Sachs -2% bất chấp EPS beat — các tín hiệu cho thấy thị trường vẫn giữ bộ lọc chất lượng, chưa thể xem là "shock absorption" toàn diện. Kết luận về mức độ hấp thụ rủi ro cần <strong>chờ power hour follow-through</strong>.</p>
+<p>Nhân tố hỗ trợ hồi phục: WTI rút khỏi đỉnh $105.30 về ~$104.35 (mức rút ~1%, trong biên độ noise intraday điển hình), cộng với việc phong tỏa Hormuz cho phép transit giữa các cảng không-Iran, và chưa có phản ứng quân sự trực tiếp từ Iran trong 4 giờ đầu. <strong>Cảnh báo:</strong> 4 giờ là cửa sổ quá ngắn để đánh giá rủi ro địa chính trị — các chu kỳ phản ứng Iran điển hình là 12–24 giờ, do đó cửa sổ overnight vẫn là biến số quan trọng.</p>
+<hr />
+<h2>BẢNG GIÁ LIVE (11:30 AM PDT)</h2>
+<table>
+<thead>
+<tr>
+<th>Chỉ Số</th>
+<th>Giá hiện tại</th>
+<th>Thay đổi từ Fri close</th>
+<th>So với 9:00 AM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S&amp;P 500</strong></td>
+<td>~6,824</td>
+<td>+7 pts (+0.11%)</td>
+<td>Đảo chiều mạnh (futures -0.59% → +0.11%)</td>
+</tr>
+<tr>
+<td><strong>Dow Jones</strong></td>
+<td>~47,657</td>
+<td>-260 pts (-0.54%)</td>
+<td>Cải thiện nhẹ, vẫn âm do GS</td>
+</tr>
+<tr>
+<td><strong>Nasdaq Composite</strong></td>
+<td>~23,059</td>
+<td>+156 pts (+0.68%)</td>
+<td>Tech-led rebound rõ nét</td>
+</tr>
+<tr>
+<td><strong>Russell 2000</strong></td>
+<td>~2,642</td>
+<td>+12 pts (+0.44%)</td>
+<td>Small-cap tiếp tục outperform</td>
+</tr>
+<tr>
+<td><strong>WTI Oil</strong></td>
+<td>~$104.35/thùng</td>
+<td>+8.1% (đỉnh $105.30)</td>
+<td>Hạ nhiệt từ đỉnh</td>
+</tr>
+<tr>
+<td><strong>Brent Oil</strong></td>
+<td>~$101.82/thùng</td>
+<td>+6.95%</td>
+<td>Giữ quanh $102</td>
+</tr>
+<tr>
+<td><strong>Gold</strong></td>
+<td>$4,717.89/oz</td>
+<td>-0.71%</td>
+<td>Tiếp tục yếu bất thường</td>
+</tr>
+<tr>
+<td><strong>VIX</strong></td>
+<td>~19.5–21.2</td>
+<td>Elevated, off đỉnh</td>
+<td>Về gần mức Friday</td>
+</tr>
+<tr>
+<td><strong>10Y Treasury</strong></td>
+<td>4.303%</td>
+<td>-1.4 bps</td>
+<td>Yields DỊU (risk-on tín hiệu)</td>
+</tr>
+<tr>
+<td><strong>DXY</strong></td>
+<td>99.03 (Yahoo Finance; nguồn khác ~98.74)</td>
+<td>+0.39%</td>
+<td>Dollar mạnh nhẹ</td>
+</tr>
+<tr>
+<td><strong>Bitcoin</strong></td>
+<td>~$71,000</td>
+<td>Gần đi ngang trong vùng $70.7k–$71.2k</td>
+<td>Giữ vùng $71k sau panic sáng</td>
+</tr>
+</tbody>
+</table>
+<h3>YTD Performance — TẠM BỎ TRONG BẢN QUICK UPDATE</h3>
+<p>⚠️ Tại thời điểm 11:30 AM PDT, các nguồn YTD công khai (Slickcharts, Yahoo Finance, ycharts, Macrotrends, Investing.com) đang cho <strong>số liệu xung đột đáng kể</strong> với nhau đối với S&amp;P 500, Nasdaq và Russell 2000 (khả năng do cách xử lý price return vs total return, cập nhật trễ cuối tuần, hoặc khác nhau giữa index vs ETF tracking).</p>
+<p><strong>Để tránh công bố YTD không đáng tin cậy trong bản quick update intraday, chúng tôi KHÔNG trích dẫn con số YTD cụ thể trong bản này.</strong> Số YTD chính thức sẽ được cross-check và công bố lại trong báo cáo close phiên (sau 1:00 PM PDT) khi các nguồn đồng bộ.</p>
+<p>Các nhận định intraday dưới đây <strong>không phụ thuộc vào YTD baseline</strong> — chỉ dựa trên biến động giá trong phiên hôm nay.</p>
+<hr />
+<h2>POWER HOUR SETUP (12:00–1:00 PM PDT / 3:00–4:00 PM ET)</h2>
+<p><strong>Thiết lập tổng quan:</strong> Thị trường vào power hour với <strong>momentum tích cực, volatility dịu</strong> — một setup hiếm gặp sau khi mở cửa với cú sốc địa chính trị cấp độ này.</p>
+<p>Các yếu tố nâng đỡ đến cuối phiên:
+- <strong>Yields giảm</strong> (10Y -1.4 bps): bull flattener có lợi cho growth/tech
+- <strong>Oil rút khỏi đỉnh</strong>: giảm áp lực chi phí đầu vào cho sectors không phải năng lượng
+- <strong>VIX không lên mốc 25</strong>: gamma hedging không buộc market-makers bán tháo
+- <strong>Small-cap dẫn dắt</strong> (Russell +0.44% vs S&amp;P +0.11%): sức mạnh nội tại, không phải concentration rebound</p>
+<p>Các rủi ro có thể lật kịch bản trong 90 phút cuối:
+- <strong>Bất kỳ tin tức quân sự Iran nào</strong> (phóng tên lửa, phong tỏa ngược) → oil spike trở lại và thị trường có thể test intraday low
+- <strong>Dòng lệnh rebalance cuối phiên</strong>: nếu Goldman Sachs và financials bị bán thêm, Dow có thể phá mức đáy
+- <strong>Gamma flip zone</strong>: nếu VIX leo trên 22 trong power hour, dealer hedging có thể amplify biến động</p>
+<p><strong>Kịch bản base case cho close:</strong> S&amp;P 500 close dương nhẹ (0% đến +0.3%), Nasdaq dẫn đầu (+0.7% đến +1.0%), Dow đóng cửa âm do GS, Russell 2000 giữ +0.4% đến +0.7%.</p>
+<hr />
+<h2>SECTOR ROTATION INTRADAY</h2>
+<table>
+<thead>
+<tr>
+<th>Sector (ETF)</th>
+<th>Vị thế intraday</th>
+<th>Diễn biến</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Energy (XLE)</strong></td>
+<td>Leader</td>
+<td>Vẫn outperform YTD (~+22%), nhưng intraday đã off đỉnh do oil lùi</td>
+</tr>
+<tr>
+<td><strong>Consumer Staples (XLP)</strong></td>
+<td>Leader</td>
+<td>Defensive bid giữ vững</td>
+</tr>
+<tr>
+<td><strong>Industrials (XLI)</strong></td>
+<td>Leader</td>
+<td>Tiếp tục đà Q1</td>
+</tr>
+<tr>
+<td><strong>Materials (XLB)</strong></td>
+<td>Leader</td>
+<td>Beneficiary của commodity backdrop</td>
+</tr>
+<tr>
+<td><strong>Technology (XLK)</strong></td>
+<td>Lagging → hồi</td>
+<td>Bounce từ intraday low, Nasdaq +0.68%</td>
+</tr>
+<tr>
+<td><strong>Communications (XLC)</strong></td>
+<td>Lagging</td>
+<td>Underperform broader market</td>
+</tr>
+<tr>
+<td><strong>Consumer Discretionary (XLY)</strong></td>
+<td>Lagging</td>
+<td>Phụ thuộc sức mua — nhạy cảm với oil</td>
+</tr>
+<tr>
+<td><strong>Financials (XLF)</strong></td>
+<td>Laggard hôm nay</td>
+<td>GS -2% kéo toàn nhóm</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Điểm đáng chú ý intraday:</strong> Russell 2000 (+0.44%) dẫn nhẹ so với S&amp;P 500 (+0.11%) và Dow (-0.54%) trong phiên hôm nay — một tín hiệu rotation intraday <strong>tạm thời</strong>, chưa đủ cơ sở để khẳng định xu hướng structural. Cần số close phiên và YTD chính thức để đánh giá thesis "Pure Growth → Quality Value".</p>
+<hr />
+<h2>EARNINGS REACTIONS &amp; STOCK MOVERS</h2>
+<p><strong>Goldman Sachs (GS) — người tạo sóng của ngày:</strong>
+- EPS Q1: $17.55 vs est $16.47 (<strong>beat</strong>)
+- Revenue: $17.23 tỷ, +14% YoY
+- Banking &amp; Markets division: revenue kỷ lục $12.74 tỷ
+- <strong>Nhưng:</strong> FICC trading <strong>miss</strong>, credit loss provisions cao hơn dự báo
+- <strong>Phản ứng giá:</strong> -2% — minh chứng cho thema "quality of earnings" quan trọng hơn headline beat</p>
+<p><strong>Movers tích cực:</strong>
+- <strong>Allogene Therapeutics (ALLO):</strong> +41% đến +61% (theo dữ liệu nhiều nguồn) — dữ liệu Phase 2 CAR-T tích cực cho lymphoma; mức tăng lớn hơn nhiều so với ghi nhận ban đầu
+- <strong>Circle (USDC issuer):</strong> +9% — dòng vốn crypto liên quan USDC
+- <strong>Coinbase (COIN):</strong> phản ứng phân hóa (-3% đến -4% theo dữ liệu giá cuối giờ 11:30 AM PDT) — KHÔNG đồng thuận với Circle; cho thấy "crypto positive" là <strong>hẹp cục bộ cho USDC-ecosystem</strong>, không phải broad crypto bid</p>
+<p><strong>Ngụ ý (có điều kiện):</strong> dòng tiền <strong>catalyst-driven / event-driven</strong> còn sống (Allogene biotech, Circle/Coinbase crypto). Tuy nhiên cần phân tách rõ các nguồn cầu này:</p>
+<ol>
+<li><strong>Hấp thụ cơ học từ panic unwind</strong> (volume cao đầu phiên) — không phải conviction buying</li>
+<li><strong>Dòng crypto/USDC</strong> (Bitcoin, Circle, Coinbase) — chủ yếu là digital-asset flow, KHÔNG lan tỏa sang equities rộng</li>
+<li><strong>Biotech Allogene</strong> — catalyst riêng (Phase 2 data), độc lập với macro Hormuz</li>
+<li><strong>Counter-signal:</strong> Dow -0.54%, Gold -0.71%, GS -2% — cho thấy equity demand rộng vẫn thận trọng</li>
+</ol>
+<p>→ Kết luận thận trọng: <strong>cầu chọn lọc ở nhóm event-driven còn, không đủ bằng chứng để khẳng định risk appetite broad-based đã trở lại</strong>.</p>
+<hr />
+<h2>VOLUME PROFILE &amp; MICROSTRUCTURE</h2>
+<ul>
+<li><strong>Volume sáng cao bất thường</strong> trên ETFs rộng (SPY, QQQ, IWM) do panic open — hấp thụ nhanh có thể phần lớn là <strong>rebalance cơ học / short cover</strong>, chưa đủ xác nhận "buy-the-dip mạnh". Cần breadth data (advance-decline, up-volume %) để kết luận chắc chắn</li>
+<li><strong>Gold -0.71%</strong> bất thường duy trì từ sáng: xác nhận giả thuyết margin pressure / real yield lên, không phải "flight to safety" điển hình</li>
+<li><strong>DXY +0.39%</strong> khi yields giảm: dollar strength đến từ flight-to-quality hơn là rate differential → tín hiệu kép</li>
+<li><strong>Bitcoin giữ vùng ~$71k</strong> (gần đi ngang từ sáng) trong khi gold âm: crypto không bị panic liquidation nhưng cũng không ghi nhận "digital safe haven bid" mạnh</li>
+</ul>
+<hr />
+<h2>ĐIỀU CHỈNH OUTLOOK SO VỚI 9:00 AM</h2>
+<p><strong>Đã xác nhận:</strong>
+1. VIX không lên mốc panic (&gt;25) — thị trường giữ kịch bản "phong tỏa tạm thời → đàm phán tiếp"
+2. Gold yếu bất thường tiếp diễn — giả thuyết margin/real-yield đứng vững
+3. Small-cap outperformance duy trì</p>
+<p><strong>Mới / thay đổi:</strong>
+1. <strong>Mức hồi phục mạnh hơn dự báo 9AM</strong>: S&amp;P từ -0.52% intraday low về +0.11% chỉ trong 3 giờ
+2. <strong>Tech dẫn dắt rebound</strong> (Nasdaq +0.68%), không phải Energy — cho thấy market bet vào kịch bản Hormuz "không tệ như sợ"
+3. <strong>Yields giảm nhẹ</strong> (10Y -1.4 bps): mức này nằm trong biên độ noise intraday (±5 bps điển hình), <strong>KHÔNG đủ để claim "higher-for-longer breached"</strong>. Lưu ý: Gold -0.71% + DXY +0.39% gợi ý <strong>real yields có thể đang TĂNG</strong> (kỳ vọng lạm phát dịu), không phải tín hiệu growth destruction hay Fed easing
+4. <strong>Goldman Sachs -2%</strong> bất chấp EPS beat: đặt tiền lệ cho earnings season sắp tới — thị trường khắt khe với quality of earnings</p>
+<p><strong>Rủi ro đuôi giữ nguyên:</strong> phản ứng quân sự Iran trong 24–48h tới vẫn là variable chính. Nếu Iran phóng tên lửa hoặc phong tỏa ngược, toàn bộ setup hồi phục này có thể đảo chiều trong overnight.</p>
+<hr />
+<h2>KẾT LUẬN</h2>
+<p>Phiên 04/13 đến thời điểm 11:30 AM PDT cho thấy <strong>hồi phục kỹ thuật đáng chú ý</strong> của thị trường Mỹ (V-shape intraday, VIX kiểm soát, tech dẫn rebound, small-cap tạm outperform). Tuy nhiên, <strong>breadth hỗn hợp</strong> với Dow âm, GS -2% bất chấp EPS beat và Gold giảm bất thường cho thấy thị trường <strong>chưa thực sự price-in xong</strong> cú sốc Hormuz — mà đang giữ thế "chờ xem phản ứng Iran 24 giờ tới". Power hour có thể giữ vùng dương cho S&amp;P/Nasdaq/Russell <strong>nếu không có tin tức Iran mới</strong>, nhưng cửa sổ overnight là biến số quyết định.</p>
+<p><strong>Theo dõi sát 90 phút cuối:</strong> (1) Oil có quay lại $105 không, (2) VIX có phá mốc 22 không, (3) Goldman có tiếp tục bị bán hay bắt đáy.</p>
+<hr />
+<p><em>Cập nhật lúc 11:30 AM PDT (2:30 PM ET) ngày 04/13/2026</em>
+<em>Nguồn: Yahoo Finance, CNBC, TheStreet, Benzinga, Trading Economics, Investing.com, Fortune</em>
+<em>Quick Update — không thay thế báo cáo đầy đủ. Báo cáo close phiên sẽ ra sau 1:00 PM PDT</em></p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Phân Tích Chứng Khoán Mỹ <span class="footer-divider">•</span> Báo cáo & Cập nhật thị trường</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #6e7681;">
+                Cập nhật lúc 2026 04 13
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
