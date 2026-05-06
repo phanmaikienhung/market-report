@@ -3,34 +3,50 @@
 - **Report Date:** 2026-05-06
 - **Review Date:** 2026-05-06
 - **Reviewer:** AI Post-Deploy Reviewer (skill: review-deployed-report)
-- **Verdict:** PASS
+- **Verdict:** WARN
 
 ## Tổng Kết
-Quick update 09:00 PDT cho phiên 06/05/2026 — data chính xác, format sạch, narrative logic chặt chẽ. Không phát hiện source name leak, arithmetic đều đúng, thời gian PDT hợp lệ. Có 1 minor issue về VIX notation không theo chuẩn bp/pp.
+Quick update 09:00 PDT cho phiên 06/05/2026 — data chính xác, format sạch, narrative logic chặt chẽ, source name an toàn. Tuy nhiên có 2 lỗi ET→PDT conversion sai trong bảng "Sự kiện sắp tới" (14:00 ET ghi 07:00 PDT, 16:30 ET ghi 09:30 PDT). Verdict: WARN (≥2 MAJOR).
 
 - 🔴 Critical: 0
-- 🟡 Major: 0
+- 🟡 Major: 2
 - 🟢 Minor: 1
 
 ## Chi Tiết Lỗi
 
-### 🟢 MINOR — VIX notation không dùng bp/pp cho change (RULE-011)
+### 🟡 MAJOR — ET→PDT conversion sai: Fed Powell speech (RULE-003)
+- **Category:** 4.7 Time & Pipeline Compliance
+- **Rule:** RULE-003
+- **Vị trí:** "14:00 ET — Fed Chair Powell speech | 07:00 PDT"
+- **Vấn đề:** 14:00 ET - 3 = 11:00 PDT, không phải 07:00 PDT. Sai lệch 4 giờ. Có thể do copy-paste nhầm từ dòng "10:00 ET → 07:00 PDT".
+- **Cách sửa:** "14:00 ET — Fed Chair Powell speech | 11:00 PDT"
+- **Học được:** ET→PDT = ET - 3. Luôn re-compute, không copy-paste PDT từ dòng khác.
+
+### 🟡 MAJOR — ET→PDT conversion sai: EIA Crude Stock (RULE-003)
+- **Category:** 4.7 Time & Pipeline Compliance
+- **Rule:** RULE-003
+- **Vị trí:** "16:30 ET — EIA Crude Stock Change | 09:30 PDT"
+- **Vấn đề:** 16:30 ET - 3 = 13:30 PDT (1:30 PM PDT), không phải 09:30 PDT. Sai lệch 4 giờ.
+- **Cách sửa:** "16:30 ET — EIA Crude Stock Change | 13:30 PDT"
+- **Học được:** Tương tự rule trên — compute từng dòng, không copy.
+
+### 🟢 MINOR — VIX notation change nên dùng bp (RULE-011)
 - **Category:** 4.3 Arithmetic & Units
 - **Rule:** RULE-011
 - **Vị trí:** "VIX 17.26 -0.12 -0.69%"
-- **Vấn đề:** VIX là volatility index (dùng điểm, không % annualized). Change ghi "-0.69%" gây hiểu nhầm là phần trăm tương đối của giá trị 17.26. Quy chuẩn RULE-011 yêu cầu dùng bp (basis points) cho các chỉ số dạng điểm/tỷ suất.
-- **Cách sửa:** Ghi "VIX 17.26 (-1.2bp)" hoặc giữ nguyên số điểm "-0.12" mà không ghi thêm % tương đối.
+- **Vấn đề:** VIX là volatility index (dùng điểm, không % annualized). Change ghi "-0.69%" là phần trăm tương đối gây hiểu nhầm.
+- **Cách sửa:** "VIX 17.26 (-1.2bp)" hoặc giữ "-0.12" mà không ghi thêm %.
 - **Học được:** Khi report VIX change, dùng format "giá (-Xbp)" thay vì "giá -X.XX -Y%".
 
 ## Hướng Dẫn Cho AI Report-Generator
-1. **LUÔN dùng bp/pp cho VIX và yield changes** — vì VIX và Treasury yields là điểm/suất, không phải % giá. Ghi "(-1.2bp)" thay vì "(-0.69%)".
-2. **KHÔNG BAO GIỜ ghi ~ giá FX trong bảng chính** — nếu không có dữ liệu real-time, bỏ qua thay vì dùng ~ (gây nghi ngờ độ tin cậy).
-3. **KHI viết "chạm 52-week high"** cần verify từng index riêng — FTSE và DAX có thể chạm ATH nhưng Dow thì không (50,512 vs 49,833), cần chính xác.
+1. **LUÔN compute ET→PDT = ET - 3 cho MỌI dòng riêng biệt** — vì copy-paste PDT từ dòng khác (vd 10:00 ET→07:00 PDT) sang dòng 14:00 ET sẽ giữ nguyên 07:00 PDT sai.
+2. **KHÔNG BAO GIỜ copy-paste PDT times từ dòng sự kiện khác** — mỗi dòng tự compute (8:30 ET→5:30 PDT, 10:00 ET→7:00 PDT, 14:00 ET→11:00 PDT, 16:30 ET→13:30 PDT).
+3. **KHI ghi VIX change**, dùng bp thay vì % tương đối để tránh nhầm lẫn magnitude.
 
 ## Rules Mới Đề Xuất
-Không có rules mới. Không phát hiện pattern lỗi lặp lại.
+Không có rules mới cần thêm. Pattern ET→PDT copy-paste đã có trong RULE-003, chỉ cần AI tuân thủ better.
 
 ## Checklist Cho Lần Report Tiếp Theo
-- [ ] Verify VIX change notation: dùng bp, không %
-- [ ] Cross-check từng index "52-week high" claim (FTSE/DAX/Nikkei có thể ATH nhưng Dow thì không)
-- [ ] Nếu không có dữ liệu FX real-time, bỏ FX row thay vì dùng ~
+- [ ] Compute ET→PDT = ET - 3 cho TỪNG dòng trong bảng event (không copy-paste từ dòng khác)
+- [ ] Verify 4 conversions đặc biệt: 8:30→5:30, 10:00→7:00, 14:00→11:00, 16:30→13:30
+- [ ] VIX change notation: dùng bp, không %
