@@ -118,7 +118,7 @@
 
 ## New Rules Proposed
 
-- **RULE-016 — Không estimate index values**
+- **RULE-017 — Không estimate index values**
   - Severity: MAJOR
   - Detection: Value với `~` prefix cho indices
   - Fix: Lấy live price từ Yahoo/Google. Nếu không có, bỏ qua.
