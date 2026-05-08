@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CẬP NHẬT NHANH THỊ TRƯỜNG — 8:00 PM PDT, 04/12/2026 (Chủ Nhật) - Phân Tích Chứng Khoán Mỹ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            color-scheme: dark;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
+            font-size: 18px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #0d1117;
+            border-bottom: 1px solid #30363d;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background-color: rgba(13, 17, 23, 0.85);
+        }
+
+        nav {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .nav-brand:hover {
+            color: #79c0ff;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 1.5rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #e6edf3;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+
+        .article-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-date::before {
+            content: "📅";
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #c9d1d9;
+        }
+
+        .article-content h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 2rem 0 0.8rem 0;
+            color: #e6edf3;
+            border-left: 4px solid #58a6ff;
+            padding-left: 1rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.6rem 0;
+            color: #e6edf3;
+        }
+
+        .article-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.2rem 0 0.4rem 0;
+            color: #c9d1d9;
+        }
+
+        .article-content p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid #58a6ff;
+            background-color: #161b22;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 1.2rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+            color: #58a6ff;
+        }
+
+        .article-content em {
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        /* Tables */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-content table thead {
+            background-color: #161b22;
+            border-bottom: 2px solid #30363d;
+        }
+
+        .article-content table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #e6edf3;
+            background-color: #161b22;
+        }
+
+        .article-content table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .article-content table tbody tr:hover {
+            background-color: #161b22;
+        }
+
+        .article-content table tbody tr:nth-child(even) {
+            background-color: #0d1117;
+        }
+
+        /* Code Blocks */
+        .article-content pre {
+            background-color: #161b22;
+            color: #e6edf3;
+            padding: 1.5rem;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .article-content code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9em;
+            background-color: #21262d;
+            color: #ff7b72;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+        }
+
+        .article-content pre code {
+            background-color: transparent;
+            color: #e6edf3;
+            padding: 0;
+        }
+
+        /* Links */
+        .article-content a {
+            color: #58a6ff;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .article-content a:hover {
+            border-bottom-color: #58a6ff;
+            color: #79c0ff;
+        }
+
+        /* Back Navigation */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+            color: #79c0ff;
+        }
+
+        .back-link::before {
+            content: "←";
+        }
+
+        /* Footer */
+        footer {
+            background-color: #161b22;
+            border-top: 1px solid #30363d;
+            padding: 2rem 1.5rem;
+            margin-top: 3rem;
+            color: #8b949e;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-divider {
+            color: #30363d;
+            margin: 0 0.5rem;
+        }
+
+        /* Horizontal Rule */
+        .article-content hr {
+            border: none;
+            border-top: 1px solid #30363d;
+            margin: 2rem 0;
+        }
+
+        /* Images */
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                padding: 1rem;
+            }
+
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+            }
+
+            nav {
+                padding: 0.8rem;
+            }
+
+            .article-content table {
+                font-size: 0.85rem;
+            }
+
+            .article-content table th,
+            .article-content table td {
+                padding: 0.6rem;
+            }
+
+            .article-content pre {
+                padding: 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .article-content {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+
+            .article-content h2 {
+                font-size: 1.1rem;
+                margin: 1.5rem 0 0.6rem 0;
+            }
+
+            .article-content pre {
+                padding: 0.8rem;
+                font-size: 0.75rem;
+                border-radius: 4px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            header, footer {
+                display: none;
+            }
+
+            main {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .back-link {
+                display: none;
+            }
+
+            .article-content a {
+                color: #58a6ff;
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="nav-brand">Phân Tích Chứng Khoán Mỹ</a>
+        </nav>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-link">Quay lại danh sách</a>
+
+        <article>
+            <header class="article-header">
+                <h1>CẬP NHẬT NHANH THỊ TRƯỜNG — 8:00 PM PDT, 04/12/2026 (Chủ Nhật)</h1>
+                <div class="article-meta">
+                    <span class="article-date">2026 04 12</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <h1>CẬP NHẬT NHANH THỊ TRƯỜNG — 8:00 PM PDT, 04/12/2026 (Chủ Nhật)</h1>
+<p><strong>Loại:</strong> Quick Update (bổ sung cho Báo cáo Tuần 3PM + Quick Update 11:30 AM)
+<strong>Baseline:</strong> <code>quick_update_1130.md</code> + <code>bao_cao_thi_truong_20260412_3PM.md</code>
+<strong>Timestamp dữ liệu:</strong> 04/12/2026, 8:00 PM PDT / 11:00 PM EDT
+<strong>Quy ước ngày tháng:</strong> MM/DD/YYYY (theo chuẩn Mỹ)</p>
+<hr />
+<h2>DIỄN BIẾN MỚI TỪ BẢN CẬP NHẬT 11:30 AM</h2>
+<h3>1. Futures CME Globex Đã Mở — Xác Nhận Gap Down Đáng Kể</h3>
+<p>Điểm mấu chốt trong bản 11:30 AM là chờ CME Globex mở lúc 3:00 PM PDT (6:00 PM EDT) để có price discovery thực sự. Kết quả:</p>
+<ul>
+<li><strong>S&amp;P 500 futures:</strong> -1.1% so với close Thứ Sáu (CNBC, Bloomberg 04/12)</li>
+<li><strong>Dow futures:</strong> -517 điểm, tương đương -1.1% (CNBC 04/12)</li>
+<li><strong>Nasdaq 100 futures:</strong> -1.2% (CNBC 04/12)</li>
+<li><strong>WTI crude (CME):</strong> $104.35–$105.02/thùng, tăng +8% đến +9.9% so với close Thứ Sáu. CNBC ghi $104.35 lúc ~3:21 PM PDT (6:21 PM EDT); yfinance live $105.02 lúc 8:04 PM PDT (CNBC, yfinance 04/12). Brent crude: $102.85 (+8.04%, Bloomberg 04/12).</li>
+<li><strong>VIX futures:</strong> ~20.41, tăng từ 19.23 close Thứ Sáu (Barchart 04/12)</li>
+</ul>
+<p><strong>So sánh với dự báo 11:30 AM:</strong> Bản update trưa đã ước tính kịch bản B (Oil Shock, xác suất ~40%) với S&amp;P futures -1% đến -2% và WTI trong vùng 103–108 USD. Kết quả thực tế — S&amp;P -1.1%, WTI $104.35–$105.02 — nằm đúng vùng kịch bản B, xác nhận phản ứng nghiêm trọng nhưng CHƯA phải panic (kịch bản C = -2% đến -3%+). Lưu ý: bản 11:30 AM dùng Hyperliquid proxy ~$103; giá CME thực tế cao hơn proxy DeFi.</p>
+<h3>2. CENTCOM Xác Nhận Phong Tỏa Bắt Đầu Thứ Hai</h3>
+<p>US Central Command (CENTCOM) chính thức thông báo sẽ bắt đầu phong tỏa các cảng Iran từ Thứ Hai 04/13 (29News, NPR 04/12). Đây không còn là lời đe dọa — đã chuyển sang giai đoạn thực thi.</p>
+<h3>3. Iran Phản Ứng — Escalation Rhetoric Nhưng Chưa Hành Động Quân Sự</h3>
+<p>Kể từ bản 11:30 AM (khi chưa có phản ứng chính thức từ Tehran), Iran đã lên tiếng qua nhiều kênh:</p>
+<ul>
+<li><strong>IRGC:</strong> Tuyên bố Hormuz vẫn dưới "quyền kiểm soát đầy đủ" của Iran. Eo biển mở cho tàu thương mại, nhưng tàu quân sự sẽ nhận "phản ứng mạnh mẽ" (Al Jazeera 04/12)</li>
+<li><strong>Chủ tịch Quốc hội Ghalibaf:</strong> "Lời đe dọa của Trump không ảnh hưởng đến dân tộc Iran" — tín hiệu không nhượng bộ (Al Jazeera 04/12)</li>
+<li><strong>Ngoại trưởng Araghchi:</strong> Hai bên đã "chỉ còn vài inch" trước thỏa thuận, đổ lỗi cho Mỹ vì "chủ nghĩa tối đa và dịch chuyển mục tiêu" (NPR, Al Jazeera 04/12)</li>
+<li><strong>IRNA (hãng tin nhà nước):</strong> Iran sẵn sàng tiếp tục đối thoại</li>
+</ul>
+<p><strong>Đánh giá:</strong> Rhetoric mạnh nhưng phản ứng quân sự thực tế CHƯA có. Iran đang giữ cửa đàm phán mở, đồng thời cảnh báo về hành động nếu tàu chiến tiến sát. Điều này tạm phù hợp với kịch bản B (Oil Shock có kiểm soát) hơn kịch bản C (Full Escalation).</p>
+<hr />
+<h2>BẢNG GIÁ CẬP NHẬT — 8:00 PM PDT</h2>
+<p><strong>Lưu ý:</strong> Hôm nay là Chủ Nhật — giá index (S&amp;P, Dow, Nasdaq) chính thức vẫn là close Thứ Sáu 04/10. Futures đã mở từ 3 PM PDT. Crypto giao dịch 24/7.</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">CHỈ</span><span class="w"> </span><span class="nx">SỐ</span><span class="w">            </span><span class="o">|</span><span class="w"> </span><span class="nx">GIÁ</span><span class="w">                  </span><span class="o">|</span><span class="w"> </span><span class="nx">THAY</span><span class="w"> </span><span class="nx">ĐỔI</span><span class="w"> </span><span class="nx">FUTURES</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="nx">YTD</span><span class="w"> </span><span class="o">%</span><span class="w">                </span><span class="o">|</span><span class="w"> </span><span class="nx">NGUỒN</span>
+<span class="err">───────────────────</span><span class="o">|</span><span class="err">──────────────────────</span><span class="o">|</span><span class="err">──────────────────────</span><span class="o">|</span><span class="err">──────────────────────</span><span class="o">|</span><span class="err">────────────────</span>
+<span class="nx">S</span><span class="o">&amp;</span><span class="nx">P</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="p">(</span><span class="nx">close</span><span class="p">)</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="m m-Double">816.89</span><span class="w"> </span><span class="p">(</span><span class="mi">04</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="nx">Futures</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="m m-Double">1.1</span><span class="o">%</span><span class="w">       </span><span class="o">|</span><span class="w"> </span><span class="o">-</span><span class="m m-Double">0.42</span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="nx">close</span><span class="p">)</span><span class="w">       </span><span class="o">|</span><span class="w"> </span><span class="nx">CNBC</span><span class="p">,</span><span class="w"> </span><span class="nx">Bloomberg</span><span class="w"> </span><span class="p">(</span><span class="mi">04</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span>
+<span class="nx">S</span><span class="o">&amp;</span><span class="nx">P</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="p">(</span><span class="nx">futures</span><span class="p">)</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="o">~</span><span class="mi">6</span><span class="p">,</span><span class="mi">741</span><span class="w"> </span><span class="p">(</span><span class="nx">implied</span><span class="p">)</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="o">-</span><span class="m m-Double">1.1</span><span class="o">%</span><span class="w">                </span><span class="o">|</span><span class="w"> </span><span class="o">~-</span><span class="m m-Double">1.5</span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="nx">implied</span><span class="p">)</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="nx">CNBC</span><span class="w"> </span><span class="p">(</span><span class="mi">04</span><span class="o">/</span><span class="mi">12</span><span class="w"> </span><span class="o">~</span><span class="mi">6</span><span class="nx">PM</span><span class="w"> </span><span class="nx">EDT</span><span class="p">)</span>
+<span class="nx">Dow</span><span class="w"> </span><span class="nx">Jones</span><span class="w"> </span><span class="p">(</span><span class="nx">close</span><span class="p">)</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="mi">47</span><span class="p">,</span><span class="m m-Double">916.57</span><span class="w"> </span><span class="p">(</span><span class="mi">04</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="nx">Futures</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">517</span><span class="w"> </span><span class="nx">pts</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="o">-</span><span class="m m-Double">0.31</span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="nx">close</span><span class="p">)</span><span class="w">       </span><span class="o">|</span><span class="w"> </span><span class="nx">CNBC</span><span class="w"> </span><span class="p">(</span><span class="mi">04</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span>
+<span class="nx">Dow</span><span class="w"> </span><span class="nx">Jones</span><span class="w"> </span><span class="p">(</span><span class="nx">futures</span><span class="p">)</span><span class="o">|</span><span class="w"> </span><span class="o">~</span><span class="mi">47</span><span class="p">,</span><span class="mi">400</span><span class="w"> </span><span class="p">(</span><span class="nx">implied</span><span class="p">)</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="o">-</span><span class="m m-Double">1.1</span><span class="o">%</span><span class="w">                </span><span class="o">|</span><span class="w"> </span><span class="o">~-</span><span class="m m-Double">1.4</span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="nx">implied</span><span class="p">)</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="nx">CNBC</span><span class="w"> </span><span class="p">(</span><span class="mi">04</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span>
+<span class="nx">Nasdaq</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">(</span><span class="nx">fut</span><span class="p">.)</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nx">N</span><span class="o">/</span><span class="nx">A</span><span class="w">                  </span><span class="o">|</span><span class="w"> </span><span class="o">-</span><span class="m m-Double">1.2</span><span class="o">%</span><span class="w">                </span><span class="o">|</span><span class="w"> </span><span class="nx">N</span><span class="o">/</span><span class="nx">A</span><span class="w">                  </span><span class="o">|</span><span class="w"> </span><span class="nx">CNBC</span><span class="w"> </span><span class="p">(</span><span class="mi">04</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span>
+<span class="nx">VIX</span><span class="w"> </span><span class="p">(</span><span class="nx">futures</span><span class="p">)</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="o">~</span><span class="m m-Double">20.41</span><span class="w">               </span><span class="o">|</span><span class="w"> </span><span class="o">+</span><span class="m m-Double">1.18</span><span class="w"> </span><span class="p">(</span><span class="o">+</span><span class="m m-Double">6.1</span><span class="o">%</span><span class="p">)</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="nx">N</span><span class="o">/</span><span class="nx">A</span><span class="w">                  </span><span class="o">|</span><span class="w"> </span><span class="nx">Barchart</span><span class="w"> </span><span class="p">(</span><span class="mi">04</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span>
+<span class="err">───────────────────</span><span class="o">|</span><span class="err">──────────────────────</span><span class="o">|</span><span class="err">──────────────────────</span><span class="o">|</span><span class="err">──────────────────────</span><span class="o">|</span><span class="err">────────────────</span>
+<span class="nx">WTI</span><span class="w"> </span><span class="nx">Crude</span><span class="w"> </span><span class="p">(</span><span class="nx">CME</span><span class="p">)</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="err">$</span><span class="m m-Double">104.35</span><span class="err">–$</span><span class="m m-Double">105.02</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="o">+</span><span class="mi">8</span><span class="o">%</span><span class="w"> </span><span class="nx">đến</span><span class="w"> </span><span class="o">+</span><span class="m m-Double">9.9</span><span class="o">%</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="o">~+</span><span class="mi">62</span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="nx">từ</span><span class="w"> </span><span class="o">~</span><span class="err">$</span><span class="mi">65</span><span class="p">)</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="nx">CNBC</span><span class="p">,</span><span class="w"> </span><span class="nx">yfinance</span><span class="w"> </span><span class="p">(</span><span class="mi">04</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span>
+<span class="nx">Brent</span><span class="w"> </span><span class="nx">Crude</span><span class="w"> </span><span class="p">(</span><span class="nx">CME</span><span class="p">)</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="err">$</span><span class="m m-Double">102.85</span><span class="w">              </span><span class="o">|</span><span class="w"> </span><span class="o">+</span><span class="m m-Double">8.04</span><span class="o">%</span><span class="w">               </span><span class="o">|</span><span class="w"> </span><span class="nx">N</span><span class="o">/</span><span class="nx">A</span><span class="w">                  </span><span class="o">|</span><span class="w"> </span><span class="nx">Bloomberg</span><span class="w"> </span><span class="p">(</span><span class="mi">04</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span>
+<span class="nx">Gold</span><span class="w"> </span><span class="p">(</span><span class="nx">XAU</span><span class="o">/</span><span class="nx">USD</span><span class="p">)</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="o">~</span><span class="err">$</span><span class="mi">4</span><span class="p">,</span><span class="mi">751</span><span class="w">              </span><span class="o">|</span><span class="w"> </span><span class="nx">Flat</span><span class="w"> </span><span class="p">(</span><span class="nx">mkt</span><span class="w"> </span><span class="nx">đóng</span><span class="p">)</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="o">~+</span><span class="m m-Double">9.8</span><span class="o">%</span><span class="w">               </span><span class="o">|</span><span class="w"> </span><span class="nx">SundayGuardianLive</span><span class="w"> </span><span class="p">(</span><span class="mi">04</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span>
+<span class="mi">10</span><span class="nx">Y</span><span class="w"> </span><span class="nx">Treasury</span><span class="w">       </span><span class="o">|</span><span class="w"> </span><span class="m m-Double">4.31</span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="mi">04</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="nx">Chờ</span><span class="w"> </span><span class="nx">Mon</span><span class="w"> </span><span class="nx">open</span><span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="nx">N</span><span class="o">/</span><span class="nx">A</span><span class="w">                  </span><span class="o">|</span><span class="w"> </span><span class="nx">ETFTrends</span><span class="p">,</span><span class="w"> </span><span class="nx">FRED</span><span class="w"> </span><span class="p">(</span><span class="mi">04</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span>
+<span class="nx">DXY</span><span class="w">                </span><span class="o">|</span><span class="w"> </span><span class="o">~</span><span class="m m-Double">98.7</span><span class="err">–</span><span class="m m-Double">99.0</span><span class="w">           </span><span class="o">|</span><span class="w"> </span><span class="nx">Chờ</span><span class="w"> </span><span class="nx">Mon</span><span class="w"> </span><span class="nx">open</span><span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="o">~+</span><span class="m m-Double">0.8</span><span class="o">%</span><span class="w">               </span><span class="o">|</span><span class="w"> </span><span class="nx">TradingEcon</span><span class="w"> </span><span class="p">(</span><span class="mi">04</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span>
+<span class="err">───────────────────</span><span class="o">|</span><span class="err">──────────────────────</span><span class="o">|</span><span class="err">──────────────────────</span><span class="o">|</span><span class="err">──────────────────────</span><span class="o">|</span><span class="err">────────────────</span>
+<span class="nx">Bitcoin</span><span class="w"> </span><span class="p">(</span><span class="nx">BTC</span><span class="p">)</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="o">~</span><span class="err">$</span><span class="mi">70</span><span class="p">,</span><span class="mi">900</span><span class="err">–$</span><span class="mi">71</span><span class="p">,</span><span class="mi">000</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="o">-</span><span class="m m-Double">2.5</span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="mi">24</span><span class="nx">h</span><span class="p">)</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="o">~-</span><span class="mi">19</span><span class="o">%</span><span class="w">                </span><span class="o">|</span><span class="w"> </span><span class="nx">CoinDesk</span><span class="w"> </span><span class="p">(</span><span class="mi">04</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span>
+<span class="nx">Ethereum</span><span class="w"> </span><span class="p">(</span><span class="nx">ETH</span><span class="p">)</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="o">~</span><span class="err">$</span><span class="mi">2</span><span class="p">,</span><span class="mi">205</span><span class="w">              </span><span class="o">|</span><span class="w"> </span><span class="o">-</span><span class="m m-Double">2.5</span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="mi">24</span><span class="nx">h</span><span class="p">)</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="o">~-</span><span class="mi">27</span><span class="o">%</span><span class="w">                </span><span class="o">|</span><span class="w"> </span><span class="nx">CoinDesk</span><span class="w"> </span><span class="p">(</span><span class="mi">04</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span>
+</code></pre></div>
+
+<h3>GHI CHÚ YTD (giữ nguyên từ bản 11:30 AM, đã verify)</h3>
+<ul>
+<li><strong>S&amp;P 500:</strong> Close 12/31/2025 = 6,845.50 (CNBC). Close 04/10 = 6,816.89. YTD = -0.42%. Implied futures YTD ~-1.5%.</li>
+<li><strong>Dow Jones:</strong> Close 12/31/2025 = 48,063.29 (StatMuse, Yahoo). Close 04/10 = 47,916.57. YTD = -0.31%.</li>
+<li><strong>WTI Crude:</strong> Close 12/31/2025 ~$65/bbl (TradingEcon). Futures hiện $105.02 (yfinance live 8:04 PM PDT) → YTD ~+62%.</li>
+<li><strong>Gold:</strong> Close 12/31/2025 = $4,325 (Barchart). Hiện ~$4,751 → YTD ~+9.8%.</li>
+<li><strong>Bitcoin:</strong> Close 12/31/2025 ~$87,500 (StatMuse). Hiện ~$71,000 → YTD ~-19%.</li>
+<li><strong>DXY:</strong> Close 12/31/2025 = 97.96 (Yahoo, FRED). Hiện ~98.7–99.0 → YTD ~+0.8%.</li>
+</ul>
+<h3>ĐỐI CHIẾU VỚI BẢN 11:30 AM</h3>
+<table>
+<thead>
+<tr>
+<th>Chỉ số</th>
+<th>11:30 AM</th>
+<th>8:00 PM</th>
+<th>Thay Đổi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S&amp;P 500 futures</td>
+<td>Chưa mở</td>
+<td><strong>-1.1%</strong> (~6,741)</td>
+<td>✅ Xác nhận gap down, vùng kịch bản B</td>
+</tr>
+<tr>
+<td>Dow futures</td>
+<td>Chưa mở</td>
+<td><strong>-517 pts (-1.1%)</strong></td>
+<td>✅ Nhất quán với S&amp;P</td>
+</tr>
+<tr>
+<td>WTI (Hyperliquid)</td>
+<td>~$103 (+7%)</td>
+<td><strong>$105.02 CME (+9.9%)</strong></td>
+<td>↑ CME xác nhận, mạnh hơn proxy DeFi</td>
+</tr>
+<tr>
+<td>WTI YTD</td>
+<td>~+49% (est.)</td>
+<td><strong>~+62%</strong> (tính trực tiếp)</td>
+<td>⚠️ Cập nhật: giá CME live cao hơn ước tính</td>
+</tr>
+<tr>
+<td>Bitcoin</td>
+<td>~$70,900</td>
+<td><strong>~$70,900–$71,000</strong></td>
+<td>→ Ổn định, chưa phá $70K support</td>
+</tr>
+<tr>
+<td>Gold</td>
+<td>~$4,751</td>
+<td><strong>~$4,751</strong></td>
+<td>→ Flat (thị trường đóng cuối tuần)</td>
+</tr>
+<tr>
+<td>VIX</td>
+<td>19.49 (close)</td>
+<td><strong>~20.41 (futures)</strong></td>
+<td>↑ Tăng nhẹ, CHƯA spike lớn — có thể chờ Mon</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>CẬP NHẬT KỊCH BẢN THỨ HAI 04/14</h2>
+<p>Giờ đã có <strong>multi-point confirmation</strong> từ CME (so với chỉ có proxy DeFi lúc 11:30 AM):</p>
+<h3>Kịch Bản Điều Chỉnh — Xác Nhận Bằng Dữ Liệu CME</h3>
+<p><strong>Kịch bản A — Gap down vừa phải (~20%, GIẢM từ 30%)</strong>
+- S&amp;P 500: mở giảm -0.5% đến -1.0%
+- WTI CME: $100–104
+- Điều kiện: Iran de-escalate rhetoric + blockade chỉ là posturing, nhanh chóng đàm phán lại
+- <strong>Lý do giảm xác suất:</strong> Futures đã -1.1% + CENTCOM xác nhận blockade bắt đầu Thứ Hai → khó quay về kịch bản nhẹ</p>
+<p><strong>Kịch bản B — Oil Shock (~50%, TĂNG từ 40%) ⭐ BASE CASE</strong>
+- S&amp;P 500: mở giảm -1.0% đến -2.0%
+- WTI CME: $104–110
+- Điều kiện: Phong tỏa diễn ra, Iran phản ứng bằng lời nói nhưng không đáp trả quân sự, thị trường price-in dầu $100+ "new normal" tạm thời
+- <strong>Lý do tăng xác suất:</strong> Futures -1.1% + WTI $105 = chính xác vùng kịch bản B. CENTCOM xác nhận thực thi. Iran rhetoric mạnh nhưng CHƯA hành động quân sự.</p>
+<p><strong>Kịch bản C — Full Escalation (~30%, giữ nguyên)</strong>
+- S&amp;P 500: mở giảm -2.0% đến -3.0%+
+- WTI CME: &gt;$108-110
+- Điều kiện: Iran hành động quân sự trực tiếp — bắn cảnh cáo, triển khai fast attack boats, hoặc đặt thêm mìn
+- <strong>Lý do giữ nguyên:</strong> Iran đã cảnh báo "phản ứng mạnh mẽ" với tàu quân sự. Rủi ro va chạm hải quân vẫn hiện hữu khi CENTCOM bắt đầu thực thi Thứ Hai.</p>
+<h3>Yếu Tố Mới Cần Theo Dõi Đêm Nay &amp; Sáng Thứ Hai</h3>
+<ol>
+<li><strong>Asian markets mở (7 PM PDT Chủ Nhật):</strong> Nikkei, Hang Seng, ASX sẽ phản ứng — Bloomberg ghi nhận Asian shares đã giảm 0.7% ban đầu. Nếu châu Á sell-off mạnh hơn → áp lực thêm lên US futures.</li>
+<li><strong>WTI overnight movement:</strong> Nếu dầu tiếp tục leo trên $105 trong phiên châu Á → kịch bản B/C củng cố thêm.</li>
+<li><strong>Iran overnight action:</strong> Bất kỳ động thái quân sự nào (triển khai tàu, thủy lôi mới) = catalyst cho kịch bản C.</li>
+<li><strong>Phản ứng GCC (Saudi, UAE, Qatar):</strong> Phong tỏa Mỹ cũng ảnh hưởng xuất khẩu dầu GCC qua Hormuz. Nếu GCC phản đối công khai → phức tạp hóa tình hình.</li>
+<li><strong>Bank earnings pre-market Thứ Hai:</strong> JPMorgan, Goldman Sachs, Wells Fargo, Citi — earnings có thể bị overshadowed bởi geopolitics, nhưng guidance về energy exposure sẽ rất quan trọng.</li>
+<li><strong>Bitcoin support quanh $71K:</strong> BTC đang giữ ở ~$71,004 (yfinance live). Nếu phá vùng $70,500 = cascade risk-off signal.</li>
+</ol>
+<hr />
+<h2>KẾT LUẬN</h2>
+<p>Bản 11:30 AM đánh giá risk level 8/10 và nâng kịch bản Oil Shock lên ~40%. Với xác nhận từ CME Globex (S&amp;P -1.1%, WTI +8.6% = $104.5) và CENTCOM thông báo thực thi blockade từ Thứ Hai, risk level <strong>nâng lên 8.5/10</strong> và kịch bản Oil Shock trở thành <strong>BASE CASE (~50%)</strong>.</p>
+<p><strong>Điểm tích cực tương đối:</strong>
+- Futures -1.1% nghiêm trọng nhưng CHƯA phải panic (-3%+ sẽ là panic)
+- VIX futures chỉ ~20.4 (chưa spike lên 25-30 = chưa có capitulation)
+- Bitcoin giữ trên $70K (support quan trọng)
+- Iran rhetoric mạnh nhưng CHƯA hành động quân sự</p>
+<p><strong>Điểm cần cảnh giác:</strong>
+- CENTCOM xác nhận phong tỏa bắt đầu Thứ Hai → không còn "chỉ là lời nói"
+- WTI vượt $105 trên CME → narrative dầu $100+ "new normal" đang hình thành
+- UMich Consumer Sentiment 47.6 (thấp nhất lịch sử kể từ 1980, BLS 04/10) + dầu $104 = Fed bị kẹt giữa lạm phát (không thể cắt) và kinh tế suy yếu (không thể tăng)
+- PPI Thứ Ba sẽ là catalyst quyết định narrative lạm phát</p>
+<p><strong>Điểm quyết định tiếp theo:</strong>
+1. <strong>Đêm nay — Asian markets:</strong> Mức độ sell-off châu Á
+2. <strong>Sáng Thứ Hai 04/13 — Pre-market:</strong> Bank earnings + phản ứng overnight
+3. <strong>Thứ Ba 04/14 5:30 AM PDT:</strong> PPI tháng 3 — quyết định narrative energy pass-through</p>
+<hr />
+<p><em>Cập nhật lúc 8:00 PM PDT (11:00 PM EDT), 04/12/2026. Giá chứng khoán chính thức là close Thứ Sáu 04/10. Futures mở từ 3:00 PM PDT. Crypto live. Gold/Bond/DXY chờ thị trường mở Thứ Hai. Nguồn: CNBC, Bloomberg, Fortune, NBC News, Al Jazeera, NPR, CoinDesk, Barchart.</em></p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Phân Tích Chứng Khoán Mỹ <span class="footer-divider">•</span> Báo cáo & Cập nhật thị trường</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #6e7681;">
+                Cập nhật lúc 2026 04 12
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

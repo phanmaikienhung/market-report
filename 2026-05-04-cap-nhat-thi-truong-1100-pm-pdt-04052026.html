@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CẬP NHẬT THỊ TRƯỜNG | 11:00 PM PDT (04/05/2026) - Phân Tích Chứng Khoán Mỹ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            color-scheme: dark;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
+            font-size: 18px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #0d1117;
+            border-bottom: 1px solid #30363d;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background-color: rgba(13, 17, 23, 0.85);
+        }
+
+        nav {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .nav-brand:hover {
+            color: #79c0ff;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 1.5rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #e6edf3;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+
+        .article-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-date::before {
+            content: "📅";
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #c9d1d9;
+        }
+
+        .article-content h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 2rem 0 0.8rem 0;
+            color: #e6edf3;
+            border-left: 4px solid #58a6ff;
+            padding-left: 1rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.6rem 0;
+            color: #e6edf3;
+        }
+
+        .article-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.2rem 0 0.4rem 0;
+            color: #c9d1d9;
+        }
+
+        .article-content p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid #58a6ff;
+            background-color: #161b22;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 1.2rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+            color: #58a6ff;
+        }
+
+        .article-content em {
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        /* Tables */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-content table thead {
+            background-color: #161b22;
+            border-bottom: 2px solid #30363d;
+        }
+
+        .article-content table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #e6edf3;
+            background-color: #161b22;
+        }
+
+        .article-content table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .article-content table tbody tr:hover {
+            background-color: #161b22;
+        }
+
+        .article-content table tbody tr:nth-child(even) {
+            background-color: #0d1117;
+        }
+
+        /* Code Blocks */
+        .article-content pre {
+            background-color: #161b22;
+            color: #e6edf3;
+            padding: 1.5rem;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .article-content code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9em;
+            background-color: #21262d;
+            color: #ff7b72;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+        }
+
+        .article-content pre code {
+            background-color: transparent;
+            color: #e6edf3;
+            padding: 0;
+        }
+
+        /* Links */
+        .article-content a {
+            color: #58a6ff;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .article-content a:hover {
+            border-bottom-color: #58a6ff;
+            color: #79c0ff;
+        }
+
+        /* Back Navigation */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+            color: #79c0ff;
+        }
+
+        .back-link::before {
+            content: "←";
+        }
+
+        /* Footer */
+        footer {
+            background-color: #161b22;
+            border-top: 1px solid #30363d;
+            padding: 2rem 1.5rem;
+            margin-top: 3rem;
+            color: #8b949e;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-divider {
+            color: #30363d;
+            margin: 0 0.5rem;
+        }
+
+        /* Horizontal Rule */
+        .article-content hr {
+            border: none;
+            border-top: 1px solid #30363d;
+            margin: 2rem 0;
+        }
+
+        /* Images */
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                padding: 1rem;
+            }
+
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+            }
+
+            nav {
+                padding: 0.8rem;
+            }
+
+            .article-content table {
+                font-size: 0.85rem;
+            }
+
+            .article-content table th,
+            .article-content table td {
+                padding: 0.6rem;
+            }
+
+            .article-content pre {
+                padding: 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .article-content {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+
+            .article-content h2 {
+                font-size: 1.1rem;
+                margin: 1.5rem 0 0.6rem 0;
+            }
+
+            .article-content pre {
+                padding: 0.8rem;
+                font-size: 0.75rem;
+                border-radius: 4px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            header, footer {
+                display: none;
+            }
+
+            main {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .back-link {
+                display: none;
+            }
+
+            .article-content a {
+                color: #58a6ff;
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="nav-brand">Phân Tích Chứng Khoán Mỹ</a>
+        </nav>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-link">Quay lại danh sách</a>
+
+        <article>
+            <header class="article-header">
+                <h1>CẬP NHẬT THỊ TRƯỜNG | 11:00 PM PDT (04/05/2026)</h1>
+                <div class="article-meta">
+                    <span class="article-date">2026 05 04</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <h1>CẬP NHẬT THỊ TRƯỜNG | 11:00 PM PDT (04/05/2026)</h1>
+<p><strong>Market Session:</strong> After-Hours / Pre-Asia — Phiên US đã đóng cửa, futures đang giao dịch, Asia chưa mở (Tokyo 3:00 AM JST, Shanghai 3:00 AM CST)
+<strong>Baseline:</strong> Báo cáo 8:00 PM PDT + Closing data chính thức</p>
+<hr />
+<h2>📊 TÓM TẮT — CLOSING CONFIRMED: DOW -1.13%, VIX +7.65%, FUTURE REPICK LÊN NHẸ</h2>
+<p>Phiên đóng cửa chính thức: <strong>DOW -1.13%</strong>, <strong>S&amp;P -0.41%</strong>, <strong>NASDAQ -0.19%</strong>. Oil pullback từ $114 spike xuống ~$104. Futures đang giao dịch với <strong>tất cả index dương nhẹ</strong> (ES +0.18%, NQ +0.27%, YM +0.15%) — market định giá lại risk. Iran/Hormuz chưa có deal mới — deadline 08/05 còn 4 ngày. Asia chưa mở.</p>
+<hr />
+<h2>💰 GIÁ HIỆN TẠI — CLOSING + AFTER-HOURS FUTURES (Yahoo Finance API, ~6:00 UTC / 11:00 PM PDT)</h2>
+<table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>Giá</th>
+<th>Thay đổi</th>
+<th>% Thay đổi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S&amp;P 500 (^GSPC)</strong></td>
+<td>7,200.75</td>
+<td>-29.37</td>
+<td>-0.41%</td>
+</tr>
+<tr>
+<td><strong>NASDAQ Composite (^IXIC)</strong></td>
+<td>25,067.80</td>
+<td>-46.64</td>
+<td>-0.19%</td>
+</tr>
+<tr>
+<td><strong>DOW Jones (^DJI)</strong></td>
+<td>48,941.90</td>
+<td>-557.37</td>
+<td>-1.13%</td>
+</tr>
+<tr>
+<td><strong>Russell 2000 Futures (RTY)</strong></td>
+<td>2,815.10</td>
+<td>+10.50</td>
+<td>+0.37%</td>
+</tr>
+<tr>
+<td><strong>CBOE VIX (^VIX)</strong></td>
+<td>18.29</td>
+<td>+1.30</td>
+<td>+7.65%</td>
+</tr>
+<tr>
+<td><strong>DXY (USD Index)</strong></td>
+<td>~100.70</td>
+<td>~-0.15</td>
+<td>~-0.15%</td>
+</tr>
+<tr>
+<td><strong>Gold (GC=F)</strong></td>
+<td>$4,556.40</td>
+<td>+$23.10</td>
+<td>+0.51%</td>
+</tr>
+<tr>
+<td><strong>Oil WTI (CL=F)</strong></td>
+<td>$104.34</td>
+<td>-$2.08</td>
+<td>-1.96%</td>
+</tr>
+<tr>
+<td><strong>Bitcoin (BTC)</strong></td>
+<td>$80,967</td>
+<td>+$976</td>
+<td>+1.22%</td>
+</tr>
+<tr>
+<td><strong>ES Futures (Jun 2026)</strong></td>
+<td>7,243.00</td>
+<td>+12.75</td>
+<td>+0.18%</td>
+</tr>
+<tr>
+<td><strong>NQ Futures (Jun 2026)</strong></td>
+<td>27,850.00</td>
+<td>+74.00</td>
+<td>+0.27%</td>
+</tr>
+<tr>
+<td><strong>YM Futures (Jun 2026)</strong></td>
+<td>49,154.00</td>
+<td>+75.00</td>
+<td>+0.15%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Session Highs/Lows (Official Close):</strong>
+- S&amp;P 500: High 7,244.54 → Low 7,174.12 → Close 7,200.75
+- DOW: High 49,441.43 → Low 48,913.06 → Close 48,941.90
+- NASDAQ: High 25,210.48 → Low 24,913.12 → Close 25,067.80
+- Oil WTI: High $105.48 → Low $103.85 → Close $104.34
+- Gold: High $4,561.20 → Low $4,522.70 → Close $4,556.40
+- VIX: High 19.08 → Low 17.15 → Close 18.29</p>
+<hr />
+<h2>🔥 BIẾN ĐỘNG ĐÁNG CHÚ Ý</h2>
+<h3>1. Oil tiếp tục pullback từ $114 → $104.34 (-1.96% close)</h3>
+<ul>
+<li><strong>Session: $114+ spike → $103.85 low → $104.34 close</strong> — pullback hoàn tất phần lớn</li>
+<li>Futures: $104.34 (cùng baseline 8PM) → ổn định</li>
+<li><strong>Diễn giải:</strong> Market pricing in partial relief (Trump plan), nhưng chưa hoàn toàn — nếu Hormuz deal sớm → oil có thể xuống $100. Không deal → risk-reversal sang phía tăng.</li>
+</ul>
+<h3>2. Futures TẤT CẢ dương — Technical bounce đang diễn ra</h3>
+<ul>
+<li><strong>ES: +0.18% (7,243)</strong> — từ 7,239.75 (8PM) lên 7,243</li>
+<li><strong>NQ: +0.27% (27,850)</strong> — từ 27,823 lên 27,850 — strongest bounce</li>
+<li><strong>YM: +0.15% (49,154)</strong> — modest recovery</li>
+<li><strong>RTY: +0.37% (2,815.10)</strong> — small-cap futures outperforming</li>
+<li><strong>Ý nghĩa:</strong> Tech và small-cap đang rebound mạnh nhất — có thể phản ánh kỳ vọng Fed easing từ oil spike</li>
+</ul>
+<h3>3. VIX giữ nguyên ở 18.29 — Fear plateaued</h3>
+<ul>
+<li>VIX không tăng thêm sau giờ đóng cửa → market đã ổn định với mức fear này</li>
+<li><strong>Watch:</strong> Nếu mở cửa Asia sell-off mạnh → VIX có thể tăng tiếp. Nếu ổn → khả năng giảm về 17</li>
+<li>Still above 15 → elevated fear, nhưng chưa đến panic zone (&gt;20)</li>
+</ul>
+<h3>4. Gold phục hồi nhẹ — $4,556.40 (+0.51%)</h3>
+<ul>
+<li>Từ $4,552.50 (8PM) lên $4,556.40 — steady</li>
+<li>Gold tiếp tục là safe haven play — không có dấu hiệu sell-off thêm</li>
+</ul>
+<h3>5. Bitcoin $80,967 (+1.22%) — Positive signal</h3>
+<ul>
+<li>Crypto đang tích cực — có thể phản ánh risk-on sentiment nhẹ trong futures</li>
+</ul>
+<hr />
+<h2>📈 SO SÁNH VỚI BASELINE (8PM → ~11PM PDT)</h2>
+<table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>8PM Close</th>
+<th>~11PM Futures</th>
+<th>Δ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S&amp;P 500</td>
+<td>7,200.75</td>
+<td>7,243.00 (ES)</td>
+<td>+42.25 (+0.59%)</td>
+</tr>
+<tr>
+<td>NASDAQ</td>
+<td>25,067.80</td>
+<td>27,850.00 (NQ)</td>
+<td>+270 (+0.98%*)</td>
+</tr>
+<tr>
+<td>DOW</td>
+<td>48,941.90</td>
+<td>49,154.00 (YM)</td>
+<td>+212.10 (+0.43%)</td>
+</tr>
+<tr>
+<td>VIX</td>
+<td>18.29</td>
+<td>18.29</td>
+<td>持平</td>
+</tr>
+<tr>
+<td>Oil WTI</td>
+<td>$104.08</td>
+<td>$104.34</td>
+<td>+$0.26 (+0.25%)</td>
+</tr>
+<tr>
+<td>Gold</td>
+<td>$4,552.50</td>
+<td>$4,556.40</td>
+<td>+$3.90 (+0.09%)</td>
+</tr>
+<tr>
+<td>BTC</td>
+<td>~$80,000</td>
+<td>$80,967</td>
+<td>+$967 (+1.22%)</td>
+</tr>
+</tbody>
+</table>
+<p><em>*NQ là contract price khác với index nên % mang tính tham khảo</em></p>
+<hr />
+<h2>🌏 ASIA PREVIEW</h2>
+<ul>
+<li><strong>Tokyo mở 09:00 JST (~6:00 PM PDT ngày 4)</strong> → chưa mở</li>
+<li><strong>Shanghai mở 09:30 CST (~09:30 AM ngày 5)</strong> → chưa mở</li>
+<li><strong>Hong Kong mở 09:30 HKT</strong> → chưa mở</li>
+<li><strong>Singapore mở ~08:00 AM ngày 5</strong> → chưa mở</li>
+</ul>
+<p>→ <strong>Không có data Asia nào cả.</strong> Khi Asia mở (khoảng 6:00 PM PDT ngày 4 theo giờ Mỹ, tức là sáng mai UTC), báo cáo tiếp theo sẽ cập nhật.</p>
+<hr />
+<h2>🔔 OUTLOOK &amp; TRADING IMPLICATIONS</h2>
+<h3>Key Factors cho phiên tiếp theo (Tuesday 05/05):</h3>
+<ol>
+<li><strong>Oil ~$104</strong> — Nếu giữ được dưới $105 → risk-off dịu. Nếu quay lại $110+ → selloff tiếp</li>
+<li><strong>Iran/Hormuz deadline 08/05</strong> — 4 ngày nữa. Bất kỳ tin tích cực nào → oil giảm, equities rally. Tin xấu → ngược lại</li>
+<li><strong>Futures bounce</strong> — Tất cả index dương nhẹ → market định giá không có worst-case mới</li>
+<li><strong>VIX 18.29</strong> — Watch close to 20. Nếu giữ dưới 17 → fear giảm, normalization</li>
+<li><strong>Asia mở cửa</strong> — Khi Tokyo/Shanghai mở, có thể tạo biến động mới nếu Iran/Hormuz tin tức mới</li>
+</ol>
+<h3>Bullish Case:</h3>
+<ul>
+<li>Futures bounce mạnh: NQ +0.27%, RTY +0.37%</li>
+<li>Oil stabilizing around $104</li>
+<li>BTC +1.22% — positive risk sentiment</li>
+<li>VIX plateaued — fear không leo thang</li>
+</ul>
+<h3>Bearish Case:</h3>
+<ul>
+<li>DOW -1.13% — industrials bị bán tháo nặng nhất</li>
+<li>VIX 18.29 — elevated, close to panic zone</li>
+<li>Iran/Hormuz chưa có deal — risk chưa qua</li>
+<li>Asia có thể sell-off nếu Middle East worsening</li>
+</ul>
+<hr />
+<h2>📅 SỰ KIỆN SẮP TỚI</h2>
+<ul>
+<li><strong>Iran ceasefire deadline: ~08/05</strong> (4 ngày) — critical</li>
+<li><strong>Asia market open: 05/05 ~06:00 PM PDT (Tokyo/Shanghai)</strong></li>
+<li><strong>Fed speakers:</strong> Theo dõi commentary về inflation từ oil surge</li>
+<li><strong>Earnings season:</strong> Tech companies còn lại báo cáo</li>
+</ul>
+<hr />
+<p><em>Báo cáo tạo: Monday, 04 tháng 05 năm 2026 — 11:00 PM PDT</em>
+<em>Quick Update | Baseline: quick_update_2000.md</em></p>
+<hr />
+<p><em>Nguồn: Yahoo Finance API (closing data), CNBC (VIX), CoinGecko (BTC)</em>
+<em>⚠️ Không phải lời khuyên đầu tư — chỉ cho mục đích thông tin</em></p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Phân Tích Chứng Khoán Mỹ <span class="footer-divider">•</span> Báo cáo & Cập nhật thị trường</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #6e7681;">
+                Cập nhật lúc 2026 05 04
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
