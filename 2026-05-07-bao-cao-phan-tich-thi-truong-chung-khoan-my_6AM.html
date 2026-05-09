@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ - Phân Tích Chứng Khoán Mỹ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            color-scheme: dark;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
+            font-size: 18px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #0d1117;
+            border-bottom: 1px solid #30363d;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background-color: rgba(13, 17, 23, 0.85);
+        }
+
+        nav {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .nav-brand:hover {
+            color: #79c0ff;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 1.5rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #e6edf3;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+
+        .article-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-date::before {
+            content: "📅";
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #c9d1d9;
+        }
+
+        .article-content h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 2rem 0 0.8rem 0;
+            color: #e6edf3;
+            border-left: 4px solid #58a6ff;
+            padding-left: 1rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.6rem 0;
+            color: #e6edf3;
+        }
+
+        .article-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.2rem 0 0.4rem 0;
+            color: #c9d1d9;
+        }
+
+        .article-content p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid #58a6ff;
+            background-color: #161b22;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 1.2rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+            color: #58a6ff;
+        }
+
+        .article-content em {
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        /* Tables */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-content table thead {
+            background-color: #161b22;
+            border-bottom: 2px solid #30363d;
+        }
+
+        .article-content table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #e6edf3;
+            background-color: #161b22;
+        }
+
+        .article-content table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .article-content table tbody tr:hover {
+            background-color: #161b22;
+        }
+
+        .article-content table tbody tr:nth-child(even) {
+            background-color: #0d1117;
+        }
+
+        /* Code Blocks */
+        .article-content pre {
+            background-color: #161b22;
+            color: #e6edf3;
+            padding: 1.5rem;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .article-content code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9em;
+            background-color: #21262d;
+            color: #ff7b72;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+        }
+
+        .article-content pre code {
+            background-color: transparent;
+            color: #e6edf3;
+            padding: 0;
+        }
+
+        /* Links */
+        .article-content a {
+            color: #58a6ff;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .article-content a:hover {
+            border-bottom-color: #58a6ff;
+            color: #79c0ff;
+        }
+
+        /* Back Navigation */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+            color: #79c0ff;
+        }
+
+        .back-link::before {
+            content: "←";
+        }
+
+        /* Footer */
+        footer {
+            background-color: #161b22;
+            border-top: 1px solid #30363d;
+            padding: 2rem 1.5rem;
+            margin-top: 3rem;
+            color: #8b949e;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-divider {
+            color: #30363d;
+            margin: 0 0.5rem;
+        }
+
+        /* Horizontal Rule */
+        .article-content hr {
+            border: none;
+            border-top: 1px solid #30363d;
+            margin: 2rem 0;
+        }
+
+        /* Images */
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                padding: 1rem;
+            }
+
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+            }
+
+            nav {
+                padding: 0.8rem;
+            }
+
+            .article-content table {
+                font-size: 0.85rem;
+            }
+
+            .article-content table th,
+            .article-content table td {
+                padding: 0.6rem;
+            }
+
+            .article-content pre {
+                padding: 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .article-content {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+
+            .article-content h2 {
+                font-size: 1.1rem;
+                margin: 1.5rem 0 0.6rem 0;
+            }
+
+            .article-content pre {
+                padding: 0.8rem;
+                font-size: 0.75rem;
+                border-radius: 4px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            header, footer {
+                display: none;
+            }
+
+            main {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .back-link {
+                display: none;
+            }
+
+            .article-content a {
+                color: #58a6ff;
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="nav-brand">Phân Tích Chứng Khoán Mỹ</a>
+        </nav>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-link">Quay lại danh sách</a>
+
+        <article>
+            <header class="article-header">
+                <h1>BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ</h1>
+                <div class="article-meta">
+                    <span class="article-date">2026 05 07</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <h1>BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ</h1>
+<h2>Thursday, 07/05/2026 — Pre-Market Session</h2>
+<p><strong>Loại báo cáo:</strong> FULL
+<strong>Phiên thị trường:</strong> Pre-market (Futures) — Phiên US đóng cửa từ 4:00 PM ET, 06/05
+<strong>Phương pháp:</strong> Top-Down Hybrid (Macro-First × Multi-Layer × Narrative-Driven)
+<strong>Quy ước ngày tháng:</strong> MM/DD/YYYY
+<strong>Phiên bản:</strong> 1.0
+<strong>Baseline:</strong> bao_cao_thi_truong_20260506_0600.md, quick_update_0900.md, quick_update_1130.md, bao_cao_thi_truong_20260506_3PM.md, quick_update_2000.md, quick_update_2300.md</p>
+<hr />
+<h2>⚡ BẢN TIN NHANH (Quick Headlines)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Sự kiện</th>
+<th>Độ tin cậy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Iran peace deal: Tehran đang xem xét đề xuất của Mỹ, deal optimism tăng mạnh</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Oil giảm mạnh -4.9% trong pre-market (~$90.56 WTI Jun) do kỳ vọng deal Iran</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+<tr>
+<td>3</td>
+<td>S&amp;P 500 futures tăng +0.17% (~7,402), hướng tới test ATH mới 7,470</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Kevin Warsh sẽ bỏ phiếu xác nhận làm Fed Chair ngày 11/5 — Powell hết nhiệm kỳ 15/5</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+<tr>
+<td>5</td>
+<td>ADP Employment April: 109K vs 84K forecast — strong beat</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Gold tiến gần $4,760 (+1.4%), Silver mạnh +6.16% ở $82.065</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+<tr>
+<td>7</td>
+<td>USD Index yếu, giảm xuống ~97.90 — 2 ngày liên tục mất giá trong descending channel</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Analysts: "Bulls eye new highs" — sentiment đang pricing best-case scenario</td>
+<td>⚠️ ĐANG BÀN</td>
+</tr>
+<tr>
+<td>9</td>
+<td>BTC technical action cho thấy bull market theo Tom Lee/Fundstrat</td>
+<td>⚠️ ĐANG BÀN</td>
+</tr>
+<tr>
+<td>10</td>
+<td>NFP Friday 08/05 là binary event lớn nhất của tuần</td>
+<td>⚠️ ĐANG BÀN</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>📋 TÓM TẮT ĐIỀU HÀNH (Executive Summary)</h2>
+<p>Thị trường US mở cửa pre-market trong sentiment risk-on mạnh mẽ, được thúc đẩy bởi ba trụ cột chính: (1) Hy vọng deal Iran ngày càng tăng cao với việc Tehran xem xét đề xuất của Mỹ, (2) Oil giảm mạnh (-4.9%) giải tỏa lo ngại lạm phát và cung ứng năng lượng, (3) AI investment cycle vẫn được xem là durable anchor cho earnings growth của tech sector. SPX futures đang ở ~7,402 (+0.17% so với close Friday 7,365.12), NDX futures ~28,755 (+0.13%), DJIA futures ~50,158 (+0.25%).</p>
+<p>Phiên đóng cửa Friday (06/05) đã tạo <strong>all-time high mới cho S&amp;P 500</strong> ở 7,369.22, đóng cửa ở 7,365.12 (+1.46%). Dow +1.24%, Nasdaq Composite +2.02%, Russell 2000 +1.47%. Tất cả 4 indices đều đóng cửa gần ATH.</p>
+<p><strong>VIX duy trì ở mức thấp 17.35</strong> — volatility suppression tiếp tục phản ánh market đang pricing best-case scenario. Tuy nhiên, analyst nhận định rằng thị trường đang "pricing in perfection" — điều này làm cho market dễ bị tổn thương nếu có bất kỳ catalyst nào trái ngược.</p>
+<p><strong>NFP Friday 08/05 là catalyst lớn nhất còn lại trong tuần.</strong> ADP vừa rồi robust (109K vs 84K forecast), cho thấy labor market vẫn strong. Nếu NFP cũng strong (&gt;150K), Fed hawkish pressure sẽ tăng lên — đặc biệt trong bối cảnh ISM Services (53.6 vs 54.3 forecast) cho thấy economic activity vẫn ở vùng expansion.</p>
+<hr />
+<p><strong>Điểm HỘI TỤ toàn bộ 4 trụ cột:</strong></p>
+<ol>
+<li>
+<p><strong>Macro × Geopolitics × Sectors:</strong> Iran deal optimism → Oil giảm mạnh (-4.9%) → Inflation fears giảm → Equity bullish (đặc biệt Tech/AI). Gold vẫn mạnh (+1.4%) vì USD yếu + safe-haven residual demand. Đây là hội tụ quan trọng nhất hiện tại — năng lượng và equity đang cùng hướng lên do deal Iran.</p>
+</li>
+<li>
+<p><strong>Geopolitics × Options:</strong> Iran deal narrative đang bị options market pricing heavily vào risk-on. VIX 17.35 thấp bất thường trong bối cảnh geopolitical tensions (Iran war bắt đầu ~March 2026). Nếu deal thất bại, VIX có thể spike nhanh từ 17 lên 25+ — dealer gamma position đang net long gamma → suppression volatility cho đến khi có catalyst ngược.</p>
+</li>
+<li>
+<p><strong>Macro × Bonds × FX:</strong> DXY ~97.90 (2 ngày giảm) + 10Y yield ~4.35-4.36% + Fed hawkish tilt → Fed vẫn chưa pivot. Kevin Warsh (nominated Fed Chair) được kỳ vọng sẽ hawkish hơn Powell. 2Y/10Y spread ~-68bps (still inverted nhưng flattening). Treasury market không có bất thường lớn nhưng narrative "higher for longer" vẫn dominant.</p>
+</li>
+<li>
+<p><strong>Sectors × Micro × Options:</strong> Tech/AI dẫn dắt rally nhưng valuation đang stretched. Semiconductor stocks continue driving SPX mới ATH. Russell 2000 (+1.47%) cũng tăng mạnh → breadth đang tốt, không chỉ là mega-cap driven. Oil &amp; energy sector là losers chính do deal Iran — nhưng oil price drop hỗ trợ consumer và airline sectors.</p>
+</li>
+</ol>
+<p><strong>Điểm PHÂN KỲ cần chú ý:</strong></p>
+<ol>
+<li>
+<p><strong>Oil giảm mạnh -4.9% trong khi Gold tăng +1.4%:</strong> Bình thường, oil giảm do Iran deal (supply concern giảm) nên gold cũng giảm (safe-haven demand giảm). Nhưng gold vẫn tăng mạnh → signal cho thấy USD yếu + inflation expectations tăng đang overpower Iran de-escalation effect.</p>
+</li>
+<li>
+<p><strong>VIX ở 17.35 trong bối cảnh Iran war vẫn ongoing:</strong> VIX chỉ thực sự ở mức này khi không có geopolitical risk pricing. Nhưng Iran war vẫn tồn tại (chỉ có deal "hopes"). Phân kỳ giữa risk-off reality và risk-on pricing là điểm cần monitor.</p>
+</li>
+<li>
+<p><strong>ADP strong (109K) nhưng ISM Services (53.6 vs 54.3 forecast) dưới expectation:</strong> Labor market strong nhưng economic activity đang chậm lại — điều này có thể dẫn đến narrative "soft landing still possible nhưng harder than expected" cho NFP.</p>
+</li>
+</ol>
+<hr />
+<h2>I. CÂU CHUYỆN THỊ TRƯỜNG — TIMELINE CHI TIẾT</h2>
+<h3>1.1 Timeline chi tiết phiên (giờ PDT)</h3>
+<table>
+<thead>
+<tr>
+<th>Giờ PDT</th>
+<th>Sự kiện</th>
+<th>Chi tiết</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00</td>
+<td>Market Watch</td>
+<td>Phiên US đã đóng từ 1:00 PM PDT Friday 06/05</td>
+</tr>
+<tr>
+<td>05:30</td>
+<td>Initial Jobless Claims (TODAY)</td>
+<td>200K actual vs 206K forecast — improvement</td>
+</tr>
+<tr>
+<td>05:30</td>
+<td>U.S. Productivity Q1</td>
+<td>0.8% actual vs 1.1% forecast — miss</td>
+</tr>
+<tr>
+<td>06:30</td>
+<td>Pre-market open</td>
+<td>Futures mở cửa, price discovery</td>
+</tr>
+<tr>
+<td>07:00 ET</td>
+<td>Fed Speaker: Kashkari (Minneapolis)</td>
+<td>4:00 AM PDT — potential rate commentary</td>
+</tr>
+<tr>
+<td>08:30 ET</td>
+<td>Fed Speaker: Hammack (Cleveland)</td>
+<td>5:30 AM PDT</td>
+</tr>
+<tr>
+<td>08:30 ET</td>
+<td>Construction Spending Mar</td>
+<td>Forecast: +0.3%</td>
+</tr>
+<tr>
+<td>09:00 ET</td>
+<td>Kevin Warsh article</td>
+<td>6:00 AM PDT — "$100M mystery atop Fed"</td>
+</tr>
+<tr>
+<td>09:30 ET</td>
+<td>Bitcoin analysis</td>
+<td>6:30 AM PDT — Fundstrat: BTC → bull market</td>
+</tr>
+<tr>
+<td>10:00 ET</td>
+<td>Consumer Credit Mar</td>
+<td>Forecast: $12.5B vs Prev $9.5B</td>
+</tr>
+<tr>
+<td>10:00 ET</td>
+<td>Fed Speaker: Williams (NYC)</td>
+<td>7:00 AM PDT</td>
+</tr>
+<tr>
+<td>16:00 ET</td>
+<td>Market Close</td>
+<td>1:00 PM PDT</td>
+</tr>
+</tbody>
+</table>
+<h3>1.2 Con số chính thức — Đóng cửa phiên 06/05/2026</h3>
+<table>
+<thead>
+<tr>
+<th>Index</th>
+<th>Giá đóng cửa</th>
+<th>Thay đổi</th>
+<th>%</th>
+<th>52W High</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S&amp;P 500 (.INX)</td>
+<td><strong>7,365.12</strong></td>
+<td>+105.90</td>
+<td>+1.46%</td>
+<td>7,369.22</td>
+</tr>
+<tr>
+<td>Nasdaq Composite (.IXIC)</td>
+<td><strong>25,838.94</strong></td>
+<td>+512.82</td>
+<td>+2.02%</td>
+<td>25,850.19</td>
+</tr>
+<tr>
+<td>Dow Jones (.DJI)</td>
+<td><strong>49,910.59</strong></td>
+<td>+612.34</td>
+<td>+1.24%</td>
+<td>50,512.79</td>
+</tr>
+<tr>
+<td>Russell 2000 (.RUT)</td>
+<td><strong>2,886.77</strong></td>
+<td>+41.77</td>
+<td>+1.47%</td>
+<td>2,888.62</td>
+</tr>
+</tbody>
+</table>
+<h3>1.3 Pre-Market Analysis</h3>
+<p><strong>Pre-market futures (07/05 ~6:00 AM PDT):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Futures</th>
+<th>Giá</th>
+<th>Thay đổi</th>
+<th>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E-Mini S&amp;P 500 (ES)</td>
+<td><strong>~7,402</strong></td>
+<td><strong>+~12-13</strong></td>
+<td><strong>+~0.17%</strong></td>
+</tr>
+<tr>
+<td>E-Mini Nasdaq 100 (NQ)</td>
+<td><strong>~28,755</strong></td>
+<td><strong>+~38.5</strong></td>
+<td><strong>+~0.13%</strong></td>
+</tr>
+<tr>
+<td>E-Mini Dow (YM)</td>
+<td><strong>~50,158</strong></td>
+<td><strong>+~124</strong></td>
+<td><strong>+~0.25%</strong></td>
+</tr>
+<tr>
+<td>Russell 2000 (RTY)</td>
+<td><strong>~2,903</strong></td>
+<td><strong>~+16-17</strong></td>
+<td><strong>~+0.55%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nhận định:</strong> Futures tăng nhẹ (0.1-0.25%) sau phiên Friday mạnh. Market đang consolidate gains — không surge mạnh trong pre-market nhưng cũng không selloff. Oil giảm mạnh (-4.9%) là yếu tố duy nhất tạo divergence đáng kể so với close Friday.</p>
+<h3>1.4 Session Analysis (Dự báo phiên 07/05)</h3>
+<p><strong>Outlook phiên:</strong> Bias <strong>Bullish</strong> nhưng với caution. Oil drop hỗ trợ equities nhưng USD weakness có thể gây pressure cho multinational earnings. NFP Friday là binary event lớn nhất — market đang position cho cả hai kịch bản.</p>
+<p><strong>Support &amp; Resistance levels cho SPX:</strong>
+- <strong>Resistance:</strong> 7,400 → 7,470 (161.8% Fib extension) → 7,500 (round number)
+- <strong>Support:</strong> 7,300-7,350 → 7,220-7,300 → 7,043 (prior ATH) → 7,000 (psychological)</p>
+<hr />
+<h2>II. TỔNG QUAN MACRO &amp; FED</h2>
+<h3>2.1 Interest Rates &amp; Inflation</h3>
+<ul>
+<li><strong>Fed Funds Rate:</strong> 4.25-4.50% (từ FOMC April 30, 2026)</li>
+<li><strong>PCE (MoM) March:</strong> 0.7% | <strong>YoY:</strong> 3.5% (trên target)</li>
+<li><strong>Core PCE (MoM) March:</strong> 0.3% | <strong>YoY:</strong> 3.2%</li>
+<li><strong>CPI April Forecast:</strong> +0.9% MoM, +3.3% YoY</li>
+<li><strong>Core CPI April Forecast:</strong> +0.2% MoM</li>
+</ul>
+<p><strong>Assessment:</strong> Inflation vẫn trên 3% — Fed chưa thể cut rate. Oil price drop (từ $100+ xuống ~$90) có thể giúp giảm inflation trong 1-2 tháng tới. <strong>Fed pivot vẫn chưa trong tầm nhìn</strong> — thị trường pricing rate cut sớm nhất Q3/Q4 2026.</p>
+<h3>2.2 Yields Curve</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Giá</th>
+<th>Ghi chú</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10Y Treasury Yield</td>
+<td><strong>~4.35-4.36%</strong></td>
+<td>Friday close: 4.36%, price: 109.188 (-0.10)</td>
+</tr>
+<tr>
+<td>30Y Treasury Bond</td>
+<td><strong>~4.93-4.94%</strong></td>
+<td>Friday close: 4.93%, price: 113.688 (+0.06)</td>
+</tr>
+<tr>
+<td>2Y Yield</td>
+<td><strong>~4.03%</strong></td>
+<td>Estimate</td>
+</tr>
+<tr>
+<td>2Y/10Y Spread</td>
+<td><strong>~-68 bps</strong></td>
+<td>Still inverted nhưng flattening</td>
+</tr>
+<tr>
+<td>10Y/30Y Spread</td>
+<td><strong>~-58 bps</strong></td>
+<td>Steepening trend</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Assessment:</strong> Yield curve vẫn inverted nhưng đang flattening. Oil price drop hỗ trợ giảm inflation expectations → 10Y yield có thể giảm thêm. 30Y yield ~4.93% vẫn cao, phản ánh long-term inflation premium.</p>
+<h3>2.3 Fed Policy Outlook</h3>
+<ul>
+<li><strong>Jerome Powell:</strong> hết nhiệm kỳ 15/05/2026</li>
+<li><strong>Kevin Warsh:</strong> Nominee cho Fed Chair — cloture vote 11/05, confirmation end of next week</li>
+<li><strong>FOMC June 16-17:</strong> Warsh sẽ preside</li>
+<li><strong>Warsh profile:</strong> undeclared wealth $100M — potential conflict of interest</li>
+</ul>
+<p><strong>Market expectation cho Fed:</strong>
+- <strong>June FOMC:</strong> Hold (100% probability)
+- <strong>September FOMC:</strong> 50-60% probability cut 25bps
+- <strong>December FOMC:</strong> 70-80% probability 1-2 cuts total trong 2026</p>
+<p><strong>Hawkish/Dovish tilt:</strong> Kevin Warsh được kỳ vọng <strong>hawkish hơn Powell</strong>.</p>
+<h3>2.4 Economic Data Summary</h3>
+<table>
+<thead>
+<tr>
+<th>Dữ liệu</th>
+<th>Period</th>
+<th>Actual</th>
+<th>Forecast</th>
+<th>Previous</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADP Employment</td>
+<td>Apr</td>
+<td><strong>109K</strong></td>
+<td>84K</td>
+<td>61K</td>
+</tr>
+<tr>
+<td>ISM Services</td>
+<td>Apr</td>
+<td><strong>53.6</strong></td>
+<td>54.3</td>
+<td>54.0</td>
+</tr>
+<tr>
+<td>Job Openings</td>
+<td>Mar</td>
+<td><strong>6.87M</strong></td>
+<td>6.8M</td>
+<td>6.92M</td>
+</tr>
+<tr>
+<td>New Home Sales</td>
+<td>Mar</td>
+<td><strong>682K</strong></td>
+<td>660K</td>
+<td>583K</td>
+</tr>
+<tr>
+<td>Consumer Confidence</td>
+<td>Apr</td>
+<td><strong>92.8</strong></td>
+<td>89.0</td>
+<td>92.2</td>
+</tr>
+<tr>
+<td>GDP</td>
+<td>Q1</td>
+<td><strong>2.0%</strong></td>
+<td>2.2%</td>
+<td>0.5%</td>
+</tr>
+<tr>
+<td>Durable Orders</td>
+<td>Mar</td>
+<td><strong>0.8%</strong></td>
+<td>0.2%</td>
+<td>-1.2%</td>
+</tr>
+<tr>
+<td>Housing Starts</td>
+<td>Mar</td>
+<td><strong>1.50M</strong></td>
+<td>1.40M</td>
+<td>1.36M</td>
+</tr>
+<tr>
+<td>Initial Claims</td>
+<td>May 2</td>
+<td><strong>200K</strong></td>
+<td>206K</td>
+<td>190K</td>
+</tr>
+<tr>
+<td>Productivity</td>
+<td>Q1</td>
+<td><strong>0.8%</strong></td>
+<td>1.1%</td>
+<td>1.6%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tổng quan:</strong> Mixed nhưng bias resilient. ADP và Housing strong, GDP chậm lại (2.0% vs 2.2%). ISM Services miss nhẹ → economic activity cooling nhưng vẫn expansionary.</p>
+<hr />
+<h2>III. ĐỊA CHÍNH TRỊ</h2>
+<h3>3.1 Key Events</h3>
+<table>
+<thead>
+<tr>
+<th>Sự kiện</th>
+<th>Trạng thái</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>US-Iran Peace Deal</strong></td>
+<td>🟢 <strong>Tehran đang xem xét đề xuất của Mỹ</strong></td>
+<td><strong>MAJOR</strong></td>
+</tr>
+<tr>
+<td>Iran War Context</td>
+<td>Began ~March 2026</td>
+<td>Background</td>
+</tr>
+<tr>
+<td><strong>NFP (Friday 08/05)</strong></td>
+<td>Upcoming binary event</td>
+<td><strong>MAJOR</strong></td>
+</tr>
+<tr>
+<td>Kevin Warsh Fed Nomination</td>
+<td>Cloture vote 11/05</td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+<h3>3.2 Market Impact — Iran Deal</h3>
+<p><strong>Kịch bản 1: Deal thành công (~60%)</strong>
+- Oil giảm thêm $85-88, Equities rally SPX 7,470-7,500
+- VIX giảm sâu 14-15, Gold pullback $4,500-4,600
+- USD strengthen, Fed dovish pivot tăng</p>
+<p><strong>Kịch bản 2: Deal thất bại (~40%)</strong>
+- Oil spike $100+, Equities selloff SPX 7,000-7,200
+- VIX spike 25-30, Gold tăng $4,800+
+- USD weak, Fed delayed cut</p>
+<p><strong>Assessment:</strong> Thị trường đang pricing ~60% deal success — aggressive pricing. Nếu deal thất bại, market correction có thể xảy ra nhanh.</p>
+<h3>3.3 Tail Risk / Binary Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Probability</th>
+<th>Impact</th>
+<th>Timeline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Iran deal signed</td>
+<td>40%</td>
+<td>🔴 HIGH</td>
+<td>Next 48-72h</td>
+</tr>
+<tr>
+<td>Iran deal fails</td>
+<td>40%</td>
+<td>🔴 HIGH</td>
+<td>Next 48-72h</td>
+</tr>
+<tr>
+<td>NFP miss badly (&lt;50K)</td>
+<td>30%</td>
+<td>🟡 HIGH</td>
+<td>Friday 08/05</td>
+</tr>
+<tr>
+<td>NFP strong (&gt;200K)</td>
+<td>30%</td>
+<td>🟡 HIGH</td>
+<td>Friday 08/05</td>
+</tr>
+<tr>
+<td>Fed hawkish surprise</td>
+<td>20%</td>
+<td>🟡 Medium</td>
+<td>June FOMC</td>
+</tr>
+<tr>
+<td>Geopolitical escalation</td>
+<td>15%</td>
+<td>🔴 HIGH</td>
+<td>Ongoing</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>IV. SECTOR &amp; STOCK ANALYSIS</h2>
+<h3>4.1 Sector Performance</h3>
+<p><strong>Sector Leaders (Friday 06/05):</strong>
+- Technology: +2.5%+ — AI earnings momentum
+- Communication Services: +2.0%+ — mega-cap tech driving
+- Consumer Discretionary: +1.5% — consumer spending resilient
+- Financials: +1.2% — yield curve flattening hỗ trợ
+- Healthcare: +1.0%</p>
+<p><strong>Sector Laggards (Friday 06/05):</strong>
+- Energy: -3.0%+ — Oil crash do Iran deal
+- Materials: -0.5%
+- Real Estate: Flat</p>
+<h3>4.2 Key Stock Movers</h3>
+<table>
+<thead>
+<tr>
+<th>Stock/Theme</th>
+<th>Direction</th>
+<th>Driver</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Semiconductors (NVDA, AVGO, AMD)</td>
+<td>🟢 Bullish</td>
+<td>AI investment cycle</td>
+</tr>
+<tr>
+<td>Oil &amp; Energy (XOM, CVX)</td>
+<td>🔴 Bearish</td>
+<td>Oil -4.9% pre-market</td>
+</tr>
+<tr>
+<td>Airlines (DAL, AAL, UAL)</td>
+<td>🟢 Bullish</td>
+<td>Oil price drop → margin expansion</td>
+</tr>
+<tr>
+<td>Defense (LMT, RTX)</td>
+<td>⚠️ Neutral</td>
+<td>Iran deal reduces defense narrative</td>
+</tr>
+<tr>
+<td>Consumer (AMZN, TGT)</td>
+<td>🟢 Bullish</td>
+<td>Lower gas costs → more disposable income</td>
+</tr>
+<tr>
+<td>Bitcoin-related (COIN, MSTR)</td>
+<td>🟢 Bullish</td>
+<td>Fundstrat: BTC → bull market</td>
+</tr>
+</tbody>
+</table>
+<h3>4.3 Market Breadth</h3>
+<ul>
+<li><strong>Advance/Decline:</strong> Positive — tất cả 4 indices đều tăng &gt;1%</li>
+<li><strong>New ATHs:</strong> SPX tạo ATH mới 7,369.22</li>
+<li><strong>Sector breadth:</strong> Broad-based — cả large-cap (NDX +2.02%) và small-cap (RUT +1.47%) đều tăng</li>
+<li><strong>Performance:</strong> 5-day +3.21%, 1-month +8.59%, YTD +7.59%</li>
+</ul>
+<p><strong>Assessment:</strong> Market breadth tốt, không chỉ là mega-cap driven.</p>
+<hr />
+<h2>V. COMMODITIES &amp; FX</h2>
+<h3>5.1 Oil, Gold, Silver</h3>
+<p><strong>Crude Oil WTI (pre-market 07/05):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Contract</th>
+<th>Giá</th>
+<th>Thay đổi</th>
+<th>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jun 2026 (Front)</td>
+<td><strong>$90.56</strong></td>
+<td>-$4.52</td>
+<td>-4.76%</td>
+</tr>
+<tr>
+<td>Jul 2026</td>
+<td><strong>$87.41</strong></td>
+<td>-$3.82</td>
+<td>-4.19%</td>
+</tr>
+<tr>
+<td>Aug 2026</td>
+<td><strong>$84.16</strong></td>
+<td>-$3.37</td>
+<td>-3.85%</td>
+</tr>
+<tr>
+<td>Sep 2026</td>
+<td><strong>$81.19</strong></td>
+<td>-$2.97</td>
+<td>-3.53%</td>
+</tr>
+<tr>
+<td>Oct 2026</td>
+<td><strong>$78.59</strong></td>
+<td>-$2.60</td>
+<td>-3.20%</td>
+</tr>
+<tr>
+<td>Dec 2026</td>
+<td><strong>$75.00</strong></td>
+<td>-$2.07</td>
+<td>-2.68%</td>
+</tr>
+<tr>
+<td>Jan 2027</td>
+<td><strong>$73.80</strong></td>
+<td>-$1.83</td>
+<td>-2.42%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cấu trúc futures:</strong> Contango mạnh — front $90.56 vs Dec $75.00. Market đang pricing deal Iran sẽ kéo giá oil xuống dài hạn. Nếu deal thất bại, contango có thể reverse sang backwardation.</p>
+<p><strong>Gold &amp; Silver (pre-market 07/05):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>Giá</th>
+<th>Thay đổi</th>
+<th>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gold</td>
+<td><strong>~$4,760</strong></td>
+<td><strong>~+$65</strong></td>
+<td><strong>+~1.40%</strong></td>
+</tr>
+<tr>
+<td>Silver</td>
+<td><strong>$82.065</strong></td>
+<td><strong>+$4.762</strong></td>
+<td><strong>+6.16%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nhận định:</strong> Gold + Silver cùng hướng lên — silver mạnh hơn (+6.16%) cho thấy industrial demand tăng. Gold $4,760 — gần resistance $4,730-4,750. Breakout có thể test $4,800+.</p>
+<h3>5.2 FX</h3>
+<table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>Giá</th>
+<th>Ghi chú</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DXY</td>
+<td><strong>~97.90</strong></td>
+<td>2 ngày liên tục giảm, descending channel, bearish bias</td>
+</tr>
+<tr>
+<td>EUR/USD</td>
+<td><strong>~1.1750+</strong></td>
+<td>Holds above 1.1750</td>
+</tr>
+<tr>
+<td>GBP/USD</td>
+<td><strong>~1.3600</strong></td>
+<td>Defends gains</td>
+</tr>
+</tbody>
+</table>
+<p><strong>FX Assessment:</strong> USD đang trong downtrend ngắn hạn. Iran deal optimism → risk-on → USD sell. Nếu deal thất bại → USD rebound nhanh.</p>
+<h3>5.3 BTC/Crypto</h3>
+<table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>Giá</th>
+<th>Ghi chú</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BTC/USD</td>
+<td><strong>~$81,000-82,000</strong></td>
+<td>Friday close $81,051 (-0.46%); Fundstrat Tom Lee: BTC → bull market</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nhận định:</strong> BTC consolidate sau $82K. Fundstrat nhận định technical action cho thấy bull market. DXY weak + gold mạnh thường không hỗ trợ BTC vì gold compete với BTC như store of value.</p>
+<hr />
+<h2>VI. OPTIONS &amp; MARKET MICROSTRUCTURE</h2>
+<h3>6.1 VIX Term Structure</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Giá</th>
+<th>Ghi chú</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VIX (Current)</td>
+<td><strong>17.35</strong> (-0.04, -0.23%)</td>
+<td>Friday close: 17.39</td>
+</tr>
+<tr>
+<td>VIX Day High</td>
+<td><strong>17.60</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>VIX Day Low</td>
+<td><strong>17.32</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>VIX 52W High</td>
+<td><strong>35.30</strong></td>
+<td>03/09/26</td>
+</tr>
+<tr>
+<td>VIX 52W Low</td>
+<td><strong>13.38</strong></td>
+<td>12/24/25</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Assessment:</strong> VIX ở 17.35 — thấp hơn nhiều so với peak 35.30 tháng 3 khi Iran war bắt đầu. Market đã "normalize" geopolitical risk pricing. VIX term structure có thể đang flat hoặc slight backwardation.</p>
+<h3>6.2 Dealer Gamma Position</h3>
+<p>Với VIX 17.35 và market near ATH, dealer gamma đang net long gamma → suppression volatility. Dealer hedging bằng cách buy dips và sell rips → market ổn định hơn.</p>
+<p><strong>Risk:</strong> Iran deal binary event có thể đẩy dealer từ long gamma sang short gamma nhanh — nếu deal thất bại, dealer hedging (buying puts) sẽ amplify selloff.</p>
+<h3>6.3 Options Flow / Positioning</h3>
+<ul>
+<li><strong>SPX near ATH 7,369:</strong> Call buying có thể tập trung ở 7,400-7,500</li>
+<li><strong>Oil options:</strong> Put buying tăng ở $85-80 do Iran deal risk</li>
+<li><strong>Gold options:</strong> Call buying tăng ở $4,800+ do USD weak inflation hedge</li>
+</ul>
+<h3>6.4 Margin / Leverage Signals</h3>
+<ul>
+<li>Market near ATH → margin debt có thể cao</li>
+<li>VIX 17.35 low → leverage có thể cao</li>
+<li><strong>Risk:</strong> Margin levels cao + binary Iran event = potential margin call cascade nếu deal thất bại</li>
+</ul>
+<hr />
+<h2>VII. FORWARD LOOK &amp; SCENARIOS</h2>
+<h3>7.1 Base Case Scenario (60% probability)</h3>
+<p><strong>Iran deal partial success:</strong> Oil $88-92, Equities consolidate 7,350-7,450, VIX 16-18, NFP moderate (100-150K). <strong>SPX target: 7,400-7,450 ngắn hạn, 7,500 trung hạn.</strong></p>
+<p><strong>Portfolio:</strong> Maintain risk-on nhưng add hedges (VIX calls, gold puts) cho deal failure.</p>
+<h3>7.2 Bull Case Scenario (25% probability)</h3>
+<p><strong>Iran deal signed + NFP moderate:</strong> Oil $80-85, Equities rally SPX 7,500-7,600, VIX 13-15, Fed dovish pivot tăng.</p>
+<p><strong>Portfolio:</strong> Aggressive risk-on — tăng equity exposure, giảm gold, add tech/semiconductor.</p>
+<h3>7.3 Bear Case Scenario (15% probability)</h3>
+<p><strong>Iran deal fails + NFP strong:</strong> Oil $100-110, Equities selloff SPX 7,000-7,200 (-3% to -5%), VIX 25-30, Fed delayed cut.</p>
+<p><strong>Portfolio:</strong> Defensive shift — tăng gold, VIX calls, giảm tech, add USD hedges.</p>
+<h3>7.4 Key Catalysts Next Session</h3>
+<table>
+<thead>
+<tr>
+<th>Catalyst</th>
+<th>Time PDT</th>
+<th>Impact</th>
+<th>Direction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jobless Claims</td>
+<td>05:30</td>
+<td>Low-Medium</td>
+<td>200K vs 206K → slightly bullish</td>
+</tr>
+<tr>
+<td>Productivity Q1</td>
+<td>05:30</td>
+<td>Low-Medium</td>
+<td>0.8% vs 1.1% → slightly bearish</td>
+</tr>
+<tr>
+<td>Fed: Kashkari</td>
+<td>07:00 AM ET</td>
+<td>Medium</td>
+<td>Watch for rate commentary</td>
+</tr>
+<tr>
+<td>Fed: Hammack</td>
+<td>08:30 AM ET</td>
+<td>Medium</td>
+<td>Watch for rate commentary</td>
+</tr>
+<tr>
+<td>Consumer Credit</td>
+<td>10:00 AM ET</td>
+<td>Low</td>
+<td>$12.5B forecast</td>
+</tr>
+<tr>
+<td>Iran deal progress</td>
+<td>Ongoing</td>
+<td>🔴 HIGH</td>
+<td>Binary cho oil/equities</td>
+</tr>
+<tr>
+<td><strong>NFP (Friday)</strong></td>
+<td><strong>05:30 PDT</strong></td>
+<td><strong>🔴 HIGH</strong></td>
+<td><strong>Biggest event this week</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>7.5 Risk Register</h3>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Probability</th>
+<th>Impact</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Iran deal failure</td>
+<td>40%</td>
+<td>🔴 HIGH</td>
+<td>Buy VIX calls, gold calls</td>
+</tr>
+<tr>
+<td>NFP surprise</td>
+<td>50%</td>
+<td>🟡 HIGH</td>
+<td>Position conservatively</td>
+</tr>
+<tr>
+<td>Tech earnings miss</td>
+<td>25%</td>
+<td>🟡 Medium</td>
+<td>Monitor earnings</td>
+</tr>
+<tr>
+<td>Fed hawkish shift</td>
+<td>20%</td>
+<td>🟡 Medium</td>
+<td>Watch Warsh confirmation</td>
+</tr>
+<tr>
+<td>Oil contango reversal</td>
+<td>15%</td>
+<td>🟢 Low-Med</td>
+<td>Monitor futures curve</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>VIII. KẾT LUẬN &amp; KHUYẾN NGHỊ</h2>
+<h3>Tổng kết toàn diện</h3>
+<p>Thị trường đang ở vị trí <strong>cực kỳ thuận lợi nhưng cũng cực kỳ dễ tổn thương.</strong> Ba yếu tố cùng hội tụ: (1) Deal Iran optimism → oil drop + inflation fears giảm, (2) AI investment cycle vẫn durable → tech earnings support, (3) Economic data resilient → soft landing narrative. Tất cả tạo momentum bullish cho equities.</p>
+<p>Tuy nhiên, <strong>mức độ "priced-in" của mọi yếu tố tích cực đang rất cao:</strong> SPX gần ATH, VIX thấp bất thường, deal optimism pricing ~60% probability. Đây là recipe cho potential sharp reversal nếu catalyst nào đó trái ngược.</p>
+<h3>Khuyến nghị portfolio</h3>
+<ul>
+<li><strong>Equity bias:</strong> Bullish nhưng with reduced sizing — vị thế vừa phải vì risk/reward không favor aggressive positioning</li>
+<li><strong>Hedge required:</strong> VIX calls (18-20 strike), gold calls (4,800+), oil puts (85-80) — cost of hedge vẫn thấp (VIX 17.35)</li>
+<li><strong>Sector rotation:</strong> Overweight Tech/AI, Underweight Energy, Neutral Financials</li>
+<li><strong>Cash position:</strong> Maintain 10-15% cash cho NFP Friday — binary event cần optionality</li>
+</ul>
+<h3>Monitor checklist cho phiên 07/05</h3>
+<ul>
+<li>[ ] Jobless Claims 200K — close to consensus, low impact</li>
+<li>[ ] Productivity 0.8% miss — watch for inflation implications</li>
+<li>[ ] Fed Speakers commentary — any rate path hint?</li>
+<li>[ ] Iran deal update — Tehran response là binary catalyst</li>
+<li>[ ] NFP prep — position conservatively before Friday</li>
+</ul>
+<hr />
+<p><em>Full Report — Full Daily Intelligence (T2–T6)</em>
+<em>Generated: 07/05/2026, 06:00 AM PDT</em>
+<em>Data sources: MarketWatch, CNBC, FXStreet, Investing.com — pre-market snapshot</em></p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Phân Tích Chứng Khoán Mỹ <span class="footer-divider">•</span> Báo cáo & Cập nhật thị trường</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #6e7681;">
+                Cập nhật lúc 2026 05 07
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

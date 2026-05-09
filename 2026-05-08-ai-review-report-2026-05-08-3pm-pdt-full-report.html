@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AI Review Report — 2026-05-08 (3PM PDT Full Report) - Phân Tích Chứng Khoán Mỹ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            color-scheme: dark;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
+            font-size: 18px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #0d1117;
+            border-bottom: 1px solid #30363d;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background-color: rgba(13, 17, 23, 0.85);
+        }
+
+        nav {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .nav-brand:hover {
+            color: #79c0ff;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 1.5rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #e6edf3;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+
+        .article-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-date::before {
+            content: "📅";
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #c9d1d9;
+        }
+
+        .article-content h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 2rem 0 0.8rem 0;
+            color: #e6edf3;
+            border-left: 4px solid #58a6ff;
+            padding-left: 1rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.6rem 0;
+            color: #e6edf3;
+        }
+
+        .article-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.2rem 0 0.4rem 0;
+            color: #c9d1d9;
+        }
+
+        .article-content p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid #58a6ff;
+            background-color: #161b22;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 1.2rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+            color: #58a6ff;
+        }
+
+        .article-content em {
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        /* Tables */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-content table thead {
+            background-color: #161b22;
+            border-bottom: 2px solid #30363d;
+        }
+
+        .article-content table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #e6edf3;
+            background-color: #161b22;
+        }
+
+        .article-content table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .article-content table tbody tr:hover {
+            background-color: #161b22;
+        }
+
+        .article-content table tbody tr:nth-child(even) {
+            background-color: #0d1117;
+        }
+
+        /* Code Blocks */
+        .article-content pre {
+            background-color: #161b22;
+            color: #e6edf3;
+            padding: 1.5rem;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .article-content code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9em;
+            background-color: #21262d;
+            color: #ff7b72;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+        }
+
+        .article-content pre code {
+            background-color: transparent;
+            color: #e6edf3;
+            padding: 0;
+        }
+
+        /* Links */
+        .article-content a {
+            color: #58a6ff;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .article-content a:hover {
+            border-bottom-color: #58a6ff;
+            color: #79c0ff;
+        }
+
+        /* Back Navigation */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+            color: #79c0ff;
+        }
+
+        .back-link::before {
+            content: "←";
+        }
+
+        /* Footer */
+        footer {
+            background-color: #161b22;
+            border-top: 1px solid #30363d;
+            padding: 2rem 1.5rem;
+            margin-top: 3rem;
+            color: #8b949e;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-divider {
+            color: #30363d;
+            margin: 0 0.5rem;
+        }
+
+        /* Horizontal Rule */
+        .article-content hr {
+            border: none;
+            border-top: 1px solid #30363d;
+            margin: 2rem 0;
+        }
+
+        /* Images */
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                padding: 1rem;
+            }
+
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+            }
+
+            nav {
+                padding: 0.8rem;
+            }
+
+            .article-content table {
+                font-size: 0.85rem;
+            }
+
+            .article-content table th,
+            .article-content table td {
+                padding: 0.6rem;
+            }
+
+            .article-content pre {
+                padding: 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .article-content {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+
+            .article-content h2 {
+                font-size: 1.1rem;
+                margin: 1.5rem 0 0.6rem 0;
+            }
+
+            .article-content pre {
+                padding: 0.8rem;
+                font-size: 0.75rem;
+                border-radius: 4px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            header, footer {
+                display: none;
+            }
+
+            main {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .back-link {
+                display: none;
+            }
+
+            .article-content a {
+                color: #58a6ff;
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="nav-brand">Phân Tích Chứng Khoán Mỹ</a>
+        </nav>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-link">Quay lại danh sách</a>
+
+        <article>
+            <header class="article-header">
+                <h1>AI Review Report — 2026-05-08 (3PM PDT Full Report)</h1>
+                <div class="article-meta">
+                    <span class="article-date">2026 05 08</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <h1>AI Review Report — 2026-05-08 (3PM PDT Full Report)</h1>
+<p><strong>Review Date:</strong> 2026-05-08 22:30 PDT
+<strong>Source Report:</strong> <code>bao_cao_thi_truong_20260508_3PM.md</code>
+<strong>Deployed File:</strong> <code>2026-05-08-bao-cao-phan-tich-thi-truong-chung-khoan-my-2.html</code> (GitHub Pages)
+<strong>Deployed URL:</strong> https://phanmaikienhung.github.io/market-report/2026-05-08-bao-cao-phan-tich-thi-truong-chung-khoan-my-2.html
+<strong>Report Type:</strong> FULL — Full Daily Intelligence Report (T2–T6)
+<strong>Reviewer:</strong> Apollo (AI)
+<strong>Review Mode:</strong> Post-Deploy (deployed content reviewed against source)</p>
+<hr />
+<h2>🚨 CRITICAL DEPLOYMENT ISSUE</h2>
+<p><strong>The deployed HTML file does NOT contain the 3PM report content.</strong> The <code>-2.html</code> file served by GitHub Pages contains the 6AM pre-market report instead of the 3PM closing report. The 3PM markdown source file (518 lines) is correct locally but was not properly reflected in the deployed HTML.</p>
+<p>This is a <strong>build pipeline issue</strong> where the filename deduplication system creates the <code>-2.html</code> file but the build script may be generating incorrect content or the deployment step is picking up stale files.</p>
+<p><strong>Impact:</strong> Readers on GitHub Pages see the 6AM report instead of the 3PM full daily intelligence report. This means critical data including:
+- S&amp;P 500 ATH 7,401.20 (+0.87%)
+- Intel +13.96% ($124.92) on Apple chip deal
+- Micron +15.52% ($746.81)
+- NASDAQ +1.58%
+- All 4-pillar convergence/divergence analysis
+- Forward scenarios for next week</p>
+<p>...are NOT visible to site readers.</p>
+<hr />
+<h2>1. REVIEW OVERVIEW</h2>
+<h3>Report Metadata</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Date</td>
+<td>2026-05-08 (Friday / T6)</td>
+</tr>
+<tr>
+<td>Report Time</td>
+<td>3:00 PM PDT (10:00 PM local)</td>
+</tr>
+<tr>
+<td>Report Type</td>
+<td>FULL (weekday T2–T6)</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>Top-Down Hybrid</td>
+</tr>
+<tr>
+<td>Sections</td>
+<td>7 sections + Executive Summary + Headlines</td>
+</tr>
+<tr>
+<td>Word Count</td>
+<td>~3,800 (estimated from 518 lines)</td>
+</tr>
+</tbody>
+</table>
+<h3>Baseline Used</h3>
+<ul>
+<li><code>bao_cao_thi_truong_20260508_6AM.md</code> (pre-market report)</li>
+<li><code>quick_update_0900.md</code></li>
+<li><code>quick_update_1130.md</code></li>
+</ul>
+<p>All baselines loaded and cross-referenced for data consistency.</p>
+<hr />
+<h2>2. CATEGORY REVIEWS</h2>
+<h3>2.1 Data Accuracy Review</h3>
+<p><strong>Verdict: ⚠️ WARN — VIX discrepancy (resolved), minor price drift expected</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Report</th>
+<th>Ground Truth</th>
+<th>Delta</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S&amp;P 500 Close</td>
+<td>7,401.20</td>
+<td>7,401.20</td>
+<td>0.00%</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>NASDAQ Close</td>
+<td>26,214.19</td>
+<td>26,214.19</td>
+<td>0.00%</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>Dow Close</td>
+<td>49,634.40</td>
+<td>49,634.40</td>
+<td>0.00%</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>VIX</td>
+<td>17.19</td>
+<td>17.19</td>
+<td>0.00%</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>Gold</td>
+<td>$4,735.60</td>
+<td>$4,723.70</td>
+<td>-0.25%</td>
+<td>⚠️ WARN</td>
+</tr>
+<tr>
+<td>WTI</td>
+<td>$95.22</td>
+<td>$94.68</td>
+<td>-0.57%</td>
+<td>⚠️ WARN</td>
+</tr>
+<tr>
+<td>Brent</td>
+<td>$100.95</td>
+<td>$100.49</td>
+<td>-0.46%</td>
+<td>⚠️ WARN</td>
+</tr>
+<tr>
+<td>30Y Yield</td>
+<td>4.94%</td>
+<td>4.9397%</td>
+<td>-0.01%</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>BTC</td>
+<td>$80,243.59</td>
+<td>$80,243.59</td>
+<td>0.00%</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>INTC</td>
+<td>$124.92</td>
+<td>$124.92</td>
+<td>0.00%</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>NVDA</td>
+<td>$215.20</td>
+<td>$215.20</td>
+<td>0.00%</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>MU</td>
+<td>$746.81</td>
+<td>$746.81</td>
+<td>0.00%</td>
+<td>✅ PASS</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong>
+- VIX was corrected from 17.47 → 17.19 (1.62% error) in pre-deploy review. ✅ RESOLVED
+- Gold, WTI, Brent show minor price drift because the quick update used 11:30 close prices. The 3PM report reads from Yahoo Finance via browser but the market was already closed (Memorial Day early close 13:00 EDT = 10:00 PDT). These minor discrepancies are within acceptable tolerance.
+- All equity indices and key stocks (INTC, NVDA, MU) are exact matches.
+- 30Y yield is accurate.</p>
+<h3>2.2 Cross-Check &amp; Consistency Review</h3>
+<p><strong>Verdict: ⚠️ WARN — 3PM report claims it is "3PM PDT" but Memorial Day market closed at 10:00 PDT</strong></p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Date consistency (T6 Friday)</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>Report type FULL vs weekday</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>Baseline referenced correctly</td>
+<td>✅ PASS (all 3 baselines referenced)</td>
+</tr>
+<tr>
+<td>Data from baselines consistent</td>
+<td>✅ PASS — cross-checked against 6AM, 9AM, 11:30 reports</td>
+</tr>
+<tr>
+<td>S&amp;P close consistent across reports</td>
+<td>✅ PASS — 7,401.20 in 11:30 quick update and 3PM report</td>
+</tr>
+<tr>
+<td>NFP data consistency</td>
+<td>✅ PASS — NFP 115K consistent across all reports</td>
+</tr>
+<tr>
+<td>Sector data</td>
+<td>⚠️ WARN — 3PM report shows sector estimates (not actual closes) — reasonable given market already closed</td>
+</tr>
+<tr>
+<td>Timeline</td>
+<td>⚠️ WARN — Timeline mentions "13:00 Market Close (Early)" but the report says it was written at 3PM PDT — market was already closed 5 hours earlier</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key cross-check notes:</strong>
+- The 3PM report correctly identifies Memorial Day early close at 13:00 EDT / 10:00 PDT
+- The S&amp;P 500 close of 7,401.20 matches the 11:30 quick update
+- NFP 115K is consistent across all baseline reports
+- The report correctly notes "no data was released in this session" due to holiday</p>
+<h3>2.3 Structure Review</h3>
+<p><strong>Verdict: ✅ PASS — Full report structure with all 7 sections</strong></p>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Present</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>⚡ Bản Tin Nhanh (Quick Headlines)</td>
+<td>✅</td>
+<td>15 verified headlines with reliability indicators</td>
+</tr>
+<tr>
+<td>📋 Executive Summary</td>
+<td>✅</td>
+<td>Strong convergence/divergence analysis (4 each)</td>
+</tr>
+<tr>
+<td>I. Câu Chuyện Thị Trường</td>
+<td>✅</td>
+<td>Timeline, verified closes, pre-market analysis, session analysis</td>
+</tr>
+<tr>
+<td>II. Tổng Quan Macro &amp; Fed</td>
+<td>✅</td>
+<td>Interest rates, yields curve, Fed outlook, data calendar</td>
+</tr>
+<tr>
+<td>III. Địa Chính Trị</td>
+<td>✅</td>
+<td>Key events, market impact, tail risks</td>
+</tr>
+<tr>
+<td>IV. Sector &amp; Stock Analysis</td>
+<td>✅</td>
+<td>Sector estimates, key movers, earnings, breadth</td>
+</tr>
+<tr>
+<td>V. Commodities &amp; FX</td>
+<td>✅</td>
+<td>Oil, metals, FX inference, BTC/crypto</td>
+</tr>
+<tr>
+<td>VI. Options &amp; Market Microstructure</td>
+<td>✅</td>
+<td>VIX term structure, dealer gamma, options flow, margin</td>
+</tr>
+<tr>
+<td>VII. Forward Look &amp; Scenarios</td>
+<td>✅</td>
+<td>Base/bull/bear + catalysts + risk register + weekly outlook</td>
+</tr>
+<tr>
+<td>📊 Tổng Kết &amp; Góc Nhìn</td>
+<td>✅</td>
+<td>5 insights + 7 strategic actions</td>
+</tr>
+<tr>
+<td>Markdown Table Formatting</td>
+<td>✅</td>
+<td>All tables properly formatted with <code>|</code> delimiters</td>
+</tr>
+</tbody>
+</table>
+<h3>2.4 Narrative Quality Review</h3>
+<p><strong>Verdict: ⚠️ WARN — Some narrative sections feel generic/repetitive</strong></p>
+<p><strong>Strengths:</strong>
+- Executive Summary has excellent 4-convergence/4-divergence analysis
+- The narrative of "AI Infrastructure Super-Cycle" is well-developed across multiple sections
+- Good use of specific data points (INTC 200M volume, MU $746.81) to support narrative
+- Forward scenarios are well-structured with probabilities
+- Risk register with specific probability/impact levels</p>
+<p><strong>Weaknesses:</strong>
+- The section VII.6 "Weekly Outlook" is truncated in the source (file has 518 lines, final section cuts off at "### 7.6 Weekly Outlook (05/11–05/15)")
+- Some convergence points repeat similar information (e.g., convergence #1 and #3 both discuss yield/bond impact)
+- The "Strategic Takeaways" table at the end is generic — could be more specific to this session's unique events</p>
+<p><strong>Anti-patterns checked:</strong>
+- No false confidence language ("chắc chắn", "100%") — ✅ PASS
+- No hedging language ("có thể", "có lẽ") used excessively — ✅ PASS (used appropriately for scenarios)
+- No fabricated data — ✅ PASS (all data traceable to baselines or live data)</p>
+<h3>2.5 Deployment Issues</h3>
+<p><strong>Verdict: ❌ CRITICAL — Deployed HTML does not match source markdown</strong></p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Source file exists</td>
+<td>✅ PASS — 518 lines, correct content</td>
+</tr>
+<tr>
+<td>Ground truth clean (critical)</td>
+<td>✅ PASS — 0 critical failures</td>
+</tr>
+<tr>
+<td>HTML generation</td>
+<td>⚠️ WARN — File created but content may be wrong</td>
+</tr>
+<tr>
+<td>HTML pushed to GitHub</td>
+<td>⚠️ WARN — GitHub repo has the file but content is the 6AM report</td>
+</tr>
+<tr>
+<td>GitHub Pages serving correct content</td>
+<td>❌ FAIL — GitHub Pages serves 6AM report in -2.html</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Root cause analysis:</strong>
+The build.py filename deduplication system assigns <code>-2</code> to the second report with the same base title on the same day. The 6AM report has title "BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ" and the 3PM report has the SAME title. The build script correctly generates two filenames, but the deployed content in the <code>-2.html</code> file shows the 6AM report's content (Pre-Market May 7) rather than the 3PM report's content (Memorial Day Holiday).</p>
+<p><strong>Recommendation:</strong> The build script's title extraction (<code>extract_title</code>) only uses the first h1 heading, which is identical for both reports. Consider adding time-based disambiguation to the filename generation or including the time in the h1 heading itself (e.g., "BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ — 3:00 PM PDT").</p>
+<h3>2.6 Baseline Utilization Review</h3>
+<p><strong>Verdict: ⚠️ WARN — Report references baselines but doesn't explicitly cross-reference or update them with new developments</strong></p>
+<table>
+<thead>
+<tr>
+<th>Baseline</th>
+<th>Referenced</th>
+<th>Updated Content?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6AM pre-market report</td>
+<td>✅</td>
+<td>Partially — mentions it as baseline but doesn't update NFP (which was from 6AM) with new developments</td>
+</tr>
+<tr>
+<td>9AM quick update</td>
+<td>✅</td>
+<td>Yes — uses updated S&amp;P close, new sector data</td>
+</tr>
+<tr>
+<td>11:30 quick update</td>
+<td>✅</td>
+<td>Yes — uses as primary source for close data</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong>
+- The 3PM report should have explicitly noted "NFP 115K was already reported in the 6AM pre-market report, no new data since then" to make the baseline evolution clearer.
+- The report does NOT mention the NFP was a prior-day event (from May 7). The 6AM report covered NFP as a forward event. By 3PM, NFP was old news. This is correctly handled in the 3PM report (NFP is mentioned in the baseline context but not as a current driver).</p>
+<h3>2.7 Forward Scenario Quality Review</h3>
+<p><strong>Verdict: ✅ PASS — Three well-defined scenarios with probabilities and catalysts</strong></p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Probability</th>
+<th>Plausibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Base Case (Consolidation on ATH)</td>
+<td>55%</td>
+<td>✅ Reasonable — post-holiday week with thin catalyst</td>
+</tr>
+<tr>
+<td>Bull (AI Super-Cycle)</td>
+<td>25%</td>
+<td>✅ Possible — INTC/MU/AMD momentum strong</td>
+</tr>
+<tr>
+<td>Bear (Profit-taking on ATH)</td>
+<td>20%</td>
+<td>✅ Possible — concentration risk still elevated</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Strengths:</strong>
+- Probabilities add up to 100% ✅
+- Each scenario has specific S&amp;P/NQ/Oil target levels
+- Catalysts are specific and time-bound
+- Risk register covers 6 different risk factors with probability/impact/direction
+- Weekly outlook considers the Memorial Day week effect (low volume, thin catalyst)</p>
+<p><strong>Weaknesses:</strong>
+- The base case probability (55%) is somewhat arbitrary — no quantitative backing
+- The bear scenario's key condition ("earnings miss hàng loạt") is unlikely in a post-holiday week when earnings are sparse</p>
+<h3>2.8 Markdown Formatting Review</h3>
+<p><strong>Verdict: ✅ PASS — Proper markdown tables with <code>|</code> delimiter</strong></p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All tables use <code>|</code> delimiter</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>Table headers aligned</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>No HTML table tags</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>Bold/italic/headers used consistently</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>Horizontal rules between sections</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>Emoji usage consistent</td>
+<td>✅ PASS</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. CRITICAL ISSUES (FAIL)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Issue</th>
+<th>Severity</th>
+<th>Action Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Deployed HTML content mismatch</strong> — <code>-2.html</code> file serves 6AM report instead of 3PM report</td>
+<td>🔴 CRITICAL</td>
+<td>Fix build pipeline; re-deploy 3PM content</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. WARNINGS (WARN)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Issue</th>
+<th>Category</th>
+<th>Severity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>VIX corrected from 17.47 → 17.19 in pre-deploy (was 1.62% error)</td>
+<td>Data Accuracy</td>
+<td>⚠️ RESOLVED</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Gold, WTI, Brent minor price drift from 11:30 close (0.25–0.57%)</td>
+<td>Data Accuracy</td>
+<td>⚠️ LOW — within tolerance</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Section VII.6 Weekly Outlook appears truncated (end of file)</td>
+<td>Structure</td>
+<td>⚠️ MEDIUM</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Memorial Day early close at 10:00 PDT but report written at 3PM — market closed 5 hours prior</td>
+<td>Consistency</td>
+<td>⚠️ LOW — explained in report</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Build pipeline filename collision — same title for 6AM and 3PM reports</td>
+<td>Deployment</td>
+<td>⚠️ HIGH</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Some convergence points are redundant (yield/bond discussion repeated)</td>
+<td>Narrative</td>
+<td>⚠️ LOW</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Strategic Takeaways table is generic, could be more session-specific</td>
+<td>Narrative</td>
+<td>⚠️ LOW</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>5. VERDICT</h2>
+<p><strong>Overall Verdict: ⚠️ WARN (with CRITICAL deployment issue)</strong></p>
+<p>The <strong>3PM markdown source report is well-written</strong> with:
+- Comprehensive 4-pillar analysis across all 7 sections
+- 15 verified headlines with reliability indicators
+- 4 convergence points + 4 divergence points in Executive Summary
+- Three forward scenarios with specific probability assignments
+- Complete market data (equities, commodities, bonds, crypto, FX)
+- Risk register with 6 factors
+- Proper markdown table formatting</p>
+<p><strong>However, the deployed HTML does NOT contain the 3PM content.</strong> The <code>-2.html</code> file on GitHub Pages shows the 6AM pre-market report instead. This means readers are NOT seeing the actual 3PM full daily intelligence report.</p>
+<p><strong>Immediate action required:</strong> Fix the build pipeline filename collision and re-deploy the 3PM report.</p>
+<p><strong>Recommendations:</strong>
+1. <strong>HIGH:</strong> Fix build script — add time suffix to filename generation to avoid title collision
+2. <strong>MEDIUM:</strong> Ensure section VII.6 (Weekly Outlook) is complete — verify file wasn't truncated
+3. <strong>LOW:</strong> Reduce redundancy in convergence points
+4. <strong>LOW:</strong> Make Strategic Takeaways more session-specific</p>
+<hr />
+<p><em>AI Review by Apollo | 2026-05-08 22:30 PDT | Post-Deploy Review</em></p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Phân Tích Chứng Khoán Mỹ <span class="footer-divider">•</span> Báo cáo & Cập nhật thị trường</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #6e7681;">
+                Cập nhật lúc 2026 05 08
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
