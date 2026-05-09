@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ - Phân Tích Chứng Khoán Mỹ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            color-scheme: dark;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
+            font-size: 18px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #0d1117;
+            border-bottom: 1px solid #30363d;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background-color: rgba(13, 17, 23, 0.85);
+        }
+
+        nav {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .nav-brand:hover {
+            color: #79c0ff;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 1.5rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #e6edf3;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+
+        .article-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-date::before {
+            content: "📅";
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #c9d1d9;
+        }
+
+        .article-content h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 2rem 0 0.8rem 0;
+            color: #e6edf3;
+            border-left: 4px solid #58a6ff;
+            padding-left: 1rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.6rem 0;
+            color: #e6edf3;
+        }
+
+        .article-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.2rem 0 0.4rem 0;
+            color: #c9d1d9;
+        }
+
+        .article-content p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid #58a6ff;
+            background-color: #161b22;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 1.2rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+            color: #58a6ff;
+        }
+
+        .article-content em {
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        /* Tables */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-content table thead {
+            background-color: #161b22;
+            border-bottom: 2px solid #30363d;
+        }
+
+        .article-content table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #e6edf3;
+            background-color: #161b22;
+        }
+
+        .article-content table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .article-content table tbody tr:hover {
+            background-color: #161b22;
+        }
+
+        .article-content table tbody tr:nth-child(even) {
+            background-color: #0d1117;
+        }
+
+        /* Code Blocks */
+        .article-content pre {
+            background-color: #161b22;
+            color: #e6edf3;
+            padding: 1.5rem;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .article-content code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9em;
+            background-color: #21262d;
+            color: #ff7b72;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+        }
+
+        .article-content pre code {
+            background-color: transparent;
+            color: #e6edf3;
+            padding: 0;
+        }
+
+        /* Links */
+        .article-content a {
+            color: #58a6ff;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .article-content a:hover {
+            border-bottom-color: #58a6ff;
+            color: #79c0ff;
+        }
+
+        /* Back Navigation */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+            color: #79c0ff;
+        }
+
+        .back-link::before {
+            content: "←";
+        }
+
+        /* Footer */
+        footer {
+            background-color: #161b22;
+            border-top: 1px solid #30363d;
+            padding: 2rem 1.5rem;
+            margin-top: 3rem;
+            color: #8b949e;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-divider {
+            color: #30363d;
+            margin: 0 0.5rem;
+        }
+
+        /* Horizontal Rule */
+        .article-content hr {
+            border: none;
+            border-top: 1px solid #30363d;
+            margin: 2rem 0;
+        }
+
+        /* Images */
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                padding: 1rem;
+            }
+
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+            }
+
+            nav {
+                padding: 0.8rem;
+            }
+
+            .article-content table {
+                font-size: 0.85rem;
+            }
+
+            .article-content table th,
+            .article-content table td {
+                padding: 0.6rem;
+            }
+
+            .article-content pre {
+                padding: 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .article-content {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+
+            .article-content h2 {
+                font-size: 1.1rem;
+                margin: 1.5rem 0 0.6rem 0;
+            }
+
+            .article-content pre {
+                padding: 0.8rem;
+                font-size: 0.75rem;
+                border-radius: 4px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            header, footer {
+                display: none;
+            }
+
+            main {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .back-link {
+                display: none;
+            }
+
+            .article-content a {
+                color: #58a6ff;
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="nav-brand">Phân Tích Chứng Khoán Mỹ</a>
+        </nav>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-link">Quay lại danh sách</a>
+
+        <article>
+            <header class="article-header">
+                <h1>BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ</h1>
+                <div class="article-meta">
+                    <span class="article-date">2026 04 09</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <h1>BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ</h1>
+<h2>Ngày 04/09/2026 — Phiên Pre-Market 6:00 AM PDT</h2>
+<p><strong>Ngày:</strong> 04/09/2026 (Thứ Năm)
+<strong>Loại báo cáo:</strong> Phân tích + Dự đoán phiên giao dịch ngày mai (Thứ Sáu 04/10)
+<strong>Quy ước ngày tháng:</strong> MM/DD/YYYY (theo chuẩn Mỹ)
+<strong>Quy ước giờ:</strong> Pacific Daylight Time (PDT)
+<strong>Phương pháp:</strong> Top-Down Hybrid (Macro-First × Multi-Layer × Narrative)
+<strong>Phiên bản:</strong> 3.0 (post Tier 0-3 reviewer corrections)</p>
+<hr />
+<h2>BẢN TIN NHANH (Quick Headlines)</h2>
+<p><strong>PRE-MARKET 04/09: NGỪNG BẮN MỸ-IRAN LUNG LAY — HORMUZ VẪN ĐÓNG, ISRAEL ĐÁNH LEBANON, CPI NGÀY MAI</strong></p>
+<ul>
+<li>✅ S&amp;P 500 +2.51% (6,782.81), Dow +2.85% (+1,325 điểm), Nasdaq +2.80% — phiên tốt nhất Dow kể từ 04/2025 sau lệnh ngừng bắn Mỹ-Iran</li>
+<li>✅ Eo biển Hormuz gần như đóng băng: chỉ 4 tàu đi qua ngày 04/08, KHÔNG có tàu chở dầu nào (CNN, Stars and Stripes)</li>
+<li>✅ Israel không kích Lebanon quy mô lớn nhất kể từ đầu chiến dịch — 100 mục tiêu trong 10 phút, ít nhất 254 người thiệt mạng (Al Jazeera, NBC)</li>
+<li>⚠️ Iran cáo buộc Mỹ vi phạm ngừng bắn, đe dọa đóng lại Hormuz nếu Israel không dừng tấn công Lebanon (CNBC, CBS)</li>
+<li>⚠️ VP Vance dẫn đầu đoàn đàm phán Mỹ đến Islamabad — vòng đàm phán trực tiếp đầu tiên dự kiến 04/11 (Thứ Bảy) (Bloomberg, Al Jazeera)</li>
+<li>✅ Dầu WTI lên ~$99.39, Brent lên ~$98.43 — rebound mạnh sau khi giảm 15% hôm 04/08 (CNBC, Trading Economics, yfinance)</li>
+<li>✅ FOMC Minutes (phiên 03/17-18): Giữ lãi suất 3.50%-3.75%, một số quan chức gợi ý "strong case" cho cả tăng lẫn giảm lãi suất (Axios, Fed)</li>
+<li>✅ Trump công bố thuế 100% lên dược phẩm (Section 232, hiệu lực 07/31) + tái cấu trúc thuế thép/nhôm/đồng (White House)</li>
+<li>✅ CPI tháng 3 sẽ công bố NGÀY MAI 04/10 lúc 5:30 AM PDT — catalyst lớn nhất cho phiên Thứ Sáu</li>
+<li>✅ US Futures (6:00 AM PDT): S&amp;P 500 futures 6,806.50 (-0.25%), Nasdaq 100 futures ~25,170 (flat)</li>
+<li>✅ Vàng $4,742/oz (+0.45%), DXY 99.04, BTC ~$71,200</li>
+</ul>
+<hr />
+<h2>TÓM TẮT ĐIỀU HÀNH (Executive Summary)</h2>
+<p>Thị trường chứng khoán Mỹ vừa có phiên rally lớn nhất trong hơn một năm nhờ lệnh ngừng bắn tạm thời 2 tuần giữa Mỹ và Iran (04/08), nhưng sáng nay pre-market đã bắt đầu trả lại một phần khi thực tế cho thấy ngừng bắn cực kỳ mong manh. Eo biển Hormuz — điều kiện tiên quyết mà Trump đặt ra — vẫn gần như đóng hoàn toàn với chỉ 4 tàu dry cargo đi qua ngày đầu tiên, không có tàu chở dầu. Israel đồng thời mở đợt không kích lớn nhất vào Lebanon (254 người thiệt mạng), khiến Iran cáo buộc Mỹ vi phạm thỏa thuận và đe dọa đóng lại Hormuz.</p>
+<p><strong>Macro:</strong> Fed giữ lãi suất 3.50%-3.75% tại phiên 03/17-18, FOMC Minutes cho thấy một số quan chức đã đề cập "strong case" cho cả kịch bản tăng lãi suất — một tín hiệu hawkish hiếm thấy. GDP forecast được nâng nhẹ lên 2.4%, PCE inflation dự báo 2.7%. CPI tháng 3 công bố ngày mai (04/10) sẽ là phép thử đầu tiên cho tác động lạm phát từ dầu tăng vọt và thuế quan mới. Đấu giá 10Y trái phiếu tail lần thứ 3 liên tiếp (4.282%) — tín hiệu nhu cầu yếu.</p>
+<p><strong>Địa chính trị:</strong> Ngừng bắn Mỹ-Iran trên giấy nhưng chưa trên thực tế. Hormuz frozen, Lebanon đang cháy, Iran và Mỹ có 2 phiên bản "10 điểm" hoàn toàn khác nhau. Trung Quốc đứng sau Pakistan broker deal. Vòng đàm phán trực tiếp tại Islamabad ngày 04/11 (Vance vs Ghalibaf) sẽ quyết định liệu ngừng bắn có tồn tại qua tuần tới.</p>
+<p><strong>Sector:</strong> Dòng tiền luân chuyển mạnh từ energy/defense về tech sau ceasefire. Meta +6.5% (Muse Spark AI model). Software bị bán nặng (INTU -5%, NOW -3.6%) do lo ngại AI thay thế + private credit stress (Blue Owl OCIC redemption 21.9%). MSFT -0.43% bất chấp thị trường xanh — OpenAI risk.</p>
+<p><strong>Market Micro:</strong> VIX close 04/08 tại 21.27, giảm mạnh từ mức &gt;28 đầu tuần. SPX flip về positive gamma tại 6,650 → bias trôi lên khi không có catalyst. IV đã cross xuống dưới RV → khép chu kỳ vol → không nên sell option. Tuy nhiên, ceasefire mong manh + CPI ngày mai = nguồn vol mới.</p>
+<p><strong>Điểm HỘI TỤ toàn bộ 4 trụ cột:</strong>
+* <strong>(Macro + Geo):</strong> Ngừng bắn giảm war premium → dầu -15% → kỳ vọng Fed rate cut tăng → yield 10Y giảm nhẹ. NHƯNG Hormuz vẫn đóng → dầu rebound +3% ngay hôm sau → CPI ngày mai có thể phá narrative dovish.
+* <strong>(Geo + Sector):</strong> Ceasefire → energy bán, tech mua. Nhưng ceasefire mong manh → energy có thể rebound bất kỳ lúc nào nếu đàm phán thất bại → rotation chưa bền vững.
+* <strong>(Sector + Micro):</strong> Positive gamma + vol crush → market trôi lên tự nhiên. Software sell-off (AI risk + private credit) là điểm yếu cục bộ trong trend bullish rộng.
+* <strong>(Macro + Micro):</strong> CPI ngày mai 5:30 AM PDT + đàm phán Islamabad 04/11 = 2 catalyst lớn trong 48h. Thị trường đang ở positive gamma nhưng complacent → bất kỳ surprise nào sẽ bị khuếch đại.</p>
+<hr />
+<h2>I. CÂU CHUYỆN THỊ TRƯỜNG NHỮNG NGÀY GẦN ĐÂY</h2>
+<h3>1.1 Bối Cảnh</h3>
+<p>Tuần này chia làm 3 giai đoạn rõ ràng:</p>
+<p><strong>Giai đoạn 1 (04/06-07 — Anxiety):</strong> Thị trường chịu áp lực nặng từ deadline Trump cho Iran. Dầu WTI đạt đỉnh ~$115 (04/07). VIX duy trì &gt;28. S&amp;P 500 dao động quanh 6,600-6,650. Trump đe dọa "phá hủy toàn bộ nền văn minh Iran" nếu không mở Hormuz. Iran bác bỏ kế hoạch ngừng bắn 45 ngày (IRNA). Israel tiêu diệt lãnh đạo tình báo IRGC. Bầu không khí cực kỳ căng thẳng.</p>
+<p><strong>Giai đoạn 2 (04/07 tối — 04/08 — Euphoria):</strong> Pakistan broker deal vào phút cuối (3 tiếng trước deadline), với Trung Quốc đứng sau. Iran chấp nhận ngừng bắn 2 tuần + bắt đầu mở Hormuz. Trump xác nhận. Thị trường phản ứng cực kỳ mạnh: S&amp;P +2.51%, Dow +1,325 điểm (phiên tốt nhất từ 04/2025), dầu WTI -15%, VIX -15% sụp về 21.27.</p>
+<p><strong>Giai đoạn 3 (04/09 sáng — Reality Check):</strong> Pre-market cho thấy thực tế phũ phàng hơn euphoria. Hormuz vẫn gần đóng (4 tàu, 0 tanker). Israel mở đợt không kích lớn nhất vào Lebanon (254 chết). Iran cáo buộc Mỹ vi phạm. Dầu rebound +3%. Futures giảm nhẹ.</p>
+<h3>1.2 Timeline Chi Tiết &amp; Phản Ứng Thị Trường</h3>
+<table>
+<thead>
+<tr>
+<th>Ngày</th>
+<th>Sự Kiện</th>
+<th>Phản Ứng</th>
+<th>Giải Thích</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>04/06 (Mon)</strong></td>
+<td>NFP +178K (vượt xa dự báo 60K); Trump gia hạn deadline Iran</td>
+<td>S&amp;P +0.3%, Nasdaq flat</td>
+<td>Thị trường cân bằng giữa NFP mạnh (hawkish) và hy vọng deadline kéo dài</td>
+</tr>
+<tr>
+<td><strong>04/07 (Tue)</strong></td>
+<td>Dầu $115; Trump đe dọa Iran; Bắn nhau ở Hormuz</td>
+<td>S&amp;P -0.5%; VIX &gt;28; dầu đỉnh</td>
+<td>Peak war anxiety — thị trường pricing worst case</td>
+</tr>
+<tr>
+<td><strong>04/08 (Wed)</strong></td>
+<td>Ngừng bắn Mỹ-Iran; Meta Muse Spark; FOMC Minutes</td>
+<td>S&amp;P +2.51% (6,782.81); Dow +2.85%; dầu -15%; VIX 21.27</td>
+<td>Ceasefire + AI rally + vol crush tạo perfect storm bullish</td>
+</tr>
+<tr>
+<td><strong>04/09 (Thu pre)</strong></td>
+<td>Hormuz vẫn đóng; Israel đánh Lebanon 254 chết; Iran đe dọa</td>
+<td>Futures -0.25%; dầu +3%; VIX 21.27</td>
+<td>Reality check — ceasefire trên giấy vs thực tế</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Con Số Close 04/08 (verified):</strong></p>
+<div class="codehilite"><pre><span></span><code>S&amp;P 500:      6,782.81  (+2.51%)   YTD: -4.34%
+Dow Jones:   47,909.92  (+2.85%)   YTD: ~+1.3%
+Nasdaq Comp: 22,635.00  (+2.80%)   YTD: -11.4%
+Russell 2000: IWM YTD: +2.70% (Yahoo Finance, 04/06)
+VIX:             21.27  (giảm mạnh từ &gt;28)
+10Y Yield:        4.28%
+WTI:            ~$96.40  (-15%)
+Brent:          ~$95.50  (-15%)
+Gold:          $4,742/oz
+DXY:             99.04
+BTC:           $71,200
+</code></pre></div>
+
+<p><strong>Pre-market 04/09 (6:00 AM PDT):</strong></p>
+<div class="codehilite"><pre><span></span><code>S&amp;P 500 Futures:    6,806.50 (-0.25%)
+Nasdaq 100 Futures: 25,170   (flat)
+WTI:               $99.39   (rebound từ close)
+Brent:             $98.43   (+2.8% từ close)
+VIX:                21.27   (+2.23%)
+</code></pre></div>
+
+<p>⚠️ <strong>Lưu ý quan trọng về giá dầu:</strong> WTI giảm mạnh trong phiên 04/08 nhờ ceasefire (intraday drop ~15% từ mức mở cửa ~$110), close ~$96.40. Sáng 04/09 pre-market dầu rebound lên $99.39 (+3.1%) do Iran đe dọa đóng lại Hormuz và Hormuz vẫn không thực sự mở.</p>
+<hr />
+<h2>II. PHÂN TÍCH 4 TRỤ CỘT CHÉO</h2>
+<h3>2.1 Macro &amp; FED</h3>
+<p><strong>Trạng Thái Hiện Tại:</strong></p>
+<div class="codehilite"><pre><span></span><code>Fed Funds Rate:           3.50% – 3.75% (giữ nguyên từ 01/28)
+GDP Forecast (Fed):       2.4% (nâng từ 2.3%)
+PCE Inflation Forecast:   2.7% (nâng từ 2.5%)
+Thất nghiệp:             4.4% (không đổi)
+NFP tháng 3:             +178K (vs dự báo +60K)
+Core CPI (tháng 2):      Chưa có tháng 3 — công bố 04/10
+10Y Yield:               4.28% (close 04/08) → 4.34% (pre-market 04/09)
+2Y Yield:                ~4.1% (estimate)
+30Y Mortgage:            6.51% (giảm lần đầu sau 8 tuần)
+ISM Manufacturing:       Contraction zone
+</code></pre></div>
+
+<p><strong>Framework Application — FED Trap:</strong></p>
+<p>Fed đang bị kẹt trong thế khó kinh điển: lạm phát chưa về target (PCE 2.7% vs 2.0%) nhưng thị trường lao động và GDP vẫn chạy tốt (NFP +178K, GDP 2.4%). Đặc biệt, FOMC Minutes tiết lộ một số quan chức đã nêu "strong case" cho cả kịch bản tăng lãi suất — điều hiếm thấy trong chu kỳ easing. Đây chính là FED Trap: không thể cắt lãi suất vì inflation sticky, không muốn tăng vì growth chưa suy yếu đủ, nhưng bất kỳ hướng nào cũng có rủi ro lớn.</p>
+<p><strong>Tín hiệu từ Bond Market:</strong>
+- Đấu giá 10Y ($39B): tail 0.2 bps lần thứ 3 liên tiếp → nhu cầu yếu, dealers phải gánh 10.8%
+- 10Y yield vọt lên 4.34-4.36% trước ceasefire → giảm nhẹ về 4.28% sau ceasefire → đang nhích lên lại pre-market
+- "Geopolitical Term Premium" — nhà đầu tư đòi yield cao hơn để bù đắp rủi ro dầu + thuế quan + lạm phát</p>
+<p><strong>Chuỗi Nhân Quả:</strong></p>
+<div class="codehilite"><pre><span></span><code>NFP +178K (thị trường lao động nóng)
+  → Fed không thể cắt lãi suất sớm
+  → FOMC Minutes gợi ý cả kịch bản tăng lãi suất
+    → 10Y yield duy trì cao (4.28-4.36%)
+    → Đấu giá 10Y tail lần 3 → demand yếu
+      → Mortgage rate 6.51% → housing pressure
+      → Corporate borrowing cost cao → Private credit stress
+        → Blue Owl OCIC redemption 21.9%
+
+SONG SONG:
+Dầu $97-115 → PPI sẽ tăng → CPI tháng 3 (04/10) có thể surprise lên
+  → Nếu CPI hot → Fed hawkish hơn → yield spike → thị trường sell-off
+  → Nếu CPI cool → Fed dovish tilt → yield giảm → market rally tiếp
+</code></pre></div>
+
+<p><strong>Key Catalyst Ngày Mai:</strong> CPI tháng 3 công bố 5:30 AM PDT (04/10). Đây là inflation data đầu tiên phản ánh tác động của dầu tăng vọt (từ $60 pre-war lên $100+) và thuế quan mới (Section 232 thép/nhôm/đồng). Consensus chưa có rõ ràng nhưng rủi ro upside cao.</p>
+<h3>2.2 Địa Chính Trị</h3>
+<p><strong>Timeline Sự Kiện Gần Đây:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Ngày</th>
+<th>Sự Kiện</th>
+<th>Tác Động Thị Trường</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>04/04</td>
+<td>Trump cho Iran 48h để đàm phán hoặc mở Hormuz</td>
+<td>Dầu tăng, VIX tăng</td>
+</tr>
+<tr>
+<td>04/06</td>
+<td>Iran bác bỏ ceasefire 45 ngày</td>
+<td>Dầu tiếp tục tăng</td>
+</tr>
+<tr>
+<td>04/07</td>
+<td>Pakistan broker deal phút cuối; TQ đứng sau</td>
+<td>Futures rally sau giờ giao dịch</td>
+</tr>
+<tr>
+<td>04/08</td>
+<td>✅ Ngừng bắn 2 tuần chính thức; Iran đồng ý mở Hormuz</td>
+<td>S&amp;P +2.51%, dầu -15%</td>
+</tr>
+<tr>
+<td>04/08</td>
+<td>✅ Israel không kích Lebanon quy mô lớn nhất (254 chết)</td>
+<td>Ceasefire bị lung lay</td>
+</tr>
+<tr>
+<td>04/08</td>
+<td>⚠️ Nhà máy lọc dầu Iran bị ném bom (nghi UAE)</td>
+<td>Thêm rủi ro leo thang</td>
+</tr>
+<tr>
+<td>04/08</td>
+<td>⚠️ Đường ống dầu Đông-Tây Saudi bị drone (7M thùng/ngày capacity)</td>
+<td>Dầu rebound</td>
+</tr>
+<tr>
+<td>04/09</td>
+<td>⚠️ Hormuz: chỉ 4 tàu dry cargo, 0 tanker</td>
+<td>Dầu +3% pre-market</td>
+</tr>
+<tr>
+<td>04/09</td>
+<td>⚠️ Iran cáo buộc Mỹ vi phạm ceasefire</td>
+<td>Uncertainty tăng</td>
+</tr>
+<tr>
+<td>04/11</td>
+<td>⚠️ Vòng đàm phán Islamabad (Vance vs Ghalibaf)</td>
+<td>Catalyst cuối tuần</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Phân Tích Ceasefire — 5 Điểm Mấu Chốt:</strong></p>
+<p><strong>1. Hai phiên bản "10 điểm" mâu thuẫn hoàn toàn.</strong> Phiên bản Iran (công bố qua Hội đồng An ninh Quốc gia): Mỹ chấp nhận Iran làm giàu uranium, rút quân, bồi thường. Phiên bản thực tế (NYT, Axios, Al Jazeera, Economic Times): không có 3 điểm trên, thay vào đó Iran mở Hormuz + thu phí $2M/tàu bằng crypto + dùng cho tái thiết. Trump yêu cầu CNN gỡ bài phiên bản Iran. Khoảng cách 2 bên rất xa → đàm phán sẽ khó khăn.</p>
+<p><strong>2. Lebanon là điểm mong manh nhất.</strong> Israel tuyên bố Lebanon không nằm trong phạm vi ngừng bắn và mở đợt không kích lớn nhất. Iran nói: không có thỏa thuận nếu Israel vẫn đánh Lebanon. Đây là deadlock có thể phá vỡ ceasefire bất kỳ lúc nào.</p>
+<p><strong>3. Hormuz "mở" trên giấy, đóng trên thực tế.</strong> Chỉ 4 tàu qua ngày 04/08 (0 tanker). Mỗi tàu phải xin phép riêng từ quân đội Iran. Iran đề xuất giới hạn 12 tàu/ngày (vs ~50-60 pre-war). Trump muốn mở "without limitation, including tolls" (White House). Chênh lệch lớn.</p>
+<p><strong>4. Ngừng bắn tạm là lợi thế chiến lược cho Mỹ, bất lợi cho Iran.</strong> Mỹ đang đưa thêm khí tài: hạm đội tàu sân bay George Bush, hạm đội đổ bộ Boxer, lữ đoàn pháo binh 142. Iran không thể tái vũ trang (hạ tầng công nghiệp quân sự bị phá hủy). Dầu giảm 15% → Iran mất đòn bẩy kinh tế. 170 triệu thùng dầu bị kẹt bắt đầu được giải thoát → supply tăng.</p>
+<p><strong>5. Mục tiêu thực sự: xác định ai nắm quyền ở Iran.</strong> Trump phân biệt "chính phủ Iran" và "Hội đồng An ninh Quốc gia" → tín hiệu Mỹ đang nhắm vào việc chuyển thực quyền từ IRGC sang chính phủ dân sự. "Regime behavior change" thay vì regime change. 4/4 mục tiêu quân sự đã gần đạt.</p>
+<p><strong>Oil Dynamics Post-Ceasefire:</strong>
+- Close 04/08: WTI ~$96.40 (giảm mạnh intraday ~15% từ mức open ~$110 nhờ ceasefire)
+- Pre-market 04/09: WTI $99.39 (rebound +3.1% từ close)
+- Lý do: Hormuz vẫn đóng, Iran đe dọa, Israel tấn công Lebanon
+- Hormuz flow math: nếu Iran cho 12 tàu/ngày (bao gồm dark ships ~30-40) → giải tỏa ~20M thùng/ngày vs 20M pre-war → gần đủ. Nhưng hiện tại chỉ có 4 tàu → deficit vẫn rất lớn.
+- Range dầu updated: $70-71 (đáy dài hạn) / $120 (kịch bản leo thang ngắn hạn) / $140 (đỉnh trần)</p>
+<p><strong>Tariff Update (April 2026):</strong>
+- ✅ 04/02: Section 232 tái cấu trúc — thép/nhôm/đồng: Annex I-A giữ 50%, Annex I-B 25%. Sản phẩm chứa ≤15% kim loại miễn thuế. Hiệu lực 04/06.
+- ✅ 04/02: Section 232 dược phẩm — 100% thuế lên thuốc có patent (hiệu lực 07/31). MFN pricing = 0% thuế.
+- Tác động: tăng áp lực lạm phát dài hạn (Trumpflation framework), đặc biệt pharmaceutical tariffs sẽ shock hệ thống y tế nếu không có đủ MFN agreements trước 07/31.</p>
+<h3>2.3 Sector &amp; Cổ Phiếu</h3>
+<p><strong>YTD Performance Overview (verified từ ≥2 nguồn LIVE, tính đến close 04/08):</strong></p>
+<div class="codehilite"><pre><span></span><code>INDEX/ETF          CLOSE 04/08    YTD %        NGUỒN
+─────────────────────────────────────────────────────
+S&amp;P 500            6,782.81      -4.34%       SlickCharts, FRED
+Dow Jones         47,909.92      ~+1.3%       SlickCharts, StatMuse
+Nasdaq Comp       22,635.00     -11.4%        StatMuse
+Russell 2000/IWM    —            +2.70%       Yahoo Finance (04/06)
+Mag7 (MAGS ETF)     —          -11.44%       PortfoliosLab, 247WallSt
+
+CỔ PHIẾU MAG7      YTD %        GHI CHÚ
+─────────────────────────────────────────
+GOOGL (Alphabet)    +1.5%        Top performer
+META (Meta)         ~resilient   +6.5% ngày 04/08 (Muse Spark)
+AMZN (Amazon)       ~resilient   Rebound mạnh post-ceasefire
+AAPL (Apple)        moderate     iPhone 17 cycle hỗ trợ
+NVDA (Nvidia)       -0.10% 04/08 Flat trong ngày rally
+TSLA (Tesla)       -21.64% YTD   -2.39% ngày 04/08 (bán dù market xanh)
+MSFT (Microsoft)   -23.5% YTD   -0.43% ngày 04/08 (OpenAI risk)
+</code></pre></div>
+
+<p><strong>Framework Application — Sector Rotation Post-Ceasefire:</strong></p>
+<p>Dòng tiền đang luân chuyển rõ ràng từ "war portfolio" (energy, defense) về "peace portfolio" (tech, growth). Tuy nhiên, rotation này CHƯA BỀN VỮNG vì ceasefire mong manh. Quan sát:</p>
+<ul>
+<li><strong>Energy:</strong> Bán mạnh 04/08 (dầu -15%), nhưng rebound 04/09 (+3%). Vẫn là sector duy nhất xanh YTD trên heat map. XLE vẫn outperform.</li>
+<li><strong>Tech:</strong> Rally mạnh 04/08 nhờ Meta Muse Spark + ceasefire sentiment. Ngoại trừ software.</li>
+<li><strong>Software:</strong> Bị BÁN NẶNG trong ngày market +2.5%: INTU -5%, NOW -3.6%, CRM giảm, MSFT -0.43%. Nguyên nhân kép: (a) AI replacement fear (Meta Muse Spark + Anthropic restricted model 94% SWE benchmark), (b) Private credit stress → BDC cho vay software chịu áp lực.</li>
+<li><strong>Healthcare Insurance:</strong> Rally bất ngờ — OSCR +10-12%, UNH rally. Chưa có catalyst rõ ràng nhưng dòng tiền quay lại.</li>
+<li><strong>Defense:</strong> PLTR bị bán — chiến tranh kết thúc (tạm).</li>
+</ul>
+<p><strong>Private Credit Alert:</strong>
+- Blue Owl OCIC: redemption requests 21.9% (vs peers thấp hơn nhiều), bị cap ở 5%
+- $3.2B requests chưa được xử lý
+- Moody's hạ outlook xuống "tiêu cực"
+- OTIC (Blue Owl Technology Income): redemption 40.7% — tệ hơn nhiều
+- Nguyên nhân: AI disruption + rising interest rates → BDC cho vay software/cyclical consumer chịu áp lực
+- <strong>Chưa phải systemic risk</strong> — Fed note: chỉ BDC nhóm software là vấn đề, private credit rộng ($3T) vẫn OK</p>
+<p><strong>Cổ Phiếu Đáng Chú Ý:</strong>
+- <strong>META (BUY):</strong> Muse Spark launch → closed AI model (#4 globally, SWE 77) → monetize via API. +6.5% phiên. Catalyst tiếp: revenue from AI API.
+- <strong>MSFT (HOLD/CAUTION):</strong> -23.5% YTD, OpenAI risk tăng sau Meta ra model cạnh tranh. Cần catalyst rõ hơn.
+- <strong>TSLA (CAUTION):</strong> -21.64% YTD, bị bán trong ngày market xanh. Valuation concerns.
+- <strong>UNH/OSCR (WATCH):</strong> Healthcare insurance rally — monitor nếu đây là trend mới hay dead cat bounce.</p>
+<h3>2.4 Options &amp; Market Microstructure</h3>
+<p><strong>VIX Analysis:</strong></p>
+<div class="codehilite"><pre><span></span><code>VIX Close 04/08:    21.27 (giảm mạnh từ &gt;28 đầu tuần — mức thấp nhất kể từ trước chiến tranh)
+VIX Pre-market 04/09: ~21.3 (ổn định quanh mức close)
+VIX 1W range:       21.27 – 32.00
+</code></pre></div>
+
+<p>VIX sụp về 20 sau ceasefire, nhưng đã nhích lên 21.5 khi reality check bắt đầu. Mức 20 là pre-war level — quá thấp cho môi trường geopolitical hiện tại. Kỳ vọng VIX sẽ duy trì range 20-25 trừ khi ceasefire đổ vỡ (→ VIX 30+) hoặc CPI hot (→ VIX 25+).</p>
+<p><strong>Gamma Environment:</strong>
+- SPX đã flip về <strong>positive gamma</strong> khi vượt 6,650. Hiện tại ở 6,783 (close) / ~6,807 (futures).
+- Trong positive gamma: dealers long gamma → mua khi giá giảm, bán khi giá tăng → market có xu hướng trôi lên, volatility bị đẩy xuống tự nhiên.
+- <strong>Put wall:</strong> ~6,600 (hỗ trợ mạnh)
+- <strong>Call wall:</strong> ~6,800 (kháng cự hiện tại)
+- <strong>Next level:</strong> 6,800 → nếu vượt, target tiếp theo ~6,900-7,000</p>
+<p><strong>IV-RV Cross:</strong>
+- IV đã cross xuống DƯỚI RV (realized vol) ngày 04/08 → <strong>khép chu kỳ vol</strong>
+- Ý nghĩa: KHÔNG nên sell option lúc này — IV quá thấp, premium không đủ bù rủi ro
+- Chờ: IV tăng lại (event-driven: CPI, Islamabad talks) hoặc market pullback</p>
+<p><strong>Options Flow &amp; Positioning:</strong>
+- Seller gần như biến mất sau ceasefire — chỉ còn take profit nhẹ sáng 04/08
+- Organic volume chiếm chủ đạo (không phải dealer-driven)
+- Complacency risk: thị trường quá thoải mái → bất kỳ surprise nào sẽ bị khuếch đại mạnh</p>
+<hr />
+<h2>III. CROSS-REFERENCE: ĐIỂM HỘI TỤ &amp; PHÂN KỲ</h2>
+<h3>3.1 Điểm Hội Tụ</h3>
+<p><strong>1. Ceasefire mong manh → uncertainty cao (Geo + Macro + Micro):</strong> Cả 3 trụ cột đều chỉ ra rằng ceasefire chưa thực sự giảm rủi ro. Hormuz vẫn đóng (Geo), dầu rebound +3% ngay hôm sau (Macro), VIX nhích lên (Micro). Rally 04/08 có thể là short-squeeze + vol crush hơn là thay đổi fundamental.</p>
+<p><strong>2. AI disruption accelerating → software under pressure (Sector + Macro + Micro):</strong> Meta Muse Spark + Anthropic restricted model → software bị bán ngay trong ngày market xanh. FOMC note AI risk cho tín dụng. Blue Owl OTIC 40.7% redemption. Đây là convergence 3 pillars cùng pointing to software stress.</p>
+<p><strong>3. Market structure bullish nhưng fragile (Micro + Sector + Geo):</strong> Positive gamma + vol crush + seller biến mất = bullish bias. NHƯNG: ceasefire mong manh, CPI ngày mai, Islamabad talks cuối tuần. Structure là bullish, catalyst tiềm ẩn là bearish.</p>
+<p><strong>4. Mỹ đạt mục tiêu quân sự → đàm phán từ vị thế mạnh (Geo + Macro):</strong> 4/4 mục tiêu quân sự gần đạt. Iran không đàm phán từ sức mạnh (dầu chỉ $115 vs $150+ kỳ vọng, SPX chỉ -5.5%, GCC vẫn ủng hộ Mỹ). Ngừng bắn cho phép Mỹ tái vũ trang. → Kịch bản base case: đàm phán kéo dài, không escalation lớn, dầu giảm dần.</p>
+<h3>3.2 Điểm Phân Kỳ</h3>
+<p><strong>1. Equity rally vs Oil rebound (Sector vs Geo):</strong> S&amp;P +2.51% pricing "peace" nhưng dầu rebound +3.1% pre-market 04/09 pricing "still war". Hai thị trường đang tell 2 câu chuyện khác nhau. Resolution: dầu có thể đúng hơn — Hormuz vẫn đóng là fact, ceasefire chỉ là promise.</p>
+<p><strong>2. VIX thấp vs geopolitical risk cao (Micro vs Geo):</strong> VIX 20 là pre-war level nhưng war chưa thực sự kết thúc. Phân kỳ này thường được resolve bằng VIX tăng (mean reversion khi event xảy ra). Ngày mai CPI + cuối tuần Islamabad = catalyst.</p>
+<p><strong>3. Fed hawkish vs Market pricing dovish (Macro internal):</strong> FOMC Minutes gợi ý cả tăng lãi suất, nhưng market tăng mạnh sau ceasefire → pricing rate cuts. Nếu CPI hot ngày mai → Fed hawkish thắng → market phải reprice.</p>
+<p><strong>4. Tech rally vs Software sell-off (Sector internal):</strong> Mega-cap tech (META, AMZN) rally nhưng software (INTU, NOW, CRM, MSFT) bị bán. Phân kỳ này phản ánh AI disruption: AI tạo value cho platform (Meta) nhưng phá hủy value cho software-as-a-service.</p>
+<h3>3.3 Chuỗi Nhân Quả Tổng Hợp</h3>
+<div class="codehilite"><pre><span></span><code>Pakistan (TQ đứng sau) broker ceasefire 2 tuần
+  ├→ Iran mở Hormuz (trên giấy) → dầu -15% → SPX +2.51% → VIX 21.27
+  │   └→ NHƯNG thực tế: 4 tàu, 0 tanker → dầu rebound +3% overnight
+  │
+  ├→ Israel loại Lebanon khỏi ceasefire → 254 chết → Iran cáo buộc vi phạm
+  │   └→ Ceasefire có thể đổ vỡ → dầu spike lại → VIX spike
+  │
+  ├→ Sector rotation: energy → tech (ceasefire) + software sell-off (AI fear)
+  │   └→ Meta Muse Spark → closed model → API revenue → META +6.5%
+  │   └→ Anthropic restricted model (94% SWE) → software existential risk
+  │   └→ Blue Owl OCIC 21.9% redemption → private credit stress
+  │
+  ├→ Mỹ tái vũ trang (George Bush, Boxer, 142nd Artillery) trong 2 tuần
+  │   └→ Vị thế đàm phán mạnh hơn → base case: deal dài hạn khả thi
+  │
+  └→ CPI tháng 3 (04/10 5:30 AM PDT) — WILD CARD
+      ├→ Nếu CPI cool: Fed dovish → yield giảm → rally tiếp
+      └→ Nếu CPI hot: Fed hawkish → yield spike → sell-off + VIX spike
+</code></pre></div>
+
+<hr />
+<h2>IV. DỰ BÁO PHIÊN GIAO DỊCH THỨ SÁU 04/10</h2>
+<blockquote>
+<p>⚠️ <strong>Loại 1 Report (Thứ 5):</strong> Chỉ dự đoán phiên ngày mai (04/10). Không build 3 scenarios đầy đủ cho cả tuần.</p>
+</blockquote>
+<h3>4.1 Catalyst Chính Phiên 04/10</h3>
+<table>
+<thead>
+<tr>
+<th>Thời Gian (PDT)</th>
+<th>Sự Kiện</th>
+<th>Tác Động Kỳ Vọng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>5:30 AM</strong></td>
+<td><strong>CPI tháng 3</strong> (BLS)</td>
+<td><strong>CATALYST LỚN NHẤT</strong> — inflation data đầu tiên phản ánh dầu tăng + tariffs</td>
+</tr>
+<tr>
+<td><strong>5:30 AM</strong></td>
+<td>Jobless Claims tuần</td>
+<td>Employment health check</td>
+</tr>
+<tr>
+<td>Trong phiên</td>
+<td>Tiếp tục diễn biến Hormuz/Lebanon</td>
+<td>Geopolitical headline risk</td>
+</tr>
+<tr>
+<td>After-hours</td>
+<td>Chuẩn bị cho đàm phán Islamabad 04/11</td>
+<td>Weekend risk positioning</td>
+</tr>
+</tbody>
+</table>
+<h3>4.2 Kịch Bản Phiên Thứ Sáu</h3>
+<p><strong>Kịch Bản A — CPI Cool + Ceasefire Giữ (Xác suất: 30%)</strong>
+- CPI dưới hoặc đúng consensus → Fed dovish tilt → yield giảm
+- Không có headline ceasefire đổ vỡ
+- SPX target: 6,820-6,900 (test call wall → breakout)
+- VIX: 19-20</p>
+<p><strong>Kịch Bản B — CPI In-line + Ceasefire Shaky (Xác suất: 45%)</strong>
+- CPI gần consensus, không surprise lớn
+- Tiếp tục headline Lebanon/Hormuz nhưng không escalation lớn
+- SPX range: 6,720-6,800 (dao động quanh close hiện tại)
+- VIX: 21-24
+- Market flat-to-slightly-down, chờ Islamabad cuối tuần</p>
+<p><strong>Kịch Bản C — CPI Hot hoặc Ceasefire Đổ Vỡ (Xác suất: 25%)</strong>
+- CPI surprise lên (core CPI trên 0.4% MoM) → Fed hawkish shock
+- HOẶC: Iran tuyên bố ceasefire vô hiệu → Hormuz đóng hoàn toàn
+- SPX target: 6,550-6,650 (test put wall / gamma flip level)
+- VIX: 25-30
+- Dầu có thể spike lên $105-115</p>
+<h3>4.3 Key Levels Phiên 04/10</h3>
+<table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>Hỗ Trợ</th>
+<th>Kháng Cự</th>
+<th>Hiện Tại</th>
+<th>Bull Case</th>
+<th>Bear Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S&amp;P 500</td>
+<td>6,650 (gamma flip)</td>
+<td>6,800-6,820 (call wall)</td>
+<td>6,783</td>
+<td>6,900</td>
+<td>6,550</td>
+</tr>
+<tr>
+<td>Nasdaq</td>
+<td>22,000</td>
+<td>22,800</td>
+<td>22,635</td>
+<td>23,000</td>
+<td>21,500</td>
+</tr>
+<tr>
+<td>VIX</td>
+<td>19</td>
+<td>25</td>
+<td>21.27</td>
+<td>19</td>
+<td>30+</td>
+</tr>
+<tr>
+<td>WTI</td>
+<td>$83</td>
+<td>$105</td>
+<td>$99.39</td>
+<td>$85</td>
+<td>$115</td>
+</tr>
+<tr>
+<td>10Y Yield</td>
+<td>4.15%</td>
+<td>4.40%</td>
+<td>4.34%</td>
+<td>4.15%</td>
+<td>4.45%</td>
+</tr>
+<tr>
+<td>DXY</td>
+<td>98</td>
+<td>100</td>
+<td>99.04</td>
+<td>98</td>
+<td>101</td>
+</tr>
+</tbody>
+</table>
+<h3>4.4 Khuyến Nghị Ngắn Hạn (Chỉ Cho Phiên 04/10)</h3>
+<p><strong>Chiến lược chung:</strong> Defensive positioning trước CPI + weekend risk.</p>
+<ul>
+<li><strong>KHÔNG mở vị thế mới lớn</strong> trước CPI 5:30 AM PDT — chờ data</li>
+<li><strong>Take profit</strong> một phần nếu đang hold từ đáy 04/07 (đã lãi 2-3% trong 1 ngày)</li>
+<li><strong>Options:</strong> KHÔNG sell option (IV quá thấp, chu kỳ vol đã khép). Nếu muốn hedge, mua put spread SPX 6650/6550 giá rẻ (VIX thấp = premium rẻ).</li>
+<li><strong>Sector positioning:</strong> Maintain tech overweight nhưng giảm exposure software. Energy có thể bounce tiếp nếu Hormuz vẫn đóng.</li>
+<li><strong>Weekend risk:</strong> Market sẽ price Islamabad talks uncertainty → có thể thấy selling pressure cuối phiên Friday. Cân nhắc giảm exposure trước close nếu risk-averse.</li>
+</ul>
+<hr />
+<h2>V. KHUYẾN NGHỊ HÀNH ĐỘNG</h2>
+<h3>5.1 Portfolio Strategy</h3>
+<div class="codehilite"><pre><span></span><code>PHÂN BỔ ĐỀ XUẤT (ngắn hạn — tuần 04/07-04/11):
+─────────────────────────────────────────────────
+Conservative/Defensive:  30% (bonds, gold, utilities)
+Growth/Tech:             30% (mega-cap tech trừ software)
+Value/Cyclical:          15% (energy, industrials — hedge cho ceasefire fail)
+Cash:                    25% (cao hơn bình thường — chờ CPI + Islamabad clarity)
+</code></pre></div>
+
+<p><strong>Rebalance Triggers:</strong>
+- CPI &gt;0.4% MoM core → Tăng cash lên 35%, giảm growth xuống 20%
+- Ceasefire đổ vỡ (Hormuz đóng hoàn toàn) → Tăng energy lên 25%, giảm tech
+- SPX break 6,650 → Tăng defensive, giảm cyclical
+- Islamabad talks thành công (deal framework) → Giảm cash xuống 15%, tăng growth</p>
+<h3>5.2 Sector Plays</h3>
+<p><strong>LONG:</strong>
+| Sector/Stock | Entry | Target | Stop-Loss | Confidence |
+|-------------|-------|--------|-----------|------------|
+| META | $620 | $680 | $580 | 70% — Muse Spark catalyst |
+| XLE (Energy) | Hiện tại | +5-8% | -5% | 60% — Hormuz hedge |
+| UNH/OSCR | Monitor | — | — | 50% — Healthcare insurance rotation |</p>
+<p><strong>HOLD:</strong>
+| Sector/Stock | Lý Do |
+|-------------|-------|
+| AAPL | iPhone 17 cycle, resilient trong war |
+| GOOGL | Top Mag7 performer YTD (+1.5%) |
+| AMZN | Rebound post-ceasefire, stable |</p>
+<p><strong>CAUTION/REDUCE:</strong>
+| Sector/Stock | Lý Do |
+|-------------|-------|
+| MSFT | -23.5% YTD, OpenAI risk, Meta competition |
+| TSLA | -21.64% YTD, valuation, bị bán trong rally |
+| Software (INTU, NOW, CRM) | AI replacement + private credit stress |
+| PLTR | Defense sell-off post-ceasefire |</p>
+<h3>5.3 Options Strategy</h3>
+<p><strong>Defensive (ưu tiên trước CPI):</strong>
+- <strong>SPX Put Spread 6650/6550</strong> (expire 04/11): Hedge cho CPI hot + weekend risk. VIX thấp → premium rẻ.
+- <strong>XLE Call 04/18</strong>: Hedge cho Hormuz đóng / ceasefire fail.</p>
+<p><strong>Timing:</strong>
+- KHÔNG sell option cho đến khi IV &gt; RV trở lại (chờ CPI shock hoặc Islamabad outcome).</p>
+<h3>5.4 Risk Management</h3>
+<table>
+<thead>
+<tr>
+<th>Rủi Ro</th>
+<th>Xác Suất</th>
+<th>Tác Động</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPI hot (&gt;0.4% core MoM)</td>
+<td>30%</td>
+<td>SPX -2-3%, yield spike</td>
+<td>Put spread, cash buffer</td>
+</tr>
+<tr>
+<td>Ceasefire đổ vỡ</td>
+<td>20%</td>
+<td>Oil $110+, SPX -3-5%, VIX 30+</td>
+<td>XLE calls, reduce equity</td>
+</tr>
+<tr>
+<td>Islamabad talks thất bại</td>
+<td>25%</td>
+<td>Uncertainty kéo dài, VIX 25+</td>
+<td>Weekend hedge, reduce Friday exposure</td>
+</tr>
+<tr>
+<td>Private credit contagion</td>
+<td>10%</td>
+<td>Broad sell-off, financials -3-5%</td>
+<td>Avoid BDC exposure, monitor HY spreads</td>
+</tr>
+<tr>
+<td>CPI cool + talks success</td>
+<td>20%</td>
+<td>SPX 6,900+, VIX &lt;19</td>
+<td>Stay invested, add on dips</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>VI. PHỤ LỤC</h2>
+<h3>A. Bảng Dữ Liệu Chi Tiết</h3>
+<div class="codehilite"><pre><span></span><code>CHỈ SỐ MACRO (verified ≥2 nguồn):
+─────────────────────────────────────────
+Fed Funds Rate:        3.50% – 3.75%    (Fed, 01/28/2026)
+GDP Forecast:          2.4%             (FOMC Minutes, 03/18)
+PCE Inflation:         2.7%             (FOMC Minutes, 03/18)
+Unemployment:          4.4%             (FOMC Minutes, 03/18)
+NFP (March):           +178,000         (BLS, 04/04)
+Core CPI (Feb):        (March CPI due 04/10)
+10Y Yield:             4.28% close → 4.34% pre-market
+2Y Yield:              ~4.1% (estimate)
+30Y Mortgage:          6.51%            (-6bps WoW)
+ISM Mfg:               Contraction
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>GIÁ THỊ TRƯỜNG (close 04/08 → pre-market 04/09):
+──────────────────────────────────────────────────
+S&amp;P 500:    6,782.81 → futures 6,806.50 (-0.25%)
+Dow:       47,909.92
+Nasdaq:    22,635.00
+VIX:           21.27 (ổn định)
+WTI:         ~$96.40 → $99.39 (+3.1%)
+Brent:       ~$95.50 → $98.43 (+2.8%)
+Gold:       $4,742/oz (+0.45%)
+DXY:           99.04
+BTC:        $71,200
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="nv">YTD</span> <span class="nv">PERFORMANCE</span> <span class="p">(</span><span class="s s-Atom">close</span> <span class="mi">04</span><span class="o">/</span><span class="mi">08</span><span class="p">,</span> <span class="s s-Atom">verified</span> <span class="s s-Atom">≥</span><span class="mi">2</span> <span class="s s-Atom">nguồn</span><span class="p">)</span><span class="o">:</span>
+<span class="s s-Atom">──────────────────────────────────────────────────</span>
+<span class="nv">S</span><span class="s s-Atom">&amp;</span><span class="nv">P</span> <span class="mi">500</span><span class="o">:</span>     <span class="o">-</span><span class="mf">4.34</span><span class="c1">%    (SlickCharts)</span>
+<span class="nv">Dow</span> <span class="nv">Jones</span><span class="o">:</span>   <span class="o">~+</span><span class="mf">1.3</span><span class="c1">%    (SlickCharts, StatMuse)</span>
+<span class="nv">Nasdaq</span><span class="o">:</span>     <span class="o">-</span><span class="mf">11.4</span><span class="c1">%     (StatMuse)</span>
+<span class="nv">IWM</span> <span class="p">(</span><span class="nv">R2000</span><span class="p">)</span><span class="o">:</span> <span class="o">+</span><span class="mf">2.70</span><span class="c1">%    (Yahoo Finance, 04/06)</span>
+<span class="nv">Mag7</span> <span class="p">(</span><span class="nv">MAGS</span><span class="p">)</span><span class="o">:-</span><span class="mf">11.44</span><span class="c1">%    (PortfoliosLab)</span>
+</code></pre></div>
+
+<h3>B. Framework Được Áp Dụng</h3>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Ứng Dụng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FED Trap</td>
+<td>Fed kẹt giữa inflation sticky (PCE 2.7%) và growth OK (GDP 2.4%, NFP 178K). FOMC Minutes gợi ý cả tăng lãi suất → thế tiến thoái lưỡng nan kinh điển.</td>
+</tr>
+<tr>
+<td>Trumpflation</td>
+<td>Section 232 tariffs (thép/nhôm/đồng 25-50%, pharmaceutical 100%) + dầu $97+ → structural inflation pressure. CPI ngày mai là test đầu tiên.</td>
+</tr>
+<tr>
+<td>Oil Shock Transmission Chain</td>
+<td>Dầu $60 pre-war → $115 peak → $83 ceasefire → $97 rebound. Chain: Oil → PPI → CPI → Expectations → Rates. CPI 04/10 = first reading.</td>
+</tr>
+<tr>
+<td>Positive Gamma / Vol Crush</td>
+<td>SPX &gt; 6,650 = positive gamma territory. IV &lt; RV cross → vol cycle closed. Market trôi lên tự nhiên nhưng complacent.</td>
+</tr>
+<tr>
+<td>Regime Behavior Change</td>
+<td>Mỹ nhắm thay đổi hành vi chế độ Iran (IRGC → dân sự) thay vì regime change. 4/4 mục tiêu quân sự gần đạt. Đàm phán Islamabad = next phase.</td>
+</tr>
+</tbody>
+</table>
+<h3>C. Glossary Thuật Ngữ</h3>
+<table>
+<thead>
+<tr>
+<th>Thuật Ngữ</th>
+<th>Giải Thích</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Positive Gamma</td>
+<td>Dealers net long gamma → mua khi giá giảm, bán khi giá tăng → market ổn định, xu hướng trôi lên</td>
+</tr>
+<tr>
+<td>IV-RV Cross</td>
+<td>Implied vol xuống dưới realized vol → vol cycle khép → không nên sell option</td>
+</tr>
+<tr>
+<td>BDC</td>
+<td>Business Development Company — quỹ private credit cho vay doanh nghiệp vừa</td>
+</tr>
+<tr>
+<td>Section 232</td>
+<td>Điều khoản cho phép Tổng thống áp thuế vì lý do an ninh quốc gia</td>
+</tr>
+<tr>
+<td>Tail (đấu giá bond)</td>
+<td>Chênh lệch giữa yield đấu giá và yield thị trường trước phiên — tail dương = demand yếu</td>
+</tr>
+<tr>
+<td>Dark Ships</td>
+<td>Tàu tắt AIS transponder — số tàu thực qua Hormuz có thể gấp 2-3x số công khai</td>
+</tr>
+<tr>
+<td>Fog of War</td>
+<td>Giai đoạn đàm phán = chiến tranh thông tin — tin giả, áp lực, nghi binh từ mọi phía</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>VII. DISCLAIMER &amp; CẢNH BÁO</h2>
+<p>Báo cáo này chỉ mang tính chất thông tin và phân tích, KHÔNG phải khuyến nghị đầu tư. Mọi quyết định giao dịch đều có rủi ro. Dữ liệu có thể thay đổi nhanh chóng trong bối cảnh geopolitical hiện tại. Luôn verify số liệu trước khi giao dịch và quản lý rủi ro phù hợp với khẩu vị cá nhân.</p>
+<p><strong>Lưu ý đặc biệt:</strong> Báo cáo được tạo lúc 6:00 AM PDT (9:00 AM ET) — TRƯỚC khi thị trường Mỹ mở cửa (6:30 AM PDT). Giá futures và pre-market có thể thay đổi đáng kể trước phiên giao dịch chính thức.</p>
+<hr />
+<p><strong>Báo Cáo Hoàn Thành:</strong> 04/09/2026, 6:00 AM PDT (9:00 AM ET)
+<strong>Phiên Bản:</strong> 1.0
+<strong>Cập Nhật Tiếp Theo:</strong> Sau khi CPI tháng 3 công bố (04/10, 5:30 AM PDT) hoặc nếu có breaking news Hormuz/Lebanon</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Phân Tích Chứng Khoán Mỹ <span class="footer-divider">•</span> Báo cáo & Cập nhật thị trường</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #6e7681;">
+                Cập nhật lúc 2026 04 09
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

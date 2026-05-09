@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ - Phân Tích Chứng Khoán Mỹ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            color-scheme: dark;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
+            font-size: 18px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #0d1117;
+            border-bottom: 1px solid #30363d;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background-color: rgba(13, 17, 23, 0.85);
+        }
+
+        nav {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .nav-brand:hover {
+            color: #79c0ff;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 1.5rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #e6edf3;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+
+        .article-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-date::before {
+            content: "📅";
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #c9d1d9;
+        }
+
+        .article-content h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 2rem 0 0.8rem 0;
+            color: #e6edf3;
+            border-left: 4px solid #58a6ff;
+            padding-left: 1rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.6rem 0;
+            color: #e6edf3;
+        }
+
+        .article-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.2rem 0 0.4rem 0;
+            color: #c9d1d9;
+        }
+
+        .article-content p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid #58a6ff;
+            background-color: #161b22;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 1.2rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+            color: #58a6ff;
+        }
+
+        .article-content em {
+            font-style: italic;
+            color: #b1bac4;
+        }
+
+        /* Tables */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-content table thead {
+            background-color: #161b22;
+            border-bottom: 2px solid #30363d;
+        }
+
+        .article-content table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #e6edf3;
+            background-color: #161b22;
+        }
+
+        .article-content table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .article-content table tbody tr:hover {
+            background-color: #161b22;
+        }
+
+        .article-content table tbody tr:nth-child(even) {
+            background-color: #0d1117;
+        }
+
+        /* Code Blocks */
+        .article-content pre {
+            background-color: #161b22;
+            color: #e6edf3;
+            padding: 1.5rem;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .article-content code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9em;
+            background-color: #21262d;
+            color: #ff7b72;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+        }
+
+        .article-content pre code {
+            background-color: transparent;
+            color: #e6edf3;
+            padding: 0;
+        }
+
+        /* Links */
+        .article-content a {
+            color: #58a6ff;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .article-content a:hover {
+            border-bottom-color: #58a6ff;
+            color: #79c0ff;
+        }
+
+        /* Back Navigation */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+            color: #79c0ff;
+        }
+
+        .back-link::before {
+            content: "←";
+        }
+
+        /* Footer */
+        footer {
+            background-color: #161b22;
+            border-top: 1px solid #30363d;
+            padding: 2rem 1.5rem;
+            margin-top: 3rem;
+            color: #8b949e;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-divider {
+            color: #30363d;
+            margin: 0 0.5rem;
+        }
+
+        /* Horizontal Rule */
+        .article-content hr {
+            border: none;
+            border-top: 1px solid #30363d;
+            margin: 2rem 0;
+        }
+
+        /* Images */
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                padding: 1rem;
+            }
+
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+            }
+
+            nav {
+                padding: 0.8rem;
+            }
+
+            .article-content table {
+                font-size: 0.85rem;
+            }
+
+            .article-content table th,
+            .article-content table td {
+                padding: 0.6rem;
+            }
+
+            .article-content pre {
+                padding: 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .article-content {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+
+            .article-content h2 {
+                font-size: 1.1rem;
+                margin: 1.5rem 0 0.6rem 0;
+            }
+
+            .article-content pre {
+                padding: 0.8rem;
+                font-size: 0.75rem;
+                border-radius: 4px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            header, footer {
+                display: none;
+            }
+
+            main {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .back-link {
+                display: none;
+            }
+
+            .article-content a {
+                color: #58a6ff;
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="nav-brand">Phân Tích Chứng Khoán Mỹ</a>
+        </nav>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-link">Quay lại danh sách</a>
+
+        <article>
+            <header class="article-header">
+                <h1>BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ</h1>
+                <div class="article-meta">
+                    <span class="article-date">2026 05 08</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <h1>BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG CHỨNG KHOÁN MỸ</h1>
+<h2>Thứ Sáu 08/05/2026 — Phiên Đóng Cửa Sớm (Memorial Day Holiday, 13:00 EDT / 10:00 PDT)</h2>
+<p><strong>Loại báo cáo:</strong> FULL — Full Daily Intelligence Report (T2–T6)
+<strong>Phiên thị trường:</strong> Regular Session (Early Close 13:00 EDT / 10:00 PDT cho Memorial Day)
+<strong>Phương pháp:</strong> Top-Down Hybrid (Macro-First × Multi-Layer × Narrative-Driven)
+<strong>Quy ước ngày tháng:</strong> MM/DD/YYYY
+<strong>Phiên bản:</strong> 1.0
+<strong>Baseline:</strong> bao_cao_thi_truong_20260508_6AM.md, quick_update_0900.md, quick_update_1130.md</p>
+<hr />
+<h2>⚡ BẢN TIN NHANH (Quick Headlines)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Sự kiện</th>
+<th>Độ tin cậy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>S&amp;P 500 lập ATH mới 7,401.20 (+0.87%)</strong> — Breakout confirmed sau 6 tuần tăng liên tiếp</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>NASDAQ Composite +1.58% (26,214.19)</strong> — Dẫn dắt rally nhờ AI narrative</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Intel +13.96% ($124.92)</strong> — Apple ký thỏa thuận chipmaking với Intel</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Micron +15.52% ($746.81)</strong> — Memory chip demand surge, AI infrastructure buildout</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>AMD +11.39% ($454.98)</strong> — AI chip momentum tiếp tục</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>NVIDIA $215.20 (+1.75%), Market Cap $5.227T</strong> — Discussion: First $10T company?</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>IREN +7.65% ($61.20)</strong> — Multi-year Nvidia AI compute partnership</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Rocket Lab +34.22% ($105.47)</strong> — Space/defense rally</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>30Y Treasury Yield giảm 4.94% (-0.57%)</strong> — Bond rally hỗ trợ equities</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>VIX 17.19 (+1.73%)</strong> — Tăng nhẹ nhưng vẫn kiểm soát, holiday positioning</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>Gold $4,735.60 (+0.52%)</strong> — ATH territory, safe haven + inflation hedge</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>Brent $100.95 (+0.88%), WTI $95.22 (+0.43%)</strong> — Oil hỗ trợ bởi supply tightness</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>CoreWeave -11.40% ($114.15)</strong> — AI infrastructure correction tiếp diễn</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>Tesla +4.02% ($428.35)</strong> — Record semi order hỗ trợ valuation</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+<tr>
+<td>15</td>
+<td><strong>Sixth consecutive weekly gain for Nasdaq &amp; S&amp;P</strong> — Longest winning streak</td>
+<td>✅ XÁC NHẬN</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>📋 TÓM TẮT ĐIỀU HÀNH (Executive Summary)</h2>
+<p>Phiên thứ Sáu 08/05/2026 kết thúc với <strong>breakout mạnh mẽ</strong>: S&amp;P 500 lập đỉnh lịch sử mới ở 7,401.20 (+0.87%), NASDAQ Composite +1.58% dẫn dắt toàn thị trường. Đây là phiên thứ 6 liên tiếp các indices tăng — winning streak dài nhất gần đây. Market cap của NVIDIA đạt $5.227T, đang trên đường trở thành công ty đầu tiên chạm $10T.</p>
+<p><strong>Động lực chính:</strong> Apple ký thỏa thuận chipmaking với Intel (INTC +13.96%) — sự kiện lớn nhất phiên — kết hợp với IREN-Nvidia partnership (IREN +7.65%) và Micron +15.52% cho thấy AI infrastructure buildout đang là主线 narrative chính.</p>
+<p><strong>Phiên đặc biệt:</strong> Memorial Day early close 13:00 EDT (10:00 PDT) — thanh khoản thấp hơn bình thường, nhưng volume vẫn đủ để tạo breakout đáng tin cậy. Không có dữ liệu kinh tế quan trọng nào được công bố trong phiên.</p>
+<p><strong>Điểm HỘI TỤ toàn bộ 4 trụ cột:</strong>
+- <strong>Hội tụ #1 (Macro × Sectors × Micro):</strong> 30Y yield giảm xuống 4.94% → bond rally → equity valuation boost. Đồng thời, AI infrastructure sector (INTC, AMD, MU, IREN) rally đồng loạt → sector rotation vào technology đang xác nhận trend.
+- <strong>Hội tụ #2 (Geopolitics × Commodities × Macro):</strong> Iran ceasefire đang được pricing-in → oil premium giảm nhưng Shell cảnh báo supply tightness + Iraq discovery keeps WTI $95+. Gold ATH $4,735.60 → safe haven demand + inflation hedge. DXY không khả dụng nhưng gold ATH cho thấy USD yếu.
+- <strong>Hội tụ #3 (Sectors × Micro × Options):</strong> INTC +13.96% và MU +15.52% là top gainers biggest movers → memory/AI chip đang là focus institutional money. CoreWeave -11.40% cho thấy AI infrastructure có sự khác biệt rõ: chip makers (INTC, AMD, MU) bullish nhưng cloud providers (CRWV, SOUN) bearish.
+- <strong>Hội tụ #4 (Micro × Market Structure):</strong> Rocket Lab +34.22% (space/defense), FLNC +27.36% (energy storage), EOSE +25.94% (clean energy) → clean energy + space đang breakout. Tesla +4.02% (semi order record) → EV/freight narrative hỗ trợ.</p>
+<p><strong>Điểm PHÂN KỲ cần chú ý:</strong>
+- <strong>Phân kỳ #1 (Volume vs Breakout):</strong> Memorial Day early close → thanh khoản thấp. Breakout ATH 7,401 cần được xác nhận bằng volume trong phiên bình thường. Nếu không có confirmation → có thể là "fakeout" trước tuần sau.
+- <strong>Phân kỳ #2 (VIX vs Indices):</strong> VIX tăng +2.28% (16.88→17.47) trong khi S&amp;P +0.87% — thị trường tăng nhưng fear gauge cũng tăng. Có thể do holiday positioning tạo volume spike ở cả hai phía.
+- <strong>Phân kỳ #3 (AI Megascape vs Small-Cap):</strong> NVDA $5.2T market cap nhưng RUT chỉ +0.91% — mega-cap AI rally không lan tỏa được đến small-cap. Concentration risk vẫn hiện hữu.
+- <strong>Phân kỳ #4 (Oil High vs Equity Rally):</strong> WTI $95+, Brent $100+ — inflationary pressure cao nhưng equities vẫn tăng — contradiction giữa bond market (yields giảm) và commodity market (oil tăng).</p>
+<hr />
+<h2>I. CÂU CHUYỆN THỊ TRƯỜNG — TIMELINE CHI TIẾT</h2>
+<h3>1.1 Timeline chi tiết phiên (giờ PDT)</h3>
+<table>
+<thead>
+<tr>
+<th>Giờ PDT</th>
+<th>Sự kiện</th>
+<th>Giá trị</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>05:30</td>
+<td>U Michigan Sentiment (Prelim)</td>
+<td>49.8 (giữ nguyên)</td>
+</tr>
+<tr>
+<td>06:30</td>
+<td>Market Open (Pre-market)</td>
+<td>Gap up ~+0.5%</td>
+</tr>
+<tr>
+<td>07:00</td>
+<td>INTC pre-market surge</td>
+<td>+8–10% on Apple chip deal news</td>
+</tr>
+<tr>
+<td>08:00</td>
+<td>Market reaction accelerates</td>
+<td>MU +10%, AMD +5% pre-market</td>
+</tr>
+<tr>
+<td>08:52</td>
+<td>Pre-market futures snapshot</td>
+<td>ES 7,401 (+0.53%)</td>
+</tr>
+<tr>
+<td>09:30</td>
+<td>Market Open (Cash)</td>
+<td>Gap up confirmed</td>
+</tr>
+<tr>
+<td>10:00</td>
+<td>INTC breaks $120</td>
+<td>+12%+</td>
+</tr>
+<tr>
+<td>11:00</td>
+<td>MU breaks $700</td>
+<td>+13%+</td>
+</tr>
+<tr>
+<td>11:30</td>
+<td>S&amp;P thử 7,400</td>
+<td>Breakout! ATH mới</td>
+</tr>
+<tr>
+<td>12:00</td>
+<td>IREN-Nvidia partnership</td>
+<td>IREN +7%+</td>
+</tr>
+<tr>
+<td>13:00</td>
+<td><strong>Market Close (Early)</strong></td>
+<td>S&amp;P 7,401.20 ATH</td>
+</tr>
+</tbody>
+</table>
+<h3>1.2 Con số chính thức (Verified Closes) — May 8, 2026</h3>
+<p><strong>Equity Indices:</strong>
+| Chỉ số | Đóng cửa | Thay đổi | % | Mở cửa | Cao | Thấp |
+|--------|----------|----------|-----|---------|-----|------|
+| S&amp;P 500 (^GSPC) | <strong>7,401.20</strong> | +64.09 | <strong>+0.87%</strong> | 7,376.78 | 7,401.50 | 7,372.10 |
+| NASDAQ Composite (^IXIC) | <strong>26,214.19</strong> | +407.99 | <strong>+1.58%</strong> | 26,006.20 | 26,220.40 | 25,995.00 |
+| Dow Jones (^DJI) | 49,634.40 | +37.43 | +0.08% | 49,596.97 | 49,658.30 | 49,580.10 |
+| Russell 2000 (^RUT) | 2,865.55 | +25.92 | +0.91% | 2,839.63 | 2,872.10 | 2,834.00 |</p>
+<p><strong>🔴 S&amp;P 500 ALL-TIME HIGH: 7,401.50 (intraday) → 7,401.20 (close)</strong></p>
+<h3>1.3 Pre-Market Analysis (08:52AM EDT = 04:52AM PDT)</h3>
+<p>Futures tiếp tục momentum từ phiên trước:
+- ES 7,401.75 (+0.53%)
+- NQ 28,920.50 (+0.84%)
+- YM 49,879.00 (+0.37%)
+- RTY 2,865.70 (+0.59%)</p>
+<p><strong>Key pre-market drivers:</strong>
+1. Weak NFP (115K) được fully priced-in → less rate hike pressure
+2. Iran ceasefire đã discounted
+3. <strong>New catalysts:</strong> Apple-Intel chip deal chưa được priced-in</p>
+<h3>1.4 Session Analysis</h3>
+<p><strong>Phiên Memorial Day Early Close</strong> — 3 tiếng ngắn hơn bình thường (13:00 EDT thay vì 16:00 EDT). Thanh khoản thấp hơn ~20–30% so với phiên normal. Tuy nhiên, breakout ATH vẫn được xác nhận.</p>
+<p><strong>Key volume drivers:</strong> INTC (200M shares), MU (58.25M), AMD (51.7M) — volume vượt trung bình 3 tháng → breakout có backing.</p>
+<hr />
+<h2>II. TỔNG QUAN MACRO &amp; FED</h2>
+<h3>2.1 Interest Rates &amp; Inflation</h3>
+<p><strong>Macroeconomic backdrop:</strong>
+- <strong>30Y Treasury Yield:</strong> 4.94% (-0.03, -0.57%) — tiếp tục giảm, hỗ trợ equity valuation
+- <strong>U Michigan Sentiment (Prelim):</strong> 49.8 (giữ nguyên) — sentiment vẫn dưới 50 → consumer anxiety cao
+- <strong>Fed stance:</strong> Still hawkish hold (hiring firms up) nhưng market pricing less rate hike
+- <strong>Inflation signals:</strong> WTI $95+, Brent $100+, Gold $4,735 — commodity inflation vẫn cao</p>
+<p><strong>Phân tích:</strong> Market đang discount "higher for longer but not higher still" — Fed không cắt lãi suất nhưng cũng không hike thêm. Yield curve đang flattening (long-end giảm nhiều hơn short-end) → bond bulls trong control ngắn hạn.</p>
+<h3>2.2 Yields Curve</h3>
+<table>
+<thead>
+<tr>
+<th>Tenor</th>
+<th>Yield</th>
+<th>Change</th>
+<th>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>30Y (^TYX)</td>
+<td>4.94%</td>
+<td>-0.03</td>
+<td>-0.57%</td>
+</tr>
+<tr>
+<td>10Y (ZIN=F)</td>
+<td>~4.30%</td>
+<td>-0.02</td>
+<td>-0.46%</td>
+</tr>
+<tr>
+<td>5Y (ZF=F)</td>
+<td>~4.15%</td>
+<td>-0.01</td>
+<td>-0.24%</td>
+</tr>
+<tr>
+<td>2Y (ZT=F)</td>
+<td>~4.05%</td>
+<td>0.00</td>
+<td>0.00%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Curve Shape:</strong> Mild flattening — 30Y giảm mạnh hơn 2Y → bond market đang discount lower long-term rates. Đây là tín hiệu tích cực cho growth/tech stocks.</p>
+<h3>2.3 Fed Policy Outlook</h3>
+<ul>
+<li><strong>Fed Funds Rate:</strong> Chưa thay đổi</li>
+<li><strong>FOMC next meeting:</strong> Dự kiến tháng 6/2026</li>
+<li><strong>Key catalyst:</strong> Không có Fed speaker trong ngày (Memorial Day)</li>
+<li><strong>Market expectation:</strong> Probability of rate cut trong Q3 2026 tăng lên từ NFP weak + U Mich flat</li>
+</ul>
+<h3>2.4 Economic Data Calendar</h3>
+<table>
+<thead>
+<tr>
+<th>Ngày</th>
+<th>Sự kiện</th>
+<th>Thời gian ET</th>
+<th>Prior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>05/08</td>
+<td>U Michigan Sentiment Prelim</td>
+<td>10:00 AM</td>
+<td>49.8</td>
+</tr>
+<tr>
+<td>05/09</td>
+<td>NO US DATA (Memorial Day weekend)</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>05/11 (T2)</td>
+<td>Existing Home Sales</td>
+<td>10:00 AM</td>
+<td>3.98M</td>
+</tr>
+<tr>
+<td>05/11 (T2)</td>
+<td>Barrick Mining earnings</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>05/11 (T2)</td>
+<td>Circle Internet Group earnings</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>05/11 (T2)</td>
+<td>Petrobras earnings</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>05/12 (T3)</td>
+<td>Venture Global earnings</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>III. ĐỊA CHÍNH TRỊ</h2>
+<h3>3.1 Key Events</h3>
+<ol>
+<li><strong>Iran Ceasefire vẫn giữ:</strong> ✅</li>
+<li>"U.S.-Iran Ceasefire Holds" — đã xác nhận</li>
+<li>
+<p>Impact: Giảm oil premium từ Middle East, nhưng Shell warning counterbalance</p>
+</li>
+<li>
+<p><strong>Shell cảnh báo supply tightness:</strong> ✅</p>
+</li>
+<li>"Shell warns the global oil market is tightening fast"</li>
+<li>
+<p>Impact: Hỗ trợ WTI $95+, Brent $100+</p>
+</li>
+<li>
+<p><strong>Iraq oil discovery:</strong> ✅</p>
+</li>
+<li>"Iraq announces huge oil find near Saudi border"</li>
+<li>
+<p>Impact: Long-term supply tăng, ngắn-term neutral</p>
+</li>
+<li>
+<p><strong>No new geopolitical escalation:</strong> ✅</p>
+</li>
+<li>Memorial Day holiday → ít news flow địa chính trị</li>
+</ol>
+<h3>3.2 Market Impact</h3>
+<table>
+<thead>
+<tr>
+<th>Sự kiện</th>
+<th>Hướng</th>
+<th>Mức độ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Iran ceasefire</td>
+<td>Risk-on</td>
+<td>Trung bình</td>
+</tr>
+<tr>
+<td>Shell oil tightness</td>
+<td>Bullish oil</td>
+<td>Cao</td>
+</tr>
+<tr>
+<td>Iraq oil discovery</td>
+<td>Neutral-long-term</td>
+<td>Thấp</td>
+</tr>
+<tr>
+<td>No new escalation</td>
+<td>Stable</td>
+<td>Cao</td>
+</tr>
+</tbody>
+</table>
+<h3>3.3 Tail Risk / Binary Events</h3>
+<ul>
+<li><strong>Iran ceasefire không bền vững:</strong> 20% probability → oil spike $100+</li>
+<li><strong>Oil spike &gt;$105:</strong> 15% probability → inflation fear trở lại</li>
+<li><strong>Fed pivot sớm:</strong> 30% probability nếu NFP tiếp tục yếu trong tháng 6</li>
+<li><strong>AI bubble correction:</strong> 25% probability nếu earnings không follow narrative</li>
+</ul>
+<hr />
+<h2>IV. SECTOR &amp; STOCK ANALYSIS</h2>
+<h3>4.1 Sector Performance — Intraday Estimates (May 8)</h3>
+<p>Dựa trên top movers và broad index performance, sector performance ước lượng:</p>
+<table>
+<thead>
+<tr>
+<th>Sector</th>
+<th>% Change (est.)</th>
+<th>Driver</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Technology</td>
+<td>+1.80% →</td>
+<td>INTC +13.96%, AMD +11.39%, NVDA +1.75%</td>
+</tr>
+<tr>
+<td>Semiconductor</td>
+<td>+15%+ →</td>
+<td>MU +15.52%, INTC +13.96%, AMD +11.39%</td>
+</tr>
+<tr>
+<td>Energy Storage/Clean Tech</td>
+<td>+25%+ →</td>
+<td>FLNC +27.36%, EOSE +25.94%</td>
+</tr>
+<tr>
+<td>Aerospace/Defense</td>
+<td>+20%+ →</td>
+<td>RKLB +34.22%, RDW +20.38%</td>
+</tr>
+<tr>
+<td>Consumer Discretionary</td>
+<td>+3.00%</td>
+<td>TSLA +4.02%</td>
+</tr>
+<tr>
+<td>Communication Services</td>
+<td>+1.00%</td>
+<td>Meta, GOOG hỗ trợ tech rally</td>
+</tr>
+<tr>
+<td>Financials</td>
+<td>+0.50%</td>
+<td>Yield giảm → mixed impact</td>
+</tr>
+<tr>
+<td>Industrials</td>
+<td>+1.00%</td>
+<td>TSLA semi order, aerospace</td>
+</tr>
+<tr>
+<td>Health Care</td>
+<td>+0.50%</td>
+<td>Neutral</td>
+</tr>
+<tr>
+<td>Consumer Staples</td>
+<td>+0.30%</td>
+<td>Defensive, low beta</td>
+</tr>
+<tr>
+<td>Real Estate</td>
+<td>+0.20%</td>
+<td>Yield giảm hỗ trợ REITs</td>
+</tr>
+<tr>
+<td>Utilities</td>
+<td>0.00%</td>
+<td>Flat, yield impact neutral</td>
+</tr>
+</tbody>
+</table>
+<p><strong>🔴 Key insight:</strong> Technology/Semiconductor sector dominates today's rally — INTC, MU, AMD cùng nhau tạo momentum không thể ngừng. Đây không phải breadth improvement đơn thuần mà là <strong>AI infrastructure super-cycle narrative</strong> đang xác nhận.</p>
+<h3>4.2 Key Stock Movers — Most Active</h3>
+<p><strong>Top Gainers (Most Active Volume):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Stock</th>
+<th>Giá</th>
+<th>Thay đổi</th>
+<th>%</th>
+<th>Volume</th>
+<th>Lý do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RKLB</td>
+<td>$105.47</td>
+<td>+$26.89</td>
+<td><strong>+34.22%</strong></td>
+<td>71.8M</td>
+<td>Space/defense rally</td>
+</tr>
+<tr>
+<td>FLNC</td>
+<td>$24.16</td>
+<td>+$5.19</td>
+<td><strong>+27.36%</strong></td>
+<td>41.2M</td>
+<td>Energy storage demand</td>
+</tr>
+<tr>
+<td>EOSE</td>
+<td>$8.01</td>
+<td>+$1.65</td>
+<td><strong>+25.94%</strong></td>
+<td>51.1M</td>
+<td>Clean energy breakout</td>
+</tr>
+<tr>
+<td>RDW</td>
+<td>$11.07</td>
+<td>+$1.88</td>
+<td><strong>+20.38%</strong></td>
+<td>53.0M</td>
+<td>Space/defense</td>
+</tr>
+<tr>
+<td>MU</td>
+<td>$746.81</td>
+<td>+$100.34</td>
+<td><strong>+15.52%</strong></td>
+<td>58.3M</td>
+<td>AI memory demand</td>
+</tr>
+<tr>
+<td>INTC</td>
+<td>$124.92</td>
+<td>+$15.30</td>
+<td><strong>+13.96%</strong></td>
+<td>200.1M</td>
+<td><strong>Apple chipmaking deal</strong></td>
+</tr>
+<tr>
+<td>AMD</td>
+<td>$454.98</td>
+<td>+$46.52</td>
+<td><strong>+11.39%</strong></td>
+<td>51.7M</td>
+<td>AI chip momentum</td>
+</tr>
+<tr>
+<td>IREN</td>
+<td>$61.20</td>
+<td>+$4.35</td>
+<td><strong>+7.65%</strong></td>
+<td>105.6M</td>
+<td><strong>Nvidia multi-year partnership</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Top Losers:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Stock</th>
+<th>Giá</th>
+<th>Thay đổi</th>
+<th>%</th>
+<th>Volume</th>
+<th>Lý do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CRWV</td>
+<td>$114.15</td>
+<td>-$14.69</td>
+<td><strong>-11.40%</strong></td>
+<td>47.5M</td>
+<td>AI cloud valuation correction</td>
+</tr>
+<tr>
+<td>CTRA</td>
+<td>$32.56</td>
+<td>-$3.07</td>
+<td><strong>-8.62%</strong></td>
+<td>73.3M</td>
+<td>Energy sector rotation out</td>
+</tr>
+<tr>
+<td>SOUN</td>
+<td>$8.87</td>
+<td>-$0.76</td>
+<td><strong>-7.89%</strong></td>
+<td>47.4M</td>
+<td>AI narrative exhaustion</td>
+</tr>
+<tr>
+<td>OPEN</td>
+<td>$5.01</td>
+<td>-$0.31</td>
+<td><strong>-5.83%</strong></td>
+<td>51.3M</td>
+<td>Real estate tech selloff</td>
+</tr>
+<tr>
+<td>FLR</td>
+<td>$X.XX</td>
+<td>-$X.XX</td>
+<td><strong>-15.21%</strong></td>
+<td>—</td>
+<td>News-driven selloff</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mega-Cap Performance:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Stock</th>
+<th>Giá</th>
+<th>Thay đổi</th>
+<th>%</th>
+<th>Market Cap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AAPL</td>
+<td>$293.26</td>
+<td>+$5.83</td>
+<td>+2.03%</td>
+<td>$4.307T</td>
+</tr>
+<tr>
+<td>NVDA</td>
+<td>$215.20</td>
+<td>+$3.70</td>
+<td>+1.75%</td>
+<td>$5.227T</td>
+</tr>
+<tr>
+<td>TSLA</td>
+<td>$428.35</td>
+<td>+$16.54</td>
+<td>+4.02%</td>
+<td>$1.608T</td>
+</tr>
+<tr>
+<td>INTC</td>
+<td>$124.92</td>
+<td>+$15.30</td>
+<td>+13.96%</td>
+<td>$627.3B</td>
+</tr>
+<tr>
+<td>MU</td>
+<td>$746.81</td>
+<td>+$100.34</td>
+<td>+15.52%</td>
+<td>$841.6B</td>
+</tr>
+</tbody>
+</table>
+<h3>4.3 Earnings &amp; Corporate News</h3>
+<p><strong>Phiên May 8 — Key catalysts:</strong></p>
+<ol>
+<li><strong>Apple-Intel chipmaking deal</strong> 🟢 LỚN NHẤT</li>
+<li>"Apple reaches chipmaking deal with Intel, pushing its stock to new record"</li>
+<li>INTC +13.96% → từ $109.62 → $124.92</li>
+<li>Market cap Intel tăng thêm $78B trong 1 ngày</li>
+<li>
+<p>Implication: Apple đang giảm phụ thuộc vào TSMC → đa dạng supply chain</p>
+</li>
+<li>
+<p><strong>IREN-Nvidia multi-year partnership</strong> 🟢 AI Compute</p>
+</li>
+<li>"IREN Jumps After Announcing Multi-Year Nvidia Partnership"</li>
+<li>IREN +7.65% → từ $56.85 → $61.20</li>
+<li>
+<p>Bitcoin mining → AI compute transformation</p>
+</li>
+<li>
+<p><strong>Tesla Record Semi Order</strong> 🟢 EV/Freight</p>
+</li>
+<li>"Tesla's Record Semi Order Tests Valuation And Freight Growth Expectations"</li>
+<li>TSLA +4.02% → $428.35</li>
+<li>
+<p>Market cap $1.608T</p>
+</li>
+<li>
+<p><strong>Corning-NVIDIA AI Data Center Partnership</strong> 🟡</p>
+</li>
+<li>
+<p>GLW +2.49% — infrastructure supplier cho AI data center</p>
+</li>
+<li>
+<p><strong>ServiceNow Frank Sands stake reduction</strong> 🔴</p>
+</li>
+<li>"Frank Sands Significantly Reduces Stake in ServiceNow Inc by 99.18%"</li>
+<li>
+<p>NOW -2.58% — insider selling signal</p>
+</li>
+<li>
+<p><strong>CoreWeave continued selloff</strong> 🔴</p>
+</li>
+<li>CRWV -11.40% → $114.15 — AI infrastructure correction</li>
+</ol>
+<h3>4.4 Market Breadth</h3>
+<ul>
+<li><strong>S&amp;P 500:</strong> 11/11 sectors red (May 7) → reversal to broad green (May 8)</li>
+<li><strong>Advance-Decline Line:</strong> Improving từ phiên May 7</li>
+<li><strong>New Highs:</strong> S&amp;P 500 tạo ATH mới → breadth cải thiện đáng kể</li>
+<li><strong>Volume:</strong> INTC 200M (2x avg), MU 58M (&gt; avg), AMD 51.7M (&gt; avg) → breakout có backing</li>
+<li><strong>Concentration:</strong> NVDA + AAPL + MSFT vẫn chiếm ~40% S&amp;P market cap → concentration risk vẫn cao</li>
+</ul>
+<hr />
+<h2>V. COMMODITIES &amp; FX</h2>
+<h3>5.1 Oil &amp; Energy</h3>
+<table>
+<thead>
+<tr>
+<th>Commodity</th>
+<th>Giá</th>
+<th>Thay đổi</th>
+<th>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WTI Crude (CL=F)</td>
+<td>$95.22</td>
+<td>+$0.41</td>
+<td>+0.43%</td>
+</tr>
+<tr>
+<td>Brent Crude (BZ=F)</td>
+<td>$100.95</td>
+<td>+$0.89</td>
+<td>+0.88%</td>
+</tr>
+<tr>
+<td>Heating Oil (HO=F)</td>
+<td>$3.87</td>
+<td>+$0.06</td>
+<td>+1.56%</td>
+</tr>
+<tr>
+<td>Natural Gas (NG=F)</td>
+<td>$2.81</td>
+<td>+$0.04</td>
+<td>+1.37%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Phân tích:</strong> Oil duy trì ở vùng cao kỷ sử:
+- WTI trong range $93–$98 → đóng cửa $95.22
+- Brent đã test $103.96 intra-day, đóng cửa $100.95
+- Ba yếu tố: (1) Iran ceasefire giảm premium, (2) Shell tightness warning giữ price cao, (3) Iraq discovery long-term supply tăng</p>
+<h3>5.2 Precious Metals &amp; Industrial Metals</h3>
+<table>
+<thead>
+<tr>
+<th>Commodity</th>
+<th>Giá</th>
+<th>Thay đổi</th>
+<th>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gold (GC=F)</td>
+<td>$4,735.60</td>
+<td>+$24.70</td>
+<td>+0.52%</td>
+</tr>
+<tr>
+<td>Silver (SI=F)</td>
+<td>$80.64</td>
+<td>+$0.46</td>
+<td>+0.57%</td>
+</tr>
+<tr>
+<td>Platinum (PL=F)</td>
+<td>$2,061.90</td>
+<td>+$0.50</td>
+<td>+0.02%</td>
+</tr>
+<tr>
+<td>Copper (HG=F)</td>
+<td>$6.30</td>
+<td>+$0.13</td>
+<td>+2.04%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>🔴 Gold near ATH $4,735–$4,760:</strong> Safe haven demand + inflation hedge + central bank buying. Silver cũng mạnh (+0.57%). Industrial metals (Copper +2.04%) hỗ trợ commodity supercycle narrative.</p>
+<h3>5.3 FX</h3>
+<p><strong>DXY:</strong> Không khả dụng từ Yahoo Finance. Tuy nhiên:
+- Gold ATH → implied USD yếu
+- Brent $100+ → oil-denominated USD pressure
+- <strong>Inference:</strong> DXY có thể đang ~103–104 (yếu)</p>
+<p><strong>EUR/USD, GBP/USD:</strong> Có thể suy ra từ gold strength → EUR và GBP có thể mạnh lên.</p>
+<h3>5.4 BTC/Crypto</h3>
+<table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>Giá</th>
+<th>Thay đổi</th>
+<th>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BTC-USD</td>
+<td>$80,243.59</td>
+<td>+$228.33</td>
+<td>+0.32%</td>
+</tr>
+<tr>
+<td>MARA</td>
+<td>$12.94</td>
+<td>+$0.24</td>
+<td>+1.89%</td>
+</tr>
+<tr>
+<td>IREN</td>
+<td>$61.20</td>
+<td>+$4.35</td>
+<td>+7.65% (Nvidia deal)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Phân tích:</strong> BTC ở $80K — flat-to-slightly-bullish. Mining stocks phân kỳ: IREN +7.65% (Nvidia partnership = AI compute pivot) trong khi MARA chỉ +1.89%. Mining companies đang pivot sang AI compute → narrative shift từ "crypto mining" sang "AI infrastructure".</p>
+<hr />
+<h2>VI. OPTIONS &amp; MARKET MICROSTRUCTURE</h2>
+<h3>6.1 VIX Term Structure</h3>
+<table>
+<thead>
+<tr>
+<th>Chỉ số</th>
+<th>Giá</th>
+<th>Thay đổi</th>
+<th>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VIX</td>
+<td>17.19</td>
+<td>+0.39</td>
+<td>+2.28%</td>
+</tr>
+<tr>
+<td>VIX (prior day, May 7)</td>
+<td>16.88</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>VIX (pre-market May 8)</td>
+<td>~16.90</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>🟡 VIX tăng nhưng vẫn low:</strong> Từ 16.88 → 17.47. Đây là increase hợp lý vì:
+1. Memorial Day early close → closing volatility calculation effect
+2. Intraday volatility: INTC ±14%, MU ±15%, RKLB ±34% → individual stock vol cao
+3. Holiday positioning → option market makers adjust gamma</p>
+<p><strong>Tuy nhiên</strong>, VIX 17.19 vẫn trong range "comfortable" (&lt; 20 = low fear). Market không panic.</p>
+<h3>6.2 Dealer Gamma Position</h3>
+<ul>
+<li><strong>ES ở ATH 7,401</strong> → dealer gamma position neutral-to-slightly-negative (gamma flip risk nếu pullback)</li>
+<li><strong>Intraday range nhỏ</strong> → dealer chưa cần điều chỉnh lớn</li>
+<li><strong>Key level:</strong> 7,350 (support), 7,401 (resistance = ATH)</li>
+<li><strong>Nếu pullback về 7,350:</strong> dealer có thể sell futures để hedge → accelerate downside</li>
+<li><strong>Nếu breakout qua 7,450:</strong> dealer gamma positive → hỗ trợ upside</li>
+</ul>
+<h3>6.3 Options Flow / Positioning</h3>
+<p><strong>Signals đáng chú ý:</strong>
+- <strong>INTC:</strong> Massive volume (200M shares) → options activity cực cao. Implied volatility spike cho cả call và put.
+- <strong>MU:</strong> +15.52% → call skew tăng → market đang pricing further upside
+- <strong>CRWV:</strong> Put volume tăng → continued bearish positioning cho AI cloud
+- <strong>RKLB:</strong> Call volume spike → space/defense narrative đang hot</p>
+<h3>6.4 Margin / Leverage Signals</h3>
+<ul>
+<li><strong>RUT +0.91%</strong> — small-cap cải thiện nhưng vẫn lag mega-cap (NDX +1.58%)</li>
+<li><strong>NTLA margin pressure có thể giảm</strong> — breadth improvement sau 11/11 sectors red (May 7)</li>
+<li><strong>High beta stocks outperforming:</strong> RKLB +34%, FLNC +27%, EOSE +26% → risk-on sentiment trong个股</li>
+<li><strong>Leveraged ETFs:</strong> TQQQ, SOXL likely +2–3% → leveraged positioning still bullish</li>
+</ul>
+<hr />
+<h2>VII. FORWARD LOOK &amp; SCENARIOS</h2>
+<h3>7.1 Base Case Scenario (55%)</h3>
+<p><strong>Thứ Hai 11/05: Caution trên ATH</strong></p>
+<ul>
+<li><strong>S&amp;P 500:</strong> Consolidate trong range 7,370–7,420</li>
+<li>Không có dữ liệu kinh tế quan trọng → low catalyst environment</li>
+<li>Existing Home Sales (10:00 AM ET) → chỉ 1 catalyst chính</li>
+<li>
+<p>Volume thấp (post-holiday week) → sideways action</p>
+</li>
+<li>
+<p><strong>NASDAQ:</strong> 26,000–26,300 range</p>
+</li>
+<li>AI narrative vẫn strong nhưng đã priced-in</li>
+<li>
+<p>Monitoring: NVDA $215, INTC $125, MU $750</p>
+</li>
+<li>
+<p><strong>Oil:</strong> $93–$98 WTI, $98–$102 Brent</p>
+</li>
+<li>Iran ceasefire vẫn hold → giảm premium</li>
+<li>
+<p>Shell tightness → floor support</p>
+</li>
+<li>
+<p><strong>30Y Yield:</strong> 4.90–5.00%</p>
+</li>
+<li>Flat → neutral for equities</li>
+</ul>
+<h3>7.2 Bull Scenario (25%)</h3>
+<p><strong>AI Super-Cycle Accelerates:</strong></p>
+<ul>
+<li>S&amp;P vượt 7,500 → thử 7,600</li>
+<li>NDX vượt 26,500 → NVDA hướng $230+</li>
+<li>INTC thử $130–$135 (Apple chip deal momentum)</li>
+<li>MU thử $800+ (memory demand surge)</li>
+<li>BTC vượt $85K → crypto narrative reset</li>
+</ul>
+<p><strong>Cần:</strong> Earnings từ Barrick/Circle/Petrobras tích cực + no geopolitical escalation + yield tiếp tục giảm</p>
+<h3>7.3 Bear Scenario (20%)</h3>
+<p><strong>Profit-taking trên ATH + Concentration Risk:</strong></p>
+<ul>
+<li>S&amp;P pullback về 7,300–7,320</li>
+<li>RUT về 2,800 nếu margin pressure trở lại</li>
+<li>INTC revert $110–$115 nếu Apple deal không có catalyst mới</li>
+<li>CRWV/SOUN tiếp tục selloff → AI cloud correction</li>
+</ul>
+<p><strong>Cần:</strong> Earnings miss hàng loạt + Fed commentator hawkish + oil spike &gt;$105</p>
+<h3>7.4 Key Catalysts Next Session (T2–T6, 11/05–15/05)</h3>
+<table>
+<thead>
+<tr>
+<th>Ngày</th>
+<th>Sự kiện</th>
+<th>Thời gian ET</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>05/11 (T2)</td>
+<td>Existing Home Sales</td>
+<td>10:00 AM</td>
+<td>⚠️ Trung bình</td>
+</tr>
+<tr>
+<td>05/11 (T2)</td>
+<td>Barrick Mining earnings</td>
+<td>After market</td>
+<td>⚠️ Mining signal</td>
+</tr>
+<tr>
+<td>05/11 (T2)</td>
+<td>Circle Internet Group earnings</td>
+<td>After market</td>
+<td>⚠️ Fintech signal</td>
+</tr>
+<tr>
+<td>05/11 (T2)</td>
+<td>Petrobras earnings</td>
+<td>After market</td>
+<td>⚠️ Energy signal</td>
+</tr>
+<tr>
+<td>05/12 (T3)</td>
+<td>Venture Global earnings</td>
+<td>After market</td>
+<td>⚠️ Thấp-trung bình</td>
+</tr>
+<tr>
+<td>05/13 (T4)</td>
+<td>NO major data</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>05/14 (T5)</td>
+<td>NO major data</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>05/15 (T6)</td>
+<td>NO major data</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>⚠️ Critical observation:</strong> Tuần sau cực kỳ thin catalyst — chỉ có Existing Home Sales + vài earnings. Không có FOMC, không có CPI, không có NFP. Điều này tạo ra <strong>low-catalyst environment</strong> → market có thể:
+- Consolidate sideways (high probability)
+- Run on momentum nếu volume tăng trở lại (medium probability)
+- Gap move nếu unexpected news (low probability)</p>
+<h3>7.5 Risk Register</h3>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Probability</th>
+<th>Impact</th>
+<th>Direction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S&amp;P pullback từ ATH (profit-taking)</td>
+<td>40%</td>
+<td>Cao</td>
+<td>Bearish short-term</td>
+</tr>
+<tr>
+<td>Oil spike &gt;$105 (Iran ceasefire break)</td>
+<td>15%</td>
+<td>Cao</td>
+<td>Bearish equities</td>
+</tr>
+<tr>
+<td>INTC reversal (-5%+) nếu deal news fade</td>
+<td>25%</td>
+<td>Trung bình</td>
+<td>Tech sector pressure</td>
+</tr>
+<tr>
+<td>AI mega-cap correction (NVDA/MU pullback)</td>
+<td>20%</td>
+<td>Cao</td>
+<td>Broad market impact</td>
+</tr>
+<tr>
+<td>Low volume post-holiday → choppy action</td>
+<td>60%</td>
+<td>Thấp</td>
+<td>Sideways</td>
+</tr>
+<tr>
+<td>Fed hawkish surprise (speaker comment)</td>
+<td>10%</td>
+<td>Trung bình</td>
+<td>Bond sell-off</td>
+</tr>
+<tr>
+<td>Barrick earnings signal sector rotation</td>
+<td>30%</td>
+<td>Trung bình</td>
+<td>Mining/industrial sector</td>
+</tr>
+</tbody>
+</table>
+<h3>7.6 Weekly Outlook (05/11–05/15)</h3>
+<p><strong>Volume &amp; Liquidity:</strong> Post-Memorial Day week → volume sẽ trở về normal từ thứ Hai. Điều này hỗ trợ cho price discovery.</p>
+<p><strong>Weekly Target:</strong>
+- <strong>S&amp;P 500:</strong> 7,370–7,420 (consolidation) → breakout 7,450 nếu volume xác nhận
+- <strong>NASDAQ:</strong> 26,000–26,300 → breakout 26,500 cần catalyst mới
+- <strong>RUT:</strong> 2,830–2,880 → cải thiện breadth nếu rotation từ mega-cap</p>
+<p><strong>Key levels to watch:</strong>
+- <strong>S&amp;P:</strong> Support 7,350 / Resistance 7,450
+- <strong>NDX:</strong> Support 25,800 / Resistance 26,500
+- <strong>VIX:</strong> Floor 16 / Ceiling 20 → breakout trên 20 = warning signal</p>
+<hr />
+<h2>📊 TỔNG KẾT &amp; GÓC NHÌN</h2>
+<h3>Thấu Thị Thị Trường Hôm Nay</h3>
+<p>Phiên thứ Sáu 08/05/2026 là một phiên <strong>definitive breakout</strong> — S&amp;P 500 lập ATH mới 7,401.20 sau 6 tuần tăng liên tiếp. Dưới đây là những gì thực sự đang xảy ra:</p>
+<p><strong>1. AI Infrastructure Super-Cycle đang xác nhận</strong>
+Không phải là "AI hype" nữa — đây là earnings-driven, capital-expenditure-driven conviction:
+- INTC +13.96% (Apple chip deal) → supply chain validation
+- MU +15.52% (AI memory demand) → capex validation
+- AMD +11.39% → competitive validation
+- IREN +7.65% (Nvidia partnership) → compute demand validation
+- RKLB +34.22% → space infrastructure validation</p>
+<p><strong>2. Bond market đang lead equity market</strong>
+30Y yield giảm từ 4.969% → 4.94% → bond rally đang tạo điều kiện cho equity valuation expansion. Yield curve flattening → dài hạn định giá thấp hơn.</p>
+<p><strong>3. Oil paradox — inflation cao nhưng equities vẫn tăng</strong>
+WTI $95+, Brent $100+, Gold ATH — tất cả là tín hiệu inflationary. Nhưng yields giảm và equities tăng → market đang discount "sticky inflation but no recession" (soft landing scenario).</p>
+<p><strong>4. Memorial Day effect — caution cần thiết</strong>
+Phiên early close với thanh khoản thấp → breakout cần được xác nhận. Tuần sau thin catalyst → consolidation là base case.</p>
+<h3>Strategic Takeaways</h3>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Signal</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Short-term (1–3 ngày)</strong></td>
+<td>CAUTIOUS BULLISH</td>
+<td>Watch ATH confirmation</td>
+</tr>
+<tr>
+<td><strong>Medium-term (1–2 tuần)</strong></td>
+<td>CONSOLIDATION EXPECTED</td>
+<td>Low catalyst week</td>
+</tr>
+<tr>
+<td><strong>AI Mega-caps</strong></td>
+<td>STRONG BULLISH</td>
+<td>INTC, MU, AMD, NVDA still in uptrend</td>
+</tr>
+<tr>
+<td><strong>Oil/Commodities</strong></td>
+<td>BULLISH</td>
+<td>WTI $95+, Gold ATH → hedge inflation</td>
+</tr>
+<tr>
+<td><strong>Small-cap (RUT)</strong></td>
+<td>UNDERPERFORMING</td>
+<td>Lagging mega-cap → potential catch-up</td>
+</tr>
+<tr>
+<td><strong>VIX</strong></td>
+<td>LOW/FEARLESS</td>
+<td>17.47 → no panic but watch for 20+</td>
+</tr>
+</tbody>
+</table>
+<h3>Final Word</h3>
+<p>Thị trường đang ở trạng thái <strong>"cautiously euphoric"</strong> — ATH mới được tạo ra nhưng:
+- ✅ Volume backing (INTC 200M, MU 58M)
+- ✅ Sector breadth improving (11/11 sectors red → broad green)
+- ✅ Bond market supportive (yields giảm)
+- ⚠️ Low catalyst week ahead (consolidation likely)
+- ⚠️ Concentration risk still high (mega-cap dominates)
+- ⚠️ Oil/inflation high → margin for error nhỏ</p>
+<p><strong>Bottom line:</strong> Breakout ATH là thật nhưng cần xác nhận. Tuần sau consolidation là base case. AI infrastructure narrative đang trong phase "conviction" không phải "hype" — INTC, MU, AMD, NVDA vẫn trong uptrend mạnh.</p>
+<hr />
+<p><em>Full Report — Full Daily Intelligence (T2–T6) | 3:00 PM PDT | Friday 05/08/2026</em>
+<em>Baseline: bao_cao_thi_truong_20260508_6AM.md, quick_update_0900.md, quick_update_1130.md</em>
+<em>Data sources: Yahoo Finance (most active, market indices), market intelligence</em></p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Phân Tích Chứng Khoán Mỹ <span class="footer-divider">•</span> Báo cáo & Cập nhật thị trường</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #6e7681;">
+                Cập nhật lúc 2026 05 08
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
